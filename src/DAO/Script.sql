@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS projeto (
   situacao CHAR(1) NOT NULL,
   PRIMARY KEY (id))
 ;
-
+-- tste
 
 -- -----------------------------------------------------
 -- Table versao
