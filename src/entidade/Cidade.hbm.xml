@@ -6,7 +6,7 @@
     <class name="entidade.Cidade" table="cidade" schema="public" optimistic-lock="version">
         <id name="id" type="int">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="descricao" type="string">
             <column name="descricao" length="150" />
