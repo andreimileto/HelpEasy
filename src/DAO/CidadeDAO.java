@@ -8,21 +8,19 @@ package DAO;
 import apoio.IDAO;
 import apoio.NewHibernateUtil;
 import java.util.ArrayList;
-import net.sf.ehcache.hibernate.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.jpa.internal.util.LogHelper;
 
 /**
  *
  * @author Mileto
  */
-public class ProjetoDAO implements IDAO {
+public class CidadeDAO implements IDAO{
 
     @Override
     public boolean salvar(Object o) {
-        Session session = NewHibernateUtil.getSessionFactory().openSession();
+         Session session = NewHibernateUtil.getSessionFactory().openSession();
         boolean retorno = false;
         try {
 
@@ -48,5 +46,5 @@ public class ProjetoDAO implements IDAO {
     public ArrayList<Object> consultar(Object o) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }
