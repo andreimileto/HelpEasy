@@ -3,10 +3,44 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Prioridade.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroCidade.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Motivo.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Tarefa.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/ConexaoBD.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/TarefaUsuario.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Usuario.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Cidade.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroFase.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Prioridade.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleCidade.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/FaseDAO.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/CidadeDAO.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Modulo.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/ProjetoDAO.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/NewHibernateUtil.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Modulo.hbm.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/Script.sql</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/util/hibernate.reveng.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/hibernate.reveng.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/helpeasy/HelpEasy.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/util/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/TelaPrincipal.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Auditoria.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroProjeto.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Auditoria.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Cidade.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Fase.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Versao.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Fase.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Projeto.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/hibernate.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Tarefa.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Motivo.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Projeto.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/MovimentoTarefa.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Cliente.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/IDAO.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaCidade.java</file>
         </group>
     </open-files>
 </project-private>

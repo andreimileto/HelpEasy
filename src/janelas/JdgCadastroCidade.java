@@ -6,6 +6,7 @@
 package janelas;
 
 import DAO.CidadeDAO;
+import controle.ControleCidade;
 import entidade.Cidade;
 import javax.swing.JOptionPane;
 
@@ -80,6 +81,11 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
         btnLocalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizar.setText("Localizar");
+        btnLocalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -157,10 +163,12 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
 
         try {
-            if (tfdCodigo.getText().length()>0) {
+            if (tfdCodigo.getText().length() > 0) {
                 cidade.setSituacao('I');
-                CidadeDAO cidadeDAO = new CidadeDAO();
-                cidadeDAO.salvar(cidade);
+//                CidadeDAO cidadeDAO = new CidadeDAO();
+//                cidadeDAO.salvar(cidade);
+                ControleCidade controleCidade = new ControleCidade();
+                controleCidade.salvar(cidade);
                 JOptionPane.showMessageDialog(rootPane, "Cidade " + cidade.getDescricao() + " Excluída com sucesso");
                 limparCampos();
             } else {
@@ -178,9 +186,10 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
                 cidade.setDescricao(tfdNome.getText());
                 cidade.setSituacao('A');
 
-                CidadeDAO cidadeDAO = new CidadeDAO();
-                cidadeDAO.salvar(cidade);
-
+//                CidadeDAO cidadeDAO = new CidadeDAO();
+//                cidadeDAO.salvar(cidade);
+                ControleCidade controleCidade = new ControleCidade();
+                controleCidade.salvar(cidade);
                 limparCampos();
                 JOptionPane.showMessageDialog(rootPane, "Cidade cadastrada com sucesso!");
             } catch (Exception e) {
@@ -191,6 +200,14 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
+            JdgListaCidade listaCidade = new JdgListaCidade(null, true, cidade);
+        listaCidade.setVisible(true);
+        
+        tfdCodigo.setText(String.valueOf(cidade.getId()));
+        tfdNome.setText(cidade.getDescricao());
+    }//GEN-LAST:event_btnLocalizarActionPerformed
 
     private void limparCampos() {
         cidade = new Cidade();
