@@ -3,7 +3,7 @@
 -- Table usuario
 -- -----------------------------------------------------
 CREATE TABLE usuario (
-  id INT NOT NULL,
+  id serial,
   nome VARCHAR(150) NOT NULL,
   login VARCHAR(100) NOT NULL unique,
   senha VARCHAR(45) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE usuario (
 -- Table projeto
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS projeto (
-  id INT NOT NULL,
+  id serial,
   descricao VARCHAR(60) NOT NULL,
   situacao CHAR(1) NOT NULL,
   PRIMARY KEY (id))
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS projeto (
 -- Table versao
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS versao (
-  id INT NOT NULL,
+  id serial,
   id_projeto INT NOT NULL,
   descricao VARCHAR(45) NOT NULL,
   situacao CHAR(1) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS versao (
 -- Table prioridade
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS prioridade (
-  id INT NOT NULL,
+  id serial,
   descricao VARCHAR(45) NOT NULL,
   situacao CHAR(1) NOT NULL,
   PRIMARY KEY (id))
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS prioridade (
 -- Table motivo
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS motivo (
-  id INT NOT NULL,
+  id serial,
   descricao VARCHAR(45) NOT NULL,
   situacao CHAR(1) NOT NULL,
   PRIMARY KEY (id))
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS motivo (
 -- Table cidade
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS cidade (
-  id INT NOT NULL,
+  id serial,
   descricao VARCHAR(150) NULL,
   situacao CHAR(1) NOT NULL,
   PRIMARY KEY (id))
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS cidade (
 -- Table cliente
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS cliente (
-  id INT NOT NULL,
+  id serial,
   id_cidade INT NOT NULL,
   razao_social VARCHAR(150) NOT NULL,
   cpf_cnpj VARCHAR(18) NULL,
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS cliente (
 -- Table fase
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS fase (
-  id INT NOT NULL,
+  id serial,
   descricao VARCHAR(45) NOT NULL,
   situacao CHAR(1) NOT NULL,
   PRIMARY KEY (id))
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS fase (
 -- Table modulo
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS modulo (
-  id INT NOT NULL,
+  id serial,
   id_projeto INT NOT NULL,
   descricao VARCHAR(45) NOT NULL,
   situacao CHAR(1) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS modulo (
 -- Table tarefa
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS tarefa (
-  id INT NOT NULL,
+  id serial,
   id_cliente INT NOT NULL,
   id_projeto INT NOT NULL,
   id_motivo INT NOT NULL,
@@ -205,7 +205,7 @@ CREATE TABLE IF NOT EXISTS tarefa (
 -- Table movimento_tarefa
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS movimento_tarefa (
-  id INT NOT NULL,
+  id serial,
   id_tarefa INT NOT NULL,
   descricao text NOT NULL,
   datahora_movimento TIMESTAMP NOT NULL,
@@ -225,7 +225,7 @@ CREATE TABLE IF NOT EXISTS movimento_tarefa (
 -- Table tarefa_usuario
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS tarefa_usuario (
-  id VARCHAR(45) NOT NULL,
+  id serial,
   id_tarefa INT NOT NULL,
   id_usuario INT NOT NULL,
   PRIMARY KEY (id),
@@ -248,8 +248,8 @@ CREATE TABLE IF NOT EXISTS tarefa_usuario (
 -- Table auditoria
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS auditoria (
-  id INT NOT NULL,
-  usuario_id INT NOT NULL,
+  id serial,
+  usuario_id serial NOT NULL,
   PRIMARY KEY (id),
  -- INDEX fk_auditoria_usuario1_idx (usuario_id),
   CONSTRAINT fk_auditoria_usuario1
