@@ -6,7 +6,7 @@
 package DAO;
 
 import apoio.IDAO;
-import apoio.NewHibernateUtil;
+import apoio.HibernateUtil;
 import java.util.ArrayList;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -20,11 +20,11 @@ public class FaseDAO implements IDAO{
 
     @Override
     public boolean salvar(Object o) {
-        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         boolean retorno = false;
         try {
 
-            session = NewHibernateUtil.getSessionFactory().openSession();
+            session = HibernateUtil.getSessionFactory().openSession();
 
             Transaction t = session.beginTransaction();
 

@@ -38,6 +38,7 @@ public class JdgListaCidade extends javax.swing.JDialog {
     public JdgListaCidade(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
         listarCidades();
     }
 
@@ -80,9 +81,9 @@ public class JdgListaCidade extends javax.swing.JDialog {
 
 //        CidadeDAO cidadeDAO = new CidadeDAO();
 //        ArrayList<Cidade> cidades = cidadeDAO.listar("");
-        
+        cidade.setDescricao(tfdDescricao.getText());
         ControleCidade controleCidade = new ControleCidade();
-       ArrayList<Cidade> cidades = controleCidade.listar(tfdDescricao.getText().toUpperCase());
+       ArrayList<Cidade> cidades = controleCidade.listar(cidade);
         dtm.addColumn("ID");
         dtm.addColumn("DESCRIÇÃO");
         
@@ -359,8 +360,10 @@ public class JdgListaCidade extends javax.swing.JDialog {
     }//GEN-LAST:event_tblCidadesMouseEntered
     private void listar() {
         try {
-        cidade.setDescricao(tfdDescricao.getText().toLowerCase());
-        System.out.println("descricao == " + cidade.getDescricao());    
+        cidade.setDescricao(tfdDescricao.getText().toUpperCase());
+        System.out.println("descricao == " + cidade.getDescricao()); 
+        ControleCidade controleCidade = new ControleCidade();
+        controleCidade.listar(cidade);
         } catch (Exception e) {
         }
         
@@ -383,9 +386,9 @@ public class JdgListaCidade extends javax.swing.JDialog {
         int row = tblCidades.getSelectedRow();
 
         //seta o ID do objeto da linha selecionada
-        cidade = new Cidade();
-        cidade.setId(Integer.parseInt(tblCidades.getValueAt(row, 0).toString()));
-        cidade.setDescricao(tblCidades.getValueAt(row, 1).toString());
+//        cidade = new Cidade();
+        this.cidade.setId(Integer.parseInt(tblCidades.getValueAt(row, 0).toString()));
+        this.cidade.setDescricao(tblCidades.getValueAt(row, 1).toString());
 //        if (tblCidades.getValueAt(row, 2).toString().equals("Ativo")) {
 //            this.cidade.setAtivo('T');
 //        } else {

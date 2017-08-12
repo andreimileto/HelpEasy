@@ -6,11 +6,11 @@
 package DAO;
 
 import apoio.IDAO;
-import apoio.NewHibernateUtil;
+import apoio.HibernateUtil;
 import entidade.Cidade;
 import java.util.ArrayList;
 import java.util.List;
-import net.sf.ehcache.hibernate.HibernateUtil;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -21,13 +21,15 @@ import org.hibernate.Transaction;
  */
 public class CidadeDAO implements IDAO {
 
+    Cidade cidade;
+    
     @Override
     public boolean salvar(Object o) {
-        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         boolean retorno = false;
         try {
 
-            session = NewHibernateUtil.getSessionFactory().openSession();
+            session = HibernateUtil.getSessionFactory().openSession();
 
             Transaction t = session.beginTransaction();
 
@@ -50,24 +52,26 @@ public class CidadeDAO implements IDAO {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.F
     }
 
-    public ArrayList<Cidade> listar(String parametro) {
-
+    public ArrayList<Cidade> listar(Cidade cidade) {
+        this.cidade=cidade;
         List resultado = null;
 
         ArrayList<Cidade> lista = new ArrayList<>();
         try {
-            Session session = NewHibernateUtil.getSessionFactory().openSession();
+            Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             String sql = "from Cidade  "
 //                    + "where 1=1 "
-////                    + parametro
-                    + "where upper(descricao)  like '"+parametro+"%' "
+//                    + parametro
+                    + "where upper(descricao)  like '"+cidade.getDescricao().toUpperCase()+"%' "
                     + " order by descricao";
             String sel = sql;
             System.out.println(sel);
-            org.hibernate.Query q = session.createQuery(sql);
+org.hibernate.Query q = session.createQuery(sql);
+//            System.out.println(sql);
+//            org.hibernate.Query q = session.createQuery(sql);
             resultado = q.list();
-
+//            System.out.println(q);
             for (Object o : resultado) {
                 Cidade cid = ((Cidade) ((Object) o));
                 lista.add(cid);
@@ -75,10 +79,11 @@ public class CidadeDAO implements IDAO {
 
         } catch (HibernateException he) {
             he.printStackTrace();
-        } //finally {
+        }// finally {
 //            session.close();
 //        }
         return lista;
     }
 
 }
+

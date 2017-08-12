@@ -28,9 +28,10 @@ public class ControleCidade {
     }
 
 
-    public ArrayList<Cidade> listar(String parametro) {
+    public ArrayList<Cidade> listar(Cidade cidade) {
+        this.cidade=cidade;
         CidadeDAO cidadeDAO = new CidadeDAO();
-        return cidadeDAO.listar(parametro);
+        return cidadeDAO.listar(this.cidade);
     }
     
 }

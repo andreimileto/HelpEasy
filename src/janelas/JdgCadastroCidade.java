@@ -24,6 +24,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
     public JdgCadastroCidade(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+         
     }
 
     /**
@@ -180,10 +181,15 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        cidade = new Cidade();
         if (tfdNome.getText().length() > 2) {
             try {
-                Cidade cidade = new Cidade();
+//                Cidade cidade = new Cidade();
                 cidade.setDescricao(tfdNome.getText());
+                if (!tfdCodigo.getText().isEmpty()) {
+                cidade.setId(Integer.parseInt(tfdCodigo.getText()));    
+                }
+                
                 cidade.setSituacao('A');
 
 //                CidadeDAO cidadeDAO = new CidadeDAO();
@@ -202,7 +208,8 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-            JdgListaCidade listaCidade = new JdgListaCidade(null, true, cidade);
+        cidade = new Cidade();    
+        JdgListaCidade listaCidade = new JdgListaCidade(null, true, cidade);
         listaCidade.setVisible(true);
         
         tfdCodigo.setText(String.valueOf(cidade.getId()));

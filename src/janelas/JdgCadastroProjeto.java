@@ -160,7 +160,7 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
                 projeto.setSituacao('A');
 
                 ProjetoDAO projetoDAO = new ProjetoDAO();
-                projetoDAO.salvar(projeto);
+//                projetoDAO.salvar(projeto);
 
                 limparCampos();
                 JOptionPane.showMessageDialog(rootPane, "Projeto cadastrado com sucesso!");
@@ -178,7 +178,7 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
             if (tfdCodigo.getText().length()>0) {
                 projeto.setSituacao('I');
                 ProjetoDAO projetoDAO = new ProjetoDAO();
-                projetoDAO.salvar(projeto);
+//                projetoDAO.salvar(projeto);
                 JOptionPane.showMessageDialog(rootPane, "projeto " + projeto.getDescricao() + " excluído com sucesso");
                 limparCampos();
             } else {
