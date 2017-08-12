@@ -45,6 +45,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         ImnCadastroFase = new javax.swing.JMenuItem();
         ImnCadastroProjeto = new javax.swing.JMenuItem();
+        imnCadastroMotivo = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EasyPDV");
@@ -106,6 +107,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(ImnCadastroProjeto);
 
+        imnCadastroMotivo.setText("Cadastro de motivo");
+        imnCadastroMotivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imnCadastroMotivoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(imnCadastroMotivo);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -150,6 +159,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroProjeto.setVisible(true);
     }//GEN-LAST:event_ImnCadastroProjetoActionPerformed
 
+    private void imnCadastroMotivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imnCadastroMotivoActionPerformed
+        JdgCadastroMotivo cadastroMotivo = new JdgCadastroMotivo(this,true);
+        cadastroMotivo.setVisible(true);
+    }//GEN-LAST:event_imnCadastroMotivoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -190,6 +204,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem ImnCadastroFase;
     private javax.swing.JMenuItem ImnCadastroProjeto;
     private javax.swing.JMenuItem imnAlterarSenha;
+    private javax.swing.JMenuItem imnCadastroMotivo;
     private javax.swing.JMenuItem imnCidades;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

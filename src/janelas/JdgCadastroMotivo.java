@@ -5,11 +5,9 @@
  */
 package janelas;
 
-import DAO.CidadeDAO;
-import DAO.FaseDAO;
-import controle.ControleFase;
-import entidade.Cidade;
-import entidade.Fase;
+import controle.ControleCidade;
+import controle.ControleMotivo;
+
 import entidade.Motivo;
 import javax.swing.JOptionPane;
 
@@ -17,15 +15,17 @@ import javax.swing.JOptionPane;
  *
  * @author Mileto
  */
-public class JdgCadastroFase extends javax.swing.JDialog {
+public class JdgCadastroMotivo extends javax.swing.JDialog {
 
     /**
-     * Creates new form JdgCadastroFase
+     * Creates new form JdgCadastroCidade
      */
-    Fase fase;
-    public JdgCadastroFase(java.awt.Frame parent, boolean modal) {
+    Motivo motivo;
+
+    public JdgCadastroMotivo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+         
     }
 
     /**
@@ -42,14 +42,14 @@ public class JdgCadastroFase extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         tfdCodigo = new javax.swing.JTextField();
         tfdNome = new javax.swing.JTextField();
-        btnSair = new javax.swing.JButton();
-        btnExcluir = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         btnLocalizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro fase", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Cidade", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
 
         jLabel1.setText("Código:");
 
@@ -57,11 +57,11 @@ public class JdgCadastroFase extends javax.swing.JDialog {
 
         tfdCodigo.setEditable(false);
 
-        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))); // NOI18N
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
+                btnSalvarActionPerformed(evt);
             }
         });
 
@@ -73,11 +73,11 @@ public class JdgCadastroFase extends javax.swing.JDialog {
             }
         });
 
-        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
-        btnSalvar.setText("Salvar");
-        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))); // NOI18N
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarActionPerformed(evt);
+                btnSairActionPerformed(evt);
             }
         });
 
@@ -96,23 +96,26 @@ public class JdgCadastroFase extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfdCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfdCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,9 +130,9 @@ public class JdgCadastroFase extends javax.swing.JDialog {
                     .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSair)
-                    .addComponent(btnExcluir)
                     .addComponent(btnSalvar)
+                    .addComponent(btnExcluir)
+                    .addComponent(btnSair)
                     .addComponent(btnLocalizar))
                 .addContainerGap())
         );
@@ -140,15 +143,15 @@ public class JdgCadastroFase extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -160,62 +163,65 @@ public class JdgCadastroFase extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-         try {
-            if (tfdCodigo.getText().length()>0) {
-                fase.setSituacao('I');
-                FaseDAO faseDAO = new FaseDAO();
-                faseDAO.salvar(fase);
-                JOptionPane.showMessageDialog(rootPane, "Fase " + fase.getDescricao() + " Excluída com sucesso");
+
+        try {
+            if (tfdCodigo.getText().length() > 0) {
+                motivo.setSituacao('I');
+//                CidadeDAO cidadeDAO = new CidadeDAO();
+//                cidadeDAO.salvar(cidade);
+                ControleMotivo controleMotivo = new ControleMotivo();
+                controleMotivo.salvar(motivo);
+                JOptionPane.showMessageDialog(rootPane, "Motivo " + motivo.getDescricao() + " Excluída com sucesso");
                 limparCampos();
             } else {
-                JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase \nNenhuma fase selecionada.");
+                JOptionPane.showMessageDialog(rootPane, "Erro ao excluir movito \nNenhum motivo selecionado.");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
+            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        motivo = new Motivo();
         if (tfdNome.getText().length() > 2) {
             try {
-                Fase fase = new Fase();
-                fase.setDescricao(tfdNome.getText());
+
+                motivo.setDescricao(tfdNome.getText());
                 if (!tfdCodigo.getText().isEmpty()) {
-                    fase.setId(Integer.parseInt(tfdCodigo.getText()));
+                motivo.setId(Integer.parseInt(tfdCodigo.getText()));    
                 }
-                fase.setSituacao('A');
+                
+                motivo.setSituacao('A');
 
-//                FaseDAO faseDAO = new FaseDAO();
-//                faseDAO.salvar(fase);
-                    ControleFase controleFase = new ControleFase();
-                    controleFase.salvar(fase);
 
+                ControleMotivo controleMotivo = new ControleMotivo();
+                controleMotivo.salvar(motivo);
                 limparCampos();
-                JOptionPane.showMessageDialog(rootPane, "Fase cadastrada com sucesso!");
+                JOptionPane.showMessageDialog(rootPane, "Motivo cadastrado com sucesso!");
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase");
+                JOptionPane.showMessageDialog(rootPane, "Erro ao salvar motivo");
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase \nQuantidade de caracteres no nome da fase precisa ser maior que 2");
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar motivo \nQuantidade de caracteres no nome oa motivo precisa ser maior que 2");
 
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-        fase = new Fase();    
-        JdgListaFase listaFase = new JdgListaFase(null, true, fase);
-        listaFase.setVisible(true);
+        motivo = new Motivo();    
+        JdgListaMotivo listaMotivo = new JdgListaMotivo(null, true, motivo);
+        listaMotivo.setVisible(true);
         
-        tfdCodigo.setText(String.valueOf(fase.getId()));
-        tfdNome.setText(fase.getDescricao());
+        tfdCodigo.setText(String.valueOf(motivo.getId()));
+        tfdNome.setText(motivo.getDescricao());
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
-    
-     private void limparCampos() {
-        fase = new Fase();
+    private void limparCampos() {
+        motivo = new Motivo();
         tfdCodigo.setText("");
         tfdNome.setText("");
     }
+
     /**
      * @param args the command line arguments
      */
@@ -233,20 +239,21 @@ public class JdgCadastroFase extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JdgCadastroFase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgCadastroMotivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JdgCadastroFase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgCadastroMotivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JdgCadastroFase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgCadastroMotivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JdgCadastroFase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgCadastroMotivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JdgCadastroFase dialog = new JdgCadastroFase(new javax.swing.JFrame(), true);
+                JdgCadastroMotivo dialog = new JdgCadastroMotivo(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

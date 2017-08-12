@@ -6,7 +6,7 @@
 package DAO;
 
 import apoio.HibernateUtil;
-import entidade.Fase;
+import entidade.Cidade;
 import entidade.Motivo;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,19 +17,22 @@ import org.hibernate.Session;
  *
  * @author Mileto
  */
-public class FaseDAO extends DAO{
+public class MotivoDAO extends DAO {
 
-    Fase fase;
-     public ArrayList<Fase> listar(Fase fase) {
-        this.fase = fase;
+    Motivo motivo;
+
+    public ArrayList<Motivo> listar(Motivo motivo) {
+        this.motivo = motivo;
         List resultado = null;
 
-        ArrayList<Fase> lista = new ArrayList<>();
+        ArrayList<Motivo> lista = new ArrayList<>();
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            String sql = "from Fase  "                    
-                    + "where upper(descricao)  like '" + fase.getDescricao().toUpperCase() + "%' "
+            String sql = "from Motivo  "
+                    //                    + "where 1=1 "
+                    //                    + parametro
+                    + "where upper(descricao)  like '" + motivo.getDescricao().toUpperCase() + "%' "
                     + "and situacao ='A'"
                     + " order by descricao";
             String sel = sql;
@@ -39,8 +42,8 @@ public class FaseDAO extends DAO{
             resultado = q.list();
 
             for (Object o : resultado) {
-                Fase fas = ((Fase) ((Object) o));
-                lista.add(fas);
+                Motivo mot = ((Motivo) ((Object) o));
+                lista.add(mot);
             }
 
         } catch (HibernateException he) {
@@ -50,5 +53,4 @@ public class FaseDAO extends DAO{
 //        }
         return lista;
     }
-    
 }

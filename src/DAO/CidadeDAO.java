@@ -64,6 +64,7 @@ public class CidadeDAO implements IDAO {
 //                    + "where 1=1 "
 //                    + parametro
                     + "where upper(descricao)  like '"+cidade.getDescricao().toUpperCase()+"%' "
+                    + "and situacao ='A'"
                     + " order by descricao";
             String sel = sql;
             System.out.println(sel);
