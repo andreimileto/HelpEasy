@@ -7,6 +7,8 @@ package janelas;
 
 import DAO.FaseDAO;
 import DAO.ProjetoDAO;
+import controle.ControleProjeto;
+import entidade.Motivo;
 import entidade.Projeto;
 import javax.swing.JOptionPane;
 
@@ -20,6 +22,7 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
      * Creates new form JdgCadastroProjeto
      */
     Projeto projeto;
+
     public JdgCadastroProjeto(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -57,6 +60,11 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
 
         btnLocalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizar.setText("Localizar");
+        btnLocalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
         btnSalvar.setText("Salvar");
@@ -105,7 +113,7 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
                         .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +126,7 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLocalizar)
                     .addComponent(btnSalvar)
@@ -153,17 +161,24 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-          if (tfdNome.getText().length() > 2) {
+        if (tfdNome.getText().length() > 2) {
             try {
                 Projeto projeto = new Projeto();
                 projeto.setDescricao(tfdNome.getText());
                 projeto.setSituacao('A');
 
-                ProjetoDAO projetoDAO = new ProjetoDAO();
-//                projetoDAO.salvar(projeto);
+                if (!tfdCodigo.getText().isEmpty()) {
+                    projeto.setId(Integer.parseInt(tfdCodigo.getText()));
+                }
 
-                limparCampos();
-                JOptionPane.showMessageDialog(rootPane, "Projeto cadastrado com sucesso!");
+                ControleProjeto controleProjeto = new ControleProjeto();
+                if (controleProjeto.salvar(projeto)) {
+                    JOptionPane.showMessageDialog(null, "Projeto salvo com sucesso!");
+                    limparCampos();
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao salvar projeto");
+                }
+
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar projeto");
             }
@@ -175,12 +190,17 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         try {
-            if (tfdCodigo.getText().length()>0) {
+            if (tfdCodigo.getText().length() > 0) {
                 projeto.setSituacao('I');
-                ProjetoDAO projetoDAO = new ProjetoDAO();
-//                projetoDAO.salvar(projeto);
-                JOptionPane.showMessageDialog(rootPane, "projeto " + projeto.getDescricao() + " excluído com sucesso");
-                limparCampos();
+
+                ControleProjeto controleProjeto = new ControleProjeto();
+                if (controleProjeto.salvar(projeto)) {
+                    JOptionPane.showMessageDialog(rootPane, "projeto " + projeto.getDescricao() + " excluído com sucesso");
+                    limparCampos();
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto.");
+                }
+
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto \nNenhum projeto selecionado.");
             }
@@ -189,12 +209,23 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
+    private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
+        projeto = new Projeto();
+        JdgListaProjeto listaProjeto = new JdgListaProjeto(null, true, projeto);
+        listaProjeto.setVisible(true);
+        if (projeto.getId() > 0) {
+            tfdCodigo.setText(String.valueOf(projeto.getId()));
+        }
+
+        tfdNome.setText(projeto.getDescricao());
+    }//GEN-LAST:event_btnLocalizarActionPerformed
+
     private void limparCampos() {
         projeto = new Projeto();
         tfdCodigo.setText("");
         tfdNome.setText("");
     }
-    
+
     /**
      * @param args the command line arguments
      */

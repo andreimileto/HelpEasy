@@ -18,8 +18,7 @@ CREATE TABLE IF NOT EXISTS projeto (
   id serial,
   descricao VARCHAR(60) NOT NULL,
   situacao CHAR(1) NOT NULL,
-  PRIMARY KEY (id))
-;
+  PRIMARY KEY (id));
 -- tste
 
 -- -----------------------------------------------------

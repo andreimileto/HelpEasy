@@ -19,40 +19,11 @@ import org.hibernate.Transaction;
  *
  * @author Mileto
  */
-public class CidadeDAO implements IDAO {
+public class CidadeDAO  extends DAO{
 
     Cidade cidade;
     
-    @Override
-    public boolean salvar(Object o) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        boolean retorno = false;
-        try {
-
-            session = HibernateUtil.getSessionFactory().openSession();
-
-            Transaction t = session.beginTransaction();
-
-            session.saveOrUpdate(o);
-
-            t.commit();
-
-            retorno = true;
-        } catch (HibernateException he) {
-//            LogHelper.makeLog(this, "algo de errado ocorreu" + he.getMessage());
-            he.printStackTrace();
-        } finally {
-            session.close();
-        }
-        return retorno;
-    }
-
-    @Override
-    public ArrayList<Object> consultar(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.F
-    }
-
-    public ArrayList<Cidade> listar(Cidade cidade) {
+ public ArrayList<Cidade> listar(Cidade cidade) {
         this.cidade=cidade;
         List resultado = null;
 
@@ -61,18 +32,15 @@ public class CidadeDAO implements IDAO {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             String sql = "from Cidade  "
-//                    + "where 1=1 "
-//                    + parametro
                     + "where upper(descricao)  like '"+cidade.getDescricao().toUpperCase()+"%' "
                     + "and situacao ='A'"
                     + " order by descricao";
             String sel = sql;
             System.out.println(sel);
 org.hibernate.Query q = session.createQuery(sql);
-//            System.out.println(sql);
-//            org.hibernate.Query q = session.createQuery(sql);
+
             resultado = q.list();
-//            System.out.println(q);
+
             for (Object o : resultado) {
                 Cidade cid = ((Cidade) ((Object) o));
                 lista.add(cid);
