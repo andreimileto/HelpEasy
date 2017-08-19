@@ -24,7 +24,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
     public JdgCadastroCidade(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-         
+
     }
 
     /**
@@ -187,17 +187,21 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 //                Cidade cidade = new Cidade();
                 cidade.setDescricao(tfdNome.getText());
                 if (!tfdCodigo.getText().isEmpty()) {
-                cidade.setId(Integer.parseInt(tfdCodigo.getText()));    
+                    cidade.setId(Integer.parseInt(tfdCodigo.getText()));
                 }
-                
+
                 cidade.setSituacao('A');
 
 //                CidadeDAO cidadeDAO = new CidadeDAO();
 //                cidadeDAO.salvar(cidade);
                 ControleCidade controleCidade = new ControleCidade();
-                controleCidade.salvar(cidade);
-                limparCampos();
-                JOptionPane.showMessageDialog(rootPane, "Cidade cadastrada com sucesso!");
+                if (controleCidade.salvar(cidade)) {
+                    limparCampos();
+                    JOptionPane.showMessageDialog(rootPane, "Cidade cadastrada com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade");
+                }
+
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade");
             }
@@ -208,12 +212,15 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-        cidade = new Cidade();    
+        cidade = new Cidade();
         JdgListaCidade listaCidade = new JdgListaCidade(null, true, cidade);
         listaCidade.setVisible(true);
-        
-        tfdCodigo.setText(String.valueOf(cidade.getId()));
-        tfdNome.setText(cidade.getDescricao());
+
+        if (cidade.getId() > 0) {
+            tfdCodigo.setText(String.valueOf(cidade.getId()));
+            tfdNome.setText(cidade.getDescricao());
+        }
+
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
     private void limparCampos() {

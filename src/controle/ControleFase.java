@@ -23,6 +23,15 @@ public class ControleFase {
      public boolean salvar(Fase fase) {
         this.fase = fase;
         FaseDAO faseDAO = new FaseDAO();
+        ArrayList<Fase> fases = new ArrayList<>();
+        fases= faseDAO.listar(fase);
+        
+        for (int i = 0; i < fases.size(); i++) {
+            if (this.fase.getDescricao().equalsIgnoreCase(fases.get(i).getDescricao()) && fase.getId()!= fases.get(i).getId()) {
+                return false;
+            }
+
+        }
         
         if(faseDAO.salvar(fase)){
             return true;

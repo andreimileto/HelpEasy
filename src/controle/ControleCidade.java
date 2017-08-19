@@ -16,22 +16,32 @@ import java.util.ArrayList;
 public class ControleCidade {
 
     Cidade cidade;
+
     public boolean salvar(Cidade cidade) {
         this.cidade = cidade;
+
         CidadeDAO cidadeDAO = new CidadeDAO();
-        
-        if(cidadeDAO.salvar(cidade)){
+            ArrayList<Cidade> cidades = new ArrayList<>();
+            cidades = cidadeDAO.listar(cidade);
+
+        for (int i = 0; i < cidades.size(); i++) {
+            if (this.cidade.getDescricao().equalsIgnoreCase(cidades.get(i).getDescricao()) && cidade.getId()!= cidades.get(i).getId()) {
+                return false;
+            }
+
+        }
+
+        if (cidadeDAO.salvar(cidade)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-
     public ArrayList<Cidade> listar(Cidade cidade) {
-        this.cidade=cidade;
+        this.cidade = cidade;
         CidadeDAO cidadeDAO = new CidadeDAO();
         return cidadeDAO.listar(this.cidade);
     }
-    
+
 }

@@ -23,6 +23,7 @@ public class JdgCadastroFase extends javax.swing.JDialog {
      * Creates new form JdgCadastroFase
      */
     Fase fase;
+
     public JdgCadastroFase(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -160,8 +161,8 @@ public class JdgCadastroFase extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-         try {
-            if (tfdCodigo.getText().length()>0) {
+        try {
+            if (tfdCodigo.getText().length() > 0) {
                 fase.setSituacao('I');
                 FaseDAO faseDAO = new FaseDAO();
                 faseDAO.salvar(fase);
@@ -187,11 +188,14 @@ public class JdgCadastroFase extends javax.swing.JDialog {
 
 //                FaseDAO faseDAO = new FaseDAO();
 //                faseDAO.salvar(fase);
-                    ControleFase controleFase = new ControleFase();
-                    controleFase.salvar(fase);
+                ControleFase controleFase = new ControleFase();
+                if (controleFase.salvar(fase)) {
+                    limparCampos();
+                    JOptionPane.showMessageDialog(rootPane, "Fase cadastrada com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase");
+                }
 
-                limparCampos();
-                JOptionPane.showMessageDialog(rootPane, "Fase cadastrada com sucesso!");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase");
             }
@@ -202,20 +206,22 @@ public class JdgCadastroFase extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-        fase = new Fase();    
+        fase = new Fase();
         JdgListaFase listaFase = new JdgListaFase(null, true, fase);
         listaFase.setVisible(true);
-        
-        tfdCodigo.setText(String.valueOf(fase.getId()));
-        tfdNome.setText(fase.getDescricao());
+        if (fase.getId() > 0) {
+            tfdCodigo.setText(String.valueOf(fase.getId()));
+            tfdNome.setText(fase.getDescricao());
+        }
+
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
-    
-     private void limparCampos() {
+    private void limparCampos() {
         fase = new Fase();
         tfdCodigo.setText("");
         tfdNome.setText("");
     }
+
     /**
      * @param args the command line arguments
      */
