@@ -182,7 +182,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         cidade = new Cidade();
-        if (tfdNome.getText().length() > 2) {
+//        if (tfdNome.getText().length() > 2) {
             try {
 //                Cidade cidade = new Cidade();
                 cidade.setDescricao(tfdNome.getText());
@@ -195,20 +195,22 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 //                CidadeDAO cidadeDAO = new CidadeDAO();
 //                cidadeDAO.salvar(cidade);
                 ControleCidade controleCidade = new ControleCidade();
-                if (controleCidade.salvar(cidade)) {
+                String mensagem=controleCidade.salvar(cidade);
+                
+                if (mensagem.equals("ok")) {
                     limparCampos();
                     JOptionPane.showMessageDialog(rootPane, "Cidade cadastrada com sucesso!");
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade");
+                    JOptionPane.showMessageDialog(rootPane, mensagem);
                 }
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade");
             }
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade \nQuantidade de caracteres no nome da cidade precisa ser maior que 2");
-
-        }
+//        } else {
+//            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade \nQuantidade de caracteres no nome da cidade precisa ser maior que 2");
+//
+//        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed

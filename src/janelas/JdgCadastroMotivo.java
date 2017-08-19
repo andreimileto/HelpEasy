@@ -25,7 +25,7 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
     public JdgCadastroMotivo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-         
+
     }
 
     /**
@@ -188,16 +188,20 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
 
                 motivo.setDescricao(tfdNome.getText());
                 if (!tfdCodigo.getText().isEmpty()) {
-                motivo.setId(Integer.parseInt(tfdCodigo.getText()));    
+                    motivo.setId(Integer.parseInt(tfdCodigo.getText()));
                 }
-                
+
                 motivo.setSituacao('A');
 
-
                 ControleMotivo controleMotivo = new ControleMotivo();
-                controleMotivo.salvar(motivo);
-                limparCampos();
-                JOptionPane.showMessageDialog(rootPane, "Motivo cadastrado com sucesso!");
+                String mensagem = controleMotivo.salvar(motivo);
+                if (mensagem.equals("ok")) {
+                    limparCampos();
+                    JOptionPane.showMessageDialog(rootPane, "Motivo cadastrado com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, mensagem);
+                }
+
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar motivo");
             }
@@ -208,10 +212,10 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-        motivo = new Motivo();    
+        motivo = new Motivo();
         JdgListaMotivo listaMotivo = new JdgListaMotivo(null, true, motivo);
         listaMotivo.setVisible(true);
-        
+
         tfdCodigo.setText(String.valueOf(motivo.getId()));
         tfdNome.setText(motivo.getDescricao());
     }//GEN-LAST:event_btnLocalizarActionPerformed

@@ -131,9 +131,11 @@ public class Validacao {
         return ok;
     }
     
-    public static boolean verificarNomeExistente(Object o){
-        
-        return true;
+    public static String verificarNomeExistente(Object o,String nomeObjeto){
+        if (nomeObjeto.equals("Cidade")) {
+            
+        }
+        return "ok";
     }
 
 }

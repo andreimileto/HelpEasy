@@ -177,32 +177,28 @@ public class JdgCadastroFase extends javax.swing.JDialog {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        if (tfdNome.getText().length() > 2) {
-            try {
-                Fase fase = new Fase();
-                fase.setDescricao(tfdNome.getText());
-                if (!tfdCodigo.getText().isEmpty()) {
-                    fase.setId(Integer.parseInt(tfdCodigo.getText()));
-                }
-                fase.setSituacao('A');
 
-//                FaseDAO faseDAO = new FaseDAO();
-//                faseDAO.salvar(fase);
-                ControleFase controleFase = new ControleFase();
-                if (controleFase.salvar(fase)) {
-                    limparCampos();
-                    JOptionPane.showMessageDialog(rootPane, "Fase cadastrada com sucesso!");
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase");
-                }
-
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase");
+        try {
+            Fase fase = new Fase();
+            fase.setDescricao(tfdNome.getText());
+            if (!tfdCodigo.getText().isEmpty()) {
+                fase.setId(Integer.parseInt(tfdCodigo.getText()));
             }
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase \nQuantidade de caracteres no nome da fase precisa ser maior que 2");
+            fase.setSituacao('A');
 
+            ControleFase controleFase = new ControleFase();
+            String mensagem = controleFase.salvar(fase);
+            if (mensagem.equals("ok")) {
+                limparCampos();
+                JOptionPane.showMessageDialog(rootPane, "Fase cadastrada com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, mensagem);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase");
         }
+
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
