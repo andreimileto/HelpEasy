@@ -7,6 +7,7 @@ package janelas;
 
 import DAO.CidadeDAO;
 import DAO.FaseDAO;
+import controle.ControleCidade;
 import controle.ControleFase;
 import entidade.Cidade;
 import entidade.Fase;
@@ -49,6 +50,7 @@ public class JdgCadastroFase extends javax.swing.JDialog {
         btnLocalizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Help Easy - Cadastro de fase");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro fase", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
 
@@ -161,18 +163,44 @@ public class JdgCadastroFase extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        try {
-            if (tfdCodigo.getText().length() > 0) {
-                fase.setSituacao('I');
-                FaseDAO faseDAO = new FaseDAO();
-                faseDAO.salvar(fase);
-                JOptionPane.showMessageDialog(rootPane, "Fase " + fase.getDescricao() + " Excluída com sucesso");
-                limparCampos();
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase \nNenhuma fase selecionada.");
+//        try {
+//            if (tfdCodigo.getText().length() > 0) {
+//                fase.setSituacao('I');
+//                FaseDAO faseDAO = new FaseDAO();
+//                faseDAO.salvar(fase);
+//                JOptionPane.showMessageDialog(rootPane, "Fase " + fase.getDescricao() + " Excluída com sucesso");
+//                limparCampos();
+//            } else {
+//                JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase \nNenhuma fase selecionada.");
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
+//        }
+//        
+
+        if (tfdCodigo.getText().length() > 0) {
+
+            int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a fase " + fase.getDescricao() + "?");
+            if (exclusao == 0) {
+
+                try {
+                    fase.setSituacao('I');
+                    ControleFase controleFase = new ControleFase();
+                    String mensagem = controleFase.salvar(fase);
+
+                    if (mensagem.equalsIgnoreCase("ok")) {
+
+                        JOptionPane.showMessageDialog(rootPane, "Fase " + fase.getDescricao() + " Excluída com sucesso");
+                        limparCampos();
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
+                }
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase\nNenhuma fase selecionada.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 

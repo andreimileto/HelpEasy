@@ -48,7 +48,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         imnCadastroMotivo = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("EasyPDV");
+        setTitle("Help Easy");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 

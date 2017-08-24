@@ -47,6 +47,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
         btnLocalizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Help Easy - Cadastro de cidade");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Cidade", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
 
@@ -162,51 +163,59 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        if (tfdCodigo.getText().length() > 0) {
 
-        try {
-            if (tfdCodigo.getText().length() > 0) {
-                cidade.setSituacao('I');
-//                CidadeDAO cidadeDAO = new CidadeDAO();
-//                cidadeDAO.salvar(cidade);
-                ControleCidade controleCidade = new ControleCidade();
-                controleCidade.salvar(cidade);
-                JOptionPane.showMessageDialog(rootPane, "Cidade " + cidade.getDescricao() + " Excluída com sucesso");
-                limparCampos();
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade \nNenhuma cidade selecionada.");
+            int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a cidade " + cidade.getDescricao() + "?");
+            if (exclusao == 0) {
+
+                try {
+                    cidade.setSituacao('I');
+                    ControleCidade controleCidade = new ControleCidade();
+                    String mensagem = controleCidade.salvar(cidade);
+
+                    if (mensagem.equalsIgnoreCase("ok")) {
+
+                        JOptionPane.showMessageDialog(rootPane, "Cidade " + cidade.getDescricao() + " Excluída com sucesso");
+                        limparCampos();
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade.");
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade.");
+                }
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade.");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade\nNenhuma cidade selecionada.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         cidade = new Cidade();
 //        if (tfdNome.getText().length() > 2) {
-            try {
+        try {
 //                Cidade cidade = new Cidade();
-                cidade.setDescricao(tfdNome.getText());
-                if (!tfdCodigo.getText().isEmpty()) {
-                    cidade.setId(Integer.parseInt(tfdCodigo.getText()));
-                }
+            cidade.setDescricao(tfdNome.getText());
+            if (!tfdCodigo.getText().isEmpty()) {
+                cidade.setId(Integer.parseInt(tfdCodigo.getText()));
+            }
 
-                cidade.setSituacao('A');
+            cidade.setSituacao('A');
 
 //                CidadeDAO cidadeDAO = new CidadeDAO();
 //                cidadeDAO.salvar(cidade);
-                ControleCidade controleCidade = new ControleCidade();
-                String mensagem=controleCidade.salvar(cidade);
-                
-                if (mensagem.equals("ok")) {
-                    limparCampos();
-                    JOptionPane.showMessageDialog(rootPane, "Cidade cadastrada com sucesso!");
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, mensagem);
-                }
+            ControleCidade controleCidade = new ControleCidade();
+            String mensagem = controleCidade.salvar(cidade);
 
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade");
+            if (mensagem.equals("ok")) {
+                limparCampos();
+                JOptionPane.showMessageDialog(rootPane, "Cidade cadastrada com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, mensagem);
             }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade");
+        }
 //        } else {
 //            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade \nQuantidade de caracteres no nome da cidade precisa ser maior que 2");
 //

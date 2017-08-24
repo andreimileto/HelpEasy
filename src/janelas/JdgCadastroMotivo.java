@@ -48,8 +48,9 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
         btnLocalizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Helpt Easy - Cadastro de motivo");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Cidade", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Motivo", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
 
         jLabel1.setText("Código:");
 
@@ -216,8 +217,10 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
         JdgListaMotivo listaMotivo = new JdgListaMotivo(null, true, motivo);
         listaMotivo.setVisible(true);
 
-        tfdCodigo.setText(String.valueOf(motivo.getId()));
-        tfdNome.setText(motivo.getDescricao());
+        if (motivo.getId() > 0) {
+            tfdCodigo.setText(String.valueOf(motivo.getId()));
+            tfdNome.setText(motivo.getDescricao());
+        }
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
     private void limparCampos() {

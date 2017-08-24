@@ -110,7 +110,7 @@ public class JdgListaMotivo extends javax.swing.JDialog {
         tfdDescricao = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("EasyPDV - Lista de cidades");
+        setTitle("Help Easy - Lista de motivos");
 
         tblCidades.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -51,6 +51,7 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Help Easy - Cadastro de projeto");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro projeto", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
 
@@ -172,11 +173,12 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
                 }
 
                 ControleProjeto controleProjeto = new ControleProjeto();
-                if (controleProjeto.salvar(projeto)) {
+                String mensagem = controleProjeto.salvar(projeto);
+                if (mensagem.equalsIgnoreCase("ok")) {
                     JOptionPane.showMessageDialog(null, "Projeto salvo com sucesso!");
                     limparCampos();
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "Erro ao salvar projeto");
+                    JOptionPane.showMessageDialog(rootPane, mensagem);
                 }
 
             } catch (Exception e) {
@@ -189,23 +191,30 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        try {
-            if (tfdCodigo.getText().length() > 0) {
-                projeto.setSituacao('I');
+        if (tfdCodigo.getText().length() > 0) {
 
-                ControleProjeto controleProjeto = new ControleProjeto();
-                if (controleProjeto.salvar(projeto)) {
-                    JOptionPane.showMessageDialog(rootPane, "projeto " + projeto.getDescricao() + " excluído com sucesso");
-                    limparCampos();
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto.");
+            int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir o projeto " + projeto.getDescricao() + "?");
+            if (exclusao == 0) {
+
+                try {
+                    projeto.setSituacao('I');
+
+                    ControleProjeto controleProjeto = new ControleProjeto();
+                    String mensagem = controleProjeto.salvar(projeto);
+
+                    if (mensagem.equalsIgnoreCase("ok")) {
+                        JOptionPane.showMessageDialog(rootPane, "projeto " + projeto.getDescricao() + " excluído com sucesso");
+                        limparCampos();
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto. ");
+                    }
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto");
                 }
-
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto \nNenhum projeto selecionado.");
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto.");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto \nNenhum projeto selecionado.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
