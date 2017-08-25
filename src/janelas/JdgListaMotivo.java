@@ -7,12 +7,11 @@ package janelas;
 
 import controle.ControleCidade;
 import controle.ControleMotivo;
-
 import entidade.Cidade;
-
 import entidade.Motivo;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+import static janelas.TelaPrincipal.logger;
 
 /**
  *

@@ -10,6 +10,7 @@ import controle.ControleMotivo;
 
 import entidade.Motivo;
 import javax.swing.JOptionPane;
+import static janelas.TelaPrincipal.logger;
 
 /**
  *

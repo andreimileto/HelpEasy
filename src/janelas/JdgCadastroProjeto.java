@@ -11,6 +11,7 @@ import controle.ControleProjeto;
 import entidade.Motivo;
 import entidade.Projeto;
 import javax.swing.JOptionPane;
+import static janelas.TelaPrincipal.logger;
 
 /**
  *

@@ -1,0 +1,55 @@
+2017-08-25 17:06:57,526 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-25 17:06:57,982 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-25 17:06:59,365 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-08-25 17:07:28,001 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-08-25 17:07:32,548 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like 'ASDASDAS%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-08-25 17:07:32,707 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.cidade 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-08-25 17:12:41,946 [AWT-EventQueue-0] ERROR helpeasy.HelpEasy:192 - Erro ao Excluir Cidade
+2017-08-25 17:13:12,257 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:192 - Erro ao Excluir Cidade
+2017-08-25 17:17:38,069 [AWT-EventQueue-0] ERROR helpeasy.HelpEasy:193 - Erro ao excluir a cidade.

@@ -8,6 +8,7 @@ package janelas;
 import DAO.CidadeDAO;
 import controle.ControleCidade;
 import entidade.Cidade;
+import static janelas.TelaPrincipal.logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -175,17 +176,21 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
                     if (mensagem.equalsIgnoreCase("ok")) {
 
-                        JOptionPane.showMessageDialog(rootPane, "Cidade " + cidade.getDescricao() + " Excluída com sucesso");
+                        JOptionPane.showMessageDialog(rootPane, "Cidade " + cidade.getDescricao() + " excluída com sucesso");
+                        logger.info("Cidade " + cidade.getDescricao() + " excluída com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade.");
+                        logger.error("Erro ao excluir a cidade.");
                     }
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade.");
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir a cidade.");
+                    logger.error("Erro ao excluir a cidade." + e.getMessage());
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade\nNenhuma cidade selecionada.");
+            logger.error("Erro ao excluir a cidade.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -209,12 +214,14 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
             if (mensagem.equals("ok")) {
                 limparCampos();
                 JOptionPane.showMessageDialog(rootPane, "Cidade cadastrada com sucesso!");
+                logger.info("Cidade cadastrada com sucesso!");
             } else {
                 JOptionPane.showMessageDialog(rootPane, mensagem);
             }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade");
+            logger.error("Erro ao salvar a cidade." + e.getMessage());
         }
 //        } else {
 //            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade \nQuantidade de caracteres no nome da cidade precisa ser maior que 2");
