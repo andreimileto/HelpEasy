@@ -64,39 +64,31 @@ v_fields_old = hstore(old);
 END CASE;
 
 IF (TG_OP = 'INSERT') OR (TG_OP = 'UPDATE') THEN
-	INSERT INTO auditoria2(
+	INSERT INTO auditoria(
+	id_usuario,
 	tabela,
-	type,
-	usuario,
-	estacao,
-	ip_estacao,
+	tipo,
 	ordem,
 	campos)
 	VALUES(
+	1,
 	TG_TABLE_NAME,
 	substr(TG_OP, 1, 1),
-	'le',--current_setting('app.usuario'),
-	'esta',--current_setting('app.estacao'),
-	'ip',--current_setting('app.ip_estacao'),
 	'NOVO',
 	v_fields);
 END IF;
 
 IF (TG_OP = 'DELETE') OR (TG_OP = 'UPDATE') THEN
-	INSERT INTO auditoria2(
+	INSERT INTO auditoria(
+	id_usuario,
 	tabela,
-	type,
-	usuario,
-	estacao,
-	ip_estacao,
+	tipo,
 	ordem,
 	campos)
 	VALUES(
+	1,
 	TG_TABLE_NAME,
 	substr(TG_OP, 1, 1),
-	'le',--current_setting('app.usuario'),
-	'esta',--current_setting('app.estacao'),
-	'ip',--current_setting('app.ip_estacao'),
 	'ANTIGO',
 	v_fields_old);
 END IF;

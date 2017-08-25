@@ -246,17 +246,13 @@ CREATE TABLE IF NOT EXISTS tarefa_usuario (
 -- -----------------------------------------------------
 -- Table auditoria
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS auditoria (
-  id serial,
-  usuario_id serial NOT NULL,
-  PRIMARY KEY (id),
- -- INDEX fk_auditoria_usuario1_idx (usuario_id),
-  CONSTRAINT fk_auditoria_usuario1
-    FOREIGN KEY (usuario_id)
-    REFERENCES usuario (id)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-;
-
-
-
+CREATE TABLE Auditoria (
+        id bigserial,
+        id_usuario INT NOT NULL,
+        tabela VARCHAR(100) NOT NULL,
+        data_hora TIMESTAMP DEFAULT now(),
+        tipo char(1),
+        ordem text,
+        campos text,
+        PRIMARY KEY (id)
+);
