@@ -5,11 +5,6 @@
  */
 package janelas;
 
-
-
-
-
-
 import controle.ControleProjeto;
 import entidade.Projeto;
 import java.util.ArrayList;

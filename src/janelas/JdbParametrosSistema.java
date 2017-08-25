@@ -5,6 +5,9 @@
  */
 package janelas;
 
+import apoio.HibernateUtil;
+import org.hibernate.Session;
+
 /**
  *
  * @author User
@@ -28,14 +31,22 @@ public class JdbParametrosSistema extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
+        btnDisableAuditoria = new javax.swing.JToggleButton();
+        btnEnableAuditoria = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jToggleButton1.setText("Desabilita Auditoria");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnDisableAuditoria.setText("Desabilita Auditoria");
+        btnDisableAuditoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                btnDisableAuditoriaActionPerformed(evt);
+            }
+        });
+
+        btnEnableAuditoria.setText("Ativa Auditoria");
+        btnEnableAuditoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnableAuditoriaActionPerformed(evt);
             }
         });
 
@@ -45,25 +56,41 @@ public class JdbParametrosSistema extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
-                .addComponent(jToggleButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDisableAuditoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEnableAuditoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(209, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(jToggleButton1)
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addComponent(btnDisableAuditoria)
+                .addGap(18, 18, 18)
+                .addComponent(btnEnableAuditoria)
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void btnDisableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisableAuditoriaActionPerformed
+        // TODO add your handling code here:    
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        String sql = "SELECT fnDisableAuditoria()";
+        session.update(sql);
+        //LEANDROVOGEL - PENDENTE
+    }//GEN-LAST:event_btnDisableAuditoriaActionPerformed
+
+    private void btnEnableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnableAuditoriaActionPerformed
         // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        String sql = "SELECT fnEnableAuditoria()";
+        session.update(sql);
+        //LEANDROVOGEL - PENDENTE
+    }//GEN-LAST:event_btnEnableAuditoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -108,6 +135,7 @@ public class JdbParametrosSistema extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton btnDisableAuditoria;
+    private javax.swing.JToggleButton btnEnableAuditoria;
     // End of variables declaration//GEN-END:variables
 }

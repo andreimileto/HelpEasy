@@ -37,7 +37,7 @@ public class CidadeDAO  extends DAO{
                     + " order by descricao";
             String sel = sql;
             System.out.println(sel);
-org.hibernate.Query q = session.createQuery(sql);
+            org.hibernate.Query q = session.createQuery(sql);
 
             resultado = q.list();
 

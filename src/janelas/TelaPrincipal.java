@@ -43,7 +43,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         imnCidades = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        imnAlterarSenha = new javax.swing.JMenuItem();
+        imnParametrosSistema = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         ImnCadastroFase = new javax.swing.JMenuItem();
         ImnCadastroProjeto = new javax.swing.JMenuItem();
@@ -80,14 +81,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu4.setText("Configurações");
 
-        imnAlterarSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/preferences_desktop_user_password.png"))); // NOI18N
-        imnAlterarSenha.setText("Alterar senha");
-        imnAlterarSenha.addActionListener(new java.awt.event.ActionListener() {
+        imnParametrosSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/preferences_desktop_user_password.png"))); // NOI18N
+        imnParametrosSistema.setText("Alterar senha");
+        imnParametrosSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imnAlterarSenhaActionPerformed(evt);
+                imnParametrosSistemaActionPerformed(evt);
             }
         });
-        jMenu4.add(imnAlterarSenha);
+        jMenu4.add(imnParametrosSistema);
+
+        jMenuItem1.setText("Parâmetros do Sistema");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem1);
 
         jMenuBar1.add(jMenu4);
 
@@ -147,9 +156,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     cadastroCidade.setVisible(true);
     }//GEN-LAST:event_imnCidadesActionPerformed
 
-    private void imnAlterarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imnAlterarSenhaActionPerformed
+    private void imnParametrosSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imnParametrosSistemaActionPerformed
        
-    }//GEN-LAST:event_imnAlterarSenhaActionPerformed
+    }//GEN-LAST:event_imnParametrosSistemaActionPerformed
 
     private void ImnCadastroFaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnCadastroFaseActionPerformed
        JdgCadastroFase cadastroFase = new JdgCadastroFase(this, true);
@@ -165,6 +174,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         JdgCadastroMotivo cadastroMotivo = new JdgCadastroMotivo(this,true);
         cadastroMotivo.setVisible(true);
     }//GEN-LAST:event_imnCadastroMotivoActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        JdbParametrosSistema parametrosSistema = new JdbParametrosSistema(this,true);
+        parametrosSistema.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,13 +223,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem ImnCadastroFase;
     private javax.swing.JMenuItem ImnCadastroProjeto;
-    private javax.swing.JMenuItem imnAlterarSenha;
     private javax.swing.JMenuItem imnCadastroMotivo;
     private javax.swing.JMenuItem imnCidades;
+    private javax.swing.JMenuItem imnParametrosSistema;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
