@@ -257,6 +257,7 @@ CREATE TABLE Auditoria (
         PRIMARY KEY (id)
 );
 
-
+                                                        --123456--
 insert into usuario values(default,'Andrei','andrei','e10adc3949ba59abbe56e057f20f883e','A');
+                                                         --123456--       
 insert into usuario values (default,'Leandro','leandro','e10adc3949ba59abbe56e057f20f883e','A');
