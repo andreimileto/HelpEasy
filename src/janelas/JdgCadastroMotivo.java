@@ -7,6 +7,7 @@ package janelas;
 
 import controle.ControleCidade;
 import controle.ControleMotivo;
+import controle.ControleProjeto;
 
 import entidade.Motivo;
 import javax.swing.JOptionPane;
@@ -166,21 +167,32 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
 
-        try {
-            if (tfdCodigo.getText().length() > 0) {
-                motivo.setSituacao('I');
-//                CidadeDAO cidadeDAO = new CidadeDAO();
-//                cidadeDAO.salvar(cidade);
-                ControleMotivo controleMotivo = new ControleMotivo();
-                controleMotivo.salvar(motivo);
-                JOptionPane.showMessageDialog(rootPane, "Motivo " + motivo.getDescricao() + " Excluída com sucesso");
-                limparCampos();
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Erro ao excluir movito \nNenhum motivo selecionado.");
+        if (tfdCodigo.getText().length() > 0) {
+
+            int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir o motivo " + motivo.getDescricao() + "?");
+            if (exclusao == 0) {
+
+                try {
+                    motivo.setSituacao('I');
+
+                    ControleMotivo controleMotivo = new ControleMotivo();
+                    String mensagem = controleMotivo.salvar(motivo);
+
+                    if (mensagem.equalsIgnoreCase("ok")) {
+                        JOptionPane.showMessageDialog(rootPane, "motivo " + motivo.getDescricao() + " excluído com sucesso");
+                        limparCampos();
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo. ");
+                    }
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo");
+                }
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo.");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo \nNenhum motivo selecionado.");
         }
+
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed

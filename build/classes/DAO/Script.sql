@@ -256,3 +256,7 @@ CREATE TABLE Auditoria (
         campos text,
         PRIMARY KEY (id)
 );
+
+
+insert into usuario values(default,'Andrei','andrei','e10adc3949ba59abbe56e057f20f883e','A');
+insert into usuario values (default,'Leandro','leandro','e10adc3949ba59abbe56e057f20f883e','A');

@@ -7,6 +7,7 @@ package helpeasy;
 
 import apoio.ConexaoBD;
 import janelas.JdgCadastroCidade;
+import janelas.Senha;
 import janelas.TelaPrincipal;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -35,8 +36,8 @@ public class HelpEasy {
         if (ConexaoBD.getInstance()
                 .getConnection() != null) {
 //            JOptionPane.showMessageDialog(null, "conectou");
-            TelaPrincipal telaPrincipal = new TelaPrincipal();
-            telaPrincipal.setVisible(true);
+            Senha senha = new Senha();
+            senha.setVisible(true);
 
             
         } else {

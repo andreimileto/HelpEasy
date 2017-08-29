@@ -3,6 +3,9 @@ package apoio;
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import com.toedter.calendar.JDateChooser;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.*;
 import java.util.Date;
 import java.util.Locale;
@@ -227,5 +230,19 @@ public class Formatacao {
         String dataHoje = df.format(now);
 
         return dataHoje;
+    }
+    
+    public static String getSenhaMD5(String senha){
+        String senhaCriptografada = "";            
+        MessageDigest md = null;
+            try {
+                md = MessageDigest.getInstance("MD5");
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+            BigInteger hash = new BigInteger(1, md.digest(senha.getBytes()));
+            senhaCriptografada = hash.toString(16);
+            
+            return senhaCriptografada;
     }
 }
