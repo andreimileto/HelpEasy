@@ -5,7 +5,6 @@
  */
 package janelas;
 
-import DAO.CidadeDAO;
 import controle.ControleCidade;
 import entidade.Cidade;
 import static janelas.TelaPrincipal.logger;

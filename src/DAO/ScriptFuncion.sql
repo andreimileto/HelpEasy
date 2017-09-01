@@ -73,7 +73,7 @@ IF (TG_OP = 'INSERT') THEN
 	ordem,
 	campos)
 	VALUES(
-	1,
+	fnPegaUsuarioSessao(),
 	TG_TABLE_NAME,
 	substr(TG_OP, 1, 1),
 	'INSERT',
@@ -88,7 +88,7 @@ IF (TG_OP = 'UPDATE') THEN
 	ordem,
 	campos)
 	VALUES(
-	1,
+	fnPegaUsuarioSessao(),
 	TG_TABLE_NAME,
 	substr(TG_OP, 1, 1),
 	'UPDATE',
@@ -99,7 +99,7 @@ END;
 $function$;
 
 --Função para Desativar Auditoria;
-CREATE OR REPLACE FUNCTION fnDisableAuditoria() RETURNS integer AS $$
+CREATE OR REPLACE FUNCTION fnDisableAuditoria() RETURNS void AS $$
     BEGIN
 	ALTER TABLE Cidade DISABLE TRIGGER trgAuditoriaCidade;
 	ALTER TABLE Projeto DISABLE TRIGGER trgAuditoriaProjeto;
@@ -113,12 +113,11 @@ CREATE OR REPLACE FUNCTION fnDisableAuditoria() RETURNS integer AS $$
 	ALTER TABLE Tarefa DISABLE TRIGGER trgAuditoriaTarefa;
 	ALTER TABLE Tarefa_Usuario DISABLE TRIGGER trgAuditoriaTarefaUsuario;
 	ALTER TABLE Movimento_Tarefa DISABLE TRIGGER trgAuditoriaMovimentoTarefa;
-	RETURN 0;
         END;
 $$ LANGUAGE plpgsql;
 
 --Função para Ativar Auditoria;
-CREATE OR REPLACE FUNCTION fnEnableAuditoria() RETURNS integer AS $$
+CREATE OR REPLACE FUNCTION fnEnableAuditoria() RETURNS void AS $$
     BEGIN
 	ALTER TABLE Cidade ENABLE TRIGGER trgAuditoriaCidade;
 	ALTER TABLE Projeto ENABLE TRIGGER trgAuditoriaProjeto;
@@ -132,6 +131,5 @@ CREATE OR REPLACE FUNCTION fnEnableAuditoria() RETURNS integer AS $$
 	ALTER TABLE Tarefa ENABLE TRIGGER trgAuditoriaTarefa;
 	ALTER TABLE Tarefa_Usuario ENABLE TRIGGER trgAuditoriaTarefaUsuario;
 	ALTER TABLE Movimento_Tarefa ENABLE TRIGGER trgAuditoriaMovimentoTarefa;
-	RETURN 1;
         END;
 $$ LANGUAGE plpgsql;

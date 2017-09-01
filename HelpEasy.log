@@ -862,3 +862,1155 @@
         (descricao, situacao) 
     values
         (?, ?)
+2017-09-01 15:21:56,336 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:21:57,020 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:22:00,856 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:22:29,642 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:22:29,649 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 15:22:52,229 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:22:52,830 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:22:54,733 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:22:54,834 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:22:54,834 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 15:23:24,751 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:23:25,356 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:23:27,059 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:23:30,056 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:23:30,057 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 15:24:27,213 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like 'ASDASD%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 15:24:27,335 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cidade
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 15:24:27,357 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42804
+2017-09-01 15:24:27,358 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: column "id_usuario" is of type integer but expression is of type text
+  Dica: You will need to rewrite or cast the expression.
+  Onde: PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-09-01 15:24:57,187 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:24:57,723 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:24:59,798 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:24:59,961 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:24:59,962 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 15:25:04,027 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like 'SADASDASD%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 15:25:04,115 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cidade
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 15:25:04,129 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42804
+2017-09-01 15:25:04,129 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: column "id_usuario" is of type integer but expression is of type text
+  Dica: You will need to rewrite or cast the expression.
+  Onde: PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-09-01 15:27:25,577 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:27:26,138 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:27:27,841 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:27:31,108 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:27:31,174 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:27:31,175 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 15:27:31,287 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        * 
+    from
+        teste
+2017-09-01 15:27:31,297 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42704
+2017-09-01 15:27:31,298 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: unrecognized configuration parameter "app.usuario"
+2017-09-01 15:28:47,481 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:28:48,154 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:28:50,124 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:28:55,919 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:28:55,920 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 15:30:04,989 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:30:05,623 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:30:07,915 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:30:26,273 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:30:26,274 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 15:39:37,314 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:39:38,027 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:39:40,121 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:39:47,913 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:39:47,914 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 15:48:51,638 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:48:52,428 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:48:54,757 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:49:06,377 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:49:06,378 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 15:52:00,251 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:52:00,950 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:52:03,354 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:52:07,139 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:52:19,671 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        * 
+    from
+        teste
+2017-09-01 15:53:27,100 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:53:27,101 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 15:53:46,967 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:53:46,969 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 15:55:02,899 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:55:02,901 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 15:55:26,839 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 15:55:27,839 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 15:55:29,868 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 15:55:45,429 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:55:45,431 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 15:56:38,279 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:56:38,282 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 15:58:27,665 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:58:27,666 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 15:58:43,460 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:58:43,462 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 15:59:55,613 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 15:59:55,663 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 16:11:05,053 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 16:11:05,776 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 16:11:07,770 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 16:11:15,084 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:11:15,086 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 27.
+2017-09-01 16:16:44,603 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 16:16:45,330 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 16:16:47,252 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 16:16:51,046 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:16:51,046 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:17:17,081 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 16:17:17,692 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 16:17:19,406 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 16:17:25,279 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:17:25,282 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:17:38,174 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:17:38,175 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:22:08,168 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:22:08,191 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:24:12,178 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:24:12,219 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:27:08,594 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:27:08,597 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:27:17,201 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:27:17,205 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:27:18,036 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:27:18,104 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:27:18,585 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:27:18,641 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:27:24,352 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:27:24,356 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:27:53,601 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 2F003
+2017-09-01 16:27:53,603 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - Sintaxe de escape mal formada da função ou do procedimento no deslocamento 2.
+2017-09-01 16:31:39,426 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 16:31:40,071 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 16:31:42,236 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 16:32:35,617 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 16:32:36,177 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 16:32:37,603 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 16:32:41,575 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 16:40:19,460 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 16:40:20,039 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 16:40:21,921 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 16:40:49,779 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 16:40:49,781 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function fsetausuario() does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Posição: 15
+2017-09-01 16:41:05,976 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 16:41:05,977 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function fsetausuario() does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Posição: 15
+2017-09-01 16:41:28,589 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 16:41:29,252 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 16:41:31,811 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 16:41:41,643 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 16:41:41,644 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function fsetausuario() does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Posição: 15
+2017-09-01 16:42:00,050 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 16:42:00,646 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 16:42:02,498 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 16:48:47,018 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 16:48:53,813 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like 'ASDASD%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 16:48:54,018 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cidade
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 16:48:54,052 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42704
+2017-09-01 16:48:54,052 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: unrecognized configuration parameter "app.usuario"
+  Onde: SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	1,
+	--TG_TABLE_NAME,
+	current_setting('app.usuario'),
+	substr(TG_OP, 1, 1),
+	'INSERT',
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-09-01 16:49:08,697 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like 'ASDASD%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 16:49:08,699 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 16:49:08,699 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 16:49:08,855 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cidade
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 16:49:08,869 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42704
+2017-09-01 16:49:08,870 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: unrecognized configuration parameter "app.usuario"
+  Onde: SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	1,
+	--TG_TABLE_NAME,
+	current_setting('app.usuario'),
+	substr(TG_OP, 1, 1),
+	'INSERT',
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-09-01 16:49:16,101 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like '%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-01 16:49:16,104 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 16:49:16,107 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 16:49:16,851 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like '%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-01 16:49:16,984 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like '%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-01 16:49:17,088 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like '%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-01 16:49:17,167 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like '%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-01 16:49:21,413 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:49:26,086 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '123%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:49:26,237 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 16:49:26,323 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42704
+2017-09-01 16:49:26,323 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: unrecognized configuration parameter "app.usuario"
+  Onde: SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	1,
+	--TG_TABLE_NAME,
+	current_setting('app.usuario'),
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 16:49:47,440 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '123%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:49:47,442 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 16:49:47,443 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 16:49:47,564 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 16:49:47,622 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42704
+2017-09-01 16:49:47,623 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: unrecognized configuration parameter "app.usuario"
+  Onde: SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	1,
+	--TG_TABLE_NAME,
+	current_setting('app.usuario'),
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 16:50:08,983 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 16:50:08,984 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 16:50:16,114 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:50:20,163 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTE%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:50:20,239 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 16:50:20,301 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42704
+2017-09-01 16:50:20,302 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: unrecognized configuration parameter "app.usuario"
+  Onde: SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	1,
+	--TG_TABLE_NAME,
+	current_setting('app.usuario'),
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 16:50:51,946 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 16:50:52,613 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 16:50:54,984 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 16:50:59,868 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:51:02,869 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ADASD%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:51:02,961 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 16:51:03,189 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42704
+2017-09-01 16:51:03,190 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: unrecognized configuration parameter "app.usuario"
+  Onde: SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	1,
+	--TG_TABLE_NAME,
+	current_setting('app.usuario'),
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 16:51:37,877 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 16:51:37,878 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 16:52:10,543 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:52:13,217 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'SDASD123123%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:52:13,297 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 16:52:33,475 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:52:36,226 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTEASDSAS%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 16:52:36,295 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 16:52:36,362 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42704
+2017-09-01 16:52:36,363 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: unrecognized configuration parameter "app.usuario"
+  Onde: SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	1,
+	--TG_TABLE_NAME,
+	current_setting('app.usuario'),
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 17:26:37,046 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 17:26:37,643 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 17:26:39,597 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 17:26:48,255 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 17:26:48,257 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function fngravausuariosessao() does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Posição: 15
+2017-09-01 17:27:06,629 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 17:27:06,630 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function fngravausuariosessao() does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Posição: 15
+2017-09-01 17:27:34,751 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 17:27:35,338 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 17:27:37,030 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 17:28:28,746 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 17:28:31,510 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 17:28:34,466 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'SSSASDASD%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 17:28:34,637 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 17:28:34,736 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 23502
+2017-09-01 17:28:34,737 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: null value in column "tabela" violates not-null constraint
+  Detalhe: Failing row contains (20, 1, null, 2017-09-01 17:28:34.642106, U, UPDATE, "id"=>"5", "descricao"=>"sss").
+  Onde: SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	1,
+	--TG_TABLE_NAME,
+	fnPegaUsuarioSessao(),
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 17:30:23,872 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'SSSASDASD%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 17:30:23,940 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 17:30:23,941 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 17:30:24,124 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 17:30:24,193 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 23502
+2017-09-01 17:30:24,194 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: null value in column "id_usuario" violates not-null constraint
+  Detalhe: Failing row contains (21, null, fase, 2017-09-01 17:30:24.128774, U, UPDATE, "id"=>"5", "descricao"=>"sss").
+  Onde: SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	fnPegaUsuarioSessao(),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 71 at SQL statement
+2017-09-01 17:30:36,472 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'SSSASDASD%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 17:30:36,493 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 17:30:36,495 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 17:30:36,602 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 17:30:36,653 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 23502
+2017-09-01 17:30:36,653 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: null value in column "id_usuario" violates not-null constraint
+  Detalhe: Failing row contains (22, null, fase, 2017-09-01 17:30:36.604761, U, UPDATE, "id"=>"5", "descricao"=>"sss").
+  Onde: SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	fnPegaUsuarioSessao(),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 71 at SQL statement
+2017-09-01 17:43:46,049 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 17:43:46,766 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 17:43:48,948 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 17:44:04,759 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        * 
+    from
+        teste
+2017-09-01 17:44:22,285 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        * 
+    from
+        teste
+2017-09-01 17:46:32,959 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 17:46:33,575 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 17:46:35,549 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 17:46:44,840 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        * 
+    from
+        teste
+2017-09-01 17:48:42,748 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 17:48:43,498 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 17:48:45,615 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 17:48:57,606 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        * 
+    from
+        teste
+2017-09-01 17:48:57,616 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 55000
+2017-09-01 17:48:57,618 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: currval of sequence "session_id" is not yet defined in this session
+2017-09-01 17:49:27,946 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        * 
+    from
+        teste
+2017-09-01 17:49:27,951 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 55000
+2017-09-01 17:49:27,953 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: currval of sequence "session_id" is not yet defined in this session

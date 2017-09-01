@@ -5,7 +5,6 @@
  */
 package controle;
 
-import DAO.ProjetoDAO;
 import DAO.UsuarioDAO;
 
 import entidade.Usuario;
