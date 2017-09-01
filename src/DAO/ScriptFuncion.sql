@@ -8,6 +8,8 @@
  * Created: 25/08/2017
  */
 
+CREATE EXTENSION hstore;
+
 --Função de Auditoria;
 CREATE OR REPLACE FUNCTION fnAuditoria() RETURNS trigger LANGUAGE plpgsql AS $function$
 DECLARE
@@ -63,7 +65,7 @@ WHEN 'DELETE' THEN
 v_fields_old = hstore(old);
 END CASE;
 
-IF (TG_OP = 'INSERT') OR (TG_OP = 'UPDATE') THEN
+IF (TG_OP = 'INSERT') THEN
 	INSERT INTO auditoria(
 	id_usuario,
 	tabela,
@@ -74,11 +76,11 @@ IF (TG_OP = 'INSERT') OR (TG_OP = 'UPDATE') THEN
 	1,
 	TG_TABLE_NAME,
 	substr(TG_OP, 1, 1),
-	'NOVO',
+	'INSERT',
 	v_fields);
 END IF;
 
-IF (TG_OP = 'DELETE') OR (TG_OP = 'UPDATE') THEN
+IF (TG_OP = 'UPDATE') THEN
 	INSERT INTO auditoria(
 	id_usuario,
 	tabela,
@@ -89,7 +91,7 @@ IF (TG_OP = 'DELETE') OR (TG_OP = 'UPDATE') THEN
 	1,
 	TG_TABLE_NAME,
 	substr(TG_OP, 1, 1),
-	'ANTIGO',
+	'UPDATE',
 	v_fields_old);
 END IF;
 RETURN NULL;

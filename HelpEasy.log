@@ -440,3 +440,425 @@
     where
         usuario0_.login='andrei' 
         and usuario0_.situacao='A'
+2017-09-01 14:14:31,082 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 14:14:32,072 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 14:14:34,946 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 14:14:35,227 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-01 14:14:35,350 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-01 14:18:51,870 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 14:18:52,745 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 14:18:54,629 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 14:22:50,461 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 14:22:51,061 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 14:22:52,891 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 14:22:59,692 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like 'TESTE%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 14:22:59,771 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cidade
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:22:59,790 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 14:22:59,791 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function hstore(cidade) does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Onde: PL/pgSQL function fnauditoria() line 10 at assignment
+2017-09-01 14:23:04,545 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like 'TESTE%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 14:23:04,547 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 14:23:04,548 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 14:23:04,732 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cidade
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:23:04,748 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 14:23:04,748 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function hstore(cidade) does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Onde: PL/pgSQL function fnauditoria() line 10 at assignment
+2017-09-01 14:23:07,240 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 14:23:07,242 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 14:23:07,243 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 14:23:16,019 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'TESTE%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:23:16,095 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:23:16,131 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 14:23:16,132 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function hstore(fase) does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Onde: PL/pgSQL function fnauditoria() line 10 at assignment
+2017-09-01 14:23:20,445 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTE%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:23:20,447 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 14:23:20,448 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 14:23:20,677 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:23:20,691 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 14:23:20,692 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function hstore(fase) does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Onde: PL/pgSQL function fnauditoria() line 10 at assignment
+2017-09-01 14:23:46,839 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTE123%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:23:46,849 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 14:23:46,850 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 14:23:47,597 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:23:47,611 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 14:23:47,613 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function hstore(fase) does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Onde: PL/pgSQL function fnauditoria() line 10 at assignment
+2017-09-01 14:25:44,447 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTE123%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:25:44,536 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 14:25:44,540 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 14:25:44,753 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:26:29,111 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:26:33,029 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTE1%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:26:33,149 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 14:28:19,146 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:28:22,637 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTE%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:28:22,712 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 14:29:44,214 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'SSSS%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:29:44,327 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:29:47,048 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:29:50,682 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'SSSS2%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:29:50,745 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 14:30:42,516 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:30:47,290 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'SSS%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:30:47,354 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 14:30:54,175 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '123123%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:30:54,248 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
