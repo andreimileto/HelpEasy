@@ -862,3 +862,105 @@
         (descricao, situacao) 
     values
         (?, ?)
+2017-09-05 21:23:34,513 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-05 21:23:34,826 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-05 21:23:35,832 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:23:37,706 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:25:03,040 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-05 21:25:03,265 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-05 21:25:04,008 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:25:05,900 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:26:21,942 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-05 21:26:22,144 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-05 21:26:22,743 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:26:24,219 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:26:29,820 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.usuario 
+    set
+        nome=?,
+        login=?,
+        senha=?,
+        situacao=? 
+    where
+        id=?
+2017-09-05 21:26:36,954 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-05 21:26:37,131 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-05 21:26:37,655 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
