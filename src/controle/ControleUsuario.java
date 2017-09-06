@@ -8,6 +8,7 @@ package controle;
 import DAO.FaseDAO;
 import DAO.ProjetoDAO;
 import DAO.UsuarioDAO;
+import apoio.Formatacao;
 import entidade.Fase;
 
 import entidade.Usuario;
@@ -20,33 +21,49 @@ import java.util.ArrayList;
 public class ControleUsuario {
 
     Usuario usuario;
-    
-    
-    public String salvar(Usuario usuario) {
-        this.usuario = usuario;
-        
-       
-        
-        //verifica se existe algum cadastro com o mesmo nome que seja um ID diferente do que está alterando.
-//        for (int i = 0; i < fases.size(); i++) {
-//            if (this.fase.getDescricao().equalsIgnoreCase(fases.get(i).getDescricao()) && fase.getId()!= fases.get(i).getId()) {
-//                return "Erro ao salvar Fase\nJá existe um cadastro com esse nome!";
-//            }
-//
-//        }
-        
-        //caso as duas validações acima não interfira no cadastro, será efetuado o cadasro
-//        if(faseDAO.salvar(fase)){
-//            return "ok";
-//        }else{
-//            return "Erro ao salvar Fase\nEntre em contato com o suporte";
-//        }
+    ArrayList<Usuario> usuarios;
 
-    UsuarioDAO usuarioDAO = new UsuarioDAO();
-        if (usuarioDAO.salvar(usuario)) {
-            return "ok";
+    public String salvar(Usuario usuario) {
+        usuarios = new ArrayList<>();
+        this.usuario = usuario;
+
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+        String mensagem = "Erro ao salvar usuário\n";
+
+        if (usuario.getNome().length() < 2 || usuario.getNome().length() > 150) {
+            mensagem = mensagem + "-Nome do usuário precisa ter 2 caracteres e não pode ultrapassar 150\n";
+        }
+        if (usuario.getLogin().length() < 2 || usuario.getLogin().length() > 100) {
+            mensagem = mensagem + "-Login do usuário precisa ter 2 caracteres e não pode ultrapassar 150\n";
+        }
+        
+        if (usuario.getSenha().length()<6) {
+            mensagem = mensagem+"-Senha deve conter no mínimo 6 caracteres\n";
         }else{
-            return "Erro ao salvar usuário";
+            usuario.setSenha(Formatacao.getSenhaMD5(usuario.getSenha()));
+        }
+
+        usuarios = usuarioDAO.listar(usuario);
+        try {
+            if (usuarios.size() > 0) {
+                if (usuarios.get(0).getLogin().equals(usuario.getLogin())) {
+
+                    mensagem = mensagem + "-Já existe um usuário cadastrado com esse login\n";
+                }
+            }
+        } catch (Exception e) {
+            mensagem = mensagem + e;
+        }
+        if (mensagem.length() < 25) {
+
+            if (usuarioDAO.salvar(usuario)) {
+                return "ok";
+            } else {
+                return mensagem;
+            }
+        } else {
+            return mensagem;
         }
     }
 

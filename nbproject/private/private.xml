@@ -3,19 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/FaseDAO.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/Senha.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleFase.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Usuario.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroProjeto.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/UsuarioDAO.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleCidade.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaProjeto.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/TelaPrincipal.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgAlteracaoSenha.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleUsuario.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/DAO.java</file>
-            <file>file:/C:/Users/andrei.mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/Script.sql</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroProjeto.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroMotivo.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroUsuario.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/DAO.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/MotivoDAO.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleCidade.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/UsuarioDAO.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdbParametrosSistema.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Cliente.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/Senha.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/ClienteDAO.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaCliente.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/Script.sql</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleCliente.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/helpeasy/HelpEasy.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/TelaPrincipal.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaUsuario.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaCidade.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Auditoria.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroCliente.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleUsuario.java</file>
         </group>
     </open-files>
 </project-private>
