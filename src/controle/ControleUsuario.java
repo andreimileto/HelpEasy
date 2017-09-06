@@ -47,7 +47,7 @@ public class ControleUsuario {
         usuarios = usuarioDAO.listar(usuario);
         try {
             if (usuarios.size() > 0) {
-                if (usuarios.get(0).getLogin().equals(usuario.getLogin())) {
+                if (usuarios.get(0).getLogin().equals(usuario.getLogin()) && usuario.getId()!= usuarios.get(0).getId()) {
 
                     mensagem = mensagem + "-Já existe um usuário cadastrado com esse login\n";
                 }

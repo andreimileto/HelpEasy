@@ -183,31 +183,35 @@ public class JdgAlteracaoSenha extends javax.swing.JDialog {
         ControleUsuario controleUsuario = new ControleUsuario();
         
         String senha = md5(pfdSenhaAtual.getText());
-//        UsuarioDAO usuarioDAO = new UsuarioDAO();
-//        Usuario user = new Usuario();
-//        usuarioDAO.consultar(user);
+
         if (usuario.getSenha().equals(senha)) {
             if (pfdNovaSenha.getText().equals(pfdRepetirNovaSenha.getText())) {
-//                JOptionPane.showMessageDialog(rootPane, "Todas senhas válidas");
 
-                //System.out.println(senha);
-                senha = md5(pfdRepetirNovaSenha.getText());
-                //  System.out.println(senha);
-                usuario.setSenha(senha);
-                if (controleUsuario.salvar(usuario).equals("ok")) {
+                
+                
+                if (!pfdSenhaAtual.getText().equals(pfdNovaSenha.getText())) {
+                    
+                usuario.setSenha(pfdRepetirNovaSenha.getText());
+                String mensagem = controleUsuario.salvar(usuario);
+                
+                
+                if (mensagem.equals("ok")) {
                     JOptionPane.showMessageDialog(rootPane, "Alteração de senha feita com sucesso!");
                     dispose();
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "Erro retornado pelo sistema:\n erro ao alterar a senha.");
+                    JOptionPane.showMessageDialog(rootPane, mensagem);
                 }
-
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "Nova senha identica a senha atual");
+                }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "nova senha diferentente entre os dois campos");
             }
-//            JOptionPane.showMessageDialog(rootPane, "Senha atual correta");
+
         } else {
             JOptionPane.showMessageDialog(rootPane, "Senha atual inválida");
         }
+        
 
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
