@@ -46,3 +46,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 /build/
+HelpEasy.log
+*.java
+src/janelas/TelaPrincipal.form
+*.form
+src/janelas/JdgAlteracaoSenha.java

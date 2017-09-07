@@ -5,8 +5,6 @@
  */
 package janelas;
 
-<<<<<<< HEAD
-=======
 import apoio.ConexaoBD;
 import entidade.Usuario;
 import java.text.SimpleDateFormat;
@@ -14,7 +12,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
->>>>>>> origin/master
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 

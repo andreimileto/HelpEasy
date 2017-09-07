@@ -5,11 +5,8 @@
  */
 package controle;
 
-<<<<<<< HEAD
-=======
 import DAO.FaseDAO;
 import DAO.ProjetoDAO;
->>>>>>> origin/master
 import DAO.UsuarioDAO;
 import apoio.Formatacao;
 import entidade.Fase;
