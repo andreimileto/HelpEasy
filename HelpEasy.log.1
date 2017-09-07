@@ -1,0 +1,2409 @@
+2017-08-25 17:06:57,526 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-25 17:06:57,982 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-25 17:06:59,365 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-08-25 17:07:28,001 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-08-25 17:07:32,548 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like 'ASDASDAS%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-08-25 17:07:32,707 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.cidade 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-08-25 17:12:41,946 [AWT-EventQueue-0] ERROR helpeasy.HelpEasy:192 - Erro ao Excluir Cidade
+2017-08-25 17:13:12,257 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:192 - Erro ao Excluir Cidade
+2017-08-25 17:17:38,069 [AWT-EventQueue-0] ERROR helpeasy.HelpEasy:193 - Erro ao excluir a cidade.
+2017-08-25 17:29:23,353 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-25 17:29:24,250 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-25 17:29:26,105 [AWT-EventQueue-0] ERROR org.hibernate.hql.internal.ast.ErrorCounter:78 - <AST>:0:0: unexpected end of subtree
+2017-08-25 17:29:26,106 [AWT-EventQueue-0] ERROR org.hibernate.hql.internal.ast.ErrorCounter:73 - <AST>:0:0: unexpected end of subtree
+<AST>:0:0: unexpected end of subtree
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElementList(HqlSqlBaseWalker.java:3527)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromClause(HqlSqlBaseWalker.java:706)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:562)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:299)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:247)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:278)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:206)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:126)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:88)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:190)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1796)
+	at janelas.JdbParametrosSistema.btnDisableAuditoriaActionPerformed(JdbParametrosSistema.java:70)
+	at janelas.JdbParametrosSistema.access$000(JdbParametrosSistema.java:15)
+	at janelas.JdbParametrosSistema$1.actionPerformed(JdbParametrosSistema.java:41)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.JToggleButton$ToggleButtonModel.setPressed(JToggleButton.java:308)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:109)
+	at java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:184)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:229)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:227)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:227)
+	at java.awt.Dialog.show(Dialog.java:1084)
+	at java.awt.Component.show(Component.java:1671)
+	at java.awt.Component.setVisible(Component.java:1623)
+	at java.awt.Window.setVisible(Window.java:1014)
+	at java.awt.Dialog.setVisible(Dialog.java:1005)
+	at janelas.TelaPrincipal.jMenuItem1ActionPerformed(TelaPrincipal.java:181)
+	at janelas.TelaPrincipal.access$200(TelaPrincipal.java:21)
+	at janelas.TelaPrincipal$3.actionPerformed(TelaPrincipal.java:96)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.AbstractButton.doClick(AbstractButton.java:376)
+	at javax.swing.plaf.basic.BasicMenuItemUI.doClick(BasicMenuItemUI.java:833)
+	at javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(BasicMenuItemUI.java:877)
+	at java.awt.Component.processMouseEvent(Component.java:6533)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6298)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2017-08-25 17:31:24,081 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-25 17:31:24,924 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-28 21:41:13,004 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-28 21:41:13,231 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-28 21:41:13,784 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='null' 
+        and usuario0_.situacao='A'
+2017-08-28 21:41:17,149 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='null' 
+        and usuario0_.situacao='A'
+2017-08-28 21:42:30,022 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-28 21:42:30,231 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-28 21:42:30,785 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-08-28 21:42:39,396 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-28 21:42:39,616 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-28 21:42:40,185 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='usuario' 
+        and usuario0_.situacao='A'
+2017-08-28 21:42:43,456 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-08-28 21:42:49,646 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-08-28 21:45:02,037 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-28 21:45:02,242 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-28 21:45:02,805 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='lenadro' 
+        and usuario0_.situacao='A'
+2017-08-28 21:45:07,804 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-08-28 21:45:17,371 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        motivo0_.id as id1_5_,
+        motivo0_.descricao as descrica2_5_,
+        motivo0_.situacao as situacao3_5_ 
+    from
+        public.motivo motivo0_ 
+    where
+        (
+            upper(motivo0_.descricao) like 'MOTIVO%'
+        ) 
+        and motivo0_.situacao='A' 
+    order by
+        motivo0_.descricao
+2017-08-28 21:45:20,650 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        motivo0_.id as id1_5_,
+        motivo0_.descricao as descrica2_5_,
+        motivo0_.situacao as situacao3_5_ 
+    from
+        public.motivo motivo0_ 
+    where
+        (
+            upper(motivo0_.descricao) like '%'
+        ) 
+        and motivo0_.situacao='A' 
+    order by
+        motivo0_.descricao
+2017-08-28 21:45:25,061 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        motivo0_.id as id1_5_,
+        motivo0_.descricao as descrica2_5_,
+        motivo0_.situacao as situacao3_5_ 
+    from
+        public.motivo motivo0_ 
+    where
+        (
+            upper(motivo0_.descricao) like 'MOTIVO%'
+        ) 
+        and motivo0_.situacao='A' 
+    order by
+        motivo0_.descricao
+2017-08-28 21:45:25,159 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.motivo 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-08-28 21:45:36,685 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        motivo0_.id as id1_5_,
+        motivo0_.descricao as descrica2_5_,
+        motivo0_.situacao as situacao3_5_ 
+    from
+        public.motivo motivo0_ 
+    where
+        (
+            upper(motivo0_.descricao) like 'MOTIVO%'
+        ) 
+        and motivo0_.situacao='A' 
+    order by
+        motivo0_.descricao
+2017-08-28 21:45:36,758 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.motivo
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-08-28 21:49:12,453 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-28 21:49:12,657 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-28 21:49:13,201 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='usuario' 
+        and usuario0_.situacao='A'
+2017-08-28 21:50:06,259 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-08-28 21:50:09,586 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-08-28 21:50:25,898 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-28 21:50:26,099 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-28 21:50:26,652 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-08-28 21:50:30,857 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-08-28 21:51:58,993 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-28 21:51:59,212 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-28 21:51:59,763 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-08-28 22:58:43,096 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-08-28 22:58:43,311 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-08-28 22:58:43,874 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-08-28 22:58:49,263 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-01 14:14:31,082 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 14:14:32,072 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 14:14:34,946 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 14:14:35,227 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-01 14:14:35,350 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-01 14:18:51,870 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 14:18:52,745 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 14:18:54,629 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 14:22:50,461 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-01 14:22:51,061 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-01 14:22:52,891 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-01 14:22:59,692 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like 'TESTE%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 14:22:59,771 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cidade
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:22:59,790 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 14:22:59,791 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function hstore(cidade) does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Onde: PL/pgSQL function fnauditoria() line 10 at assignment
+2017-09-01 14:23:04,545 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like 'TESTE%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 14:23:04,547 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 14:23:04,548 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 14:23:04,732 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cidade
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:23:04,748 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 14:23:04,748 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function hstore(cidade) does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Onde: PL/pgSQL function fnauditoria() line 10 at assignment
+2017-09-01 14:23:07,240 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-01 14:23:07,242 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 14:23:07,243 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 14:23:16,019 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'TESTE%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:23:16,095 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:23:16,131 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 14:23:16,132 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function hstore(fase) does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Onde: PL/pgSQL function fnauditoria() line 10 at assignment
+2017-09-01 14:23:20,445 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTE%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:23:20,447 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 14:23:20,448 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 14:23:20,677 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:23:20,691 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 14:23:20,692 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function hstore(fase) does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Onde: PL/pgSQL function fnauditoria() line 10 at assignment
+2017-09-01 14:23:46,839 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTE123%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:23:46,849 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 14:23:46,850 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 14:23:47,597 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:23:47,611 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42883
+2017-09-01 14:23:47,613 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: function hstore(fase) does not exist
+  Dica: No function matches the given name and argument types. You might need to add explicit type casts.
+  Onde: PL/pgSQL function fnauditoria() line 10 at assignment
+2017-09-01 14:25:44,447 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTE123%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:25:44,536 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-01 14:25:44,540 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-01 14:25:44,753 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:26:29,111 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:26:33,029 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTE1%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:26:33,149 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 14:28:19,146 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:28:22,637 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'ASDASDTESTE%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:28:22,712 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 14:29:44,214 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'SSSS%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:29:44,327 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-01 14:29:47,048 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:29:50,682 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'SSSS2%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:29:50,745 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 14:30:42,516 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:30:47,290 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like 'SSS%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:30:47,354 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.fase 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-01 14:30:54,175 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        fase0_.id as id1_3_,
+        fase0_.descricao as descrica2_3_,
+        fase0_.situacao as situacao3_3_ 
+    from
+        public.fase fase0_ 
+    where
+        (
+            upper(fase0_.descricao) like '123123%'
+        ) 
+        and fase0_.situacao='A' 
+    order by
+        fase0_.descricao
+2017-09-01 14:30:54,248 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.fase
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-05 21:23:34,513 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-05 21:23:34,826 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-05 21:23:35,832 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:23:37,706 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:25:03,040 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-05 21:25:03,265 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-05 21:25:04,008 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:25:05,900 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:26:21,942 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-05 21:26:22,144 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-05 21:26:22,743 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:26:24,219 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-05 21:26:29,820 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.usuario 
+    set
+        nome=?,
+        login=?,
+        senha=?,
+        situacao=? 
+    where
+        id=?
+2017-09-05 21:26:36,954 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-05 21:26:37,131 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-05 21:26:37,655 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:31:13,637 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:31:13,918 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:31:14,652 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:32:06,844 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:32:07,078 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:32:07,672 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:33:31,747 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:33:31,950 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:33:32,497 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:34:26,575 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:34:26,809 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:34:27,356 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:35:09,837 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:35:10,072 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:35:15,370 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:39:55,302 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:39:55,514 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:39:56,087 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:40:16,884 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:40:17,087 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:40:17,634 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:40:36,771 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:41:06,749 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:41:06,968 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:41:07,515 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:41:19,393 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:41:19,424 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.usuario
+        (nome, login, senha, situacao) 
+    values
+        (?, ?, ?, ?)
+2017-09-06 00:41:19,440 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 23505
+2017-09-06 00:41:19,440 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: duplicate key value violates unique constraint "usuario_login_key"
+  Detalhe: Key (login)=(andrei) already exists.
+2017-09-06 00:43:12,395 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei2' 
+        and usuario0_.situacao='A'
+2017-09-06 00:43:12,395 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 25P02
+2017-09-06 00:43:12,395 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: current transaction is aborted, commands ignored until end of transaction block
+2017-09-06 00:43:12,457 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.usuario
+        (nome, login, senha, situacao) 
+    values
+        (?, ?, ?, ?)
+2017-09-06 00:43:14,177 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:262 - Usuario cadastrado com sucesso!
+2017-09-06 00:43:25,695 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:43:25,914 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:43:26,477 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei2' 
+        and usuario0_.situacao='A'
+2017-09-06 00:44:44,279 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:44:44,498 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:44:45,061 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:44:56,891 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:44:56,922 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.usuario
+        (nome, login, senha, situacao) 
+    values
+        (?, ?, ?, ?)
+2017-09-06 00:44:56,922 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 23505
+2017-09-06 00:44:56,922 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: duplicate key value violates unique constraint "usuario_login_key"
+  Detalhe: Key (login)=(andrei) already exists.
+2017-09-06 00:46:53,951 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:46:55,716 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:46:59,792 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:47:35,252 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:47:43,426 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        tarefausua0_.id_usuario as id_usuar3_11_0_,
+        tarefausua0_.id as id1_10_0_,
+        tarefausua0_.id as id1_10_1_,
+        tarefausua0_.id_tarefa as id_taref2_10_1_,
+        tarefausua0_.id_usuario as id_usuar3_10_1_ 
+    from
+        public.tarefa_usuario tarefausua0_ 
+    where
+        tarefausua0_.id_usuario=?
+2017-09-06 00:47:43,473 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        tarefasfor0_.id_usuario_responsavel as id_usuar8_11_0_,
+        tarefasfor0_.id as id1_9_0_,
+        tarefasfor0_.id as id1_9_1_,
+        tarefasfor0_.id_cliente as id_clien2_9_1_,
+        tarefasfor0_.id_fase as id_fase3_9_1_,
+        tarefasfor0_.id_modulo as id_modul4_9_1_,
+        tarefasfor0_.id_motivo as id_motiv5_9_1_,
+        tarefasfor0_.id_prioridade as id_prior6_9_1_,
+        tarefasfor0_.id_projeto as id_proje7_9_1_,
+        tarefasfor0_.id_usuario_responsavel as id_usuar8_9_1_,
+        tarefasfor0_.id_usuario_autor as id_usuar9_9_1_,
+        tarefasfor0_.id_versao_correcao as id_vers10_9_1_,
+        tarefasfor0_.id_versao_bug as id_vers11_9_1_,
+        tarefasfor0_.titulo as titulo12_9_1_,
+        tarefasfor0_.descricao as descric13_9_1_,
+        tarefasfor0_.datahora_criacao as datahor14_9_1_,
+        tarefasfor0_.datahora_previsao as datahor15_9_1_,
+        tarefasfor0_.datahora_conclusao as datahor16_9_1_,
+        tarefasfor0_.situacao as situaca17_9_1_ 
+    from
+        public.tarefa tarefasfor0_ 
+    where
+        tarefasfor0_.id_usuario_responsavel=?
+2017-09-06 00:47:43,489 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        tarefasfor0_.id_usuario_autor as id_usuar9_11_0_,
+        tarefasfor0_.id as id1_9_0_,
+        tarefasfor0_.id as id1_9_1_,
+        tarefasfor0_.id_cliente as id_clien2_9_1_,
+        tarefasfor0_.id_fase as id_fase3_9_1_,
+        tarefasfor0_.id_modulo as id_modul4_9_1_,
+        tarefasfor0_.id_motivo as id_motiv5_9_1_,
+        tarefasfor0_.id_prioridade as id_prior6_9_1_,
+        tarefasfor0_.id_projeto as id_proje7_9_1_,
+        tarefasfor0_.id_usuario_responsavel as id_usuar8_9_1_,
+        tarefasfor0_.id_usuario_autor as id_usuar9_9_1_,
+        tarefasfor0_.id_versao_correcao as id_vers10_9_1_,
+        tarefasfor0_.id_versao_bug as id_vers11_9_1_,
+        tarefasfor0_.titulo as titulo12_9_1_,
+        tarefasfor0_.descricao as descric13_9_1_,
+        tarefasfor0_.datahora_criacao as datahor14_9_1_,
+        tarefasfor0_.datahora_previsao as datahor15_9_1_,
+        tarefasfor0_.datahora_conclusao as datahor16_9_1_,
+        tarefasfor0_.situacao as situaca17_9_1_ 
+    from
+        public.tarefa tarefasfor0_ 
+    where
+        tarefasfor0_.id_usuario_autor=?
+2017-09-06 00:47:43,504 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        auditorias0_.usuario_id as usuario_2_11_0_,
+        auditorias0_.id as id1_0_0_,
+        auditorias0_.id as id1_0_1_,
+        auditorias0_.usuario_id as usuario_2_0_1_ 
+    from
+        public.auditoria auditorias0_ 
+    where
+        auditorias0_.usuario_id=?
+2017-09-06 00:47:43,504 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2017-09-06 00:47:43,504 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: column auditorias0_.usuario_id does not exist
+  Posição: 8
+2017-09-06 00:48:42,966 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:48:43,153 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:48:43,700 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:48:51,388 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:48:51,420 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.usuario
+        (nome, login, senha, situacao) 
+    values
+        (?, ?, ?, ?)
+2017-09-06 00:48:51,420 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 23505
+2017-09-06 00:48:51,420 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: duplicate key value violates unique constraint "usuario_login_key"
+  Detalhe: Key (login)=(andrei) already exists.
+2017-09-06 00:50:18,590 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 00:50:18,793 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 00:50:19,355 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 00:50:28,936 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='admin' 
+        and usuario0_.situacao='A'
+2017-09-06 00:50:28,952 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.usuario
+        (nome, login, senha, situacao) 
+    values
+        (?, ?, ?, ?)
+2017-09-06 00:50:29,952 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:262 - Usuario cadastrado com sucesso!
+2017-09-06 01:00:17,425 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 01:00:17,628 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 01:00:18,191 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:21,786 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:34,945 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='A' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:34,992 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='a' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:35,023 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='AN' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:35,054 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='an' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:36,101 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='A' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:36,148 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='a' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:36,257 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:36,304 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:36,664 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:36,711 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:36,836 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:36,867 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:37,008 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-06 01:00:37,071 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='' 
+        and usuario0_.situacao='A'
+2017-09-06 01:03:37,922 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 01:03:39,750 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 01:07:10,995 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 01:07:11,199 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 01:07:11,730 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:15,449 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%%' 
+            or upper(usuario0_.nome) like '%%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:18,246 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%A%' 
+            or upper(usuario0_.nome) like '%A%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:18,309 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%A%' 
+            or upper(usuario0_.nome) like '%A%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:18,371 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AD%' 
+            or upper(usuario0_.nome) like '%AD%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:18,402 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AD%' 
+            or upper(usuario0_.nome) like '%AD%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:18,527 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMI%' 
+            or upper(usuario0_.nome) like '%ADMI%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:18,590 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMI%' 
+            or upper(usuario0_.nome) like '%ADMI%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:18,621 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMI%' 
+            or upper(usuario0_.nome) like '%ADMI%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:18,668 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMI%' 
+            or upper(usuario0_.nome) like '%ADMI%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:18,715 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMIN%' 
+            or upper(usuario0_.nome) like '%ADMIN%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:18,746 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMIN%' 
+            or upper(usuario0_.nome) like '%ADMIN%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:19,509 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMI%' 
+            or upper(usuario0_.nome) like '%ADMI%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:19,564 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMI%' 
+            or upper(usuario0_.nome) like '%ADMI%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:19,642 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADM%' 
+            or upper(usuario0_.nome) like '%ADM%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:19,705 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADM%' 
+            or upper(usuario0_.nome) like '%ADM%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:19,814 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AD%' 
+            or upper(usuario0_.nome) like '%AD%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:19,861 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AD%' 
+            or upper(usuario0_.nome) like '%AD%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:19,955 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%A%' 
+            or upper(usuario0_.nome) like '%A%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:20,018 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%A%' 
+            or upper(usuario0_.nome) like '%A%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:20,096 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%%' 
+            or upper(usuario0_.nome) like '%%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:20,127 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%%' 
+            or upper(usuario0_.nome) like '%%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:22,627 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%A%' 
+            or upper(usuario0_.nome) like '%A%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:22,674 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%A%' 
+            or upper(usuario0_.nome) like '%A%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:22,721 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AN%' 
+            or upper(usuario0_.nome) like '%AN%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:22,737 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AN%' 
+            or upper(usuario0_.nome) like '%AN%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:22,783 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AND%' 
+            or upper(usuario0_.nome) like '%AND%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:22,815 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AND%' 
+            or upper(usuario0_.nome) like '%AND%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:23,127 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ANDRE%' 
+            or upper(usuario0_.nome) like '%ANDRE%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:23,174 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ANDRE%' 
+            or upper(usuario0_.nome) like '%ANDRE%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:23,221 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ANDRE%' 
+            or upper(usuario0_.nome) like '%ANDRE%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:23,252 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ANDRE%' 
+            or upper(usuario0_.nome) like '%ANDRE%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:23,299 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ANDREI%' 
+            or upper(usuario0_.nome) like '%ANDREI%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:23,330 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ANDREI%' 
+            or upper(usuario0_.nome) like '%ANDREI%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:26,768 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ANDRE%' 
+            or upper(usuario0_.nome) like '%ANDRE%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:26,815 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ANDRE%' 
+            or upper(usuario0_.nome) like '%ANDRE%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:26,956 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ANDR%' 
+            or upper(usuario0_.nome) like '%ANDR%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:27,003 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ANDR%' 
+            or upper(usuario0_.nome) like '%ANDR%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:27,159 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AND%' 
+            or upper(usuario0_.nome) like '%AND%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:27,206 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AND%' 
+            or upper(usuario0_.nome) like '%AND%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:27,378 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AN%' 
+            or upper(usuario0_.nome) like '%AN%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:27,409 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%AN%' 
+            or upper(usuario0_.nome) like '%AN%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:28,143 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%A%' 
+            or upper(usuario0_.nome) like '%A%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:28,190 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%A%' 
+            or upper(usuario0_.nome) like '%A%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:28,378 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%%' 
+            or upper(usuario0_.nome) like '%%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:07:28,393 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%%' 
+            or upper(usuario0_.nome) like '%%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:10:17,588 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 01:10:17,791 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 01:10:18,338 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 01:10:21,447 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%%' 
+            or upper(usuario0_.nome) like '%%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:10:22,729 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMIN%' 
+            or upper(usuario0_.nome) like '%ADMIN%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:10:53,112 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMIN%' 
+            or upper(usuario0_.nome) like '%ADMIN%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:11:03,318 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMIN%' 
+            or upper(usuario0_.nome) like '%ADMIN%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:11:03,349 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.usuario 
+    set
+        nome=?,
+        login=?,
+        senha=?,
+        situacao=? 
+    where
+        id=?
+2017-09-06 01:11:04,740 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:261 - Usuario cadastrado com sucesso!
+2017-09-06 01:11:05,444 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%%' 
+            or upper(usuario0_.nome) like '%%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:12:32,721 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 01:12:32,940 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 01:12:33,502 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-06 01:12:36,878 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%%' 
+            or upper(usuario0_.nome) like '%%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:12:38,190 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        (
+            upper(usuario0_.login) like '%ADMIN%' 
+            or upper(usuario0_.nome) like '%ADMIN%'
+        ) 
+        and usuario0_.situacao='A'
+2017-09-06 01:13:23,419 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-06 01:13:23,622 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-06 01:13:24,185 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='usuario' 
+        and usuario0_.situacao='A'
+2017-09-06 01:13:31,083 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'

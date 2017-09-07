@@ -179,23 +179,18 @@ public class Senha extends javax.swing.JFrame {
 //            UsuarioDAO usuarioDAO = new UsuarioDAO();
 //            usuarioDAO.listar(user);
             user.setLogin(tfUsuario.getText());
+           
             
             ControleUsuario controleUsuario = new ControleUsuario();
             ArrayList<Usuario> usuarios = controleUsuario.listar(user);
-
-//            MessageDigest md = null;
-//            try {
-//                md = MessageDigest.getInstance("MD5");
-//            } catch (NoSuchAlgorithmException e) {
-//                e.printStackTrace();
-//            }
-//            BigInteger hash = new BigInteger(1, md.digest(pfSenha.getText().getBytes()));
-//            sen = hash.toString(16);
-            // System.out.println(sen);
-            if (senhaCriptografada.equals(usuarios.get(0).getSenha())) {
+            user.setSenha(usuarios.get(0).getSenha());
+            user.setId(usuarios.get(0).getId());
+             user.setSituacao('A');
+            user.setNome(usuarios.get(0).getNome());
+            if (senhaCriptografada.equals(user.getSenha())) {
                 lblValidacaologin.setText("");
                 lblValidacaologin.setForeground(Color.black);
-                TelaPrincipal tela = new TelaPrincipal();
+                TelaPrincipal tela = new TelaPrincipal(user);
                 tela.setVisible(true);
                 dispose();
             } else {

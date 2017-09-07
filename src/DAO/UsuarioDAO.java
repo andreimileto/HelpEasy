@@ -33,9 +33,19 @@ public class UsuarioDAO extends DAO {
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            String sql = "from Usuario  "
-                    + "where login = '" + usuario.getLogin() + "' "
-                    + "and situacao ='A'";
+            String sql = "";
+
+            if (usuario.getLogin().equals(usuario.getNome())) {
+                sql = "from Usuario  "
+                        + "where (upper(login) like '%" + usuario.getLogin().toUpperCase() + "%'"
+                        + "or upper(nome) like '%" + usuario.getNome().toUpperCase() + "%')"
+                        + "and situacao ='A'";
+            } else {
+
+                sql = "from Usuario  "
+                        + "where login = '" + usuario.getLogin() + "' "
+                        + "and situacao ='A'";
+            }
             String sel = sql;
             System.out.println(sel);
             org.hibernate.Query q = session.createQuery(sql);
