@@ -18,7 +18,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      * Creates new form TelaPrincipal
      */
 //    Usuario usuario;
-    static Usuario userH = new Usuario();
+    public static Usuario userH = new Usuario();
     
 
     public TelaPrincipal() {

@@ -10,6 +10,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+
 /**
  *
  * @author Mileto
@@ -30,7 +31,7 @@ public abstract class DAO {
 
             retorno = true;
         } catch (HibernateException he) {
-//            LogHelper.makeLog(this, "algo de errado ocorreu" + he.getMessage());
+            //janelas.TelaPrincipal.logH.gravaErro(o.getClass().getName(),janelas.TelaPrincipal.userH.getLogin(),"err");
             he.printStackTrace();
         } finally {
             session.close();
