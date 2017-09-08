@@ -55,9 +55,7 @@ public class UsuarioDAO extends DAO {
 
         } catch (HibernateException he) {
             he.printStackTrace();
-        }// finally {
-//            session.close();
-//        }
+        } 
         return lista;
     }
 }

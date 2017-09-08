@@ -16,6 +16,10 @@ import javax.swing.JOptionPane;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 
+//Utilizado para gravação do Log:
+import static janelas.TelaPrincipal.logH;
+import static janelas.TelaPrincipal.userH;
+
 /**
  *
  * @author Mileto
@@ -305,11 +309,13 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                 JOptionPane.showMessageDialog(null, "Cadastro de cliente salvo com sucesso!");
             } else {
                 JOptionPane.showMessageDialog(null, "Erro ao salvar cliente, campos inválidos ou nulos");
+                logH.gravaInfo(this.getClass().getName(), userH.getLogin(), "Erro ao salvar cliente, campos inválidos ou nulos");
 
             }
 
         } else {
             JOptionPane.showMessageDialog(null, "CPF/CNPJ do cliente já utilizado em outro cadastro");
+            logH.gravaInfo(this.getClass().getName(), userH.getLogin(), "CPF/CNPJ do cliente já utilizado em outro cadastro");
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
     private void limparCampos() {

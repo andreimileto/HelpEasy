@@ -10,8 +10,11 @@ import controle.ControleCidade;
 import controle.ControleUsuario;
 import entidade.Cidade;
 import entidade.Usuario;
-import static janelas.TelaPrincipal.logH;
 import javax.swing.JOptionPane;
+
+//Utilizado para gravação do Log:
+import static janelas.TelaPrincipal.logH;
+import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -210,20 +213,20 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
                     if (mensagem.equalsIgnoreCase("ok")) {
 
                         JOptionPane.showMessageDialog(rootPane, "Usuário " + usuario.getLogin() + " excluído com sucesso");
-                        //logger.info("Usuário " + usuario.getLogin() + " excluído com sucesso");
+                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Usuário " + usuario.getLogin() + " excluído com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir usuário.");
-                        //logger.error("Erro ao excluir usuário.");
+                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir usuário.");
                     }
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir usuário.");
-                    //logger.error("Erro ao excluir usuário." + e.getMessage());
+                    logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir usuário.");
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir usuário\nNenhum usuário selecionado.");
-            //logger.error("Erro ao excluir usuário.");
+            logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir usuário\nNenhum usuário selecionado.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -233,13 +236,11 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
         usuario = new Usuario();
 
         if (!tfaSenha.getText().equals(tfaRepetirSenha.getText())) {
-
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar usuário:\nsenha e repetir senha não conferem.");
+            logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao salvar usuário:\nsenha e repetir senha não conferem.");
         } else {
             usuario.setSenha(tfaSenha.getText());
             try {
-//                Cidade cidade = new Cidade();
-//            cidade.setDescricao(tfdNome.getText());
 
                 usuario.setNome(tfdNome.getText());
                 if (!tfdCodigo.getText().isEmpty()) {
@@ -248,15 +249,13 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
                 usuario.setLogin(tfdLogin.getText());
                 usuario.setSituacao('A');
 
-//                CidadeDAO cidadeDAO = new CidadeDAO();
-//                cidadeDAO.salvar(cidade);
                 ControleUsuario controleUsuario = new ControleUsuario();
                 String mensagem = controleUsuario.salvar(usuario);
 
                 if (mensagem.equals("ok")) {
                     limparCampos();
                     JOptionPane.showMessageDialog(rootPane, "Usuário cadastrado com sucesso!");
-                    //logger.info("Usuario cadastrado com sucesso!");
+                    logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Usuário cadastrado com sucesso!");
                 } else {
                     if (mensagem.contains("Já existe um usuário cadastrado com esse login")) {
                         tfdLogin.requestFocus();
@@ -266,12 +265,9 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar usuário");
-                //logger.error("Erro ao salvar a usuário." + e.getMessage());
+                logH.gravaErro(this.getClass().getName(), userH.getLogin(),"Erro ao salvar usuário" + e.getMessage());
             }
         }
-
-//        if (tfdNome.getText().length() > 2) {
-
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed

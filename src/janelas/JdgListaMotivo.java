@@ -11,7 +11,10 @@ import entidade.Cidade;
 import entidade.Motivo;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+
+//Utilizado para gravação do Log:
 import static janelas.TelaPrincipal.logH;
+import static janelas.TelaPrincipal.userH;
 
 /**
  *

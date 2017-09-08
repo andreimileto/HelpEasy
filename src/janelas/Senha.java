@@ -24,6 +24,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+//Utilizado para gravação do Log:
+import static janelas.TelaPrincipal.logH;
+import static janelas.TelaPrincipal.userH;
+
 public class Senha extends javax.swing.JFrame {
 
     Usuario user = new Usuario();

@@ -7,9 +7,12 @@ package janelas;
 
 import controle.ControleCidade;
 import entidade.Cidade;
-import static janelas.TelaPrincipal.logH;
 import javax.swing.JOptionPane;
+
+//Utilizado para gravação do Log:
+import static janelas.TelaPrincipal.logH;
 import static janelas.TelaPrincipal.userH;
+
 
 /**
  *

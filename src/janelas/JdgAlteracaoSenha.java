@@ -13,6 +13,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import javax.swing.JOptionPane;
 
+//Utilizado para gravação do Log:
+import static janelas.TelaPrincipal.logH;
+import static janelas.TelaPrincipal.userH;
+
 /**
  *
  * @author Mileto
@@ -197,23 +201,23 @@ public class JdgAlteracaoSenha extends javax.swing.JDialog {
                 
                 if (mensagem.equals("ok")) {
                     JOptionPane.showMessageDialog(rootPane, "Alteração de senha feita com sucesso!");
-                    TelaPrincipal.logH.gravaInfo(this.getClass().getName(),TelaPrincipal.userH.getLogin(),"Alteração de senha feita com sucesso!");
+                    logH.gravaInfo(this.getClass().getName(),userH.getLogin(),"Alteração de senha feita com sucesso!");
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(rootPane, mensagem);
                 }
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Nova senha identica a senha atual");
-                    TelaPrincipal.logH.gravaInfo(this.getClass().getName(),TelaPrincipal.userH.getLogin(),"Nova senha identica a senha atual");
+                    logH.gravaInfo(this.getClass().getName(),userH.getLogin(),"Nova senha identica a senha atual");
                 }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "nova senha diferentente entre os dois campos");
-                TelaPrincipal.logH.gravaInfo(this.getClass().getName(),TelaPrincipal.userH.getLogin(),"nova senha diferentente entre os dois campos");
+                logH.gravaInfo(this.getClass().getName(),userH.getLogin(),"nova senha diferentente entre os dois campos");
             }
 
         } else {
             JOptionPane.showMessageDialog(rootPane, "Senha atual inválida");
-            TelaPrincipal.logH.gravaInfo(this.getClass().getName(),TelaPrincipal.userH.getLogin(),"Senha atual inválida");
+            logH.gravaInfo(this.getClass().getName(),userH.getLogin(),"Senha atual inválida");
         }
         
 

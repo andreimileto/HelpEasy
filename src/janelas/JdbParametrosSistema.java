@@ -13,6 +13,10 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.jdbc.Work;
 
+//Utilizado para gravação do Log:
+import static janelas.TelaPrincipal.logH;
+import static janelas.TelaPrincipal.userH;
+
 /**
  *
  * @author User

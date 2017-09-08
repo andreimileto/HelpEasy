@@ -15,7 +15,10 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+
+//Utilizado para gravação do Log:
 import static janelas.TelaPrincipal.logH;
+import static janelas.TelaPrincipal.userH;
 
 /**
  *

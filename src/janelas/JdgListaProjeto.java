@@ -9,7 +9,10 @@ import controle.ControleProjeto;
 import entidade.Projeto;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+
+//Utilizado para gravação do Log:
 import static janelas.TelaPrincipal.logH;
+import static janelas.TelaPrincipal.userH;
 
 /**
  *
