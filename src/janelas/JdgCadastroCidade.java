@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -199,37 +199,27 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         cidade = new Cidade();
-//        if (tfdNome.getText().length() > 2) {
         try {
-//                Cidade cidade = new Cidade();
             cidade.setDescricao(tfdNome.getText());
             if (!tfdCodigo.getText().isEmpty()) {
                 cidade.setId(Integer.parseInt(tfdCodigo.getText()));
             }
-
             cidade.setSituacao('A');
-
-//                CidadeDAO cidadeDAO = new CidadeDAO();
-//                cidadeDAO.salvar(cidade);
             ControleCidade controleCidade = new ControleCidade();
             String mensagem = controleCidade.salvar(cidade);
 
             if (mensagem.equals("ok")) {
                 limparCampos();
                 JOptionPane.showMessageDialog(rootPane, "Cidade cadastrada com sucesso!");
-                //logger.info("Cidade cadastrada com sucesso!");
+                logH.gravaErro(this.getClass().getName(),userH.getLogin(),"Cidade cadastrada com sucesso!");
             } else {
                 JOptionPane.showMessageDialog(rootPane, mensagem);
             }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade");
-            //logger.error("Erro ao salvar a cidade." + e.getMessage());
+            logH.gravaErro(this.getClass().getName(),userH.getLogin(),"Erro ao salvar cidade");
         }
-//        } else {
-//            JOptionPane.showMessageDialog(rootPane, "LogHeasy ao salvar cidade \nQuantidade de caracteres no nome da cidade precisa ser maior que 2");
-//
-//        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed

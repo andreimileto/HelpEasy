@@ -197,19 +197,23 @@ public class JdgAlteracaoSenha extends javax.swing.JDialog {
                 
                 if (mensagem.equals("ok")) {
                     JOptionPane.showMessageDialog(rootPane, "Alteração de senha feita com sucesso!");
+                    TelaPrincipal.logH.gravaInfo(this.getClass().getName(),TelaPrincipal.userH.getLogin(),"Alteração de senha feita com sucesso!");
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(rootPane, mensagem);
                 }
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Nova senha identica a senha atual");
+                    TelaPrincipal.logH.gravaInfo(this.getClass().getName(),TelaPrincipal.userH.getLogin(),"Nova senha identica a senha atual");
                 }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "nova senha diferentente entre os dois campos");
+                TelaPrincipal.logH.gravaInfo(this.getClass().getName(),TelaPrincipal.userH.getLogin(),"nova senha diferentente entre os dois campos");
             }
 
         } else {
             JOptionPane.showMessageDialog(rootPane, "Senha atual inválida");
+            TelaPrincipal.logH.gravaInfo(this.getClass().getName(),TelaPrincipal.userH.getLogin(),"Senha atual inválida");
         }
         
 
