@@ -10,7 +10,7 @@ import controle.ControleCidade;
 import controle.ControleUsuario;
 import entidade.Cidade;
 import entidade.Usuario;
-import static janelas.TelaPrincipal.e;
+import static janelas.TelaPrincipal.logH;
 import javax.swing.JOptionPane;
 
 /**

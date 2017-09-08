@@ -8,7 +8,7 @@ package janelas;
 import controle.ControleFase;
 import controle.ControleMotivo;
 import entidade.Fase;
-import static janelas.TelaPrincipal.e;
+import static janelas.TelaPrincipal.logH;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 

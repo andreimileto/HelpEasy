@@ -5,16 +5,8 @@
  */
 package janelas;
 
-import apoio.ConexaoBD;
 import apoio.LogHeasy;
 import entidade.Usuario;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import javax.swing.JOptionPane;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 /**
  *
@@ -25,7 +17,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form TelaPrincipal
      */
-    Usuario usuario;
+//    Usuario usuario;
+    static Usuario userH = new Usuario();
+    
 
     public TelaPrincipal() {
         initComponents();
@@ -36,9 +30,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal(Usuario usuario) {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-        
-        this.usuario = usuario;
         lblUsuario.setText(usuario.getLogin());
+        userH = usuario;
         
     }
 
@@ -224,7 +217,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_imnCidadesActionPerformed
 
     private void imnParametrosSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imnParametrosSistemaActionPerformed
-        JdgAlteracaoSenha alteracaoSenha = new JdgAlteracaoSenha(this, rootPaneCheckingEnabled, usuario);
+        JdgAlteracaoSenha alteracaoSenha = new JdgAlteracaoSenha(this, rootPaneCheckingEnabled, userH);
         alteracaoSenha.setVisible(true);
     }//GEN-LAST:event_imnParametrosSistemaActionPerformed
 
@@ -263,7 +256,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    static final LogHeasy e = new LogHeasy();
+    static final LogHeasy logH = new LogHeasy();
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

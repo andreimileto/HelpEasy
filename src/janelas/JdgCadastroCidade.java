@@ -5,11 +5,11 @@
  */
 package janelas;
 
-import apoio.LogHeasy;
 import controle.ControleCidade;
 import entidade.Cidade;
-import static janelas.TelaPrincipal.e;
+import static janelas.TelaPrincipal.logH;
 import javax.swing.JOptionPane;
+import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -98,7 +98,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,25 +174,26 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
                     cidade.setSituacao('I');
                     ControleCidade controleCidade = new ControleCidade();
                     String mensagem = controleCidade.salvar(cidade);
-
+                    System.out.println(controleCidade.getClass().getName());
+                    
                     if (mensagem.equalsIgnoreCase("ok")) {
 
                         JOptionPane.showMessageDialog(rootPane, "Cidade " + cidade.getDescricao() + " excluída com sucesso");
-                        e.gravaInfo("Cidade", "Leandro", "Cidade " + cidade.getDescricao() + " excluída com sucesso");
+                        
+                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(), "Cidade " + cidade.getDescricao() + " excluída com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade.");
-                        e.gravaErro("Cidade","Leandro","Erro ao excluir a cidade.");
+                        logH.gravaErro(this.getClass().getName(),userH.getLogin(),"Erro ao excluir a cidade.");
                     }
                 } catch (Exception e) {
-                    LogHeasy e2 = new LogHeasy();
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir a cidade.");
-                    e2.gravaErro("Cidade","Leandro","Erro ao excluir a cidade." + e.getMessage());
+                    logH.gravaErro(this.getClass().getName(),userH.getLogin(),"Erro ao excluir a cidade." + e.getMessage());
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade\nNenhuma cidade selecionada.");
-            e.gravaErro("Cidade","Leandro","Erro ao excluir a cidade.");
+            logH.gravaErro(this.getClass().getName(),userH.getLogin(),"Erro ao excluir a cidade.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
