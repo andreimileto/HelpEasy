@@ -9,7 +9,7 @@ import controle.ControleProjeto;
 import entidade.Projeto;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-import static janelas.TelaPrincipal.logger;
+import static janelas.TelaPrincipal.e;
 
 /**
  *

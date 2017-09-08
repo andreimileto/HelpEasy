@@ -13,7 +13,7 @@ import entidade.Cidade;
 import entidade.Fase;
 import entidade.Motivo;
 import javax.swing.JOptionPane;
-import static janelas.TelaPrincipal.logger;
+import static janelas.TelaPrincipal.e;
 
 /**
  *

@@ -185,7 +185,7 @@ public class Senha extends javax.swing.JFrame {
             ArrayList<Usuario> usuarios = controleUsuario.listar(user);
             user.setSenha(usuarios.get(0).getSenha());
             user.setId(usuarios.get(0).getId());
-             user.setSituacao('A');
+            user.setSituacao('A');
             user.setNome(usuarios.get(0).getNome());
             if (senhaCriptografada.equals(user.getSenha())) {
                 lblValidacaologin.setText("");

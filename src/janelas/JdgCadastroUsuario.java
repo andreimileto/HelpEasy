@@ -10,7 +10,7 @@ import controle.ControleCidade;
 import controle.ControleUsuario;
 import entidade.Cidade;
 import entidade.Usuario;
-import static janelas.TelaPrincipal.logger;
+import static janelas.TelaPrincipal.e;
 import javax.swing.JOptionPane;
 
 /**
@@ -210,20 +210,20 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
                     if (mensagem.equalsIgnoreCase("ok")) {
 
                         JOptionPane.showMessageDialog(rootPane, "Usuário " + usuario.getLogin() + " excluído com sucesso");
-                        logger.info("Usuário " + usuario.getLogin() + " excluído com sucesso");
+                        //logger.info("Usuário " + usuario.getLogin() + " excluído com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir usuário.");
-                        logger.error("Erro ao excluir usuário.");
+                        //logger.error("Erro ao excluir usuário.");
                     }
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir usuário.");
-                    logger.error("Erro ao excluir usuário." + e.getMessage());
+                    //logger.error("Erro ao excluir usuário." + e.getMessage());
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir usuário\nNenhum usuário selecionado.");
-            logger.error("Erro ao excluir usuário.");
+            //logger.error("Erro ao excluir usuário.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -256,7 +256,7 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
                 if (mensagem.equals("ok")) {
                     limparCampos();
                     JOptionPane.showMessageDialog(rootPane, "Usuário cadastrado com sucesso!");
-                    logger.info("Usuario cadastrado com sucesso!");
+                    //logger.info("Usuario cadastrado com sucesso!");
                 } else {
                     if (mensagem.contains("Já existe um usuário cadastrado com esse login")) {
                         tfdLogin.requestFocus();
@@ -266,7 +266,7 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar usuário");
-                logger.error("Erro ao salvar a usuário." + e.getMessage());
+                //logger.error("Erro ao salvar a usuário." + e.getMessage());
             }
         }
 

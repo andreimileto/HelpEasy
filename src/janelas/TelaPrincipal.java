@@ -6,6 +6,7 @@
 package janelas;
 
 import apoio.ConexaoBD;
+import apoio.LogHeasy;
 import entidade.Usuario;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -90,10 +91,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblVersao)
                 .addGap(129, 129, 129)
-                .addComponent(jLabel2)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 405, Short.MAX_VALUE))
+                .addGap(0, 344, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,7 +263,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    static final Logger logger = LogManager.getLogger(helpeasy.HelpEasy.class.getName());
+    static final LogHeasy e = new LogHeasy();
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
