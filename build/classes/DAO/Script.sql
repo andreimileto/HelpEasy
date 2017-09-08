@@ -254,10 +254,30 @@ CREATE TABLE Auditoria (
         tipo char(1),
         ordem text,
         campos text,
+        situacao CHAR(1) NOT NULL,
         PRIMARY KEY (id)
 );
 
-                                                        --123456--
+-- -----------------------------------------------------
+-- Table usuario_permissao
+-- -----------------------------------------------------
+CREATE TABLE usuario_permissao (
+        id bigserial,
+        id_usuario INT NOT NULL,
+        tabela VARCHAR(100) NOT NULL,
+        permite_incluir CHAR(1) NOT NULL, --'S,N'
+        permite_alterar CHAR(1) NOT NULL, --'S,N'
+        permite_excluir CHAR(1) NOT NULL, --'S,N'
+        permite_consultar CHAR(1) NOT NULL, --'S,N'
+        PRIMARY KEY (id)
+);
+
+INSERT INTO usuario_permissao (id_usuario,tabela,permite_incluir,permite_alterar,permite_excluir,permite_consultar) 
+SELECT 1,tablename,'S','S','S','S' FROM pg_catalog.pg_tables
+WHERE schemaname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
+
+--Insere os Usuários Padrões;
+--Senha: 123456--
 insert into usuario values(default,'Andrei','andrei','e10adc3949ba59abbe56e057f20f883e','A');
-                                                         --123456--       
+--Senha: 123456--       
 insert into usuario values (default,'Leandro','leandro','e10adc3949ba59abbe56e057f20f883e','A');

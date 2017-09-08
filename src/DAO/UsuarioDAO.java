@@ -7,14 +7,10 @@ package DAO;
 
 import apoio.HibernateUtil;
 import entidade.Usuario;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.jdbc.Work;
 
 
 /**
@@ -64,40 +60,4 @@ public class UsuarioDAO extends DAO {
 //        }
         return lista;
     }
-
-        public void setaUsuarioConexao() {
-         try {
-            Session sessao = HibernateUtil.getSessionFactory().openSession();
-            sessao.beginTransaction();
-
-            sessao.doWork(new Work() {
-                public void execute(Connection connection) throws SQLException {
-                    CallableStatement call = connection.prepareCall("{ set app.usuario to '2'; }");
-                    call.execute();
-                }
-            });
-
-            sessao.getTransaction().commit();
-        } catch (Exception e) {
-            System.out.println("erro da função: " + e);
-        }
-    }    
-    public void chamarView() {
-    try {
-        Session sessao = HibernateUtil.getSessionFactory().openSession();
-        sessao.beginTransaction();
-
-        List resultado = sessao.createSQLQuery("select * from teste").list();
-
-        for (Object o : resultado) {
-            System.out.println("nome: " + o.toString());
-        }
-
-        sessao.getTransaction().commit();
-
-    } catch (Exception e) {
-        System.out.println("erro ao chamar view: " + e);
-    }
-    }
-
 }
