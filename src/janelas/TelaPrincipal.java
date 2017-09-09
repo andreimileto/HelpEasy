@@ -61,6 +61,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImnCadastroProjeto = new javax.swing.JMenuItem();
         imnCadastroMotivo = new javax.swing.JMenuItem();
         imnCadastroUsuario = new javax.swing.JMenuItem();
+        ImnCadastroPrioridade = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Help Easy");
@@ -186,6 +187,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(imnCadastroUsuario);
 
+        ImnCadastroPrioridade.setText("Cadastro de prioridade");
+        ImnCadastroPrioridade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImnCadastroPrioridadeActionPerformed(evt);
+            }
+        });
+        ImnCadastroUsuario.add(ImnCadastroPrioridade);
+
         jMenuBar1.add(ImnCadastroUsuario);
 
         setJMenuBar(jMenuBar1);
@@ -253,6 +262,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroUsuario.setVisible(true);
     }//GEN-LAST:event_imnCadastroUsuarioActionPerformed
 
+    private void ImnCadastroPrioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnCadastroPrioridadeActionPerformed
+        JdgCadastroPrioridade cadastroPrioridade = new JdgCadastroPrioridade(this,true);
+        cadastroPrioridade.setVisible(true);
+    }//GEN-LAST:event_ImnCadastroPrioridadeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -293,6 +307,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem ImnCadastroFase;
+    private javax.swing.JMenuItem ImnCadastroPrioridade;
     private javax.swing.JMenuItem ImnCadastroProjeto;
     private javax.swing.JMenu ImnCadastroUsuario;
     private javax.swing.JMenuItem imnCadastroMotivo;
