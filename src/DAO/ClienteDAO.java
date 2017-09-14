@@ -29,13 +29,25 @@ public class ClienteDAO extends DAO {
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            String sql = "from Cliente  "
-                    + "where upper(razao_social)  like '%" + cliente.getRazaoSocial().toUpperCase() + "%' "
-                    + "or cnpj_cpf like '%" + cliente.getCpfCnpj().replace(".", "").replace("-", "").replace("/", "") + "%'"
-                    + "and situacao ='A'"
-                    + " order by razao_social";
+            String sql = "";
+
+            if (cliente.getId() == 0) {
+
+                sql = "from Cliente  "
+                        + "where (upper(razao_social)  like '%" + cliente.getRazaoSocial().toUpperCase() + "%' "
+                        + "or cpf_cnpj like '%" + cliente.getCpfCnpj().replace(".", "").replace("-", "").replace("/", "") + "%')"
+                        + "and situacao ='A'"
+                        + " order by razao_social";
+            } else {
+                sql = "from Cliente  "
+                        + "where (upper(razao_social)  like '%" + cliente.getRazaoSocial().toUpperCase() + "%' "
+                        + "or cpf_cnpj like '%" + cliente.getCpfCnpj().replace(".", "").replace("-", "").replace("/", "") + "%')"
+                        + "and situacao ='A'"
+                        + "and id = " + cliente.getId()
+                        + " order by razao_social";
+            }
             String sel = sql;
-            System.out.println(sel);
+            System.out.println(sel + " select cliente");
             org.hibernate.Query q = session.createQuery(sql);
 
             resultado = q.list();
@@ -52,4 +64,5 @@ public class ClienteDAO extends DAO {
 //        }
         return lista;
     }
+
 }

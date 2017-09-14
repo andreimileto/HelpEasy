@@ -1,0 +1,2669 @@
+2017-09-08 23:01:45,507 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-08 23:01:45,739 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-08 23:01:46,395 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-08 23:09:26,118 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-08 23:09:26,346 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-08 23:09:26,944 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-08 23:11:02,415 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-08 23:11:02,661 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-08 23:11:03,354 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-08 23:11:09,809 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like 'ALTA%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-08 23:11:09,885 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.projeto
+        (descricao, situacao) 
+    values
+        (?, ?)
+2017-09-08 23:11:12,327 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like '%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-08 23:11:17,972 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like 'ALTAS%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-08 23:11:18,037 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.projeto 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-08 23:11:22,116 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like 'ALTAS%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-08 23:11:24,899 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like '%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-08 23:11:28,165 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like 'ALTAS%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-08 23:11:28,209 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.projeto 
+    set
+        descricao=?,
+        situacao=? 
+    where
+        id=?
+2017-09-08 23:11:29,242 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroPrioridade Usuário: andrei Mensagem: projeto Altas excluído com sucesso
+2017-09-08 23:11:30,697 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        projeto0_.id as id1_8_,
+        projeto0_.descricao as descrica2_8_,
+        projeto0_.situacao as situacao3_8_ 
+    from
+        public.projeto projeto0_ 
+    where
+        (
+            upper(projeto0_.descricao) like '%'
+        ) 
+        and projeto0_.situacao='A' 
+    order by
+        projeto0_.descricao
+2017-09-13 19:12:39,885 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:12:40,182 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:12:40,901 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:12:43,698 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:13:05,023 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:15:51,499 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:15:51,702 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:15:52,249 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:16:18,848 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:19:43,654 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:19:45,263 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:19:47,076 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='usuario' 
+        and usuario0_.situacao='A'
+2017-09-13 19:19:53,657 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:20:26,595 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:21:29,045 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:21:30,701 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:21:32,436 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:21:43,691 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:22:41,438 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:22:41,657 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:22:42,204 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:22:55,065 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:22:56,547 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        upper(razao_social) like '%AAA%' 
+        or (
+            cnpj_cpf like '%03632248079%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 19:22:56,547 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2017-09-13 19:22:56,547 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: column "cnpj_cpf" does not exist
+  Posição: 404
+2017-09-13 19:23:00,688 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 19:23:07,221 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        upper(razao_social) like '%AAA%' 
+        or (
+            cnpj_cpf like '%03632248079%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 19:23:07,221 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2017-09-13 19:23:07,221 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: column "cnpj_cpf" does not exist
+  Posição: 404
+2017-09-13 19:23:08,096 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 19:23:10,299 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        upper(razao_social) like '%AAA%' 
+        or (
+            cnpj_cpf like '%03632248079%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 19:23:10,299 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2017-09-13 19:23:10,299 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: column "cnpj_cpf" does not exist
+  Posição: 404
+2017-09-13 19:23:11,206 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 19:24:56,483 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:24:58,139 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:24:59,871 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:25:16,436 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:28:12,343 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        upper(razao_social) like '%ANDREI%' 
+        or (
+            cnpj_cpf like '%03632248079%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 19:28:12,359 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2017-09-13 19:28:12,359 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: column "cnpj_cpf" does not exist
+  Posição: 407
+2017-09-13 19:28:18,891 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 19:29:49,630 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:31:38,448 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:31:40,034 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:31:41,769 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:31:58,847 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:32:01,428 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:32:01,459 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:33:11,761 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:33:11,973 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:33:12,521 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:33:18,511 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 19:33:21,046 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        upper(razao_social) like '%ASDASDASD%' 
+        or (
+            cnpj_cpf like '%11111111111%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 19:33:21,062 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2017-09-13 19:33:21,062 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: column "cnpj_cpf" does not exist
+  Posição: 410
+2017-09-13 19:33:21,156 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cliente
+        (id_cidade, razao_social, cpf_cnpj, tipo_cadastro, clientecol, endereco, telefone, situacao) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2017-09-13 19:37:42,763 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:37:43,060 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:37:43,764 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:41:35,255 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:41:35,459 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:41:35,990 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:45:19,711 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:45:19,915 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:45:20,446 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:45:50,004 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:45:50,208 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:45:50,739 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:49:09,278 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:49:10,872 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:49:12,607 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:56:11,291 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:56:11,510 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:56:12,073 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 19:58:22,283 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 19:58:23,892 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 19:58:25,666 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:01:27,674 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:01:29,331 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:01:31,081 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:01:58,328 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cnpj_cpf like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:01:58,328 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2017-09-13 20:01:58,328 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: column "cnpj_cpf" does not exist
+  Posição: 401
+2017-09-13 20:02:54,020 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cnpj_cpf like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:02:54,036 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2017-09-13 20:02:54,036 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: column "cnpj_cpf" does not exist
+  Posição: 401
+2017-09-13 20:04:51,178 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:04:52,803 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:04:54,538 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:05:03,819 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:05:03,834 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:05:13,632 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:05:13,664 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:05:40,695 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%ASDASDASDAAAAAAAAA%' 
+            or cpf_cnpj like '%11111111111%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:05:42,930 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.cliente 
+    set
+        id_cidade=?,
+        razao_social=?,
+        cpf_cnpj=?,
+        tipo_cadastro=?,
+        clientecol=?,
+        endereco=?,
+        telefone=?,
+        situacao=? 
+    where
+        id=?
+2017-09-13 20:05:57,592 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:05:57,795 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:05:58,373 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:06:00,920 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:06:05,202 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:07:57,130 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:07:57,349 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:07:57,896 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:08:06,493 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 20:08:08,856 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAA%' 
+            or cpf_cnpj like '%03632248079%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:08:08,884 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cliente
+        (id_cidade, razao_social, cpf_cnpj, tipo_cadastro, clientecol, endereco, telefone, situacao) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2017-09-13 20:08:10,593 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:08:10,593 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:08:12,281 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:08:12,296 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:08:15,031 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAABBB%' 
+            or cpf_cnpj like '%03632248079%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:08:15,047 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.cliente 
+    set
+        id_cidade=?,
+        razao_social=?,
+        cpf_cnpj=?,
+        tipo_cadastro=?,
+        clientecol=?,
+        endereco=?,
+        telefone=?,
+        situacao=? 
+    where
+        id=?
+2017-09-13 20:08:16,719 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:08:16,719 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:08:25,232 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 20:08:27,570 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAA%' 
+            or cpf_cnpj like '%03632248079%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:08:29,609 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 20:08:35,126 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 20:08:38,799 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAA%' 
+            or cpf_cnpj like '%11111111111%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:08:38,817 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cliente
+        (id_cidade, razao_social, cpf_cnpj, tipo_cadastro, clientecol, endereco, telefone, situacao) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2017-09-13 20:08:40,451 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:08:40,453 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:44:10,526 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:44:10,541 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:44:15,574 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:44:15,574 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:44:27,898 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:44:28,117 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:44:28,632 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:44:37,649 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 20:45:26,232 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:45:26,436 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:45:26,998 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:45:37,580 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente:
+Nome do cliente precisa ter entre 3 a 150 caracteres
+Cidade do cliente não selecionada
+CPF do cliente incorreto
+
+2017-09-13 20:45:45,165 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 20:45:47,204 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAA%' 
+            or cpf_cnpj like '%11111111111%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:45:48,585 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 20:46:17,908 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:46:18,111 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:46:18,658 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:46:22,518 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente:
+Nome do cliente precisa ter entre 3 a 150 caracteres
+Cidade do cliente não selecionada
+CPF do cliente incorreto
+
+2017-09-13 20:46:29,141 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente:
+Cidade do cliente não selecionada
+
+2017-09-13 20:46:29,771 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 20:46:32,816 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAA%' 
+            or cpf_cnpj like '%11111111111%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:46:41,615 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 20:46:44,890 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAA%' 
+            or cpf_cnpj like '%22222222222%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:46:44,921 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cliente
+        (id_cidade, razao_social, cpf_cnpj, tipo_cadastro, clientecol, endereco, telefone, situacao) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2017-09-13 20:46:46,278 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:46:46,278 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:47:39,543 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:47:39,746 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:47:40,293 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:47:48,355 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-13 20:47:51,078 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAAA%' 
+            or cpf_cnpj like '%33333333333%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:47:51,107 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    insert 
+    into
+        public.cliente
+        (id_cidade, razao_social, cpf_cnpj, tipo_cadastro, clientecol, endereco, telefone, situacao) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2017-09-13 20:47:52,606 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:47:52,606 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:47:52,606 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:48:02,873 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente:
+Nome do cliente precisa ter entre 3 a 150 caracteres
+Cidade do cliente não selecionada
+CPF do cliente incorreto
+
+2017-09-13 20:48:05,905 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:48:05,905 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:48:05,905 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:48:07,124 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:48:07,124 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:48:13,389 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAAQ%' 
+            or cpf_cnpj like '%11111111111%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:48:17,577 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 20:49:57,464 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:49:59,074 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:50:00,886 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:50:10,090 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:50:10,106 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:50:10,122 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:50:19,576 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:50:19,623 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:50:52,335 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAAJ%' 
+            or cpf_cnpj like '%11111111111%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:51:20,354 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        tarefas0_.id_cliente as id_clien2_2_0_,
+        tarefas0_.id as id1_9_0_,
+        tarefas0_.id as id1_9_1_,
+        tarefas0_.id_cliente as id_clien2_9_1_,
+        tarefas0_.id_fase as id_fase3_9_1_,
+        tarefas0_.id_modulo as id_modul4_9_1_,
+        tarefas0_.id_motivo as id_motiv5_9_1_,
+        tarefas0_.id_prioridade as id_prior6_9_1_,
+        tarefas0_.id_projeto as id_proje7_9_1_,
+        tarefas0_.id_usuario_responsavel as id_usuar8_9_1_,
+        tarefas0_.id_usuario_autor as id_usuar9_9_1_,
+        tarefas0_.id_versao_correcao as id_vers10_9_1_,
+        tarefas0_.id_versao_bug as id_vers11_9_1_,
+        tarefas0_.titulo as titulo12_9_1_,
+        tarefas0_.descricao as descric13_9_1_,
+        tarefas0_.datahora_criacao as datahor14_9_1_,
+        tarefas0_.datahora_previsao as datahor15_9_1_,
+        tarefas0_.datahora_conclusao as datahor16_9_1_,
+        tarefas0_.situacao as situaca17_9_1_ 
+    from
+        public.tarefa tarefas0_ 
+    where
+        tarefas0_.id_cliente=?
+2017-09-13 20:52:08,361 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:52:08,580 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:52:09,142 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:52:11,346 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:52:11,346 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:11,346 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:16,706 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:52:16,706 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:17,710 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAA%' 
+            or cpf_cnpj like '%22222222222%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:52:21,729 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:19 - Classe: janelas.JdgCadastroCliente Usuário: andrei Mensagem: Erro ao salvar cliente, campos inválidos ou nulos
+2017-09-13 20:52:24,135 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:52:24,151 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:24,151 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:26,417 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:52:26,417 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:29,216 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:52:29,222 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:29,224 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:32,760 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:52:32,776 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:37,940 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:52:37,940 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:37,955 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:52:40,283 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:52:40,283 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:19,805 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-13 20:55:20,024 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-13 20:55:20,602 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='andrei' 
+        and usuario0_.situacao='A'
+2017-09-13 20:55:22,930 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:55:22,946 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:22,946 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:24,071 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=2 
+    order by
+        razao_social
+2017-09-13 20:55:24,086 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:26,634 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAABBB%' 
+            or cpf_cnpj like '%03632248079%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=2 
+    order by
+        razao_social
+2017-09-13 20:55:26,680 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.cliente 
+    set
+        id_cidade=?,
+        razao_social=?,
+        cpf_cnpj=?,
+        tipo_cadastro=?,
+        clientecol=?,
+        endereco=?,
+        telefone=?,
+        situacao=? 
+    where
+        id=?
+2017-09-13 20:55:28,493 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:55:28,493 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:28,493 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:30,181 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=5 
+    order by
+        razao_social
+2017-09-13 20:55:30,197 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:33,525 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAAA%' 
+            or cpf_cnpj like '%33333333333%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=5 
+    order by
+        razao_social
+2017-09-13 20:55:33,557 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.cliente 
+    set
+        id_cidade=?,
+        razao_social=?,
+        cpf_cnpj=?,
+        tipo_cadastro=?,
+        clientecol=?,
+        endereco=?,
+        telefone=?,
+        situacao=? 
+    where
+        id=?
+2017-09-13 20:55:35,088 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:55:35,088 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:35,088 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:37,526 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=5 
+    order by
+        razao_social
+2017-09-13 20:55:37,526 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:46,998 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAAA%' 
+            or cpf_cnpj like '%33333333333%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=5 
+    order by
+        razao_social
+2017-09-13 20:55:47,014 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.cliente 
+    set
+        id_cidade=?,
+        razao_social=?,
+        cpf_cnpj=?,
+        tipo_cadastro=?,
+        clientecol=?,
+        endereco=?,
+        telefone=?,
+        situacao=? 
+    where
+        id=?
+2017-09-13 20:55:48,733 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:55:48,733 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:48,748 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:53,473 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=5 
+    order by
+        razao_social
+2017-09-13 20:55:53,473 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:58,205 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAAA%' 
+            or cpf_cnpj like '%33333333333%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=5 
+    order by
+        razao_social
+2017-09-13 20:55:58,221 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.cliente 
+    set
+        id_cidade=?,
+        razao_social=?,
+        cpf_cnpj=?,
+        tipo_cadastro=?,
+        clientecol=?,
+        endereco=?,
+        telefone=?,
+        situacao=? 
+    where
+        id=?
+2017-09-13 20:55:59,734 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:55:59,734 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:55:59,734 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:56:02,060 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=4 
+    order by
+        razao_social
+2017-09-13 20:56:02,068 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:56:18,463 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%AAA%' 
+            or cpf_cnpj like '%22222222222%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=4 
+    order by
+        razao_social
+2017-09-13 20:56:18,494 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    update
+        public.cliente 
+    set
+        id_cidade=?,
+        razao_social=?,
+        cpf_cnpj=?,
+        tipo_cadastro=?,
+        clientecol=?,
+        endereco=?,
+        telefone=?,
+        situacao=? 
+    where
+        id=?
+2017-09-13 20:56:20,119 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+    order by
+        razao_social
+2017-09-13 20:56:20,119 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:56:20,135 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_0_,
+        cidade0_.descricao as descrica2_1_0_,
+        cidade0_.situacao as situacao3_1_0_ 
+    from
+        public.cidade cidade0_ 
+    where
+        cidade0_.id=?
+2017-09-13 20:56:21,619 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cliente0_.id as id1_2_,
+        cliente0_.id_cidade as id_cidad2_2_,
+        cliente0_.razao_social as razao_so3_2_,
+        cliente0_.cpf_cnpj as cpf_cnpj4_2_,
+        cliente0_.tipo_cadastro as tipo_cad5_2_,
+        cliente0_.clientecol as clientec6_2_,
+        cliente0_.endereco as endereco7_2_,
+        cliente0_.telefone as telefone8_2_,
+        cliente0_.situacao as situacao9_2_ 
+    from
+        public.cliente cliente0_ 
+    where
+        (
+            upper(razao_social) like '%%' 
+            or cpf_cnpj like '%%'
+        ) 
+        and cliente0_.situacao='A' 
+        and cliente0_.id=4 
+    order by
+        razao_social

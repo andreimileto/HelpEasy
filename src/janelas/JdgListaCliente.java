@@ -7,6 +7,8 @@ package janelas;
 
 import DAO.CidadeDAO;
 import DAO.ClienteDAO;
+import controle.ControleCidade;
+import controle.ControleCliente;
 
 import entidade.Cidade;
 import entidade.Cliente;
@@ -45,36 +47,36 @@ public class JdgListaCliente extends javax.swing.JDialog {
         this.cliente = cliente;
         this.cid = cid;
        // System.out.println("ativo cliente na listaaaa" + cliente.getAtivo());
-        verificarTipoChamada();
-        popularComboBox();
+        //verificarTipoChamada();
+       // popularComboBox();
        // System.out.println("ativo cliente na listaaaa depois do popular" + cliente.getAtivo());
         
-        listarClientes();
+        listarCidades();
 
     }
 
-    private void verificarTipoChamada() {
-        //System.out.println("ativo cliente na lista" + cliente.getAtivo());
-        if (cliente.getSituacao() == 'A') {
-            cbxStatus.setEnabled(false);
-          //  System.out.println("ativo cliente na lista" + cliente.getAtivo());
-            btnConfirmar.setText("Selecionar");
-            btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png")));
-        } else {
-            btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Edit File-16.png")));
-            cbxStatus.setEditable(true);
-        }
-    }
+//    private void verificarTipoChamada() {
+//        //System.out.println("ativo cliente na lista" + cliente.getAtivo());
+//        if (cliente.getSituacao() == 'A') {
+//            cbxStatus.setEnabled(false);
+//          //  System.out.println("ativo cliente na lista" + cliente.getAtivo());
+//            btnConfirmar.setText("Selecionar");
+//            btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png")));
+//        } else {
+//            btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Edit File-16.png")));
+//            cbxStatus.setEditable(true);
+//        }
+//    }
 
-    private void popularComboBox() {
-       // System.out.println("ativo cliente na listaaaa popular inicio" + cliente.getAtivo());
-        cbxStatus.addItem("Ativos");
-        cbxStatus.addItem("Inativos");
-        cbxStatus.addItem("Todos");
-       // System.out.println("ativo cliente na listaaaa popular fim" + cliente.getAtivo());
-    }
+//    private void popularComboBox() {
+//       // System.out.println("ativo cliente na listaaaa popular inicio" + cliente.getAtivo());
+//        cbxStatus.addItem("Ativos");
+//        cbxStatus.addItem("Inativos");
+//        cbxStatus.addItem("Todos");
+//       // System.out.println("ativo cliente na listaaaa popular fim" + cliente.getAtivo());
+//    }
 
-    private void listarClientes() {
+    private void listarCidades() {
         try {
             //setar para tabela modelo de dados
             tblListaClientes.setModel(this.obterDadosParaTabelaCompleto());
@@ -84,7 +86,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
             tblListaClientes.getColumnModel().getColumn(3).setPreferredWidth(80);
             tblListaClientes.getColumnModel().getColumn(4).setPreferredWidth(170);
             tblListaClientes.getColumnModel().getColumn(5).setPreferredWidth(20);
-            tblListaClientes.getColumnModel().getColumn(6).setPreferredWidth(0);
+         
 
         } catch (Exception ex) {
 //            Logger.getLogger(JdgListaFormaPagamento.class.getName()).log(Level.SEVERE, null, ex);
@@ -98,9 +100,17 @@ public class JdgListaCliente extends javax.swing.JDialog {
             }
         };
 //adiciona titulo para as colunas
+        cid.setDescricao("");
+        cliente.setRazaoSocial(tfdFiltro.getText());
+        cliente.setCpfCnpj(tfdFiltro.getText());
+//        CidadeDAO cidadeDAO = new CidadeDAO();
+//        ArrayList<Cidade> cidades = cidadeDAO.listar(cid);
+//    ControleCidade controleCidade = new ControleCidade();
+//    ArrayList<Cidade> cidades = controleCidade.listar(cid);
+    
+//    ControleCliente controleCliente = new ControleCliente();
+//    ArrayList<Cliente> clientes = controleCliente.listar(cliente);
 
-        CidadeDAO cidadeDAO = new CidadeDAO();
-        ArrayList<Cidade> cidades = cidadeDAO.listar(cid);
 
         ClienteDAO cliDAO = new ClienteDAO();
         ArrayList<Cliente> clientes = cliDAO.listar(cliente);
@@ -111,23 +121,18 @@ public class JdgListaCliente extends javax.swing.JDialog {
         dtm.addColumn("CIDADE");
         dtm.addColumn("ENDEREÇO");
         dtm.addColumn("TELEFONE");
-        dtm.addColumn("SITUAÇÃO");
+        //dtm.addColumn("SITUAÇÃO");
 
         for (int i = 0; i < clientes.size(); i++) {
             //popular tabela
-            String result = "";
-            if (String.valueOf(clientes.get(i).getSituacao()).equalsIgnoreCase("A")) {
-                result = "Ativo";
-            } else {
-                result = "Inativo";
-            }
+          
+            
             dtm.addRow(new String[]{String.valueOf(clientes.get(i).getId()),
                 clientes.get(i).getRazaoSocial(),
                 clientes.get(i).getCpfCnpj(),
                 String.valueOf(clientes.get(i).getCidade().getDescricao()),
                 String.valueOf(clientes.get(i).getEndereco()),
-                String.valueOf(clientes.get(i).getTelefone()),
-                result
+                String.valueOf(clientes.get(i).getTelefone())
             });
         }
 //retorna o modelo
@@ -154,11 +159,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
 
        // System.out.println("cidade id..." + cliente.getCidade().getId());
 
-        if (tblListaClientes.getValueAt(row, 6).toString().equals("Ativo")) {
-            this.cliente.setSituacao('A');
-        } else {
-            this.cliente.setSituacao('I');
-        }
+        
 
         dispose();
     }
@@ -304,12 +305,12 @@ public class JdgListaCliente extends javax.swing.JDialog {
         } else {
             cliente.setSituacao(' ');
         }
-        listarClientes();
+        listarCidades();
     }
     private void tfdFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdFiltroKeyReleased
         cliente.setCpfCnpj(tfdFiltro.getText());
         cliente.setRazaoSocial(tfdFiltro.getText());
-        listarClientes();
+        listarCidades();
     }//GEN-LAST:event_tfdFiltroKeyReleased
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

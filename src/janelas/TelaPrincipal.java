@@ -52,6 +52,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblUsuario = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        ImnClientes = new javax.swing.JMenuItem();
         imnCidades = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         imnParametrosSistema = new javax.swing.JMenuItem();
@@ -115,6 +116,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Cadastros");
+
+        ImnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Iconusers48.png"))); // NOI18N
+        ImnClientes.setText("Clientes");
+        ImnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImnClientesActionPerformed(evt);
+            }
+        });
+        jMenu1.add(ImnClientes);
 
         imnCidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IconLocation.png"))); // NOI18N
         imnCidades.setText("Cidades");
@@ -267,6 +277,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroPrioridade.setVisible(true);
     }//GEN-LAST:event_ImnCadastroPrioridadeActionPerformed
 
+    private void ImnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnClientesActionPerformed
+        JdgCadastroCliente cadastroCliente = new JdgCadastroCliente(this, true);
+        cadastroCliente.setVisible(true);
+    }//GEN-LAST:event_ImnClientesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -310,6 +325,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem ImnCadastroPrioridade;
     private javax.swing.JMenuItem ImnCadastroProjeto;
     private javax.swing.JMenu ImnCadastroUsuario;
+    private javax.swing.JMenuItem ImnClientes;
     private javax.swing.JMenuItem imnCadastroMotivo;
     private javax.swing.JMenuItem imnCadastroUsuario;
     private javax.swing.JMenuItem imnCidades;

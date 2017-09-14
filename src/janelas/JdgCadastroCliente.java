@@ -8,6 +8,7 @@ package janelas;
 import DAO.ClienteDAO;
 import apoio.Formatacao;
 import apoio.Validacao;
+import controle.ControleCliente;
 import entidade.Cidade;
 import entidade.Cliente;
 import java.awt.Color;
@@ -33,10 +34,12 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
     private MaskFormatter mascaraCnpj;
     private MaskFormatter mascaraTelefone8Digitos;
     private MaskFormatter mascaraTelefone9Digitos;
-
+    
+    String preValidacao = "";
+    
     Cidade cidade = new Cidade();
     Cliente cliente = new Cliente(cidade);
-
+    
     public JdgCadastroCliente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -46,32 +49,32 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         atualizarCamposFormatados();
         limparCampos();
     }
-
+    
     private void mascaraCpfCnpj() {
         try {
             mascaraCpf = new MaskFormatter("###.###.###-##");
             mascaraCnpj = new MaskFormatter("##.###.###/####-##");
-
+            
         } catch (Exception e) {
         }
-
+        
     }
-
+    
     private void mascaraTelefone() {
         try {
             mascaraTelefone8Digitos = new MaskFormatter("(##)####-####");
             mascaraTelefone9Digitos = new MaskFormatter("(##)#####-####");
-
+            
         } catch (Exception e) {
         }
     }
-
+    
     private void popularComboBox() {
         cbxTipo.addItem("Pessoa Física");
         cbxTipo.addItem("Pessoa Jurídica");
         atualizarCamposFormatados();
     }
-
+    
     private void atualizarCamposFormatados() {
         tffCpfCnpj.setValue(null);
         lblSituacaoCPFCNPJ.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
@@ -79,7 +82,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
             lblRazaoSocial.setText("Nome*");
             lblCpfCnpj.setText("CPF*");
             tffCpfCnpj.setFormatterFactory(new DefaultFormatterFactory(mascaraCpf));
-
+            
         } else {
             lblRazaoSocial.setText("Razão S.*");
             lblCpfCnpj.setText("CNPJ*");
@@ -100,7 +103,6 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         tfdId = new javax.swing.JTextField();
         cbxTipo = new javax.swing.JComboBox<>();
-        rbtAtivo = new javax.swing.JRadioButton();
         lblSituacaoCPFCNPJ = new javax.swing.JLabel();
         tffCpfCnpj = new javax.swing.JFormattedTextField();
         lblCpfCnpj = new javax.swing.JLabel();
@@ -114,8 +116,9 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         lblEndereco = new javax.swing.JLabel();
         tfdEndereco = new javax.swing.JTextField();
         btnLocalizar = new javax.swing.JButton();
-        btnSalvar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
+        btnSalvar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EasyPDV - Cadastro Cliente");
@@ -128,19 +131,15 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         tfdId.setEditable(false);
-        jPanel1.add(tfdId, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 55, -1));
+        jPanel1.add(tfdId, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 80, -1));
 
         cbxTipo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbxTipoItemStateChanged(evt);
             }
         });
-        jPanel1.add(cbxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 30, 130, -1));
-
-        rbtAtivo.setSelected(true);
-        rbtAtivo.setText("Ativo");
-        jPanel1.add(rbtAtivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
-        jPanel1.add(lblSituacaoCPFCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 20, 20));
+        jPanel1.add(cbxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 130, -1));
+        jPanel1.add(lblSituacaoCPFCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 20, 20));
 
         try {
             tffCpfCnpj.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -157,13 +156,13 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                 tffCpfCnpjActionPerformed(evt);
             }
         });
-        jPanel1.add(tffCpfCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 130, -1));
+        jPanel1.add(tffCpfCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 130, -1));
 
         lblCpfCnpj.setText("CPF*");
-        jPanel1.add(lblCpfCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        jPanel1.add(lblCpfCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         lblTelefone.setText("Telefone");
-        jPanel1.add(lblTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, -1, -1));
+        jPanel1.add(lblTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
 
         try {
             tffTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
@@ -185,17 +184,17 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                 tffTelefoneKeyReleased(evt);
             }
         });
-        jPanel1.add(tffTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 110, -1));
+        jPanel1.add(tffTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 110, -1));
 
         lblRazaoSocial.setText("Nome*");
-        jPanel1.add(lblRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-        jPanel1.add(tfdRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 320, -1));
+        jPanel1.add(lblRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        jPanel1.add(tfdRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 370, -1));
 
         lblCidade.setText("Cidade*");
-        jPanel1.add(lblCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        jPanel1.add(lblCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         tfdCidade.setEditable(false);
-        jPanel1.add(tfdCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 184, -1));
+        jPanel1.add(tfdCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 270, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -203,17 +202,17 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 30, 23));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 30, 23));
 
         lblEndereco.setText("Endereço");
-        jPanel1.add(lblEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+        jPanel1.add(lblEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
         tfdEndereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfdEnderecoActionPerformed(evt);
             }
         });
-        jPanel1.add(tfdEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 298, -1));
+        jPanel1.add(tfdEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 370, -1));
 
         btnLocalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizar.setText("Localizar");
@@ -222,16 +221,16 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                 btnLocalizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLocalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
+        jPanel1.add(btnLocalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
-        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
-        btnSalvar.setText("Salvar");
-        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixeira16x16.png"))); // NOI18N
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarActionPerformed(evt);
+                btnExcluirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 100, -1));
+        jPanel1.add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 100, -1));
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))); // NOI18N
         btnSair.setText("Sair");
@@ -240,9 +239,18 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                 btnSairActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 81, -1));
+        jPanel1.add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 90, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 11, 412, 231));
+        btnSalvar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
+        btnSalvar1.setText("Salvar");
+        btnSalvar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvar1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSalvar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 100, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 11, 470, 270));
 
         pack();
         setLocationRelativeTo(null);
@@ -260,7 +268,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         JdgListaCidade listaCidade = new JdgListaCidade(null, true, cidade);
         listaCidade.setVisible(true);
         cliente.setCidade(cidade);
-        if (cliente.getCidade().getId() > 0 && cliente.getCidade().getDescricao().length()>0) {
+        if (cliente.getCidade().getId() > 0 && cliente.getCidade().getDescricao().length() > 0) {
             //System.out.println("entrou no if do id > 0");
             tfdCidade.setText(cliente.getCidade().getDescricao());
         } else {
@@ -277,47 +285,32 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
 
     }//GEN-LAST:event_tffCpfCnpjActionPerformed
 
-    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+cliente.setSituacao('I');
+//        if (verificarCadastrado()) {
+          
+              
         
-        if (verificarCadastrado()) {
-            if (validarCampos()) {
-                cliente.setRazaoSocial(tfdRazaoSocial.getText());
-
-                cliente.setCpfCnpj(tffCpfCnpj.getText().replace(".", "").replace("/", "").replace("-", ""));
-                if (cliente.getTelefone() != "null") {
-                    cliente.setTelefone(tffTelefone.getText().replace("(", "").replace(")", "").replace("-", ""));
-                }
-                if (cliente.getEndereco() != "null") {
-                    cliente.setEndereco(tfdEndereco.getText());
-                }
-
-                if (cbxTipo.getSelectedIndex() == 0) {
-                    cliente.setTipoCadastro('F');
-                } else {
-                    cliente.setTipoCadastro('J');
-                }
-                if (rbtAtivo.isSelected()) {
-                    cliente.setSituacao('A');
-                } else {
-                    cliente.setSituacao('I');
-                }
+               
                 
-                ClienteDAO clienteDAO = new ClienteDAO();
-                clienteDAO.salvar(cliente);
+                
+               cliente.setSituacao('I');
+                ControleCliente controleCliente = new ControleCliente();
+                String mensagem = controleCliente.salvar(cliente);
+                if (mensagem.equals("ok")) {
+                    limparCampos();
+                    JOptionPane.showMessageDialog(null, "Cadastro de cliente excluído com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(null, mensagem);
+                    logH.gravaInfo(this.getClass().getName(), userH.getLogin(), mensagem);
+                }
 
-                limparCampos();
-                JOptionPane.showMessageDialog(null, "Cadastro de cliente salvo com sucesso!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Erro ao salvar cliente, campos inválidos ou nulos");
-                logH.gravaInfo(this.getClass().getName(), userH.getLogin(), "Erro ao salvar cliente, campos inválidos ou nulos");
+//                ClienteDAO clienteDAO = new ClienteDAO();
+//                clienteDAO.salvar(cliente);
+           
+            
 
-            }
-
-        } else {
-            JOptionPane.showMessageDialog(null, "CPF/CNPJ do cliente já utilizado em outro cadastro");
-            logH.gravaInfo(this.getClass().getName(), userH.getLogin(), "CPF/CNPJ do cliente já utilizado em outro cadastro");
-        }
-    }//GEN-LAST:event_btnSalvarActionPerformed
+    }//GEN-LAST:event_btnExcluirActionPerformed
     private void limparCampos() {
         cliente.setId(0);
         cidade.setId(0);
@@ -329,7 +322,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         tfdCidade.setText("");
         tfdRazaoSocial.setText("");
         tfdEndereco.setText("");
-        rbtAtivo.setSelected(true);
+        
         tfdRazaoSocial.requestFocus();
         tffCpfCnpj.setEnabled(true);
         lblSituacaoCPFCNPJ.setIcon(null);
@@ -348,7 +341,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
     }//GEN-LAST:event_tffTelefoneActionPerformed
 
     private void tffTelefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tffTelefoneFocusLost
-       // System.out.println(tffTelefone.getText().length());
+        // System.out.println(tffTelefone.getText().length());
         String a = "";
         if (tffTelefone.getText().replace(" ", "").length() == 13) {
             a = "" + tffTelefone.getText().charAt(1) + tffTelefone.getText().charAt(2)
@@ -356,10 +349,10 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                     + tffTelefone.getText().charAt(6) + tffTelefone.getText().charAt(7)
                     + tffTelefone.getText().charAt(8) + tffTelefone.getText().charAt(10)
                     + tffTelefone.getText().charAt(11) + tffTelefone.getText().charAt(12);
-           // System.out.println(tffTelefone.getText().replace(" ", "").length());
+            // System.out.println(tffTelefone.getText().replace(" ", "").length());
             tffTelefone.setFormatterFactory(new DefaultFormatterFactory(mascaraTelefone8Digitos));
             tffTelefone.setText(a);
-
+            
         }
     }//GEN-LAST:event_tffTelefoneFocusLost
 
@@ -375,6 +368,22 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
 //           
 //        }
 //        verificarCadastroSelecionado();
+
+        limparCampos();
+        JdgListaCliente clientes = new JdgListaCliente(null, true, cliente, cidade);
+        clientes.setVisible(true);
+        if (cliente.getId() > 0) {
+            tffCpfCnpj.setEnabled(false);
+            cbxTipo.setEnabled(false);
+            
+        } else {
+            tffCpfCnpj.setEnabled(true);
+            cbxTipo.setEnabled(true);
+        }
+        
+        verificarCadastroSelecionado();
+        
+
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
     private void tffCpfCnpjFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tffCpfCnpjFocusLost
@@ -388,7 +397,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
             }
         } else {
             if (Validacao.validarCPF(Formatacao.removerFormatacao(tffCpfCnpj.getText()))) {
-               // System.out.println("ok");
+                // System.out.println("ok");
                 lblSituacaoCPFCNPJ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png")));
             } else {
                 //System.out.println("false");
@@ -401,106 +410,115 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
     private void tfdEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfdEnderecoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfdEnderecoActionPerformed
+
+    private void btnSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalvar1ActionPerformed
     private boolean validarCampos() {
-        lblRazaoSocial.setForeground(Color.black);
-        lblEndereco.setForeground(Color.black);
-        lblCidade.setForeground(Color.black);
-        lblCpfCnpj.setForeground(Color.black);
-        lblTelefone.setForeground(Color.black);
+//        lblRazaoSocial.setForeground(Color.black);
+//        lblEndereco.setForeground(Color.black);
+//        lblCidade.setForeground(Color.black);
+//        lblCpfCnpj.setForeground(Color.black);
+//        lblTelefone.setForeground(Color.black);
+
+preValidacao = "Erro ao salvar cliente:\n";
         boolean ok = true;
-        if (tfdRazaoSocial.getText().length() > 150 || tfdRazaoSocial.getText().length() <= 0) {
+        if (tfdRazaoSocial.getText().length() > 150 || tfdRazaoSocial.getText().length() <= 2) {
+            preValidacao = preValidacao+"Nome do cliente precisa ter entre 3 a 150 caracteres\n";
             ok = false;
-            lblRazaoSocial.setForeground(Color.red);
+//            lblRazaoSocial.setForeground(Color.red);
         }
         if (tfdEndereco.getText().length() > 150) {
+            preValidacao = preValidacao+"Endereço do cliente com mais de 150 caracteres\n";
             ok = false;
-            lblEndereco.setForeground(Color.red);
+//            lblEndereco.setForeground(Color.red);
         }
         if (tfdCidade.getText().length() > 100 || tfdCidade.getText().length() <= 0) {
+            preValidacao = preValidacao+"Cidade do cliente não selecionada\n";
             ok = false;
-            lblCidade.setForeground(Color.red);
+//            lblCidade.setForeground(Color.red);
         }
-
+        
         if (cbxTipo.getSelectedIndex() == 0) {
             //System.out.println("antes do if..."+tffCpfCnpj.getText());
             try {
                 
-            
-            if (!Validacao.validarCPF(Formatacao.removerFormatacao(tffCpfCnpj.getText()))){
-               // System.out.println("entrou no if do cpf como certo");
-                ok = false;
-                lblCpfCnpj.setForeground(Color.red);
-
-            }
+                if (!Validacao.validarCPF(Formatacao.removerFormatacao(tffCpfCnpj.getText()))) {
+                    // System.out.println("entrou no if do cpf como certo");
+                    preValidacao = preValidacao+"CPF do cliente incorreto\n";
+                    ok = false;
+//                    lblCpfCnpj.setForeground(Color.red);
+                    
+                }
             } catch (Exception e) {
+                  preValidacao = preValidacao+"CPF do cliente incorreto\n";
                 ok = false;
-                lblCpfCnpj.setForeground(Color.red);
+//                lblCpfCnpj.setForeground(Color.red);
             }
             
         } else {
-            try{
-            if (!Validacao.validarCNPJ(Formatacao.removerFormatacao(tffCpfCnpj.getText()))){
-                
-                ok = false;
-                lblCpfCnpj.setForeground(Color.red);    
-            }
+            try {
+                if (!Validacao.validarCNPJ(Formatacao.removerFormatacao(tffCpfCnpj.getText()))) {
+                  preValidacao = preValidacao+"CNPJ do cliente incorreto\n";    
+                    ok = false;
+//                    lblCpfCnpj.setForeground(Color.red);
+                }
             } catch (Exception e) {
+                  preValidacao = preValidacao+"CPF do cliente incorreto\n";
                 ok = false;
-                lblCpfCnpj.setForeground(Color.red);
-            
-            
-
+//                lblCpfCnpj.setForeground(Color.red);
+                
             }
-           // System.out.println("ok..."+ok);
+            // System.out.println("ok..."+ok);
         }
         if (tffTelefone.getText().replace(" ", "").replace("(", "").replace(")", "").replace("-", "").length() < 10
                 && tffTelefone.getText().replace(" ", "").replace("(", "").replace(")", "").replace("-", "").length() > 1) {
-
-            lblTelefone.setForeground(Color.red);
-
+            
+//            lblTelefone.setForeground(Color.red);
+              preValidacao = preValidacao+"Telefone do cliente inválido\n";
             ok = false;
         }
         if (tffTelefone.getText().replace(" ", "").replace("(", "").replace(")", "").replace("-", "").length() == 0) {
-            cliente.setTelefone("null");
-
+            cliente.setTelefone("");
+            
         }
         if (tfdEndereco.getText().replace(" ", "").replace("(", "").replace(")", "").replace("-", "").length() == 0) {
-            cliente.setEndereco("null");
-
+            cliente.setEndereco("");
+            
         }
-
+        
         return ok;
     }
-
+    
     private boolean verificarCadastrado() {
 
-        ClienteDAO cliDAO = new ClienteDAO();
-        cliente.setCpfCnpj(tffCpfCnpj.getText().replace(".", "").replace("-", "").replace("/", ""));
-
-        ArrayList<Cliente> clientes = cliDAO.listar(cliente);
-        if (cliente.getId() == 0) {
-
-            if (clientes.size() > 0) {
-
-                if (cliente.getCpfCnpj().equals(clientes.get(0).getCpfCnpj())) {
-                   // System.out.println("false");
-                    return false;
-                } else {
-                  //  System.out.println("true");
-                    return true;
-                }
-            }
-        }
+//        ClienteDAO cliDAO = new ClienteDAO();
+//        cliente.setCpfCnpj(tffCpfCnpj.getText().replace(".", "").replace("-", "").replace("/", ""));
+//
+//        ArrayList<Cliente> clientes = cliDAO.listar(cliente);
+//        if (cliente.getId() == 0) {
+//
+//            if (clientes.size() > 0) {
+//
+//                if (cliente.getCpfCnpj().equals(clientes.get(0).getCpfCnpj())) {
+//                   // System.out.println("false");
+//                    return false;
+//                } else {
+//                  //  System.out.println("true");
+//                    return true;
+//                }
+//            }
+//        }
         return true;
     }
-
+    
     private void verificarCadastroSelecionado() {
-
+        
         if (cliente.getId() > 0) {
             if (cliente.getTipoCadastro() == 'F') {
                 cbxTipo.setSelectedIndex(0);
             } else {
-              //  System.out.println("entrou no else");
+                //  System.out.println("entrou no else");
                 //System.out.println(cliente.getTipoCadastro() + "....");
                 cbxTipo.setSelectedIndex(1);
             }
@@ -510,13 +528,8 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
             tfdEndereco.setText(cliente.getEndereco());
             tffCpfCnpj.setText(cliente.getCpfCnpj());
             tffTelefone.setText(cliente.getTelefone());
-            if (cliente.getSituacao() == 'A') {
-                rbtAtivo.setSelected(true);
-
-            } else {
-                rbtAtivo.setSelected(false);
-            }
-
+          
+            
         } else {
             limparCampos();
         }
@@ -566,9 +579,10 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLocalizar;
     private javax.swing.JButton btnSair;
-    private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnSalvar1;
     private javax.swing.JComboBox<String> cbxTipo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
@@ -579,7 +593,6 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
     private javax.swing.JLabel lblRazaoSocial;
     private javax.swing.JLabel lblSituacaoCPFCNPJ;
     private javax.swing.JLabel lblTelefone;
-    private javax.swing.JRadioButton rbtAtivo;
     private javax.swing.JTextField tfdCidade;
     private javax.swing.JTextField tfdEndereco;
     private javax.swing.JTextField tfdId;
