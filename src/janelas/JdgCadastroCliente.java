@@ -302,7 +302,7 @@ cliente.setSituacao('I');
                     JOptionPane.showMessageDialog(null, "Cadastro de cliente excluído com sucesso!");
                 } else {
                     JOptionPane.showMessageDialog(null, mensagem);
-                    logH.gravaInfo(this.getClass().getName(), userH.getLogin(), mensagem);
+                    logH.gravaInfo(this.getClass().getName(), mensagem);
                 }
 
 //                ClienteDAO clienteDAO = new ClienteDAO();

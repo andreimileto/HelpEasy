@@ -7,6 +7,7 @@ package janelas;
 
 import DAO.CidadeDAO;
 import DAO.FaseDAO;
+import apoio.Validacao;
 import controle.ControleCidade;
 import controle.ControleFase;
 import entidade.Cidade;
@@ -32,6 +33,8 @@ public class JdgCadastroFase extends javax.swing.JDialog {
     public JdgCadastroFase(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
+        
     }
 
     /**
@@ -66,6 +69,7 @@ public class JdgCadastroFase extends javax.swing.JDialog {
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))); // NOI18N
         btnSair.setText("Sair");
+        btnSair.setName("btnSair"); // NOI18N
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -74,6 +78,7 @@ public class JdgCadastroFase extends javax.swing.JDialog {
 
         btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixeira16x16.png"))); // NOI18N
         btnExcluir.setText("Excluir");
+        btnExcluir.setName("btnExcluir"); // NOI18N
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcluirActionPerformed(evt);
@@ -82,6 +87,7 @@ public class JdgCadastroFase extends javax.swing.JDialog {
 
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
         btnSalvar.setText("Salvar");
+        btnSalvar.setName("btnSalvar"); // NOI18N
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
@@ -90,6 +96,8 @@ public class JdgCadastroFase extends javax.swing.JDialog {
 
         btnLocalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizar.setText("Localizar");
+        btnLocalizar.setDoubleBuffered(true);
+        btnLocalizar.setName("btnLocalizar"); // NOI18N
         btnLocalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLocalizarActionPerformed(evt);
@@ -195,20 +203,20 @@ public class JdgCadastroFase extends javax.swing.JDialog {
                     if (mensagem.equalsIgnoreCase("ok")) {
 
                         JOptionPane.showMessageDialog(rootPane, "Fase " + fase.getDescricao() + " Excluída com sucesso");
-                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(), "Fase " + fase.getDescricao() + " Excluída com sucesso");
+                        logH.gravaInfo(this.getClass().getName(), "Fase " + fase.getDescricao() + " Excluída com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
-                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir fase.");
+                        logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase.");
                     }
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
-                    logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir fase.");
+                    logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase.");
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase\nNenhuma fase selecionada.");
-            logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir fase\nNenhuma fase selecionada.");
+            logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase\nNenhuma fase selecionada.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -233,7 +241,7 @@ public class JdgCadastroFase extends javax.swing.JDialog {
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase");
-            logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao salvar fase.");
+            logH.gravaInfo(this.getClass().getName(), "Erro ao salvar fase.");
         }
 
     }//GEN-LAST:event_btnSalvarActionPerformed

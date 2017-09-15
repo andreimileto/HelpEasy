@@ -3,12 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Prioridade.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroPrioridade.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/PrioridadeDAO.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/helpeasy/HelpEasy.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/TelaPrincipal.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControlePrioridade.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/janelas/JdgCadastroFase.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/apoio/Validacao.java</file>
         </group>
     </open-files>
 </project-private>

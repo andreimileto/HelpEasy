@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package apoio;
+import janelas.TelaPrincipal;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -15,15 +16,15 @@ import org.apache.log4j.Logger;
 public class LogHeasy  {
     static final Logger logger = LogManager.getLogger(helpeasy.HelpEasy.class.getName());
     
-    public void gravaInfo(String sClasse,String sUsuario,String sMensagem) {
-        logger.info("Classe: " + sClasse + " Usuário: " + sUsuario + " Mensagem: " + sMensagem);
+    public void gravaInfo(String sClasse,String sMensagem) {
+        logger.info("Classe: " + sClasse + " Usuário: " + TelaPrincipal.userH.getNome()+ " Mensagem: " + sMensagem);
     }
     
-    public void gravaErro(String sClasse,String sUsuario,String sMensagem) {
-        logger.error("Classe: " + sClasse + " Usuário: " + sUsuario + " Mensagem: " + sMensagem);
+    public void gravaErro(String sClasse,String sMensagem) {
+        logger.error("Classe: " + sClasse + " Usuário: " + TelaPrincipal.userH.getNome() + " Mensagem: " + sMensagem);
     }
         
-    public void gravaDebug(String sClasse,String sUsuario,String sMensagem) {
-        logger.debug("Classe: " + sClasse + " Usuário: " + sUsuario + " Mensagem: " + sMensagem);
+    public void gravaDebug(String sClasse,String sMensagem) {
+        logger.debug("Classe: " + sClasse + " Usuário: " + TelaPrincipal.userH.getNome() + " Mensagem: " + sMensagem);
     }
 }

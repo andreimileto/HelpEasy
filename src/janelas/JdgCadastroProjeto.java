@@ -187,11 +187,11 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar projeto");
-                logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao salvar projeto");
+                logH.gravaInfo(this.getClass().getName(), "Erro ao salvar projeto");
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar projeto \nQuantidade de caracteres no nome do projeto precisa ser maior que 2");
-            logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao salvar projeto \nQuantidade de caracteres no nome do projeto precisa ser maior que 2");
+            logH.gravaInfo(this.getClass().getName(), "Erro ao salvar projeto \nQuantidade de caracteres no nome do projeto precisa ser maior que 2");
 
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -210,21 +210,21 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
 
                     if (mensagem.equalsIgnoreCase("ok")) {
                         JOptionPane.showMessageDialog(rootPane, "projeto " + projeto.getDescricao() + " excluído com sucesso");
-                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"projeto " + projeto.getDescricao() + " excluído com sucesso");
+                        logH.gravaInfo(this.getClass().getName(), "projeto " + projeto.getDescricao() + " excluído com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto. ");
-                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir projeto. ");
+                        logH.gravaInfo(this.getClass().getName(), "Erro ao excluir projeto. ");
                     }
 
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto");
-                    logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir projeto");
+                    logH.gravaInfo(this.getClass().getName(), "Erro ao excluir projeto");
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir projeto \nNenhum projeto selecionado.");
-            logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir projeto \nNenhum projeto selecionado.");
+            logH.gravaInfo(this.getClass().getName(), "Erro ao excluir projeto \nNenhum projeto selecionado.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 

@@ -180,21 +180,21 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
 
                     if (mensagem.equalsIgnoreCase("ok")) {
                         JOptionPane.showMessageDialog(rootPane, "motivo " + motivo.getDescricao() + " excluído com sucesso");
-                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"motivo " + motivo.getDescricao() + " excluído com sucesso");
+                        logH.gravaInfo(this.getClass().getName(), "motivo " + motivo.getDescricao() + " excluído com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo. ");
-                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir motivo.");
+                        logH.gravaInfo(this.getClass().getName(), "Erro ao excluir motivo.");
                     }
 
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo");
-                    logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir motivo.");
+                    logH.gravaInfo(this.getClass().getName(), "Erro ao excluir motivo.");
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo \nNenhum motivo selecionado.");
-            logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir motivo \nNenhum motivo selecionado.");
+            logH.gravaInfo(this.getClass().getName(), "Erro ao excluir motivo \nNenhum motivo selecionado.");
         }
 
     }//GEN-LAST:event_btnExcluirActionPerformed
@@ -222,11 +222,11 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar motivo");
-                logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao salvar motivo.");
+                logH.gravaInfo(this.getClass().getName(), "Erro ao salvar motivo.");
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar motivo \nQuantidade de caracteres no nome oa motivo precisa ser maior que 2");
-            logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao salvar motivo \nQuantidade de caracteres no nome oa motivo precisa ser maior que 2");
+            logH.gravaInfo(this.getClass().getName(), "Erro ao salvar motivo \nQuantidade de caracteres no nome oa motivo precisa ser maior que 2");
 
         }
     }//GEN-LAST:event_btnSalvarActionPerformed

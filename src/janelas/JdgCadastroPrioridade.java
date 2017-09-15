@@ -187,11 +187,11 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar prioridade");
-                logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao salvar prioridade");
+                logH.gravaInfo(this.getClass().getName(), "Erro ao salvar prioridade");
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar prioridade \nQuantidade de caracteres no nome da prioridade precisa ser maior que 2");
-            logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao salvar prioridade \nQuantidade de caracteres no nome da prioridade precisa ser maior que 2");
+            logH.gravaInfo(this.getClass().getName(), "Erro ao salvar prioridade \nQuantidade de caracteres no nome da prioridade precisa ser maior que 2");
 
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -210,21 +210,21 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
 
                     if (mensagem.equalsIgnoreCase("ok")) {
                         JOptionPane.showMessageDialog(rootPane, "prioridade " + projeto.getDescricao() + " excluído com sucesso");
-                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"projeto " + projeto.getDescricao() + " excluído com sucesso");
+                        logH.gravaInfo(this.getClass().getName(), "projeto " + projeto.getDescricao() + " excluído com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir prioridade. ");
-                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir prioridade. ");
+                        logH.gravaInfo(this.getClass().getName(), "Erro ao excluir prioridade. ");
                     }
 
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir prioridade");
-                    logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir prioridade");
+                    logH.gravaInfo(this.getClass().getName(), "Erro ao excluir prioridade");
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir prioridade \nNenhuma prioridade selecionada.");
-            logH.gravaInfo(this.getClass().getName(), userH.getLogin(),"Erro ao excluir prioridade \nNenhuma prioridade selecionada.");
+            logH.gravaInfo(this.getClass().getName(), "Erro ao excluir prioridade \nNenhuma prioridade selecionada.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 

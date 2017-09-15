@@ -5,7 +5,12 @@
 package apoio;
 
 import com.toedter.calendar.JDateChooser;
+import janelas.TelaPrincipal;
+import java.awt.Component;
+import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 
@@ -138,4 +143,18 @@ public class Validacao {
 //        return "ok";
 //    }
 
+public static void setaPermissoes (String sClasse,JPanel panel) {
+       for(int i=0;i<panel.getComponentCount();i++)
+        {
+            if(panel.getComponent(i) instanceof JButton)
+            {
+                System.out.println(panel.getComponent(i).getName());
+                System.out.println(TelaPrincipal.userH.getId());
+                if (panel.getComponent(i).getName().equals("btnSalvar"))
+                        panel.getComponent(i).setEnabled(false);
+                        
+            }
+        }
+}
+   
 }

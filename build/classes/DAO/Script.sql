@@ -242,39 +242,48 @@ CREATE TABLE IF NOT EXISTS tarefa_usuario (
     ON UPDATE NO ACTION)
 ;
 
-
--- -----------------------------------------------------
--- Table auditoria
--- -----------------------------------------------------
-CREATE TABLE Auditoria (
+CREATE TABLE usuario_permissao_tela (
         id bigserial,
         id_usuario INT NOT NULL,
-        tabela VARCHAR(100) NOT NULL,
-        data_hora TIMESTAMP DEFAULT now(),
-        tipo char(1),
-        ordem text,
-        campos text,
-        situacao CHAR(1) NOT NULL,
+        tela VARCHAR(100) NOT NULL,
+	permite_acesso CHAR(1) NOT NULL,
         PRIMARY KEY (id)
 );
 
--- -----------------------------------------------------
--- Table usuario_permissao
--- -----------------------------------------------------
-CREATE TABLE usuario_permissao (
+
+INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroCliente','S');
+INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroCliente','S');
+INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroFase','S');
+INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroFase','S');
+
+
+CREATE TABLE usuario_permissao_tela_acoes (
         id bigserial,
-        id_usuario INT NOT NULL,
-        tabela VARCHAR(100) NOT NULL,
-        permite_incluir CHAR(1) NOT NULL, --'S,N'
-        permite_alterar CHAR(1) NOT NULL, --'S,N'
-        permite_excluir CHAR(1) NOT NULL, --'S,N'
-        permite_consultar CHAR(1) NOT NULL, --'S,N'
+        id_usuario_permissao_tela INT NOT NULL,
+        acao VARCHAR(100) NOT NULL,
+	permite_acesso CHAR(1) NOT NULL,
         PRIMARY KEY (id)
 );
 
-INSERT INTO usuario_permissao (id_usuario,tabela,permite_incluir,permite_alterar,permite_excluir,permite_consultar) 
-SELECT 1,tablename,'S','S','S','S' FROM pg_catalog.pg_tables
-WHERE schemaname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
+
+INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnSalvar','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnLocalizar','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnExcluir','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnSair','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnSalvar','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnLocalizar','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnExcluir','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnSair','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnSalvar','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnLocalizar','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnExcluir','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnSair','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnSalvar','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnLocalizar','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnExcluir','S');
+INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnSair','S');
+
+
 
 --Insere os Usuários Padrões;
 --Senha: 123456--

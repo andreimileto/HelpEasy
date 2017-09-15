@@ -183,20 +183,20 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
                         JOptionPane.showMessageDialog(rootPane, "Cidade " + cidade.getDescricao() + " excluída com sucesso");
                         
-                        logH.gravaInfo(this.getClass().getName(), userH.getLogin(), "Cidade " + cidade.getDescricao() + " excluída com sucesso");
+                        logH.gravaInfo(this.getClass().getName(), "Cidade " + cidade.getDescricao() + " excluída com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade.");
-                        logH.gravaErro(this.getClass().getName(),userH.getLogin(),"Erro ao excluir a cidade.");
+                        logH.gravaErro(this.getClass().getName(),"Erro ao excluir a cidade.");
                     }
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir a cidade.");
-                    logH.gravaErro(this.getClass().getName(),userH.getLogin(),"Erro ao excluir a cidade." + e.getMessage());
+                    logH.gravaErro(this.getClass().getName(),"Erro ao excluir a cidade." + e.getMessage());
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade\nNenhuma cidade selecionada.");
-            logH.gravaErro(this.getClass().getName(),userH.getLogin(),"Erro ao excluir a cidade.");
+            logH.gravaErro(this.getClass().getName(),"Erro ao excluir a cidade.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -214,14 +214,14 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
             if (mensagem.equals("ok")) {
                 limparCampos();
                 JOptionPane.showMessageDialog(rootPane, "Cidade cadastrada com sucesso!");
-                logH.gravaErro(this.getClass().getName(),userH.getLogin(),"Cidade cadastrada com sucesso!");
+                logH.gravaErro(this.getClass().getName(),"Cidade cadastrada com sucesso!");
             } else {
                 JOptionPane.showMessageDialog(rootPane, mensagem);
             }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade");
-            logH.gravaErro(this.getClass().getName(),userH.getLogin(),"Erro ao salvar cidade");
+            logH.gravaErro(this.getClass().getName(),"Erro ao salvar cidade");
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
