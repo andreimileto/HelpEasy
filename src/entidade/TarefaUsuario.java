@@ -1,5 +1,5 @@
 package entidade;
-// Generated 07/08/2017 21:08:37 by Hibernate Tools 4.3.1
+// Generated 15/09/2017 20:09:58 by Hibernate Tools 4.3.1
 
 
 
@@ -9,24 +9,24 @@ package entidade;
 public class TarefaUsuario  implements java.io.Serializable {
 
 
-     private String id;
+     private int id;
      private Tarefa tarefa;
      private Usuario usuario;
 
     public TarefaUsuario() {
     }
 
-    public TarefaUsuario(String id, Tarefa tarefa, Usuario usuario) {
+    public TarefaUsuario(int id, Tarefa tarefa, Usuario usuario) {
        this.id = id;
        this.tarefa = tarefa;
        this.usuario = usuario;
     }
    
-    public String getId() {
+    public int getId() {
         return this.id;
     }
     
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
     public Tarefa getTarefa() {

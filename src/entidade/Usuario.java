@@ -1,5 +1,5 @@
 package entidade;
-// Generated 07/08/2017 21:08:37 by Hibernate Tools 4.3.1
+// Generated 15/09/2017 20:09:58 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -19,7 +19,6 @@ public class Usuario  implements java.io.Serializable {
      private Set tarefaUsuarios = new HashSet(0);
      private Set tarefasForIdUsuarioResponsavel = new HashSet(0);
      private Set tarefasForIdUsuarioAutor = new HashSet(0);
-     private Set auditorias = new HashSet(0);
 
     public Usuario() {
     }
@@ -32,7 +31,7 @@ public class Usuario  implements java.io.Serializable {
         this.senha = senha;
         this.situacao = situacao;
     }
-    public Usuario(int id, String nome, String login, String senha, char situacao, Set tarefaUsuarios, Set tarefasForIdUsuarioResponsavel, Set tarefasForIdUsuarioAutor, Set auditorias) {
+    public Usuario(int id, String nome, String login, String senha, char situacao, Set tarefaUsuarios, Set tarefasForIdUsuarioResponsavel, Set tarefasForIdUsuarioAutor) {
        this.id = id;
        this.nome = nome;
        this.login = login;
@@ -41,7 +40,6 @@ public class Usuario  implements java.io.Serializable {
        this.tarefaUsuarios = tarefaUsuarios;
        this.tarefasForIdUsuarioResponsavel = tarefasForIdUsuarioResponsavel;
        this.tarefasForIdUsuarioAutor = tarefasForIdUsuarioAutor;
-       this.auditorias = auditorias;
     }
    
     public int getId() {
@@ -99,13 +97,6 @@ public class Usuario  implements java.io.Serializable {
     
     public void setTarefasForIdUsuarioAutor(Set tarefasForIdUsuarioAutor) {
         this.tarefasForIdUsuarioAutor = tarefasForIdUsuarioAutor;
-    }
-    public Set getAuditorias() {
-        return this.auditorias;
-    }
-    
-    public void setAuditorias(Set auditorias) {
-        this.auditorias = auditorias;
     }
 
 

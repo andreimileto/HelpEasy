@@ -1,5 +1,5 @@
 package entidade;
-// Generated 07/08/2017 21:08:37 by Hibernate Tools 4.3.1
+// Generated 15/09/2017 20:09:58 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -24,13 +24,11 @@ public class Cliente  implements java.io.Serializable {
 
     public Cliente() {
     }
-
-
+    
     public Cliente(Cidade cidade) {
-        this.cidade = cidade;
+    this.cidade=cidade;
     }
-    
-    
+	
     public Cliente(int id, Cidade cidade, String razaoSocial, char tipoCadastro, char situacao) {
         this.id = id;
         this.cidade = cidade;

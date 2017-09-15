@@ -5,14 +5,19 @@
 package apoio;
 
 import com.toedter.calendar.JDateChooser;
+import entidade.Cliente;
+import entidade.UsuarioPermissaoTela;
 import janelas.TelaPrincipal;
-import java.awt.Component;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.text.DefaultFormatterFactory;
-import javax.swing.text.MaskFormatter;
+import org.hibernate.Session;
+import org.hibernate.jdbc.Work;
 
 /**
  *
@@ -143,7 +148,7 @@ public class Validacao {
 //        return "ok";
 //    }
 
-public static void setaPermissoes (String sClasse,JPanel panel) {
+    public static void setaPermissoes (String sClasse,JPanel panel) {
        for(int i=0;i<panel.getComponentCount();i++)
         {
             if(panel.getComponent(i) instanceof JButton)
@@ -155,6 +160,48 @@ public static void setaPermissoes (String sClasse,JPanel panel) {
                         
             }
         }
-}
+    }
+    
+    public static ArrayList populaPermissoes() {
+		ArrayList<UsuarioPermissaoTela> permissao = new ArrayList<UsuarioPermissaoTela>();
+		try {
+                    Session sessao = HibernateUtil.getSessionFactory().openSession();
+                    sessao.beginTransaction();
+
+                    sessao.doWork(new Work() {
+                        public void execute(Connection connection) throws SQLException {
+                            String sSql = "SELECT pt.id_usuario,pt.tela,pt.permite_acesso permite_acesso_tela,pa.acao,pa.permite_acesso permite_acesso_acao FROM usuario_permissao_tela pt	INNER JOIN usuario_permissao_tela_acoes pa on pt.id = pa.id_usuario_permissao_tela WHERE pt.id_usuario = 1";
+                            CallableStatement call = connection.prepareCall(sSql);
+                            ResultSet rs = call.executeQuery();
+                            while (rs.next()) {
+                                    System.out.println(rs.getString("tela"));
+                            }
+                        }
+                    });
+
+                    sessao.getTransaction().commit();
+	
+          /*          String sql = "select * from cliente";
+			PreparedStatement stmt = conexao.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Cliente pessoa1 = new Cliente();
+				pessoa1.setNome(rs.getString("nome"));
+				pessoa1.setCpf(rs.getString("cpf"));
+				pessoa1.setEndereco(rs.getString("endereco"));
+				pessoa1.setNumero(rs.getString("numero"));
+				pessoa1.setBairro(rs.getString("bairro"));
+				pessoa1.setTelefone(rs.getString("telefone"));
+				pessoa1.setEmail(rs.getString("email"));
+				pessoas.add(pessoa1);
+			}
+			rs.close();
+			stmt.close();
+			return pessoas;*/
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+    }
    
 }

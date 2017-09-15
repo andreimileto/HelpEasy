@@ -6,6 +6,7 @@
 package janelas;
 
 import apoio.LogHeasy;
+import apoio.Validacao;
 import entidade.Usuario;
 
 /**
@@ -32,6 +33,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         lblUsuario.setText(usuario.getLogin());
         userH = usuario;
+        Validacao.populaPermissoes();
         
     }
 

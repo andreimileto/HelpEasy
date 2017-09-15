@@ -33,8 +33,6 @@ public class ConexaoBD {
             if (dbuser.length() != 0) // conexão COM usuário e senha
             {
                 conexao = DriverManager.getConnection(dburl, dbuser, dbsenha);
-//                CallableStatement call = conexao.prepareCall("{ call fnGravaUsuarioSessao(2,'Leandro') }");
-//                call.execute();
             } else // conexão SEM usuário e senha
             {
                 conexao = DriverManager.getConnection(dburl);

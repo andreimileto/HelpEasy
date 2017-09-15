@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 15/09/2017 20:09:59 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="entidade.Auditoria" table="auditoria" schema="public" optimistic-lock="version">
+    <class name="entidade.UsuarioPermissao" table="usuario_permissao" schema="public" optimistic-lock="version">
         <id name="id" type="long">
             <column name="id" />
             <generator class="identity" />
@@ -14,17 +14,17 @@
         <property name="tabela" type="string">
             <column name="tabela" length="100" not-null="true" />
         </property>
-        <property name="dataHora" type="timestamp">
-            <column name="data_hora" length="29" />
+        <property name="permiteIncluir" type="char">
+            <column name="permite_incluir" length="1" not-null="true" />
         </property>
-        <property name="tipo" type="java.lang.Character">
-            <column name="tipo" length="1" />
+        <property name="permiteAlterar" type="char">
+            <column name="permite_alterar" length="1" not-null="true" />
         </property>
-        <property name="ordem" type="string">
-            <column name="ordem" />
+        <property name="permiteExcluir" type="char">
+            <column name="permite_excluir" length="1" not-null="true" />
         </property>
-        <property name="campos" type="string">
-            <column name="campos" />
+        <property name="permiteConsultar" type="char">
+            <column name="permite_consultar" length="1" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

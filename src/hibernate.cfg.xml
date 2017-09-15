@@ -48,18 +48,21 @@ Contributor(s):
     <property name="hibernate.connection.password">postgres</property>
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
-    <mapping resource="entidade/Motivo.hbm.xml"/>
-    <mapping resource="entidade/Projeto.hbm.xml"/>
-    <mapping resource="entidade/MovimentoTarefa.hbm.xml"/>
-    <mapping resource="entidade/Fase.hbm.xml"/>
-    <mapping resource="entidade/Prioridade.hbm.xml"/>
-    <mapping resource="entidade/Cidade.hbm.xml"/>
-    <mapping resource="entidade/Cliente.hbm.xml"/>
-    <mapping resource="entidade/Versao.hbm.xml"/>
-    <mapping resource="entidade/Modulo.hbm.xml"/>
-    <mapping resource="entidade/Usuario.hbm.xml"/>
     <mapping resource="entidade/TarefaUsuario.hbm.xml"/>
-    <mapping resource="entidade/Auditoria.hbm.xml"/>
+    <mapping resource="entidade/MovimentoTarefa.hbm.xml"/>
+    <mapping resource="entidade/Cidade.hbm.xml"/>
+    <mapping resource="entidade/Modulo.hbm.xml"/>
+    <mapping resource="entidade/Projeto.hbm.xml"/>
+    <mapping resource="entidade/Versao.hbm.xml"/>
     <mapping resource="entidade/Tarefa.hbm.xml"/>
+    <mapping resource="entidade/Auditoria.hbm.xml"/>
+    <mapping resource="entidade/UsuarioPermissaoTela.hbm.xml"/>
+    <mapping resource="entidade/UsuarioPermissaoTelaAcoes.hbm.xml"/>
+    <mapping resource="entidade/Usuario.hbm.xml"/>
+    <mapping resource="entidade/Cliente.hbm.xml"/>
+    <mapping resource="entidade/Motivo.hbm.xml"/>
+    <mapping resource="entidade/Prioridade.hbm.xml"/>
+    <mapping resource="entidade/UsuarioPermissao.hbm.xml"/>
+    <mapping resource="entidade/Fase.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
