@@ -6,7 +6,7 @@
     <class name="entidade.Auditoria" table="auditoria" schema="public" optimistic-lock="version">
         <id name="id" type="long">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="idUsuario" type="int">
             <column name="id_usuario" not-null="true" />
