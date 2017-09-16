@@ -171,6 +171,7 @@ public class Senha extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
+
         login();
 
     }//GEN-LAST:event_btLoginActionPerformed

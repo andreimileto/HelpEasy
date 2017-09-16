@@ -155,9 +155,9 @@ public class Validacao {
             {
                 System.out.println(panel.getComponent(i).getName());
                 System.out.println(TelaPrincipal.userH.getId());
-                if (panel.getComponent(i).getName().equals("btnSalvar"))
+                if (panel.getComponent(i).getName().equals("btnSalvar")){
                         panel.getComponent(i).setEnabled(false);
-                        
+                }
             }
         }
     }
@@ -170,7 +170,11 @@ public class Validacao {
 
                     sessao.doWork(new Work() {
                         public void execute(Connection connection) throws SQLException {
-                            String sSql = "SELECT pt.id_usuario,pt.tela,pt.permite_acesso permite_acesso_tela,pa.acao,pa.permite_acesso permite_acesso_acao FROM usuario_permissao_tela pt	INNER JOIN usuario_permissao_tela_acoes pa on pt.id = pa.id_usuario_permissao_tela WHERE pt.id_usuario = 1";
+                            String sSql = "SELECT pt.id_usuario,pt.tela,pt.permite_acesso permite_acesso_tela,pa.acao,pa.permite_acesso permite_acesso_acao "
+                                    + "FROM usuario_permissao_tela pt	"
+                                    + "INNER JOIN usuario_permissao_tela_acoes pa "
+                                    + "on pt.id = pa.id_usuario_permissao_tela "
+                                    + "WHERE pt.id_usuario = 1";
                             CallableStatement call = connection.prepareCall(sSql);
                             ResultSet rs = call.executeQuery();
                             while (rs.next()) {
