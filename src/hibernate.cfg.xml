@@ -62,7 +62,6 @@ Contributor(s):
     <mapping resource="entidade/Cliente.hbm.xml"/>
     <mapping resource="entidade/Motivo.hbm.xml"/>
     <mapping resource="entidade/Prioridade.hbm.xml"/>
-    <mapping resource="entidade/UsuarioPermissao.hbm.xml"/>
     <mapping resource="entidade/Fase.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

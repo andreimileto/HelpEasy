@@ -242,14 +242,18 @@ CREATE TABLE IF NOT EXISTS tarefa_usuario (
     ON UPDATE NO ACTION)
 ;
 
+DROP TABLE usuario_permissao_tela
+
 CREATE TABLE usuario_permissao_tela (
         id bigserial,
         id_usuario INT NOT NULL,
         tela VARCHAR(100) NOT NULL,
 	permite_acesso CHAR(1) NOT NULL,
-        PRIMARY KEY (id)
+        PRIMARY KEY (id),
+        CONSTRAINT fk_usuario_permissao_tela_id_usuario
+            FOREIGN KEY (id_usuario)
+            REFERENCES usuario (id)
 );
-
 
 INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroCliente','S');
 INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroCliente','S');
@@ -257,12 +261,17 @@ INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroFase','
 INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroFase','S');
 
 
+DROP TABLE usuario_permissao_tela_acoes
+
 CREATE TABLE usuario_permissao_tela_acoes (
         id bigserial,
-        id_usuario_permissao_tela INT NOT NULL,
+        id_tela INT NOT NULL,
         acao VARCHAR(100) NOT NULL,
 	permite_acesso CHAR(1) NOT NULL,
-        PRIMARY KEY (id)
+        PRIMARY KEY (id),
+                CONSTRAINT usuario_permissao_tela_id_tela
+            FOREIGN KEY (id_tela)
+            REFERENCES usuario_permissao_tela (id)
 );
 
 

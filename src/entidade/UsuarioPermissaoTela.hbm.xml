@@ -1,21 +1,27 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 15/09/2017 20:09:59 by Hibernate Tools 4.3.1 -->
+<!-- Generated 15/09/2017 21:15:41 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="entidade.UsuarioPermissaoTela" table="usuario_permissao_tela" schema="public" optimistic-lock="version">
         <id name="id" type="long">
             <column name="id" />
-            <generator class="identity" />
+            <generator class="assigned" />
         </id>
-        <property name="idUsuario" type="int">
+        <many-to-one name="usuario" class="entidade.Usuario" fetch="select">
             <column name="id_usuario" not-null="true" />
-        </property>
+        </many-to-one>
         <property name="tela" type="string">
             <column name="tela" length="100" not-null="true" />
         </property>
         <property name="permiteAcesso" type="char">
             <column name="permite_acesso" length="1" not-null="true" />
         </property>
+        <set name="usuarioPermissaoTelaAcoeses" table="usuario_permissao_tela_acoes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_tela" not-null="true" />
+            </key>
+            <one-to-many class="entidade.UsuarioPermissaoTelaAcoes" />
+        </set>
     </class>
 </hibernate-mapping>

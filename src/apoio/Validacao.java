@@ -27,6 +27,7 @@ public class Validacao {
 
     private static final int[] pesoCPF = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2};
     private static final int[] pesoCNPJ = {6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
+    private static String sRetorno = "";
 
     private static int calcularDigito(String str, int[] peso) {
         int soma = 0;
@@ -140,68 +141,50 @@ public class Validacao {
 
         return ok;
     }
-    
-//    public static String verificarNomeExistente(Object o,String nomeObjeto){
-//        if (nomeObjeto.equals("Cidade")) {
-//            
-//        }
-//        return "ok";
-//    }
 
-    public static void setaPermissoes (String sClasse,JPanel panel) {
-       for(int i=0;i<panel.getComponentCount();i++)
-        {
-            if(panel.getComponent(i) instanceof JButton)
-            {
-                System.out.println(panel.getComponent(i).getName());
-                System.out.println(TelaPrincipal.userH.getId());
-                if (panel.getComponent(i).getName().equals("btnSalvar"))
-                        panel.getComponent(i).setEnabled(false);
-                        
+    public static void setaPermissoes(String sClasse, JPanel panel) {
+        for (int i = 0; i < panel.getComponentCount(); i++) {
+            if (panel.getComponent(i) instanceof JButton) {
+                panel.getComponent(i).setEnabled(pegaPermissao(sClasse, panel.getComponent(i).getName()));
             }
         }
     }
-    
-    public static ArrayList populaPermissoes() {
-		ArrayList<UsuarioPermissaoTela> permissao = new ArrayList<UsuarioPermissaoTela>();
-		try {
-                    Session sessao = HibernateUtil.getSessionFactory().openSession();
-                    sessao.beginTransaction();
 
-                    sessao.doWork(new Work() {
-                        public void execute(Connection connection) throws SQLException {
-                            String sSql = "SELECT pt.id_usuario,pt.tela,pt.permite_acesso permite_acesso_tela,pa.acao,pa.permite_acesso permite_acesso_acao FROM usuario_permissao_tela pt	INNER JOIN usuario_permissao_tela_acoes pa on pt.id = pa.id_usuario_permissao_tela WHERE pt.id_usuario = 1";
-                            CallableStatement call = connection.prepareCall(sSql);
-                            ResultSet rs = call.executeQuery();
-                            while (rs.next()) {
-                                    System.out.println(rs.getString("tela"));
-                            }
+    public static boolean pegaPermissao(String sTela, String sAcao) {
+        try {
+
+            Session sessao = HibernateUtil.getSessionFactory().openSession();
+            sessao.beginTransaction();
+
+            sessao.doWork(new Work() {
+                public void execute(Connection connection) throws SQLException {
+                    String sSql = "SELECT "
+                            + " pt.id_usuario,pt.tela,pt.permite_acesso " 
+                            + " permite_acesso_tela,pa.acao,pa.permite_acesso permite_acesso_acao "
+                            + " FROM usuario_permissao_tela pt	"
+                            + "     INNER JOIN usuario_permissao_tela_acoes pa on "
+                            + "         pt.id = pa.id_tela "
+                            + " WHERE pt.id_usuario = " + TelaPrincipal.userH.getId();
+                    CallableStatement call = connection.prepareCall(sSql);
+                    ResultSet rs = call.executeQuery();
+                    while (rs.next()) {
+                        if (sTela.equals(rs.getString("tela")) && sAcao.equals(rs.getString("acao"))) {
+                            sRetorno = rs.getString("permite_acesso_acao");
                         }
-                    });
+                    }
+                }
+            });
 
-                    sessao.getTransaction().commit();
-	
-          /*          String sql = "select * from cliente";
-			PreparedStatement stmt = conexao.prepareStatement(sql);
-			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) {
-				Cliente pessoa1 = new Cliente();
-				pessoa1.setNome(rs.getString("nome"));
-				pessoa1.setCpf(rs.getString("cpf"));
-				pessoa1.setEndereco(rs.getString("endereco"));
-				pessoa1.setNumero(rs.getString("numero"));
-				pessoa1.setBairro(rs.getString("bairro"));
-				pessoa1.setTelefone(rs.getString("telefone"));
-				pessoa1.setEmail(rs.getString("email"));
-				pessoas.add(pessoa1);
-			}
-			rs.close();
-			stmt.close();
-			return pessoas;*/
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return null;
+            sessao.getTransaction().commit();
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        if (sRetorno.equals("S")) {
+            return true;
+        } else {
+            return false;
+        }
     }
-   
+
 }

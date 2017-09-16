@@ -1,5 +1,5 @@
 package entidade;
-// Generated 15/09/2017 20:09:58 by Hibernate Tools 4.3.1
+// Generated 15/09/2017 21:15:41 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -16,6 +16,7 @@ public class Usuario  implements java.io.Serializable {
      private String login;
      private String senha;
      private char situacao;
+     private Set usuarioPermissaoTelas = new HashSet(0);
      private Set tarefaUsuarios = new HashSet(0);
      private Set tarefasForIdUsuarioResponsavel = new HashSet(0);
      private Set tarefasForIdUsuarioAutor = new HashSet(0);
@@ -31,12 +32,13 @@ public class Usuario  implements java.io.Serializable {
         this.senha = senha;
         this.situacao = situacao;
     }
-    public Usuario(int id, String nome, String login, String senha, char situacao, Set tarefaUsuarios, Set tarefasForIdUsuarioResponsavel, Set tarefasForIdUsuarioAutor) {
+    public Usuario(int id, String nome, String login, String senha, char situacao, Set usuarioPermissaoTelas, Set tarefaUsuarios, Set tarefasForIdUsuarioResponsavel, Set tarefasForIdUsuarioAutor) {
        this.id = id;
        this.nome = nome;
        this.login = login;
        this.senha = senha;
        this.situacao = situacao;
+       this.usuarioPermissaoTelas = usuarioPermissaoTelas;
        this.tarefaUsuarios = tarefaUsuarios;
        this.tarefasForIdUsuarioResponsavel = tarefasForIdUsuarioResponsavel;
        this.tarefasForIdUsuarioAutor = tarefasForIdUsuarioAutor;
@@ -76,6 +78,13 @@ public class Usuario  implements java.io.Serializable {
     
     public void setSituacao(char situacao) {
         this.situacao = situacao;
+    }
+    public Set getUsuarioPermissaoTelas() {
+        return this.usuarioPermissaoTelas;
+    }
+    
+    public void setUsuarioPermissaoTelas(Set usuarioPermissaoTelas) {
+        this.usuarioPermissaoTelas = usuarioPermissaoTelas;
     }
     public Set getTarefaUsuarios() {
         return this.tarefaUsuarios;

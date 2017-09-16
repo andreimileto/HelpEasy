@@ -1,5 +1,5 @@
 package entidade;
-// Generated 15/09/2017 20:09:58 by Hibernate Tools 4.3.1
+// Generated 15/09/2017 21:15:41 by Hibernate Tools 4.3.1
 
 
 
@@ -10,16 +10,16 @@ public class UsuarioPermissaoTelaAcoes  implements java.io.Serializable {
 
 
      private long id;
-     private int idUsuarioPermissaoTela;
+     private UsuarioPermissaoTela usuarioPermissaoTela;
      private String acao;
      private char permiteAcesso;
 
     public UsuarioPermissaoTelaAcoes() {
     }
 
-    public UsuarioPermissaoTelaAcoes(long id, int idUsuarioPermissaoTela, String acao, char permiteAcesso) {
+    public UsuarioPermissaoTelaAcoes(long id, UsuarioPermissaoTela usuarioPermissaoTela, String acao, char permiteAcesso) {
        this.id = id;
-       this.idUsuarioPermissaoTela = idUsuarioPermissaoTela;
+       this.usuarioPermissaoTela = usuarioPermissaoTela;
        this.acao = acao;
        this.permiteAcesso = permiteAcesso;
     }
@@ -31,12 +31,12 @@ public class UsuarioPermissaoTelaAcoes  implements java.io.Serializable {
     public void setId(long id) {
         this.id = id;
     }
-    public int getIdUsuarioPermissaoTela() {
-        return this.idUsuarioPermissaoTela;
+    public UsuarioPermissaoTela getUsuarioPermissaoTela() {
+        return this.usuarioPermissaoTela;
     }
     
-    public void setIdUsuarioPermissaoTela(int idUsuarioPermissaoTela) {
-        this.idUsuarioPermissaoTela = idUsuarioPermissaoTela;
+    public void setUsuarioPermissaoTela(UsuarioPermissaoTela usuarioPermissaoTela) {
+        this.usuarioPermissaoTela = usuarioPermissaoTela;
     }
     public String getAcao() {
         return this.acao;

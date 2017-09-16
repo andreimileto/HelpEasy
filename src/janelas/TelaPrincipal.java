@@ -33,7 +33,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         lblUsuario.setText(usuario.getLogin());
         userH = usuario;
-        Validacao.populaPermissoes();
         
     }
 
