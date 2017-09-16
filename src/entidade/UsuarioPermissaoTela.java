@@ -19,6 +19,9 @@ public class UsuarioPermissaoTela  implements java.io.Serializable {
 
     public UsuarioPermissaoTela() {
     }
+    public UsuarioPermissaoTela(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
 	
     public UsuarioPermissaoTela(long id, Usuario usuario, String tela, char permiteAcesso) {

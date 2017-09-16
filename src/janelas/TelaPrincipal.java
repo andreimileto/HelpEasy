@@ -41,7 +41,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ArrayList<UsuarioPermissaoTelaAcoes> permissoes = new ArrayList<>();
 
         permissoes = perissoesDAO.listarPermissoes(usuario);
-        UsuarioPermissaoTelaAcoes usuarioPermissaoTelaAcoes = new UsuarioPermissaoTelaAcoes();
+     //   UsuarioPermissaoTelaAcoes usuarioPermissaoTelaAcoes = new UsuarioPermissaoTelaAcoes();
         for (int i = 0; i < permissoes.size(); i++) {
             if (permissoes.get(i).getPermiteAcesso()=='S') {
                 System.out.println(permissoes.get(i).getUsuarioPermissaoTela().getTela());
@@ -50,7 +50,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
         // UsuarioPermissaoTelaAcoes usuarioPermissaoTelaAcoes = new UsuarioPermissaoTelaAcoes();
 
-        usuarioPermissaoTelaAcoes.getUsuarioPermissaoTela().getPermiteAcesso();
+       // usuarioPermissaoTelaAcoes.getUsuarioPermissaoTela().getPermiteAcesso();
 
       //  System.out.println("usuario" + usuario.get);
 

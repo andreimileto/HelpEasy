@@ -53,6 +53,10 @@ public class UsuarioPermissaoTelaAcoes  implements java.io.Serializable {
         this.permiteAcesso = permiteAcesso;
     }
 
+    public Object getUsuarioPermissaoTela(Usuario usuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 
 

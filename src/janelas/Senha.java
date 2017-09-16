@@ -218,6 +218,7 @@ public class Senha extends javax.swing.JFrame {
             tfUsuario.setText("");
             pfSenha.setText("");
             tfUsuario.requestFocus();
+            System.out.println(e+" Erro");
         }
     }
     private void tfUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsuarioActionPerformed

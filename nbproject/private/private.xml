@@ -5,14 +5,19 @@
         <group>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroCidade.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaFase.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/Senha.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/Validacao.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/Script.sql</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/UsuarioPermissaoTela.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroFase.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/TelaPrincipal.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroCliente.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleCidade.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/UsuarioDAO.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/PermissoesDAO.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/Senha.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/Script.sql</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/TelaPrincipal.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Usuario.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroCliente.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleUsuario.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/UsuarioPermissaoTelaAcoes.java</file>
         </group>
     </open-files>
 </project-private>
