@@ -141,6 +141,7 @@ public class Validacao {
 
         return ok;
     }
+<<<<<<< HEAD
 
     public static void setaPermissoes(String sClasse, JPanel panel) {
         for (int i = 0; i < panel.getComponentCount(); i++) {
@@ -170,6 +171,48 @@ public class Validacao {
                     while (rs.next()) {
                         if (sTela.equals(rs.getString("tela")) && sAcao.equals(rs.getString("acao"))) {
                             sRetorno = rs.getString("permite_acesso_acao");
+=======
+    
+//    public static String verificarNomeExistente(Object o,String nomeObjeto){
+//        if (nomeObjeto.equals("Cidade")) {
+//            
+//        }
+//        return "ok";
+//    }
+
+    public static void setaPermissoes (String sClasse,JPanel panel) {
+       for(int i=0;i<panel.getComponentCount();i++)
+        {
+            if(panel.getComponent(i) instanceof JButton)
+            {
+                System.out.println(panel.getComponent(i).getName());
+                System.out.println(TelaPrincipal.userH.getId());
+                if (panel.getComponent(i).getName().equals("btnSalvar")){
+                        panel.getComponent(i).setEnabled(false);
+                }
+            }
+        }
+    }
+    
+    public static ArrayList populaPermissoes() {
+		ArrayList<UsuarioPermissaoTela> permissao = new ArrayList<UsuarioPermissaoTela>();
+		try {
+                    Session sessao = HibernateUtil.getSessionFactory().openSession();
+                    sessao.beginTransaction();
+
+                    sessao.doWork(new Work() {
+                        public void execute(Connection connection) throws SQLException {
+                            String sSql = "SELECT pt.id_usuario,pt.tela,pt.permite_acesso permite_acesso_tela,pa.acao,pa.permite_acesso permite_acesso_acao "
+                                    + "FROM usuario_permissao_tela pt	"
+                                    + "INNER JOIN usuario_permissao_tela_acoes pa "
+                                    + "on pt.id = pa.id_usuario_permissao_tela "
+                                    + "WHERE pt.id_usuario = 1";
+                            CallableStatement call = connection.prepareCall(sSql);
+                            ResultSet rs = call.executeQuery();
+                            while (rs.next()) {
+                                    System.out.println(rs.getString("tela"));
+                            }
+>>>>>>> origin/master
                         }
                     }
                 }

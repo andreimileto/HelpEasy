@@ -5,9 +5,11 @@
  */
 package janelas;
 
+import DAO.UsuarioDAO;
 import apoio.LogHeasy;
 import apoio.Validacao;
 import entidade.Usuario;
+import java.util.ArrayList;
 
 /**
  *
@@ -33,6 +35,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         lblUsuario.setText(usuario.getLogin());
         userH = usuario;
+        
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        
+        usuarios = usuarioDAO.listarPermissoes(usuario);
+//        for (int i = 0; i < usuarios.size(); i++) {
+//            
+//        }
         
     }
 

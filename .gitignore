@@ -47,3 +47,6 @@ Temporary Items
 .apdisk
 /build/
 HelpEasy.log
+src/DAO/UsuarioDAO.java
+src/janelas/Senha.java
+src/janelas/TelaPrincipal.java
