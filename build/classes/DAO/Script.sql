@@ -275,22 +275,22 @@ CREATE TABLE usuario_permissao_tela_acoes (
 );
 
 
-INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnSalvar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnLocalizar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnExcluir','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnSair','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnSalvar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnLocalizar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnExcluir','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnSair','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnSalvar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnLocalizar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnExcluir','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnSair','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnSalvar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnLocalizar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnExcluir','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnSair','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnExcluir','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnSair','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnExcluir','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnSair','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnExcluir','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnSair','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnExcluir','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnSair','S');
 
 
 

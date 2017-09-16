@@ -5,10 +5,12 @@
  */
 package janelas;
 
+import DAO.PermissoesDAO;
 import DAO.UsuarioDAO;
 import apoio.LogHeasy;
 import apoio.Validacao;
 import entidade.Usuario;
+import entidade.UsuarioPermissaoTelaAcoes;
 import java.util.ArrayList;
 
 /**
@@ -22,28 +24,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
 //    Usuario usuario;
     public static Usuario userH = new Usuario();
-    
 
     public TelaPrincipal() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-        
+
     }
-    
+
     public TelaPrincipal(Usuario usuario) {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         lblUsuario.setText(usuario.getLogin());
         userH = usuario;
-        
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        ArrayList<Usuario> usuarios = new ArrayList<>();
-        
-        usuarios = usuarioDAO.listarPermissoes(usuario);
-//        for (int i = 0; i < usuarios.size(); i++) {
-//            
-//        }
-        
+
+        PermissoesDAO perissoesDAO = new PermissoesDAO();
+        ArrayList<UsuarioPermissaoTelaAcoes> permissoes = new ArrayList<>();
+
+        permissoes = perissoesDAO.listarPermissoes(usuario);
+        UsuarioPermissaoTelaAcoes usuarioPermissaoTelaAcoes = new UsuarioPermissaoTelaAcoes();
+        for (int i = 0; i < permissoes.size(); i++) {
+            if (permissoes.get(i).getPermiteAcesso()=='S') {
+                System.out.println(permissoes.get(i).getUsuarioPermissaoTela().getTela());
+            }
+            
+        }
+        // UsuarioPermissaoTelaAcoes usuarioPermissaoTelaAcoes = new UsuarioPermissaoTelaAcoes();
+
+        usuarioPermissaoTelaAcoes.getUsuarioPermissaoTela().getPermiteAcesso();
+
+      //  System.out.println("usuario" + usuario.get);
+
     }
 
     /**
@@ -274,7 +284,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void ImnCadastroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnCadastroUsuarioActionPerformed
 
-        
+
     }//GEN-LAST:event_ImnCadastroUsuarioActionPerformed
 
     private void imnCadastroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imnCadastroUsuarioActionPerformed
@@ -284,7 +294,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_imnCadastroUsuarioActionPerformed
 
     private void ImnCadastroPrioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnCadastroPrioridadeActionPerformed
-        JdgCadastroPrioridade cadastroPrioridade = new JdgCadastroPrioridade(this,true);
+        JdgCadastroPrioridade cadastroPrioridade = new JdgCadastroPrioridade(this, true);
         cadastroPrioridade.setVisible(true);
     }//GEN-LAST:event_ImnCadastroPrioridadeActionPerformed
 
@@ -297,7 +307,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     static final LogHeasy logH = new LogHeasy();
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
