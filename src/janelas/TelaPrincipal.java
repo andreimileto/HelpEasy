@@ -5,13 +5,8 @@
  */
 package janelas;
 
-import DAO.PermissoesDAO;
-import DAO.UsuarioDAO;
 import apoio.LogHeasy;
-import apoio.Validacao;
 import entidade.Usuario;
-import entidade.UsuarioPermissaoTelaAcoes;
-import java.util.ArrayList;
 
 /**
  *
@@ -36,24 +31,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         lblUsuario.setText(usuario.getLogin());
         userH = usuario;
-
-        PermissoesDAO perissoesDAO = new PermissoesDAO();
-        ArrayList<UsuarioPermissaoTelaAcoes> permissoes = new ArrayList<>();
-
-        permissoes = perissoesDAO.listarPermissoes(usuario);
-     //   UsuarioPermissaoTelaAcoes usuarioPermissaoTelaAcoes = new UsuarioPermissaoTelaAcoes();
-        for (int i = 0; i < permissoes.size(); i++) {
-            if (permissoes.get(i).getPermiteAcesso()=='S') {
-                System.out.println(permissoes.get(i).getUsuarioPermissaoTela().getTela());
-            }
-            
-        }
-        // UsuarioPermissaoTelaAcoes usuarioPermissaoTelaAcoes = new UsuarioPermissaoTelaAcoes();
-
-       // usuarioPermissaoTelaAcoes.getUsuarioPermissaoTela().getPermiteAcesso();
-
-      //  System.out.println("usuario" + usuario.get);
-
     }
 
     /**

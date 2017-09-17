@@ -4,9 +4,11 @@
  */
 package apoio;
 
+import DAO.PermissoesDAO;
 import com.toedter.calendar.JDateChooser;
 import entidade.Cliente;
 import entidade.UsuarioPermissaoTela;
+import entidade.UsuarioPermissaoTelaAcoes;
 import janelas.TelaPrincipal;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -152,34 +154,21 @@ public class Validacao {
 
     public static boolean pegaPermissao(String sTela, String sAcao) {
         try {
+            PermissoesDAO perissoesDAO = new PermissoesDAO();
+            ArrayList<UsuarioPermissaoTelaAcoes> permissoes = new ArrayList<>();
 
-            Session sessao = HibernateUtil.getSessionFactory().openSession();
-            sessao.beginTransaction();
+            permissoes = perissoesDAO.listarPermissoes(TelaPrincipal.userH);
+            for (int i = 0; i < permissoes.size(); i++) {
+                System.out.println("erro = " + sTela);
+                System.out.println("erro 2 = " + sAcao);
+                //System.out.println("erro 3 = " + permissoes.get(i).getPermiteAcesso());
+                if (sTela.equals(permissoes.get(i).getUsuarioPermissaoTela().getTela()) && sAcao.equals(permissoes.get(i).getAcao())) {
+                    sRetorno = "" + permissoes.get(i).getPermiteAcesso();
 
-            sessao.doWork(new Work() {
-                public void execute(Connection connection) throws SQLException {
-                    String sSql = "SELECT "
-                            + " pt.id_usuario,pt.tela,pt.permite_acesso " 
-                            + " permite_acesso_tela,pa.acao,pa.permite_acesso permite_acesso_acao "
-                            + " FROM usuario_permissao_tela pt	"
-                            + "     INNER JOIN usuario_permissao_tela_acoes pa on "
-                            + "         pt.id = pa.id_tela "
-                            + " WHERE pt.id_usuario = " + TelaPrincipal.userH.getId();
-                    CallableStatement call = connection.prepareCall(sSql);
-                    ResultSet rs = call.executeQuery();
-                    while (rs.next()) {
-                        if (sTela.equals(rs.getString("tela")) && sAcao.equals(rs.getString("acao"))) {
-                            sRetorno = rs.getString("permite_acesso_acao");
-
-                        }
-                    }
                 }
-            });
-
-            sessao.getTransaction().commit();
-
+            }
         } catch (Exception e) {
-            // TODO: handle exception
+            System.out.println("ver erro");
         }
         if (sRetorno.equals("S")) {
             return true;
@@ -187,5 +176,4 @@ public class Validacao {
             return false;
         }
     }
-
 }

@@ -6,14 +6,9 @@
 package janelas;
 
 import controle.ControleFase;
-import controle.ControleMotivo;
 import entidade.Fase;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -26,11 +21,7 @@ public class JdgListaFase extends javax.swing.JDialog {
     public JdgListaFase(java.awt.Frame parent, boolean modal, Fase fase) {
         super(parent, modal);
         initComponents();
-
         this.fase = fase;
-//        verificarTipoChamada();
-//        popularComboBox();
-
         listaMotivo();
     }
 
@@ -50,27 +41,9 @@ public class JdgListaFase extends javax.swing.JDialog {
             
 
         } catch (Exception ex) {
-//            Logger.getLogger(JdgListaFormaPagamento.class.getName()).log(Level.SEVERE, null, ex);
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),ex.getMessage());
         }
     }
-
-//    private void popularComboBox() {
-//
-//        cbxStatus.addItem("Ativos");
-//        cbxStatus.addItem("Inativos");
-//        
-//    }
-
-//    private void verificarTipoChamada() {
-//        if (cidade.getAtivo() == 'T') {
-//            cbxStatus.setEnabled(false);
-//            btnConfirmar.setText("Selecionar");
-//            btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png")));
-//        } else {
-//            cbxStatus.setEditable(true);
-//        }
-//    }
-
     public DefaultTableModel obterDadosParaJTable() throws Exception {
         DefaultTableModel dtm = new DefaultTableModel() {
             public boolean isCellEditable(int row, int column) {
@@ -78,23 +51,17 @@ public class JdgListaFase extends javax.swing.JDialog {
             }
         };
 
-//        CidadeDAO cidadeDAO = new CidadeDAO();
-//        ArrayList<Cidade> cidades = cidadeDAO.listar("");
         fase.setDescricao(tfdDescricao.getText());
         ControleFase controleFase = new ControleFase();
-       ArrayList<Fase> fases = controleFase.listar(fase);
+        ArrayList<Fase> fases = controleFase.listar(fase);
         dtm.addColumn("ID");
         dtm.addColumn("DESCRIÇÃO");
-        
 
         for (int i = 0; i < fases.size(); i++) {
-            //popular tabela
-            
-            
             dtm.addRow(new String[]{String.valueOf(fases.get(i).getId()),
                 fases.get(i).getDescricao()});
         }
-//retorna o modelo
+
         return dtm;
     }
 
@@ -364,6 +331,7 @@ public class JdgListaFase extends javax.swing.JDialog {
         ControleFase controleFase = new ControleFase();
         controleFase.listar(fase);
         } catch (Exception e) {
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),e.getMessage());
         }
         
         
@@ -380,20 +348,9 @@ public class JdgListaFase extends javax.swing.JDialog {
 
     //retorna item selecionado na taleba
     private void selecionado() {
-
-        //pega a linha selecionada
         int row = tblCidades.getSelectedRow();
-
-        //seta o ID do objeto da linha selecionada
-//        cidade = new Cidade();
         this.fase.setId(Integer.parseInt(tblCidades.getValueAt(row, 0).toString()));
         this.fase.setDescricao(tblCidades.getValueAt(row, 1).toString());
-//        if (tblCidades.getValueAt(row, 2).toString().equals("Ativo")) {
-//            this.cidade.setAtivo('T');
-//        } else {
-//            this.cidade.setAtivo('F');
-//        }
-
         dispose();
     }
 
@@ -422,22 +379,7 @@ public class JdgListaFase extends javax.swing.JDialog {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(JdgListaFase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -5,16 +5,11 @@
  */
 package janelas;
 
-import apoio.Formatacao;
+import apoio.Validacao;
 import controle.ControleCidade;
 import controle.ControleUsuario;
-import entidade.Cidade;
 import entidade.Usuario;
 import javax.swing.JOptionPane;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -30,6 +25,7 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
     public JdgCadastroUsuario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
 
     }
 
@@ -213,20 +209,20 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
                     if (mensagem.equalsIgnoreCase("ok")) {
 
                         JOptionPane.showMessageDialog(rootPane, "Usuário " + usuario.getLogin() + " excluído com sucesso");
-                        logH.gravaInfo(this.getClass().getName(), "Usuário " + usuario.getLogin() + " excluído com sucesso");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Usuário " + usuario.getLogin() + " excluído com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir usuário.");
-                        logH.gravaInfo(this.getClass().getName(), "Erro ao excluir usuário.");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir usuário.");
                     }
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir usuário.");
-                    logH.gravaInfo(this.getClass().getName(), "Erro ao excluir usuário.");
+                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir usuário.");
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir usuário\nNenhum usuário selecionado.");
-            logH.gravaInfo(this.getClass().getName(), "Erro ao excluir usuário\nNenhum usuário selecionado.");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir usuário\nNenhum usuário selecionado.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -237,7 +233,7 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
 
         if (!tfaSenha.getText().equals(tfaRepetirSenha.getText())) {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar usuário:\nsenha e repetir senha não conferem.");
-            logH.gravaInfo(this.getClass().getName(), "Erro ao salvar usuário:\nsenha e repetir senha não conferem.");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao salvar usuário:\nsenha e repetir senha não conferem.");
         } else {
             usuario.setSenha(tfaSenha.getText());
             try {
@@ -255,7 +251,7 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
                 if (mensagem.equals("ok")) {
                     limparCampos();
                     JOptionPane.showMessageDialog(rootPane, "Usuário cadastrado com sucesso!");
-                    logH.gravaInfo(this.getClass().getName(), "Usuário cadastrado com sucesso!");
+                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Usuário cadastrado com sucesso!");
                 } else {
                     if (mensagem.contains("Já existe um usuário cadastrado com esse login")) {
                         tfdLogin.requestFocus();
@@ -265,21 +261,12 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar usuário");
-                logH.gravaErro(this.getClass().getName(), "Erro ao salvar usuário" + e.getMessage());
+                janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(), "Erro ao salvar usuário" + e.getMessage());
             }
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-//        cidade = new Cidade();
-//        JdgListaCidade listaCidade = new JdgListaCidade(null, true, cidade);
-//        listaCidade.setVisible(true);
-//
-//        if (cidade.getId() > 0) {
-//            tfdCodigo.setText(String.valueOf(cidade.getId()));
-//            tfdNome.setText(cidade.getDescricao());
-//        }
-
         usuario = new Usuario();
         JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, usuario);
         listaUsuario.setVisible(true);

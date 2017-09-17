@@ -5,16 +5,10 @@
  */
 package janelas;
 
-import DAO.FaseDAO;
-import DAO.ProjetoDAO;
+import apoio.Validacao;
 import controle.ControleProjeto;
-import entidade.Motivo;
 import entidade.Projeto;
 import javax.swing.JOptionPane;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -30,6 +24,7 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
     public JdgCadastroPrioridade(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
     }
 
     /**
@@ -187,11 +182,11 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar prioridade");
-                logH.gravaInfo(this.getClass().getName(), "Erro ao salvar prioridade");
+                janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao salvar prioridade");
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar prioridade \nQuantidade de caracteres no nome da prioridade precisa ser maior que 2");
-            logH.gravaInfo(this.getClass().getName(), "Erro ao salvar prioridade \nQuantidade de caracteres no nome da prioridade precisa ser maior que 2");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao salvar prioridade \nQuantidade de caracteres no nome da prioridade precisa ser maior que 2");
 
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -210,21 +205,21 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
 
                     if (mensagem.equalsIgnoreCase("ok")) {
                         JOptionPane.showMessageDialog(rootPane, "prioridade " + projeto.getDescricao() + " excluído com sucesso");
-                        logH.gravaInfo(this.getClass().getName(), "projeto " + projeto.getDescricao() + " excluído com sucesso");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "projeto " + projeto.getDescricao() + " excluído com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir prioridade. ");
-                        logH.gravaInfo(this.getClass().getName(), "Erro ao excluir prioridade. ");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir prioridade. ");
                     }
 
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir prioridade");
-                    logH.gravaInfo(this.getClass().getName(), "Erro ao excluir prioridade");
+                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir prioridade");
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir prioridade \nNenhuma prioridade selecionada.");
-            logH.gravaInfo(this.getClass().getName(), "Erro ao excluir prioridade \nNenhuma prioridade selecionada.");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir prioridade \nNenhuma prioridade selecionada.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 

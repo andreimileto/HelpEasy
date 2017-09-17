@@ -5,15 +5,10 @@
  */
 package janelas;
 
-import controle.ControleProjeto;
 import controle.ControleUsuario;
 import entidade.Usuario;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -28,10 +23,7 @@ public class JdgListaUsuario extends javax.swing.JDialog {
     public JdgListaUsuario(java.awt.Frame parent, boolean modal, Usuario usuario) {
         super(parent, modal);
         initComponents();
-
         this.usuario = usuario;
-
-
         listarUsuarios();
     }
 
@@ -51,7 +43,7 @@ public class JdgListaUsuario extends javax.swing.JDialog {
             tblUsuarios.getColumnModel().getColumn(2).setPreferredWidth(0);
 
         } catch (Exception ex) {
-//            Logger.getLogger(JdgListaFormaPagamento.class.getName()).log(Level.SEVERE, null, ex);
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),ex.getMessage());
         }
     }
 
@@ -64,8 +56,6 @@ public class JdgListaUsuario extends javax.swing.JDialog {
             }
         };
 
-//        CidadeDAO cidadeDAO = new CidadeDAO();
-//        ArrayList<Cidade> cidades = cidadeDAO.listar("");
         usuario.setNome(tfdDescricao.getText());
         usuario.setLogin(tfdDescricao.getText());
         ControleUsuario controleUsuario = new ControleUsuario();
@@ -73,16 +63,12 @@ public class JdgListaUsuario extends javax.swing.JDialog {
         dtm.addColumn("ID");
         dtm.addColumn("NOME");
         dtm.addColumn("LOGIN");
-        
 
         for (int i = 0; i < usuarios.size(); i++) {
-            //popular tabela
-            
             
             dtm.addRow(new String[]{String.valueOf(usuarios.get(i).getId()),
                 usuarios.get(i).getNome(),usuarios.get(i).getLogin()});
         }
-//retorna o modelo
         return dtm;
     }
 
@@ -347,16 +333,14 @@ public class JdgListaUsuario extends javax.swing.JDialog {
     }//GEN-LAST:event_tblUsuariosMouseEntered
     private void listar() {
         try {
-        usuario.setNome(tfdDescricao.getText().toUpperCase());
-        usuario.setLogin(tfdDescricao.getText().toUpperCase());
-//        System.out.println("descricao == " + usuario.getDescricao()); 
-        ControleUsuario controleUsuario = new ControleUsuario();
-        controleUsuario.listar(usuario);
+            usuario.setNome(tfdDescricao.getText().toUpperCase());
+            usuario.setLogin(tfdDescricao.getText().toUpperCase()); 
+            ControleUsuario controleUsuario = new ControleUsuario();
+            controleUsuario.listar(usuario);
         } catch (Exception e) {
-            System.out.println("erro ao listar usuarios"+e);
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),e.getMessage());
         }
-        
-        
+     
         listarUsuarios();
     }
     private void tfdDescricaoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdDescricaoKeyPressed
@@ -371,23 +355,12 @@ public class JdgListaUsuario extends javax.swing.JDialog {
     //retorna item selecionado na taleba
     private void selecionado() {
 
-        //pega a linha selecionada
         int row = tblUsuarios.getSelectedRow();
-
-        //seta o ID do objeto da linha selecionada
-//        cidade = new Cidade();
         this.usuario.setId(Integer.parseInt(tblUsuarios.getValueAt(row, 0).toString()));
         this.usuario.setNome(tblUsuarios.getValueAt(row, 1).toString());
         this.usuario.setLogin(tblUsuarios.getValueAt(row, 2).toString());
-       usuarios = controleUsuario.listar(usuario);
-       usuario.setSenha(usuarios.get(0).getSenha());
-        
-//        if (tblCidades.getValueAt(row, 2).toString().equals("Ativo")) {
-//            this.cidade.setAtivo('T');
-//        } else {
-//            this.cidade.setAtivo('F');
-//        }
-
+        usuarios = controleUsuario.listar(usuario);
+        usuario.setSenha(usuarios.get(0).getSenha());        
         dispose();
     }
 
@@ -416,38 +389,6 @@ public class JdgListaUsuario extends javax.swing.JDialog {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(JdgListaUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {

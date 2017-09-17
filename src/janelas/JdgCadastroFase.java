@@ -5,19 +5,10 @@
  */
 package janelas;
 
-import DAO.CidadeDAO;
-import DAO.FaseDAO;
 import apoio.Validacao;
-import controle.ControleCidade;
 import controle.ControleFase;
-import entidade.Cidade;
 import entidade.Fase;
-import entidade.Motivo;
 import javax.swing.JOptionPane;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -175,23 +166,7 @@ public class JdgCadastroFase extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-//        try {
-//            if (tfdCodigo.getText().length() > 0) {
-//                fase.setSituacao('I');
-//                FaseDAO faseDAO = new FaseDAO();
-//                faseDAO.salvar(fase);
-//                JOptionPane.showMessageDialog(rootPane, "Fase " + fase.getDescricao() + " Excluída com sucesso");
-//                limparCampos();
-//            } else {
-//                JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase \nNenhuma fase selecionada.");
-//            }
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
-//        }
-//        
-
         if (tfdCodigo.getText().length() > 0) {
-
             int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a fase " + fase.getDescricao() + "?");
             if (exclusao == 0) {
 
@@ -203,20 +178,20 @@ public class JdgCadastroFase extends javax.swing.JDialog {
                     if (mensagem.equalsIgnoreCase("ok")) {
 
                         JOptionPane.showMessageDialog(rootPane, "Fase " + fase.getDescricao() + " Excluída com sucesso");
-                        logH.gravaInfo(this.getClass().getName(), "Fase " + fase.getDescricao() + " Excluída com sucesso");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Fase " + fase.getDescricao() + " Excluída com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
-                        logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase.");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase.");
                     }
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
-                    logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase.");
+                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase.");
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase\nNenhuma fase selecionada.");
-            logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase\nNenhuma fase selecionada.");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase\nNenhuma fase selecionada.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -241,7 +216,7 @@ public class JdgCadastroFase extends javax.swing.JDialog {
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase");
-            logH.gravaInfo(this.getClass().getName(), "Erro ao salvar fase.");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao salvar fase.");
         }
 
     }//GEN-LAST:event_btnSalvarActionPerformed

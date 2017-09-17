@@ -6,6 +6,7 @@
 package janelas;
 
 import DAO.UsuarioDAO;
+import apoio.Validacao;
 import controle.ControleUsuario;
 import entidade.Usuario;
 import java.math.BigInteger;
@@ -13,9 +14,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import javax.swing.JOptionPane;
 
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -33,18 +31,13 @@ public class JdgAlteracaoSenha extends javax.swing.JDialog {
     public JdgAlteracaoSenha(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-
-//        usuarioDAO.consultar(user);
-//        tfdUsuario.setText(user.getUsuario());
+        Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
     }
 
     public JdgAlteracaoSenha(java.awt.Frame parent, boolean modal, Usuario usuario) {
         super(parent, modal);
         initComponents();
         this.usuario = usuario;
-//        usuarioDAO.consultar(user);
-//        tfdUsuario.setText(user.getUsuario());
-
         buscarUsuarioLogado();
 
     }
@@ -52,9 +45,7 @@ public class JdgAlteracaoSenha extends javax.swing.JDialog {
     private void buscarUsuarioLogado() {
         ControleUsuario controleUsuario = new ControleUsuario();
         controleUsuario.listar(usuario);
-
         tfdUsuario.setText(usuario.getLogin());
-
     }
 
     /**
@@ -201,23 +192,23 @@ public class JdgAlteracaoSenha extends javax.swing.JDialog {
                 
                 if (mensagem.equals("ok")) {
                     JOptionPane.showMessageDialog(rootPane, "Alteração de senha feita com sucesso!");
-                    logH.gravaInfo(this.getClass().getName(),"Alteração de senha feita com sucesso!");
+                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(),"Alteração de senha feita com sucesso!");
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(rootPane, mensagem);
                 }
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Nova senha identica a senha atual");
-                    logH.gravaInfo(this.getClass().getName(),"Nova senha identica a senha atual");
+                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(),"Nova senha identica a senha atual");
                 }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "nova senha diferentente entre os dois campos");
-                logH.gravaInfo(this.getClass().getName(),"nova senha diferentente entre os dois campos");
+                janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(),"nova senha diferentente entre os dois campos");
             }
 
         } else {
             JOptionPane.showMessageDialog(rootPane, "Senha atual inválida");
-            logH.gravaInfo(this.getClass().getName(),"Senha atual inválida");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(),"Senha atual inválida");
         }
         
 

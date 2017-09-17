@@ -5,14 +5,10 @@
  */
 package janelas;
 
+import apoio.Validacao;
 import controle.ControleCidade;
 import entidade.Cidade;
 import javax.swing.JOptionPane;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
-
 
 /**
  *
@@ -28,6 +24,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
     public JdgCadastroCidade(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
     }
 
     /**
@@ -62,6 +59,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
         btnSalvar.setText("Salvar");
+        btnSalvar.setName("btnSalvar"); // NOI18N
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
@@ -70,6 +68,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
         btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixeira16x16.png"))); // NOI18N
         btnExcluir.setText("Excluir");
+        btnExcluir.setName("btnExcluir"); // NOI18N
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcluirActionPerformed(evt);
@@ -78,6 +77,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))); // NOI18N
         btnSair.setText("Sair");
+        btnSair.setName("btnSair"); // NOI18N
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -86,6 +86,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
         btnLocalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizar.setText("Localizar");
+        btnLocalizar.setName("btnLocalizar"); // NOI18N
         btnLocalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLocalizarActionPerformed(evt);
@@ -131,7 +132,7 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnExcluir)
@@ -183,20 +184,20 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
                         JOptionPane.showMessageDialog(rootPane, "Cidade " + cidade.getDescricao() + " excluída com sucesso");
                         
-                        logH.gravaInfo(this.getClass().getName(), "Cidade " + cidade.getDescricao() + " excluída com sucesso");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Cidade " + cidade.getDescricao() + " excluída com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade.");
-                        logH.gravaErro(this.getClass().getName(),"Erro ao excluir a cidade.");
+                        janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),"Erro ao excluir a cidade.");
                     }
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir a cidade.");
-                    logH.gravaErro(this.getClass().getName(),"Erro ao excluir a cidade." + e.getMessage());
+                    janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),"Erro ao excluir a cidade." + e.getMessage());
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir cidade\nNenhuma cidade selecionada.");
-            logH.gravaErro(this.getClass().getName(),"Erro ao excluir a cidade.");
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),"Erro ao excluir a cidade.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -214,14 +215,14 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
             if (mensagem.equals("ok")) {
                 limparCampos();
                 JOptionPane.showMessageDialog(rootPane, "Cidade cadastrada com sucesso!");
-                logH.gravaErro(this.getClass().getName(),"Cidade cadastrada com sucesso!");
+                janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),"Cidade cadastrada com sucesso!");
             } else {
                 JOptionPane.showMessageDialog(rootPane, mensagem);
             }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar cidade");
-            logH.gravaErro(this.getClass().getName(),"Erro ao salvar cidade");
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),"Erro ao salvar cidade");
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
 

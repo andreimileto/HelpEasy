@@ -5,21 +5,14 @@
  */
 package janelas;
 
-import DAO.ClienteDAO;
 import apoio.Formatacao;
 import apoio.Validacao;
 import controle.ControleCliente;
 import entidade.Cidade;
 import entidade.Cliente;
-import java.awt.Color;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -48,6 +41,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         mascaraTelefone();
         atualizarCamposFormatados();
         limparCampos();
+        Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
     }
     
     private void mascaraCpfCnpj() {
@@ -302,7 +296,7 @@ cliente.setSituacao('I');
                     JOptionPane.showMessageDialog(null, "Cadastro de cliente excluído com sucesso!");
                 } else {
                     JOptionPane.showMessageDialog(null, mensagem);
-                    logH.gravaInfo(this.getClass().getName(), mensagem);
+                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), mensagem);
                 }
 
 //                ClienteDAO clienteDAO = new ClienteDAO();

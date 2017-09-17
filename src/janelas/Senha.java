@@ -5,28 +5,13 @@
  */
 package janelas;
 
-import apoio.ConexaoBD;
-import DAO.UsuarioDAO;
 import apoio.Formatacao;
 import controle.ControleUsuario;
-import entidade.Cidade;
-
 import entidade.Usuario;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
 
 public class Senha extends javax.swing.JFrame {
 
@@ -35,14 +20,8 @@ public class Senha extends javax.swing.JFrame {
 
     public Senha() {
         initComponents();
-
         count = 0;
-
     }
-
-//    public Senha() {
-//       initComponents();
-//    }
     private void habilitarBotao() {
         if (tfUsuario.getText().length() > 0 && pfSenha.getText().length() > 0) {
             btLogin.setEnabled(true);
@@ -181,8 +160,6 @@ public class Senha extends javax.swing.JFrame {
             String sen = pfSenha.getText();
             String senhaCriptografada = Formatacao.getSenhaMD5(sen);
             System.out.println(senhaCriptografada);
-//            UsuarioDAO usuarioDAO = new UsuarioDAO();
-//            usuarioDAO.listar(user);
             user.setLogin(tfUsuario.getText());
            
             
@@ -218,7 +195,7 @@ public class Senha extends javax.swing.JFrame {
             tfUsuario.setText("");
             pfSenha.setText("");
             tfUsuario.requestFocus();
-            System.out.println(e+" Erro");
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),e.getMessage());
         }
     }
     private void tfUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsuarioActionPerformed
@@ -272,39 +249,6 @@ public class Senha extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Senha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

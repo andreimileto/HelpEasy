@@ -5,23 +5,12 @@
  */
 package janelas;
 
-import DAO.CidadeDAO;
 import DAO.ClienteDAO;
-import controle.ControleCidade;
-import controle.ControleCliente;
-
 import entidade.Cidade;
 import entidade.Cliente;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
-
 /**
  *
  * @author pc05
@@ -46,36 +35,10 @@ public class JdgListaCliente extends javax.swing.JDialog {
         initComponents();
         this.cliente = cliente;
         this.cid = cid;
-       // System.out.println("ativo cliente na listaaaa" + cliente.getAtivo());
-        //verificarTipoChamada();
-       // popularComboBox();
-       // System.out.println("ativo cliente na listaaaa depois do popular" + cliente.getAtivo());
-        
         listarCidades();
 
     }
-
-//    private void verificarTipoChamada() {
-//        //System.out.println("ativo cliente na lista" + cliente.getAtivo());
-//        if (cliente.getSituacao() == 'A') {
-//            cbxStatus.setEnabled(false);
-//          //  System.out.println("ativo cliente na lista" + cliente.getAtivo());
-//            btnConfirmar.setText("Selecionar");
-//            btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png")));
-//        } else {
-//            btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Edit File-16.png")));
-//            cbxStatus.setEditable(true);
-//        }
-//    }
-
-//    private void popularComboBox() {
-//       // System.out.println("ativo cliente na listaaaa popular inicio" + cliente.getAtivo());
-//        cbxStatus.addItem("Ativos");
-//        cbxStatus.addItem("Inativos");
-//        cbxStatus.addItem("Todos");
-//       // System.out.println("ativo cliente na listaaaa popular fim" + cliente.getAtivo());
-//    }
-
+    
     private void listarCidades() {
         try {
             //setar para tabela modelo de dados
@@ -89,7 +52,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
          
 
         } catch (Exception ex) {
-//            Logger.getLogger(JdgListaFormaPagamento.class.getName()).log(Level.SEVERE, null, ex);
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),ex.getMessage());
         }
     }
 
@@ -99,18 +62,10 @@ public class JdgListaCliente extends javax.swing.JDialog {
                 return false;
             }
         };
-//adiciona titulo para as colunas
+        
         cid.setDescricao("");
         cliente.setRazaoSocial(tfdFiltro.getText());
         cliente.setCpfCnpj(tfdFiltro.getText());
-//        CidadeDAO cidadeDAO = new CidadeDAO();
-//        ArrayList<Cidade> cidades = cidadeDAO.listar(cid);
-//    ControleCidade controleCidade = new ControleCidade();
-//    ArrayList<Cidade> cidades = controleCidade.listar(cid);
-    
-//    ControleCliente controleCliente = new ControleCliente();
-//    ArrayList<Cliente> clientes = controleCliente.listar(cliente);
-
 
         ClienteDAO cliDAO = new ClienteDAO();
         ArrayList<Cliente> clientes = cliDAO.listar(cliente);
@@ -121,11 +76,8 @@ public class JdgListaCliente extends javax.swing.JDialog {
         dtm.addColumn("CIDADE");
         dtm.addColumn("ENDEREÇO");
         dtm.addColumn("TELEFONE");
-        //dtm.addColumn("SITUAÇÃO");
 
-        for (int i = 0; i < clientes.size(); i++) {
-            //popular tabela
-          
+        for (int i = 0; i < clientes.size(); i++) {       
             
             dtm.addRow(new String[]{String.valueOf(clientes.get(i).getId()),
                 clientes.get(i).getRazaoSocial(),
@@ -135,17 +87,12 @@ public class JdgListaCliente extends javax.swing.JDialog {
                 String.valueOf(clientes.get(i).getTelefone())
             });
         }
-//retorna o modelo
         return dtm;
     }
 
     private void selecionado() throws Exception {
 
-        //pega a linha selecionada
         int row = tblListaClientes.getSelectedRow();
-
-        //seta o ID do objeto da linha selecionada
-//        obterDadosParaTabelaCompleto();
         this.cliente.setId(Integer.parseInt(tblListaClientes.getValueAt(row, 0).toString()));
 
         ClienteDAO cliDAO = new ClienteDAO();
@@ -156,10 +103,6 @@ public class JdgListaCliente extends javax.swing.JDialog {
         cliente.setCpfCnpj(clientes.get(0).getCpfCnpj());
         cliente.setTipoCadastro(clientes.get(0).getTipoCadastro());
         cliente.setTelefone(clientes.get(0).getTelefone());
-
-       // System.out.println("cidade id..." + cliente.getCidade().getId());
-
-        
 
         dispose();
     }
@@ -290,7 +233,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
         try {
             selecionado();
         } catch (Exception ex) {
-            Logger.getLogger(JdgListaCliente.class.getName()).log(Level.SEVERE, null, ex);
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),ex.getMessage());
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
@@ -323,7 +266,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
                     try {
                         selecionado();
                     } catch (Exception ex) {
-                        Logger.getLogger(JdgListaCliente.class.getName()).log(Level.SEVERE, null, ex);
+                        janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),ex.getMessage());
                     }
             dispose();
         }

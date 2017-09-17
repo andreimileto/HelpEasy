@@ -5,13 +5,10 @@
  */
 package janelas;
 
+import apoio.Validacao;
 import controle.ControleMotivo;
 import entidade.Motivo;
 import javax.swing.JOptionPane;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -27,7 +24,7 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
     public JdgCadastroMotivo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-
+        Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
     }
 
     /**
@@ -62,6 +59,7 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
 
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
         btnSalvar.setText("Salvar");
+        btnSalvar.setName("btnSalvar"); // NOI18N
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
@@ -70,6 +68,7 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
 
         btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixeira16x16.png"))); // NOI18N
         btnExcluir.setText("Excluir");
+        btnExcluir.setName("btnExcluir"); // NOI18N
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcluirActionPerformed(evt);
@@ -78,6 +77,7 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))); // NOI18N
         btnSair.setText("Sair");
+        btnSair.setName("btnSair"); // NOI18N
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -86,6 +86,7 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
 
         btnLocalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizar.setText("Localizar");
+        btnLocalizar.setName("btnLocalizar"); // NOI18N
         btnLocalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLocalizarActionPerformed(evt);
@@ -180,21 +181,21 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
 
                     if (mensagem.equalsIgnoreCase("ok")) {
                         JOptionPane.showMessageDialog(rootPane, "motivo " + motivo.getDescricao() + " excluído com sucesso");
-                        logH.gravaInfo(this.getClass().getName(), "motivo " + motivo.getDescricao() + " excluído com sucesso");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "motivo " + motivo.getDescricao() + " excluído com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo. ");
-                        logH.gravaInfo(this.getClass().getName(), "Erro ao excluir motivo.");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir motivo.");
                     }
 
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo");
-                    logH.gravaInfo(this.getClass().getName(), "Erro ao excluir motivo.");
+                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir motivo.");
                 }
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao excluir motivo \nNenhum motivo selecionado.");
-            logH.gravaInfo(this.getClass().getName(), "Erro ao excluir motivo \nNenhum motivo selecionado.");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir motivo \nNenhum motivo selecionado.");
         }
 
     }//GEN-LAST:event_btnExcluirActionPerformed
@@ -222,11 +223,11 @@ public class JdgCadastroMotivo extends javax.swing.JDialog {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao salvar motivo");
-                logH.gravaInfo(this.getClass().getName(), "Erro ao salvar motivo.");
+                janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao salvar motivo.");
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao salvar motivo \nQuantidade de caracteres no nome oa motivo precisa ser maior que 2");
-            logH.gravaInfo(this.getClass().getName(), "Erro ao salvar motivo \nQuantidade de caracteres no nome oa motivo precisa ser maior que 2");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao salvar motivo \nQuantidade de caracteres no nome oa motivo precisa ser maior que 2");
 
         }
     }//GEN-LAST:event_btnSalvarActionPerformed

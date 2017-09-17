@@ -5,16 +5,10 @@
  */
 package janelas;
 
-import controle.ControleCidade;
 import controle.ControleMotivo;
-import entidade.Cidade;
 import entidade.Motivo;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-
-//Utilizado para gravação do Log:
-import static janelas.TelaPrincipal.logH;
-import static janelas.TelaPrincipal.userH;
 
 /**
  *
@@ -27,11 +21,7 @@ public class JdgListaMotivo extends javax.swing.JDialog {
     public JdgListaMotivo(java.awt.Frame parent, boolean modal, Motivo motivo) {
         super(parent, modal);
         initComponents();
-
         this.motivo = motivo;
-//        verificarTipoChamada();
-//        popularComboBox();
-
         listaMotivo();
     }
 
@@ -51,26 +41,9 @@ public class JdgListaMotivo extends javax.swing.JDialog {
             
 
         } catch (Exception ex) {
-//            Logger.getLogger(JdgListaFormaPagamento.class.getName()).log(Level.SEVERE, null, ex);
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),ex.getMessage());
         }
     }
-
-//    private void popularComboBox() {
-//
-//        cbxStatus.addItem("Ativos");
-//        cbxStatus.addItem("Inativos");
-//        
-//    }
-
-//    private void verificarTipoChamada() {
-//        if (cidade.getAtivo() == 'T') {
-//            cbxStatus.setEnabled(false);
-//            btnConfirmar.setText("Selecionar");
-//            btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png")));
-//        } else {
-//            cbxStatus.setEditable(true);
-//        }
-//    }
 
     public DefaultTableModel obterDadosParaJTable() throws Exception {
         DefaultTableModel dtm = new DefaultTableModel() {
@@ -78,24 +51,16 @@ public class JdgListaMotivo extends javax.swing.JDialog {
                 return false;
             }
         };
-
-//        CidadeDAO cidadeDAO = new CidadeDAO();
-//        ArrayList<Cidade> cidades = cidadeDAO.listar("");
         motivo.setDescricao(tfdDescricao.getText());
         ControleMotivo controleMotivo = new ControleMotivo();
-       ArrayList<Motivo> motivos = controleMotivo.listar(motivo);
+        ArrayList<Motivo> motivos = controleMotivo.listar(motivo);
         dtm.addColumn("ID");
         dtm.addColumn("DESCRIÇÃO");
         
-
         for (int i = 0; i < motivos.size(); i++) {
-            //popular tabela
-            
-            
             dtm.addRow(new String[]{String.valueOf(motivos.get(i).getId()),
                 motivos.get(i).getDescricao()});
         }
-//retorna o modelo
         return dtm;
     }
 
@@ -365,6 +330,7 @@ public class JdgListaMotivo extends javax.swing.JDialog {
         ControleMotivo controleMotivo = new ControleMotivo();
         controleMotivo.listar(motivo);
         } catch (Exception e) {
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),e.getMessage());
         }
         
         
@@ -382,19 +348,9 @@ public class JdgListaMotivo extends javax.swing.JDialog {
     //retorna item selecionado na taleba
     private void selecionado() {
 
-        //pega a linha selecionada
         int row = tblCidades.getSelectedRow();
-
-        //seta o ID do objeto da linha selecionada
-//        cidade = new Cidade();
         this.motivo.setId(Integer.parseInt(tblCidades.getValueAt(row, 0).toString()));
         this.motivo.setDescricao(tblCidades.getValueAt(row, 1).toString());
-//        if (tblCidades.getValueAt(row, 2).toString().equals("Ativo")) {
-//            this.cidade.setAtivo('T');
-//        } else {
-//            this.cidade.setAtivo('F');
-//        }
-
         dispose();
     }
 
@@ -424,13 +380,7 @@ public class JdgListaMotivo extends javax.swing.JDialog {
             java.util.logging.Logger.getLogger(JdgListaMotivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
