@@ -61,6 +61,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         imnCadastroMotivo = new javax.swing.JMenuItem();
         imnCadastroUsuario = new javax.swing.JMenuItem();
         ImnCadastroPrioridade = new javax.swing.JMenuItem();
+        ImnPermissoesUsuario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Help Easy");
@@ -203,6 +204,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(ImnCadastroPrioridade);
 
+        ImnPermissoesUsuario.setText("Permissões do usuário");
+        ImnPermissoesUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImnPermissoesUsuarioActionPerformed(evt);
+            }
+        });
+        ImnCadastroUsuario.add(ImnPermissoesUsuario);
+
         jMenuBar1.add(ImnCadastroUsuario);
 
         setJMenuBar(jMenuBar1);
@@ -280,6 +289,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroCliente.setVisible(true);
     }//GEN-LAST:event_ImnClientesActionPerformed
 
+    private void ImnPermissoesUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnPermissoesUsuarioActionPerformed
+        JdgPermissoesUsuario permissoesUsuario = new JdgPermissoesUsuario(this, true);
+        permissoesUsuario.setVisible(true);
+    }//GEN-LAST:event_ImnPermissoesUsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -324,6 +338,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem ImnCadastroProjeto;
     private javax.swing.JMenu ImnCadastroUsuario;
     private javax.swing.JMenuItem ImnClientes;
+    private javax.swing.JMenuItem ImnPermissoesUsuario;
     private javax.swing.JMenuItem imnCadastroMotivo;
     private javax.swing.JMenuItem imnCadastroUsuario;
     private javax.swing.JMenuItem imnCidades;
