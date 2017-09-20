@@ -8,10 +8,14 @@ package controle;
 import DAO.FaseDAO;
 import DAO.ProjetoDAO;
 import DAO.UsuarioDAO;
+import DAO.UsuarioPermissaoTelaAcoesDAO;
+import DAO.UsuarioPermissaoTelaDAO;
 import apoio.Formatacao;
 import entidade.Fase;
 
 import entidade.Usuario;
+import entidade.UsuarioPermissaoTela;
+import entidade.UsuarioPermissaoTelaAcoes;
 import java.util.ArrayList;
 
 /**
@@ -37,17 +41,17 @@ public class ControleUsuario {
         if (usuario.getLogin().length() < 2 || usuario.getLogin().length() > 100) {
             mensagem = mensagem + "-Login do usuário precisa ter 2 caracteres e não pode ultrapassar 150\n";
         }
-        
-        if (usuario.getSenha().length()<6) {
-            mensagem = mensagem+"-Senha deve conter no mínimo 6 caracteres\n";
-        }else{
+
+        if (usuario.getSenha().length() < 6) {
+            mensagem = mensagem + "-Senha deve conter no mínimo 6 caracteres\n";
+        } else {
             usuario.setSenha(Formatacao.getSenhaMD5(usuario.getSenha()));
         }
 
         usuarios = usuarioDAO.listar(usuario);
         try {
             if (usuarios.size() > 0) {
-                if (usuarios.get(0).getLogin().equals(usuario.getLogin()) && usuario.getId()!= usuarios.get(0).getId()) {
+                if (usuarios.get(0).getLogin().equals(usuario.getLogin()) && usuario.getId() != usuarios.get(0).getId()) {
 
                     mensagem = mensagem + "-Já existe um usuário cadastrado com esse login\n";
                 }
@@ -58,6 +62,157 @@ public class ControleUsuario {
         if (mensagem.length() < 25) {
 
             if (usuarioDAO.salvar(usuario)) {
+                try {
+                    UsuarioPermissaoTela usuarioPermissaoTela = new UsuarioPermissaoTela();
+                UsuarioPermissaoTelaAcoes usuarioPermissaoTelaAcoes = new UsuarioPermissaoTelaAcoes();
+                UsuarioPermissaoTelaDAO usuarioPermissaoTelaDAO = new UsuarioPermissaoTelaDAO();
+                UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
+                usuarioPermissaoTela.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTela.setUsuario(usuario);
+                
+                usuarioPermissaoTela.setTela("janelas.JdgCadastroCidade");
+                usuarioPermissaoTelaDAO.salvar(usuarioPermissaoTela);
+                
+                usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
+                usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                
+                usuarioPermissaoTela.setId(0);
+                usuarioPermissaoTela.setTela("janelas.JdgAlteracaoSenha");
+                usuarioPermissaoTelaDAO.salvar(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTela.setId(0);
+                
+                
+                usuarioPermissaoTela.setTela("janelas.JdgParametrosSistema");
+                usuarioPermissaoTelaDAO.salvar(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoes.setAcao("btnEnableAuditoria");
+                usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnDisableAuditoria");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTela.setId(0);
+                
+                
+                
+                usuarioPermissaoTela.setTela("janelas.JdgCadastroCliente");
+                usuarioPermissaoTelaDAO.salvar(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
+                usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTela.setId(0);
+                
+                
+                
+                usuarioPermissaoTela.setTela("janelas.JdgCadastroProjeto");
+                usuarioPermissaoTelaDAO.salvar(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
+                usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTela.setId(0);
+                
+                
+                usuarioPermissaoTela.setTela("janelas.JdgCadastroMotivo");
+                usuarioPermissaoTelaDAO.salvar(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
+                usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTela.setId(0);
+                
+                
+                usuarioPermissaoTela.setTela("janelas.JdgCadastroUsuario");
+                usuarioPermissaoTelaDAO.salvar(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
+                usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTela.setId(0);
+                
+                
+                usuarioPermissaoTela.setTela("janelas.JdgCadastroPrioridade");
+                usuarioPermissaoTelaDAO.salvar(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
+                usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTela.setId(0);
+                
+                
+                usuarioPermissaoTela.setTela("janelas.JdgCadastroFase");
+                usuarioPermissaoTelaDAO.salvar(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
+                usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTela.setId(0);
+                
+                
+                
+                usuarioPermissaoTela.setTela("janelas.JdgPermissoesUsuario");
+                usuarioPermissaoTelaDAO.salvar(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
+                usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
+                usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
+                usuarioPermissaoTelaAcoes.setId(0);
+                usuarioPermissaoTela.setId(0);
+                } catch (Exception e) {
+                    mensagem = mensagem+"Erro ao gravar as permissões do usuário\n"+e;
+                    return mensagem;
+                }
+                
+                
                 return "ok";
             } else {
                 return mensagem;
