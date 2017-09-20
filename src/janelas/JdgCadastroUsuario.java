@@ -25,7 +25,7 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
     public JdgCadastroUsuario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
+        //Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
 
     }
 

@@ -82,7 +82,9 @@
                           <Component id="tfdUsuario" min="-2" pref="155" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnLocalizar" min="-2" pref="30" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="307" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -98,6 +100,7 @@
                           <Component id="tfdUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="btnLocalizar" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -196,9 +199,9 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBox3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkLocalizarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkSalvarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkExcluirCliente" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="65" max="32767" attributes="0"/>
                       </Group>
@@ -207,28 +210,28 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkLocalizarCliente" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarCliente" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkExcluirCliente" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+                <Component class="javax.swing.JCheckBox" name="chkExcluirCliente">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+                <Component class="javax.swing.JCheckBox" name="chkSalvarCliente">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+                <Component class="javax.swing.JCheckBox" name="chkLocalizarCliente">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Localizar"/>
                   </Properties>
@@ -252,9 +255,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBox6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox5" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkLocalizarCidade" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkSalvarCidade" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkExcluirCidade" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="65" max="32767" attributes="0"/>
                       </Group>
@@ -263,28 +266,28 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox6" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkLocalizarCidade" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox5" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarCidade" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkExcluirCidade" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+                <Component class="javax.swing.JCheckBox" name="chkExcluirCidade">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+                <Component class="javax.swing.JCheckBox" name="chkSalvarCidade">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+                <Component class="javax.swing.JCheckBox" name="chkLocalizarCidade">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Localizar"/>
                   </Properties>
@@ -364,9 +367,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBox13" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox9" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkLocalizarCadastroProjeto" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkSalvarCadastroProjeto" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkExcluirCadastroProjeto" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="65" max="32767" attributes="0"/>
                       </Group>
@@ -375,27 +378,27 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox13" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkLocalizarCadastroProjeto" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox9" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarCadastroProjeto" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox7" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkExcluirCadastroProjeto" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox7">
+                <Component class="javax.swing.JCheckBox" name="chkExcluirCadastroProjeto">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox9">
+                <Component class="javax.swing.JCheckBox" name="chkSalvarCadastroProjeto">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox13">
+                <Component class="javax.swing.JCheckBox" name="chkLocalizarCadastroProjeto">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Localizar"/>
                   </Properties>
@@ -419,9 +422,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBox16" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox15" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox14" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkLocalizarCadastroFase" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkSalvarCadastroFase" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkExcluirCadastroFase" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -430,27 +433,27 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox16" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkLocalizarCadastroFase" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox15" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarCadastroFase" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox14" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkExcluirCadastroFase" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox14">
+                <Component class="javax.swing.JCheckBox" name="chkExcluirCadastroFase">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox15">
+                <Component class="javax.swing.JCheckBox" name="chkSalvarCadastroFase">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox16">
+                <Component class="javax.swing.JCheckBox" name="chkLocalizarCadastroFase">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Localizar"/>
                   </Properties>
@@ -474,9 +477,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBox18" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox17" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox12" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkLocalizarCadastroUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkSalvarCadastroUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkExcluirCadastroUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -485,28 +488,28 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox18" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkLocalizarCadastroUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox17" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarCadastroUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox12" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkExcluirCadastroUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox12">
+                <Component class="javax.swing.JCheckBox" name="chkExcluirCadastroUsuario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox17">
+                <Component class="javax.swing.JCheckBox" name="chkSalvarCadastroUsuario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox18">
+                <Component class="javax.swing.JCheckBox" name="chkLocalizarCadastroUsuario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Localizar"/>
                   </Properties>
@@ -530,9 +533,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBox21" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox20" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox19" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkLocalizarCadastroMotivo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkSalvarCadastroMotivo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkExcluirCadastroMotivo" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -541,28 +544,28 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox21" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkLocalizarCadastroMotivo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox20" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarCadastroMotivo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jCheckBox19" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkExcluirCadastroMotivo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox19">
+                <Component class="javax.swing.JCheckBox" name="chkExcluirCadastroMotivo">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox20">
+                <Component class="javax.swing.JCheckBox" name="chkSalvarCadastroMotivo">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox21">
+                <Component class="javax.swing.JCheckBox" name="chkLocalizarCadastroMotivo">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Localizar"/>
                   </Properties>
@@ -586,9 +589,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBox24" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox23" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox22" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkLocalizarCadastroPrioridade" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkSalvarCadastroPrioridade" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkExcluirCadastroPrioridade" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="65" max="32767" attributes="0"/>
                       </Group>
@@ -597,28 +600,28 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox24" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkLocalizarCadastroPrioridade" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox23" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarCadastroPrioridade" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox22" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkExcluirCadastroPrioridade" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox22">
+                <Component class="javax.swing.JCheckBox" name="chkExcluirCadastroPrioridade">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox23">
+                <Component class="javax.swing.JCheckBox" name="chkSalvarCadastroPrioridade">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox24">
+                <Component class="javax.swing.JCheckBox" name="chkLocalizarCadastroPrioridade">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Localizar"/>
                   </Properties>
@@ -641,7 +644,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox26" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarPermissoesUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -649,14 +652,14 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox26" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarPermissoesUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="53" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox26">
+                <Component class="javax.swing.JCheckBox" name="chkSalvarPermissoesUsuario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
@@ -717,7 +720,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox8" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarAlteracaoSenha" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="83" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -725,14 +728,14 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox8" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkSalvarAlteracaoSenha" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox8">
+                <Component class="javax.swing.JCheckBox" name="chkSalvarAlteracaoSenha">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Salvar"/>
                   </Properties>
@@ -756,8 +759,8 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBox11" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox10" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkAtivarAuditoria" min="-2" max="-2" attributes="0"/>
+                              <Component id="chkDesativarAuditoria" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="17" max="32767" attributes="0"/>
                       </Group>
@@ -766,20 +769,20 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jCheckBox11" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkAtivarAuditoria" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkDesativarAuditoria" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox10">
+                <Component class="javax.swing.JCheckBox" name="chkDesativarAuditoria">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="desativar auditoria"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox11">
+                <Component class="javax.swing.JCheckBox" name="chkAtivarAuditoria">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Ativar auditoria"/>
                   </Properties>
@@ -806,6 +809,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLocalizarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jButton1"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

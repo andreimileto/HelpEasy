@@ -1,13 +1,18 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package janelas;
 
+import DAO.PermissoesDAO;
+import DAO.UsuarioDAO;
 import apoio.Validacao;
 import controle.ControleCidade;
 import entidade.Cidade;
+import entidade.Usuario;
+import entidade.UsuarioPermissaoTelaAcoes;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,11 +25,12 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
      * Creates new form JdgCadastroCidade
      */
     Cidade cidade;
+    Usuario usuarios = new Usuario();
 
     public JdgPermissoesUsuario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
+//        Validacao.setaPermissoes(this.getClass().getName(), this.jPanel1);
     }
 
     /**
@@ -41,45 +47,46 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
         btnSair = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        chkExcluirCliente = new javax.swing.JCheckBox();
+        chkSalvarCliente = new javax.swing.JCheckBox();
+        chkLocalizarCliente = new javax.swing.JCheckBox();
         jPanel6 = new javax.swing.JPanel();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        chkExcluirCidade = new javax.swing.JCheckBox();
+        chkSalvarCidade = new javax.swing.JCheckBox();
+        chkLocalizarCidade = new javax.swing.JCheckBox();
         jPanel4 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox13 = new javax.swing.JCheckBox();
+        chkExcluirCadastroProjeto = new javax.swing.JCheckBox();
+        chkSalvarCadastroProjeto = new javax.swing.JCheckBox();
+        chkLocalizarCadastroProjeto = new javax.swing.JCheckBox();
         jPanel11 = new javax.swing.JPanel();
-        jCheckBox14 = new javax.swing.JCheckBox();
-        jCheckBox15 = new javax.swing.JCheckBox();
-        jCheckBox16 = new javax.swing.JCheckBox();
+        chkExcluirCadastroFase = new javax.swing.JCheckBox();
+        chkSalvarCadastroFase = new javax.swing.JCheckBox();
+        chkLocalizarCadastroFase = new javax.swing.JCheckBox();
         jPanel12 = new javax.swing.JPanel();
-        jCheckBox12 = new javax.swing.JCheckBox();
-        jCheckBox17 = new javax.swing.JCheckBox();
-        jCheckBox18 = new javax.swing.JCheckBox();
+        chkExcluirCadastroUsuario = new javax.swing.JCheckBox();
+        chkSalvarCadastroUsuario = new javax.swing.JCheckBox();
+        chkLocalizarCadastroUsuario = new javax.swing.JCheckBox();
         jPanel13 = new javax.swing.JPanel();
-        jCheckBox19 = new javax.swing.JCheckBox();
-        jCheckBox20 = new javax.swing.JCheckBox();
-        jCheckBox21 = new javax.swing.JCheckBox();
+        chkExcluirCadastroMotivo = new javax.swing.JCheckBox();
+        chkSalvarCadastroMotivo = new javax.swing.JCheckBox();
+        chkLocalizarCadastroMotivo = new javax.swing.JCheckBox();
         jPanel14 = new javax.swing.JPanel();
-        jCheckBox22 = new javax.swing.JCheckBox();
-        jCheckBox23 = new javax.swing.JCheckBox();
-        jCheckBox24 = new javax.swing.JCheckBox();
+        chkExcluirCadastroPrioridade = new javax.swing.JCheckBox();
+        chkSalvarCadastroPrioridade = new javax.swing.JCheckBox();
+        chkLocalizarCadastroPrioridade = new javax.swing.JCheckBox();
         jPanel15 = new javax.swing.JPanel();
-        jCheckBox26 = new javax.swing.JCheckBox();
+        chkSalvarPermissoesUsuario = new javax.swing.JCheckBox();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
-        jCheckBox8 = new javax.swing.JCheckBox();
+        chkSalvarAlteracaoSenha = new javax.swing.JCheckBox();
         jPanel9 = new javax.swing.JPanel();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
+        chkDesativarAuditoria = new javax.swing.JCheckBox();
+        chkAtivarAuditoria = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
         tfdUsuario = new javax.swing.JTextField();
         btnLocalizar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Help Easy - Cadastro de cidade");
@@ -108,11 +115,11 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cliente", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
-        jCheckBox2.setText("Excluir");
+        chkExcluirCliente.setText("Excluir");
 
-        jCheckBox1.setText("Salvar");
+        chkSalvarCliente.setText("Salvar");
 
-        jCheckBox3.setText("Localizar");
+        chkLocalizarCliente.setText("Localizar");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -121,29 +128,29 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2))
+                    .addComponent(chkLocalizarCliente)
+                    .addComponent(chkSalvarCliente)
+                    .addComponent(chkExcluirCliente))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jCheckBox3)
+                .addComponent(chkLocalizarCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(chkSalvarCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox2)
+                .addComponent(chkExcluirCliente)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cidade", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
-        jCheckBox4.setText("Excluir");
+        chkExcluirCidade.setText("Excluir");
 
-        jCheckBox5.setText("Salvar");
+        chkSalvarCidade.setText("Salvar");
 
-        jCheckBox6.setText("Localizar");
+        chkLocalizarCidade.setText("Localizar");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -152,19 +159,19 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox6)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox4))
+                    .addComponent(chkLocalizarCidade)
+                    .addComponent(chkSalvarCidade)
+                    .addComponent(chkExcluirCidade))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jCheckBox6)
+                .addComponent(chkLocalizarCidade)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox5)
+                .addComponent(chkSalvarCidade)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox4)
+                .addComponent(chkExcluirCidade)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -191,11 +198,11 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
 
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de projeto", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
-        jCheckBox7.setText("Excluir");
+        chkExcluirCadastroProjeto.setText("Excluir");
 
-        jCheckBox9.setText("Salvar");
+        chkSalvarCadastroProjeto.setText("Salvar");
 
-        jCheckBox13.setText("Localizar");
+        chkLocalizarCadastroProjeto.setText("Localizar");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -204,28 +211,28 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox13)
-                    .addComponent(jCheckBox9)
-                    .addComponent(jCheckBox7))
+                    .addComponent(chkLocalizarCadastroProjeto)
+                    .addComponent(chkSalvarCadastroProjeto)
+                    .addComponent(chkExcluirCadastroProjeto))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jCheckBox13)
+                .addComponent(chkLocalizarCadastroProjeto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox9)
+                .addComponent(chkSalvarCadastroProjeto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox7))
+                .addComponent(chkExcluirCadastroProjeto))
         );
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de fase", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
-        jCheckBox14.setText("Excluir");
+        chkExcluirCadastroFase.setText("Excluir");
 
-        jCheckBox15.setText("Salvar");
+        chkSalvarCadastroFase.setText("Salvar");
 
-        jCheckBox16.setText("Localizar");
+        chkLocalizarCadastroFase.setText("Localizar");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -234,28 +241,28 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox16)
-                    .addComponent(jCheckBox15)
-                    .addComponent(jCheckBox14))
+                    .addComponent(chkLocalizarCadastroFase)
+                    .addComponent(chkSalvarCadastroFase)
+                    .addComponent(chkExcluirCadastroFase))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addComponent(jCheckBox16)
+                .addComponent(chkLocalizarCadastroFase)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox15)
+                .addComponent(chkSalvarCadastroFase)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox14))
+                .addComponent(chkExcluirCadastroFase))
         );
 
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de usuário", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
-        jCheckBox12.setText("Excluir");
+        chkExcluirCadastroUsuario.setText("Excluir");
 
-        jCheckBox17.setText("Salvar");
+        chkSalvarCadastroUsuario.setText("Salvar");
 
-        jCheckBox18.setText("Localizar");
+        chkLocalizarCadastroUsuario.setText("Localizar");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -264,29 +271,29 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox18)
-                    .addComponent(jCheckBox17)
-                    .addComponent(jCheckBox12))
+                    .addComponent(chkLocalizarCadastroUsuario)
+                    .addComponent(chkSalvarCadastroUsuario)
+                    .addComponent(chkExcluirCadastroUsuario))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addComponent(jCheckBox18)
+                .addComponent(chkLocalizarCadastroUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox17)
+                .addComponent(chkSalvarCadastroUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox12)
+                .addComponent(chkExcluirCadastroUsuario)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de motivo", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
-        jCheckBox19.setText("Excluir");
+        chkExcluirCadastroMotivo.setText("Excluir");
 
-        jCheckBox20.setText("Salvar");
+        chkSalvarCadastroMotivo.setText("Salvar");
 
-        jCheckBox21.setText("Localizar");
+        chkLocalizarCadastroMotivo.setText("Localizar");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -295,29 +302,29 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox21)
-                    .addComponent(jCheckBox20)
-                    .addComponent(jCheckBox19))
+                    .addComponent(chkLocalizarCadastroMotivo)
+                    .addComponent(chkSalvarCadastroMotivo)
+                    .addComponent(chkExcluirCadastroMotivo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addComponent(jCheckBox21)
+                .addComponent(chkLocalizarCadastroMotivo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox20)
+                .addComponent(chkSalvarCadastroMotivo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox19)
+                .addComponent(chkExcluirCadastroMotivo)
                 .addContainerGap())
         );
 
         jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de prioridade", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
-        jCheckBox22.setText("Excluir");
+        chkExcluirCadastroPrioridade.setText("Excluir");
 
-        jCheckBox23.setText("Salvar");
+        chkSalvarCadastroPrioridade.setText("Salvar");
 
-        jCheckBox24.setText("Localizar");
+        chkLocalizarCadastroPrioridade.setText("Localizar");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -326,25 +333,25 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox24)
-                    .addComponent(jCheckBox23)
-                    .addComponent(jCheckBox22))
+                    .addComponent(chkLocalizarCadastroPrioridade)
+                    .addComponent(chkSalvarCadastroPrioridade)
+                    .addComponent(chkExcluirCadastroPrioridade))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addComponent(jCheckBox24)
+                .addComponent(chkLocalizarCadastroPrioridade)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox23)
+                .addComponent(chkSalvarCadastroPrioridade)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox22)
+                .addComponent(chkExcluirCadastroPrioridade)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Permissões de usuário", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
-        jCheckBox26.setText("Salvar");
+        chkSalvarPermissoesUsuario.setText("Salvar");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -352,13 +359,13 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jCheckBox26)
+                .addComponent(chkSalvarPermissoesUsuario)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addComponent(jCheckBox26)
+                .addComponent(chkSalvarPermissoesUsuario)
                 .addGap(0, 53, Short.MAX_VALUE))
         );
 
@@ -400,28 +407,28 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alteração de senha", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
-        jCheckBox8.setText("Salvar");
+        chkSalvarAlteracaoSenha.setText("Salvar");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jCheckBox8)
+                .addComponent(chkSalvarAlteracaoSenha)
                 .addGap(0, 83, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jCheckBox8)
+                .addComponent(chkSalvarAlteracaoSenha)
                 .addGap(0, 23, Short.MAX_VALUE))
         );
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parâmetros do sistema", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
 
-        jCheckBox10.setText("desativar auditoria");
+        chkDesativarAuditoria.setText("desativar auditoria");
 
-        jCheckBox11.setText("Ativar auditoria");
+        chkAtivarAuditoria.setText("Ativar auditoria");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -430,16 +437,16 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox11)
-                    .addComponent(jCheckBox10))
+                    .addComponent(chkAtivarAuditoria)
+                    .addComponent(chkDesativarAuditoria))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jCheckBox11)
+                .addComponent(chkAtivarAuditoria)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox10))
+                .addComponent(chkDesativarAuditoria))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -473,6 +480,13 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             }
         });
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -499,7 +513,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
                         .addComponent(tfdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(307, 307, 307))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,7 +525,8 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
                         .addComponent(tfdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -592,17 +609,277 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
 //            tfdCidade.setText(cliente.getCidade().getDescricao());
 //        }
 
+        usuarios.setLogin("");
+        usuarios.setNome("");
+        JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, usuarios);
+        listaUsuario.setVisible(true);
+
+        tfdUsuario.setText(usuarios.getLogin());
     }//GEN-LAST:event_btnLocalizarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        listarpermissoes();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 //    private void limparCampos() {
 //        cidade = new Cidade();
 //        tfdCodigo.setText("");
 //        tfdNome.setText("");
 //    }
-
     /**
      * @param args the command line arguments
      */
+    private void listarpermissoes() {
+        limparPermissoes();
+        UsuarioPermissaoTelaAcoes usuarioPermissaoTelaAcoes = new UsuarioPermissaoTelaAcoes();
+        ArrayList<UsuarioPermissaoTelaAcoes> permissoes = new ArrayList<>();
+        PermissoesDAO permissoesDAO = new PermissoesDAO();
+        permissoes = permissoesDAO.listarPermissoes(usuarios);
+        for (int i = 0; i < permissoes.size(); i++) {
+            System.out.println(permissoes.get(i).getUsuarioPermissaoTela().getId());
+            System.out.println(permissoes.get(i).getPermiteAcesso());
+            System.out.println(permissoes.get(i).getAcao());
+
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCidade") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnSalvar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkSalvarCidade.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCidade") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnLocalizar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkLocalizarCidade.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCidade") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnExcluir") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkExcluirCidade.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCliente") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnSalvar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkSalvarCliente.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCliente") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnLocalizar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkLocalizarCliente.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCliente") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnExcluir") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkExcluirCliente.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgAlteracaoSenha") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnSalvar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkSalvarAlteracaoSenha.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgParametrosSistema") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnEnableAuditoria") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkAtivarAuditoria.setSelected(true);
+
+            }
+            
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgParametrosSistema") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnDisableAuditoria") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkDesativarAuditoria.setSelected(true);
+
+            }
+            
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroFase") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnSalvar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkSalvarCadastroFase.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroFase") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnLocalizar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkLocalizarCadastroFase.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroFase") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnExcluir") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkExcluirCadastroFase.setSelected(true);
+
+            }
+            
+            
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroProjeto") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnSalvar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkSalvarCadastroProjeto.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroProjeto") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnLocalizar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkLocalizarCadastroProjeto.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroProjeto") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnExcluir") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkExcluirCadastroProjeto.setSelected(true);
+
+            }
+            
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroMotivo") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnSalvar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkSalvarCadastroMotivo.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroMotivo") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnLocalizar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkLocalizarCadastroMotivo.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroMotivo") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnExcluir") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkExcluirCadastroMotivo.setSelected(true);
+
+            }
+            
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroUsuario") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnSalvar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkSalvarCadastroUsuario.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroUsuario") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnLocalizar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkLocalizarCadastroUsuario.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroUsuario") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnExcluir") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkExcluirCadastroUsuario.setSelected(true);
+
+            }
+            
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroPrioridade") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnSalvar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkSalvarCadastroPrioridade.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroPrioridade") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnLocalizar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkLocalizarCadastroPrioridade.setSelected(true);
+
+            }
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroPrioridade") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnExcluir") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkExcluirCadastroPrioridade.setSelected(true);
+
+            }
+            
+            if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgPermissoesUsuario") 
+                    && permissoes.get(i).getPermiteAcesso() == 'S' 
+                    && permissoes.get(i).getAcao().equals("btnSalvar") 
+                    && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
+                System.out.println("existe");
+                chkSalvarPermissoesUsuario.setSelected(true);
+
+            }
+            
+        }
+    }
+    
+    private void limparPermissoes(){
+        chkAtivarAuditoria.setSelected(false);
+        chkDesativarAuditoria.setSelected(false);
+        chkExcluirCadastroFase.setSelected(false);
+        chkExcluirCadastroMotivo.setSelected(false);
+        chkExcluirCadastroPrioridade.setSelected(false);
+        chkExcluirCadastroProjeto.setSelected(false);
+        chkExcluirCadastroUsuario.setSelected(false);
+        chkExcluirCidade.setSelected(false);
+        chkExcluirCliente.setSelected(false);
+        chkLocalizarCadastroFase.setSelected(false);
+        chkLocalizarCadastroMotivo.setSelected(false);
+        chkLocalizarCadastroPrioridade.setSelected(false);
+        chkLocalizarCadastroProjeto.setSelected(false);
+        chkLocalizarCadastroUsuario.setSelected(false);
+        chkLocalizarCidade.setSelected(false);
+        chkLocalizarCliente.setSelected(false);
+        chkSalvarAlteracaoSenha.setSelected(false);
+        chkSalvarCadastroFase.setSelected(false);
+        chkSalvarCadastroMotivo.setSelected(false);
+        chkSalvarCadastroPrioridade.setSelected(false);
+        chkSalvarCadastroUsuario.setSelected(false);
+        chkSalvarCadastroProjeto.setSelected(false);
+        chkSalvarCidade.setSelected(false);
+        chkSalvarCliente.setSelected(false);
+        chkSalvarPermissoesUsuario.setSelected(false);
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -647,31 +924,32 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
     private javax.swing.JButton btnLocalizar;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox14;
-    private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox16;
-    private javax.swing.JCheckBox jCheckBox17;
-    private javax.swing.JCheckBox jCheckBox18;
-    private javax.swing.JCheckBox jCheckBox19;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox20;
-    private javax.swing.JCheckBox jCheckBox21;
-    private javax.swing.JCheckBox jCheckBox22;
-    private javax.swing.JCheckBox jCheckBox23;
-    private javax.swing.JCheckBox jCheckBox24;
-    private javax.swing.JCheckBox jCheckBox26;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JCheckBox chkAtivarAuditoria;
+    private javax.swing.JCheckBox chkDesativarAuditoria;
+    private javax.swing.JCheckBox chkExcluirCadastroFase;
+    private javax.swing.JCheckBox chkExcluirCadastroMotivo;
+    private javax.swing.JCheckBox chkExcluirCadastroPrioridade;
+    private javax.swing.JCheckBox chkExcluirCadastroProjeto;
+    private javax.swing.JCheckBox chkExcluirCadastroUsuario;
+    private javax.swing.JCheckBox chkExcluirCidade;
+    private javax.swing.JCheckBox chkExcluirCliente;
+    private javax.swing.JCheckBox chkLocalizarCadastroFase;
+    private javax.swing.JCheckBox chkLocalizarCadastroMotivo;
+    private javax.swing.JCheckBox chkLocalizarCadastroPrioridade;
+    private javax.swing.JCheckBox chkLocalizarCadastroProjeto;
+    private javax.swing.JCheckBox chkLocalizarCadastroUsuario;
+    private javax.swing.JCheckBox chkLocalizarCidade;
+    private javax.swing.JCheckBox chkLocalizarCliente;
+    private javax.swing.JCheckBox chkSalvarAlteracaoSenha;
+    private javax.swing.JCheckBox chkSalvarCadastroFase;
+    private javax.swing.JCheckBox chkSalvarCadastroMotivo;
+    private javax.swing.JCheckBox chkSalvarCadastroPrioridade;
+    private javax.swing.JCheckBox chkSalvarCadastroProjeto;
+    private javax.swing.JCheckBox chkSalvarCadastroUsuario;
+    private javax.swing.JCheckBox chkSalvarCidade;
+    private javax.swing.JCheckBox chkSalvarCliente;
+    private javax.swing.JCheckBox chkSalvarPermissoesUsuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;

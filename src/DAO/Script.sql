@@ -5,10 +5,17 @@
 CREATE TABLE usuario (
   id serial,
   nome VARCHAR(150) NOT NULL,
-  login VARCHAR(100) NOT NULL unique,
+  login VARCHAR(100) NOT NULL,
   senha VARCHAR(45) NOT NULL,
   situacao CHAR(1) NOT NULL,
   PRIMARY KEY (id));
+
+
+--Insere os Usuários Padrões;
+--Senha: 123456--
+insert into usuario values(default,'Andrei','andrei','e10adc3949ba59abbe56e057f20f883e','A');
+--Senha: 123456--       
+insert into usuario values (default,'Leandro','leandro','e10adc3949ba59abbe56e057f20f883e','A');
 
 
 -- -----------------------------------------------------
@@ -242,7 +249,7 @@ CREATE TABLE IF NOT EXISTS tarefa_usuario (
     ON UPDATE NO ACTION)
 ;
 
-DROP TABLE usuario_permissao_tela
+--DROP TABLE usuario_permissao_tela
 
 CREATE TABLE usuario_permissao_tela (
         id bigserial,
@@ -259,9 +266,25 @@ INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroCliente
 INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroCliente','S');
 INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroFase','S');
 INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroFase','S');
+insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroCidade','S');
+insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroCidade','S');
+insert into usuario_permissao_tela values(default,1,'janelas.JdgAlteracaoSenha','S');
+insert into usuario_permissao_tela values(default,2,'janelas.JdgAlteracaoSenha','S');
+insert into usuario_permissao_tela values(default,1,'janelas.JdgParametrosSistema','S');
+insert into usuario_permissao_tela values(default,2,'janelas.JdgParametrosSistema','S');
+insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroProjeto','S');
+insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroProjeto','S');
+insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroMotivo','S');
+insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroMotivo','S');
+insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroUsuario','S');
+insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroUsuario','S');
+insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroPrioridade','S');
+insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroPrioridade','S');
+insert into usuario_permissao_tela values(default,1,'janelas.JdgPermissoesUsuario','S');
+insert into usuario_permissao_tela values(default,2,'janelas.JdgPermissoesUsuario','S');
 
 
-DROP TABLE usuario_permissao_tela_acoes
+--DROP TABLE usuario_permissao_tela_acoes
 
 CREATE TABLE usuario_permissao_tela_acoes (
         id bigserial,
@@ -278,24 +301,68 @@ CREATE TABLE usuario_permissao_tela_acoes (
     INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnSalvar','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnLocalizar','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnExcluir','S');
-    INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnSair','S');
+    --INSERT INTO usuario_permissao_tela_acoes values (default,1,'btnSair','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnSalvar','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnLocalizar','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnExcluir','S');
-    INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnSair','S');
+    --INSERT INTO usuario_permissao_tela_acoes values (default,2,'btnSair','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnSalvar','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnLocalizar','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnExcluir','S');
-    INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnSair','S');
+    --INSERT INTO usuario_permissao_tela_acoes values (default,3,'btnSair','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnSalvar','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnLocalizar','S');
     INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnExcluir','S');
-    INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnSair','S');
+    --INSERT INTO usuario_permissao_tela_acoes values (default,4,'btnSair','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,5,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,5,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,5,'btnExcluir','S');
+    
+    INSERT INTO usuario_permissao_tela_acoes values (default,6,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,6,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,6,'btnExcluir','S');
+    
+    INSERT INTO usuario_permissao_tela_acoes values (default,7,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,8,'btnSalvar','S');
+    
+    INSERT INTO usuario_permissao_tela_acoes values (default,9,'btnEnableAuditoria','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,9,'btnDisableAuditoria','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,10,'btnEnableAuditoria','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,10,'btnDisableAuditoria','S');
+    
+    INSERT INTO usuario_permissao_tela_acoes values (default,11,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,11,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,11,'btnExcluir','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,12,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,12,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,12,'btnExcluir','S');
+    
+    INSERT INTO usuario_permissao_tela_acoes values (default,13,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,13,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,13,'btnExcluir','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,14,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,14,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,14,'btnExcluir','S');
+
+    INSERT INTO usuario_permissao_tela_acoes values (default,15,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,15,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,15,'btnExcluir','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,16,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,16,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,16,'btnExcluir','S');
+
+    INSERT INTO usuario_permissao_tela_acoes values (default,17,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,17,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,17,'btnExcluir','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,18,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,18,'btnLocalizar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,18,'btnExcluir','S');
+    
+    INSERT INTO usuario_permissao_tela_acoes values (default,19,'btnSalvar','S');
+    INSERT INTO usuario_permissao_tela_acoes values (default,20,'btnSalvar','S');
 
 
 
---Insere os Usuários Padrões;
---Senha: 123456--
-insert into usuario values(default,'Andrei','andrei','e10adc3949ba59abbe56e057f20f883e','A');
---Senha: 123456--       
-insert into usuario values (default,'Leandro','leandro','e10adc3949ba59abbe56e057f20f883e','A');
+
+
+

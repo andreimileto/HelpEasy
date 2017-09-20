@@ -18,12 +18,12 @@ import org.hibernate.jdbc.Work;
  *
  * @author User
  */
-public class JdbParametrosSistema extends javax.swing.JDialog {
+public class JdgParametrosSistema extends javax.swing.JDialog {
 
     /**
      * Creates new form JdbParametrosSistema
      */
-    public JdbParametrosSistema(java.awt.Frame parent, boolean modal) {
+    public JdgParametrosSistema(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
@@ -158,20 +158,21 @@ public class JdbParametrosSistema extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JdbParametrosSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgParametrosSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JdbParametrosSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgParametrosSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JdbParametrosSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgParametrosSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JdbParametrosSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgParametrosSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JdbParametrosSistema dialog = new JdbParametrosSistema(new javax.swing.JFrame(), true);
+                JdgParametrosSistema dialog = new JdgParametrosSistema(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

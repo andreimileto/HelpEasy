@@ -24,32 +24,62 @@ public class PermissoesDAO {
     Usuario usuario;
     public ArrayList<UsuarioPermissaoTelaAcoes> listarPermissoes(Usuario usuario) {
         this.usuario = usuario;
+//        List resultado = null;
+//
+//         ArrayList<UsuarioPermissaoTelaAcoes> listaPermissoes = new ArrayList<>();
+//        try {
+//           Session session = HibernateUtil.getSessionFactory().openSession();
+//            session.beginTransaction();
+//          
+//            String hql;          
+//                hql = "from Usuario u, UsuarioPermissaoTela upt, UsuarioPermissaoTelaAcoes upta "
+//                        +"where  u.id="+usuario.getId();
+//             Query query = session.createQuery(hql);
+//            List<Object[]> listResult = query.list();
+//
+//            for (Object[] aRow : listResult) {
+//                Usuario usu = (Usuario) aRow[0];
+//                UsuarioPermissaoTela usuPermissaoTela = (UsuarioPermissaoTela) aRow[1];
+//                UsuarioPermissaoTelaAcoes usuPermissaoTelaAcoes = (UsuarioPermissaoTelaAcoes) aRow[2];
+//
+//                
+//                listaPermissoes.add(usuPermissaoTelaAcoes);
+//            }
+//
+//        } catch (HibernateException he) {
+//            he.printStackTrace();
+//        }
+//        return listaPermissoes;
+
+
         List resultado = null;
 
-         ArrayList<UsuarioPermissaoTelaAcoes> listaPermissoes = new ArrayList<>();
+        ArrayList<UsuarioPermissaoTelaAcoes> lista = new ArrayList<>();
         try {
-           Session session = HibernateUtil.getSessionFactory().openSession();
+            Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-          
-            String hql;          
-                hql = "from Usuario u, UsuarioPermissaoTela upt, UsuarioPermissaoTelaAcoes upta "
-                        +"where u.id="+usuario.getId();
-             Query query = session.createQuery(hql);
-            List<Object[]> listResult = query.list();
+            String sql = "";
 
-            for (Object[] aRow : listResult) {
-                Usuario usu = (Usuario) aRow[0];
-                UsuarioPermissaoTela usuPermissaoTela = (UsuarioPermissaoTela) aRow[1];
-                UsuarioPermissaoTelaAcoes usuPermissaoTelaAcoes = (UsuarioPermissaoTelaAcoes) aRow[2];
+           
+                sql = "from UsuarioPermissaoTelaAcoes";
+            
+            String sel = sql;
+           // System.out.println(sel + " select cliente");
+            org.hibernate.Query q = session.createQuery(sql);
 
-                
-                listaPermissoes.add(usuPermissaoTelaAcoes);
+            resultado = q.list();
+
+            for (Object o : resultado) {
+                UsuarioPermissaoTelaAcoes acoes = ((UsuarioPermissaoTelaAcoes) ((Object) o));
+                lista.add(acoes);
             }
 
         } catch (HibernateException he) {
             he.printStackTrace();
-        }
-        return listaPermissoes;
+        }// finally {
+//            session.close();
+//        }
+        return lista;
 
     }
 }
