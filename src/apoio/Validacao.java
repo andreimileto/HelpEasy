@@ -159,6 +159,9 @@ public class Validacao {
             sRetorno = "";
             permissoes = perissoesDAO.listarPermissoes(TelaPrincipal.userH);
             for (int i = 0; i < permissoes.size(); i++) {
+                System.out.println("acao"+permissoes.get(i).getAcao());
+                System.out.println("tela"+permissoes.get(i).getUsuarioPermissaoTela().getTela());
+                //System.out.println("idusuario"+permissoes.get(i).getUsuarioPermissaoTela().getUsuario());
                 if (sTela.equals(permissoes.get(i).getUsuarioPermissaoTela().getTela()) && sAcao.equals(permissoes.get(i).getAcao())) {
                     sRetorno = "" + permissoes.get(i).getPermiteAcesso();
                 }
@@ -172,4 +175,10 @@ public class Validacao {
             return false;
         }
     }
+    
+    public static void populaPermissao(boolean bTodos) {
+         
+        
+    }
+    
 }
