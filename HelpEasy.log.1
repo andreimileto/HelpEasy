@@ -1,146 +1,98 @@
-2017-09-20 17:07:21,446 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-17 18:37:51,250 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
     from
-        public.usuario_permissao_tela usuarioper0_ 
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
     where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,447 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+        usuario0_.id=2
+2017-09-17 18:37:51,314 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
     from
-        public.usuario_permissao_tela usuarioper0_ 
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
     where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,448 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+        usuario0_.id=2
+2017-09-17 18:37:51,426 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
     from
-        public.usuario_permissao_tela usuarioper0_ 
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
     where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,448 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+        usuario0_.id=2
+2017-09-17 18:37:51,518 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
     from
-        public.usuario_permissao_tela usuarioper0_ 
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
     where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,449 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,450 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,450 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,462 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,463 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,464 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,464 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,465 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,466 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:07:21,475 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:16,255 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-09-20 17:15:16,490 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
-2017-09-20 17:15:17,090 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+        usuario0_.id=2
+2017-09-17 18:38:44,527 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-17 18:38:45,297 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-17 18:38:48,034 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuario0_.id as id1_11_,
         usuario0_.nome as nome2_11_,
@@ -150,277 +102,1050 @@
     from
         public.usuario usuario0_ 
     where
-        usuario0_.login='andrei' 
+        usuario0_.login='leandro' 
         and usuario0_.situacao='A'
-2017-09-20 17:15:28,077 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-17 18:38:50,606 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
-        usuario0_.id as id1_11_,
-        usuario0_.nome as nome2_11_,
-        usuario0_.login as login3_11_,
-        usuario0_.senha as senha4_11_,
-        usuario0_.situacao as situacao5_11_ 
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
     from
-        public.usuario usuario0_ 
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:38:50,768 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:38:50,898 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:38:51,043 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:38:54,875 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:38:54,956 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:38:55,036 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:38:55,105 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:38:58,205 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
     where
         (
-            upper(usuario0_.login) like '%ADMIN3%' 
-            or upper(usuario0_.nome) like '%ADMIN3%'
+            upper(cidade0_.descricao) like '%'
         ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-17 18:40:35,888 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-17 18:40:36,412 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-17 18:40:37,888 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
         and usuario0_.situacao='A'
-2017-09-20 17:15:28,103 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario
-        (nome, login, senha, situacao) 
-    values
-        (?, ?, ?, ?)
-2017-09-20 17:15:28,114 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela
-        (id_usuario, tela, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,117 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,131 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,134 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,136 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela
-        (id_usuario, tela, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,138 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,140 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela
-        (id_usuario, tela, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,142 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,143 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,145 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela
-        (id_usuario, tela, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,146 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,150 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,152 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,153 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela
-        (id_usuario, tela, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,155 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,156 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,157 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,159 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela
-        (id_usuario, tela, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,161 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,162 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,163 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,165 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela
-        (id_usuario, tela, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,167 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,169 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,171 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,172 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela
-        (id_usuario, tela, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,175 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,176 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,177 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,179 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela
-        (id_usuario, tela, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,181 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,182 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,182 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,184 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela
-        (id_usuario, tela, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:28,185 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    insert 
-    into
-        public.usuario_permissao_tela_acoes
-        (id_tela, acao, permite_acesso) 
-    values
-        (?, ?, ?)
-2017-09-20 17:15:29,202 [AWT-EventQueue-0]  INFO helpeasy.HelpEasy:20 - Classe: janelas.JdgCadastroUsuario Usuário: Andrei Mensagem: Usuário cadastrado com sucesso!
-2017-09-20 17:15:36,991 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-17 18:40:41,139 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:40:41,260 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:40:41,368 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:40:41,529 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:40:43,187 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        cidade0_.id as id1_1_,
+        cidade0_.descricao as descrica2_1_,
+        cidade0_.situacao as situacao3_1_ 
+    from
+        public.cidade cidade0_ 
+    where
+        (
+            upper(cidade0_.descricao) like '%'
+        ) 
+        and cidade0_.situacao='A' 
+    order by
+        cidade0_.descricao
+2017-09-17 18:41:03,669 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-17 18:41:04,177 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-17 18:41:05,464 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-17 18:41:07,694 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:41:07,812 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:41:07,911 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:41:08,094 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:43:30,950 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-17 18:43:31,466 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-17 18:43:32,710 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-17 18:43:37,494 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:43:37,590 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:43:37,758 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:43:37,927 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:43,377 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-17 18:44:43,975 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-17 18:44:45,405 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-17 18:44:48,387 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:48,474 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:48,549 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:48,633 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:48,708 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:52,173 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:52,274 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:52,361 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:52,455 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:55,344 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:55,425 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:55,527 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:55,640 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:58,641 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:58,747 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:58,906 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:44:59,193 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:45:03,055 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:45:03,146 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:45:03,250 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-17 18:45:03,367 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_0_,
+        usuarioper1_.id as id1_12_1_,
+        usuarioper2_.id as id1_13_2_,
+        usuario0_.nome as nome2_11_0_,
+        usuario0_.login as login3_11_0_,
+        usuario0_.senha as senha4_11_0_,
+        usuario0_.situacao as situacao5_11_0_,
+        usuarioper1_.id_usuario as id_usuar2_12_1_,
+        usuarioper1_.tela as tela3_12_1_,
+        usuarioper1_.permite_acesso as permite_4_12_1_,
+        usuarioper2_.id_tela as id_tela2_13_2_,
+        usuarioper2_.acao as acao3_13_2_,
+        usuarioper2_.permite_acesso as permite_4_13_2_ 
+    from
+        public.usuario usuario0_ cross 
+    join
+        public.usuario_permissao_tela usuarioper1_ cross 
+    join
+        public.usuario_permissao_tela_acoes usuarioper2_ 
+    where
+        usuario0_.id=2
+2017-09-20 21:22:17,171 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-20 21:22:17,897 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-20 21:22:21,684 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-20 21:22:40,951 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuario0_.id as id1_11_,
         usuario0_.nome as nome2_11_,
@@ -431,7 +1156,7 @@
         public.usuario usuario0_ 
     where
         usuario0_.situacao='A'
-2017-09-20 17:15:39,307 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:22:42,534 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_13_,
         usuarioper0_.id_tela as id_tela2_13_,
@@ -439,7 +1164,7 @@
         usuarioper0_.permite_acesso as permite_4_13_ 
     from
         public.usuario_permissao_tela_acoes usuarioper0_
-2017-09-20 17:15:39,321 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:22:42,665 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -449,7 +1174,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:15:39,327 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:22:42,755 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -459,7 +1184,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:15:39,328 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:22:42,760 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -469,7 +1194,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:15:39,330 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:22:42,767 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -479,7 +1204,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:15:39,331 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:22:42,770 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -489,7 +1214,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:15:39,333 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:22:42,773 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -499,7 +1224,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:15:39,334 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:22:42,784 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -509,622 +1234,18 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:15:39,335 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:35,793 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
     from
-        public.usuario_permissao_tela usuarioper0_ 
+        public.usuario usuario0_ 
     where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,336 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,338 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,339 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,340 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,341 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,347 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,348 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,349 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,350 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,351 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,352 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,355 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,356 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,357 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,358 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,359 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,359 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,360 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,364 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,364 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,365 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,366 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,367 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,367 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,374 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,375 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,376 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,377 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,378 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,379 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,381 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,389 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,390 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,391 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,392 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,393 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,394 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:39,401 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:15:58,759 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,764 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,766 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,767 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,769 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,771 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,772 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,773 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,774 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,775 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,777 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,778 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,779 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,781 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,782 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,783 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,784 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,785 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,787 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,788 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,789 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,791 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,792 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,793 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:15:58,795 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    update
-        public.usuario_permissao_tela_acoes 
-    set
-        id_tela=?,
-        acao=?,
-        permite_acesso=? 
-    where
-        id=?
-2017-09-20 17:16:02,390 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+        usuario0_.situacao='A'
+2017-09-20 21:23:37,521 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_13_,
         usuarioper0_.id_tela as id_tela2_13_,
@@ -1132,7 +1253,7 @@
         usuarioper0_.permite_acesso as permite_4_13_ 
     from
         public.usuario_permissao_tela_acoes usuarioper0_
-2017-09-20 17:16:02,397 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:37,529 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1142,7 +1263,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,399 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:37,541 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1152,7 +1273,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,400 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:37,546 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1162,7 +1283,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,401 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:37,549 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1172,7 +1293,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,402 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:37,552 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1182,7 +1303,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,403 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:37,555 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1192,7 +1313,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,404 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:37,563 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1202,397 +1323,18 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,405 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:39,935 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
     from
-        public.usuario_permissao_tela usuarioper0_ 
+        public.usuario usuario0_ 
     where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,405 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,406 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,407 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,408 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,409 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,410 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,411 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,412 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,416 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,417 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,418 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,419 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,420 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,421 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,425 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,426 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,427 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,427 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,428 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,429 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,430 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,435 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,436 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,437 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,438 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,438 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,439 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,444 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,445 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,446 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,446 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,447 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,447 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,448 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,452 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,453 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,454 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,454 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,938 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+        usuario0_.situacao='A'
+2017-09-20 21:23:41,523 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_13_,
         usuarioper0_.id_tela as id_tela2_13_,
@@ -1600,7 +1342,7 @@
         usuarioper0_.permite_acesso as permite_4_13_ 
     from
         public.usuario_permissao_tela_acoes usuarioper0_
-2017-09-20 17:16:02,943 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:41,531 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1610,7 +1352,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,945 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:41,537 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1620,7 +1362,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,946 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:41,549 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1630,7 +1372,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,947 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:41,572 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1640,7 +1382,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,948 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:41,575 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1650,7 +1392,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,949 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:41,578 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1660,7 +1402,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,949 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:41,581 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -1670,397 +1412,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:02,950 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,951 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,951 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,952 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,953 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,953 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,954 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,955 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,955 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,956 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,957 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,961 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,962 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,962 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,963 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,964 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,964 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,969 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,970 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,970 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,971 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,971 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,972 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,973 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,977 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,978 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,979 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,979 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,980 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,981 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,986 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,987 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,987 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,988 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,989 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,990 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,991 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,995 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:02,996 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,081 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,395 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_13_,
         usuarioper0_.id_tela as id_tela2_13_,
@@ -2068,7 +1420,7 @@
         usuarioper0_.permite_acesso as permite_4_13_ 
     from
         public.usuario_permissao_tela_acoes usuarioper0_
-2017-09-20 17:16:03,088 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,402 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2078,7 +1430,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,090 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,406 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2088,7 +1440,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,091 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,409 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2098,7 +1450,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,092 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,412 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2108,7 +1460,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,092 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,415 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2118,7 +1470,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,093 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,419 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2128,7 +1480,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,094 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,421 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2138,397 +1490,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,095 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,096 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,096 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,097 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,098 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,098 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,099 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,099 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,101 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,102 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,102 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,103 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,104 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,104 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,110 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,110 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,111 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,111 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,112 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,112 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,113 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,118 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,119 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,119 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,120 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,121 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,121 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,126 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,126 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,127 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,128 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,128 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,129 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,129 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,136 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,137 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,138 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,138 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,139 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
-    select
-        usuarioper0_.id as id1_12_0_,
-        usuarioper0_.id_usuario as id_usuar2_12_0_,
-        usuarioper0_.tela as tela3_12_0_,
-        usuarioper0_.permite_acesso as permite_4_12_0_ 
-    from
-        public.usuario_permissao_tela usuarioper0_ 
-    where
-        usuarioper0_.id=?
-2017-09-20 17:16:03,210 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,541 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_13_,
         usuarioper0_.id_tela as id_tela2_13_,
@@ -2536,7 +1498,7 @@
         usuarioper0_.permite_acesso as permite_4_13_ 
     from
         public.usuario_permissao_tela_acoes usuarioper0_
-2017-09-20 17:16:03,215 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,551 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2546,7 +1508,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,217 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,555 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2556,7 +1518,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,218 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,557 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2566,7 +1528,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,219 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,571 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2576,7 +1538,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,220 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,575 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2586,7 +1548,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,221 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,577 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2596,7 +1558,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,222 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,582 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2606,7 +1568,15 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,223 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,743 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:23:47,750 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2616,7 +1586,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,224 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,754 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2626,7 +1596,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,225 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,757 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2636,7 +1606,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,226 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,759 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2646,7 +1616,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,227 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,761 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2656,7 +1626,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,228 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,767 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2666,7 +1636,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,228 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,770 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2676,7 +1646,15 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,229 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,908 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:23:47,915 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2686,7 +1664,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,231 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,918 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2696,7 +1674,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,232 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,920 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2706,7 +1684,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,233 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,922 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2716,7 +1694,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,234 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,923 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2726,7 +1704,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,235 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,925 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2736,7 +1714,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,236 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:23:47,927 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2746,7 +1724,251 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,243 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 21:37:25,301 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-20 21:37:25,915 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-20 21:37:27,293 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-20 21:37:32,239 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.situacao='A'
+2017-09-20 21:37:33,702 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:37:33,706 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42P01
+2017-09-20 21:37:33,707 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: relation "public.usuario_permissao_tela_acoes" does not exist
+  Posição: 156
+2017-09-20 21:37:36,439 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:36,501 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:36,588 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:36,705 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:36,891 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:37,085 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:37,369 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:37,479 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:37,693 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:37,876 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:38,057 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:38,213 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:38,312 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:38,466 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:38,592 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:38,700 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:38,842 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:38,977 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:39,089 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:39,251 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:39,372 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:39,436 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:39,518 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:39,601 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:37:39,690 [AWT-EventQueue-0]  WARN org.hibernate.action.internal.UnresolvedEntityInsertActions:162 - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([entidade.UsuarioPermissaoTela#0])
+	Dependent entities: ([[entidade.UsuarioPermissaoTelaAcoes#<null>]])
+	Non-nullable association(s): ([entidade.UsuarioPermissaoTelaAcoes.usuarioPermissaoTela])
+2017-09-20 21:38:22,333 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.situacao='A'
+2017-09-20 21:38:23,797 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:38:23,799 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42P01
+2017-09-20 21:38:23,799 [AWT-EventQueue-0] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:146 - ERROR: relation "public.usuario_permissao_tela_acoes" does not exist
+  Posição: 156
+2017-09-20 21:49:26,207 [AWT-EventQueue-0]  WARN org.hibernate.internal.util.xml.DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-09-20 21:49:26,707 [AWT-EventQueue-0]  WARN org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-20 21:49:28,036 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuario0_.id as id1_11_,
+        usuario0_.nome as nome2_11_,
+        usuario0_.login as login3_11_,
+        usuario0_.senha as senha4_11_,
+        usuario0_.situacao as situacao5_11_ 
+    from
+        public.usuario usuario0_ 
+    where
+        usuario0_.login='leandro' 
+        and usuario0_.situacao='A'
+2017-09-20 21:49:30,888 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:49:30,995 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:49:31,114 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:49:31,237 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:49:35,194 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:49:35,300 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:49:35,402 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 21:49:35,593 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:08,096 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:08,106 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2756,7 +1978,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,244 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:08,118 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2766,7 +1988,15 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,245 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:08,224 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:08,230 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2776,7 +2006,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,246 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:08,236 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2786,7 +2016,15 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,247 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:08,344 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:08,351 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2796,7 +2034,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,247 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:08,355 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2806,7 +2044,15 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,248 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:08,462 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:08,467 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2816,7 +2062,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,253 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:08,472 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2826,7 +2072,15 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,253 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:12,916 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:12,920 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2836,7 +2090,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,254 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:12,924 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2846,7 +2100,15 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,255 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:13,034 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:13,038 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2856,7 +2118,7 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,256 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:13,042 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,
@@ -2866,7 +2128,221 @@
         public.usuario_permissao_tela usuarioper0_ 
     where
         usuarioper0_.id=?
-2017-09-20 17:16:03,256 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+2017-09-20 22:02:13,158 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:13,172 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:13,187 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:13,290 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:13,295 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:13,298 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:54,058 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:54,063 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:54,067 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:54,180 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:54,185 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:54,190 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:54,303 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:54,308 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:54,312 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:54,444 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:54,449 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:54,453 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:58,526 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:58,531 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:58,534 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:58,652 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_13_,
+        usuarioper0_.id_tela as id_tela2_13_,
+        usuarioper0_.acao as acao3_13_,
+        usuarioper0_.permite_acesso as permite_4_13_ 
+    from
+        public.usuario_permissao_tela_acoes usuarioper0_
+2017-09-20 22:02:58,657 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
+    select
+        usuarioper0_.id as id1_12_0_,
+        usuarioper0_.id_usuario as id_usuar2_12_0_,
+        usuarioper0_.tela as tela3_12_0_,
+        usuarioper0_.permite_acesso as permite_4_12_0_ 
+    from
+        public.usuario_permissao_tela usuarioper0_ 
+    where
+        usuarioper0_.id=?
+2017-09-20 22:02:58,666 [AWT-EventQueue-0] DEBUG org.hibernate.SQL:109 - 
     select
         usuarioper0_.id as id1_12_0_,
         usuarioper0_.id_usuario as id_usuar2_12_0_,

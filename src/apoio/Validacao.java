@@ -156,19 +156,15 @@ public class Validacao {
         try {
             PermissoesDAO perissoesDAO = new PermissoesDAO();
             ArrayList<UsuarioPermissaoTelaAcoes> permissoes = new ArrayList<>();
-
+            sRetorno = "";
             permissoes = perissoesDAO.listarPermissoes(TelaPrincipal.userH);
             for (int i = 0; i < permissoes.size(); i++) {
-                System.out.println("erro = " + sTela);
-                System.out.println("erro 2 = " + sAcao);
-                //System.out.println("erro 3 = " + permissoes.get(i).getPermiteAcesso());
                 if (sTela.equals(permissoes.get(i).getUsuarioPermissaoTela().getTela()) && sAcao.equals(permissoes.get(i).getAcao())) {
                     sRetorno = "" + permissoes.get(i).getPermiteAcesso();
-
                 }
             }
         } catch (Exception e) {
-            System.out.println("ver erro");
+            System.out.println("ver erro" + e.getMessage());
         }
         if (sRetorno.equals("S")) {
             return true;

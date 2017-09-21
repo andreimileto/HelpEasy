@@ -1,5 +1,5 @@
 package entidade;
-// Generated 15/09/2017 21:15:41 by Hibernate Tools 4.3.1
+// Generated 20/09/2017 22:24:06 by Hibernate Tools 4.3.1
 
 
 

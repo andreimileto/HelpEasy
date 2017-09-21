@@ -24,61 +24,27 @@ public class PermissoesDAO {
     Usuario usuario;
     public ArrayList<UsuarioPermissaoTelaAcoes> listarPermissoes(Usuario usuario) {
         this.usuario = usuario;
-//        List resultado = null;
-//
-//         ArrayList<UsuarioPermissaoTelaAcoes> listaPermissoes = new ArrayList<>();
-//        try {
-//           Session session = HibernateUtil.getSessionFactory().openSession();
-//            session.beginTransaction();
-//          
-//            String hql;          
-//                hql = "from Usuario u, UsuarioPermissaoTela upt, UsuarioPermissaoTelaAcoes upta "
-//                        +"where  u.id="+usuario.getId();
-//             Query query = session.createQuery(hql);
-//            List<Object[]> listResult = query.list();
-//
-//            for (Object[] aRow : listResult) {
-//                Usuario usu = (Usuario) aRow[0];
-//                UsuarioPermissaoTela usuPermissaoTela = (UsuarioPermissaoTela) aRow[1];
-//                UsuarioPermissaoTelaAcoes usuPermissaoTelaAcoes = (UsuarioPermissaoTelaAcoes) aRow[2];
-//
-//                
-//                listaPermissoes.add(usuPermissaoTelaAcoes);
-//            }
-//
-//        } catch (HibernateException he) {
-//            he.printStackTrace();
-//        }
-//        return listaPermissoes;
-
-
-        List resultado = null;
-
+        
         ArrayList<UsuarioPermissaoTelaAcoes> lista = new ArrayList<>();
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             String sql = "";
-
-           
-                sql = "from UsuarioPermissaoTelaAcoes";
-            
-            String sel = sql;
-           // System.out.println(sel + " select cliente");
+            sql = "from UsuarioPermissaoTela upt, UsuarioPermissaoTelaAcoes upta "
+                        +"where upt.id = id_tela "
+                        +"and id_usuario="+usuario.getId();
             org.hibernate.Query q = session.createQuery(sql);
 
-            resultado = q.list();
+            List<Object[]> listResult = q.list();
 
-            for (Object o : resultado) {
-                UsuarioPermissaoTelaAcoes acoes = ((UsuarioPermissaoTelaAcoes) ((Object) o));
+            for (Object[] o : listResult) {
+                UsuarioPermissaoTelaAcoes acoes = (UsuarioPermissaoTelaAcoes) o[1];
                 lista.add(acoes);
             }
 
         } catch (HibernateException he) {
             he.printStackTrace();
-        }// finally {
-//            session.close();
-//        }
+        }
         return lista;
 
     }

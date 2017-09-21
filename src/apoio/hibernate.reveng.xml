@@ -41,19 +41,19 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="helpeasy"/>
-  <table-filter match-name="movimento_tarefa"/>
-  <table-filter match-name="auditoria"/>
-  <table-filter match-name="prioridade"/>
-  <table-filter match-name="modulo"/>
-  <table-filter match-name="cliente"/>
-  <table-filter match-name="projeto"/>
-  <table-filter match-name="motivo"/>
-  <table-filter match-name="tarefa"/>
-  <table-filter match-name="cidade"/>
-  <table-filter match-name="usuario_permissao_tela"/>
   <table-filter match-name="tarefa_usuario"/>
+  <table-filter match-name="modulo"/>
+  <table-filter match-name="auditoria"/>
+  <table-filter match-name="usuario_permissao_tela"/>
+  <table-filter match-name="projeto"/>
   <table-filter match-name="versao"/>
+  <table-filter match-name="fase"/>
+  <table-filter match-name="cidade"/>
+  <table-filter match-name="tarefa"/>
+  <table-filter match-name="movimento_tarefa"/>
   <table-filter match-name="usuario"/>
   <table-filter match-name="usuario_permissao_tela_acoes"/>
-  <table-filter match-name="fase"/>
+  <table-filter match-name="prioridade"/>
+  <table-filter match-name="cliente"/>
+  <table-filter match-name="motivo"/>
 </hibernate-reverse-engineering>

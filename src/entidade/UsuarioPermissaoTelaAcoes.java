@@ -1,5 +1,5 @@
 package entidade;
-// Generated 15/09/2017 21:15:41 by Hibernate Tools 4.3.1
+// Generated 20/09/2017 22:24:06 by Hibernate Tools 4.3.1
 
 
 
@@ -12,15 +12,17 @@ public class UsuarioPermissaoTelaAcoes  implements java.io.Serializable {
      private long id;
      private UsuarioPermissaoTela usuarioPermissaoTela;
      private String acao;
+     private String acaoAmigavel;
      private char permiteAcesso;
 
     public UsuarioPermissaoTelaAcoes() {
     }
 
-    public UsuarioPermissaoTelaAcoes(long id, UsuarioPermissaoTela usuarioPermissaoTela, String acao, char permiteAcesso) {
+    public UsuarioPermissaoTelaAcoes(long id, UsuarioPermissaoTela usuarioPermissaoTela, String acao, String acaoAmigavel, char permiteAcesso) {
        this.id = id;
        this.usuarioPermissaoTela = usuarioPermissaoTela;
        this.acao = acao;
+       this.acaoAmigavel = acaoAmigavel;
        this.permiteAcesso = permiteAcesso;
     }
    
@@ -45,16 +47,19 @@ public class UsuarioPermissaoTelaAcoes  implements java.io.Serializable {
     public void setAcao(String acao) {
         this.acao = acao;
     }
+    public String getAcaoAmigavel() {
+        return this.acaoAmigavel;
+    }
+    
+    public void setAcaoAmigavel(String acaoAmigavel) {
+        this.acaoAmigavel = acaoAmigavel;
+    }
     public char getPermiteAcesso() {
         return this.permiteAcesso;
     }
     
     public void setPermiteAcesso(char permiteAcesso) {
         this.permiteAcesso = permiteAcesso;
-    }
-
-    public Object getUsuarioPermissaoTela(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

@@ -1,5 +1,5 @@
 package entidade;
-// Generated 15/09/2017 21:15:41 by Hibernate Tools 4.3.1
+// Generated 20/09/2017 22:24:06 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,26 +14,26 @@ public class UsuarioPermissaoTela  implements java.io.Serializable {
      private long id;
      private Usuario usuario;
      private String tela;
+     private String telaAmigavel;
      private char permiteAcesso;
      private Set usuarioPermissaoTelaAcoeses = new HashSet(0);
 
     public UsuarioPermissaoTela() {
     }
-    public UsuarioPermissaoTela(Usuario usuario) {
-        this.usuario = usuario;
-    }
 
 	
-    public UsuarioPermissaoTela(long id, Usuario usuario, String tela, char permiteAcesso) {
+    public UsuarioPermissaoTela(long id, Usuario usuario, String tela, String telaAmigavel, char permiteAcesso) {
         this.id = id;
         this.usuario = usuario;
         this.tela = tela;
+        this.telaAmigavel = telaAmigavel;
         this.permiteAcesso = permiteAcesso;
     }
-    public UsuarioPermissaoTela(long id, Usuario usuario, String tela, char permiteAcesso, Set usuarioPermissaoTelaAcoeses) {
+    public UsuarioPermissaoTela(long id, Usuario usuario, String tela, String telaAmigavel, char permiteAcesso, Set usuarioPermissaoTelaAcoeses) {
        this.id = id;
        this.usuario = usuario;
        this.tela = tela;
+       this.telaAmigavel = telaAmigavel;
        this.permiteAcesso = permiteAcesso;
        this.usuarioPermissaoTelaAcoeses = usuarioPermissaoTelaAcoeses;
     }
@@ -58,6 +58,13 @@ public class UsuarioPermissaoTela  implements java.io.Serializable {
     
     public void setTela(String tela) {
         this.tela = tela;
+    }
+    public String getTelaAmigavel() {
+        return this.telaAmigavel;
+    }
+    
+    public void setTelaAmigavel(String telaAmigavel) {
+        this.telaAmigavel = telaAmigavel;
     }
     public char getPermiteAcesso() {
         return this.permiteAcesso;
