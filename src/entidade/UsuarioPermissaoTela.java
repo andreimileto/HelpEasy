@@ -15,21 +15,21 @@ public class UsuarioPermissaoTela  implements java.io.Serializable {
      private Usuario usuario;
      private String tela;
      private String telaAmigavel;
-     private char permiteAcesso;
+     private boolean permiteAcesso;
      private Set usuarioPermissaoTelaAcoeses = new HashSet(0);
 
     public UsuarioPermissaoTela() {
     }
 
 	
-    public UsuarioPermissaoTela(long id, Usuario usuario, String tela, String telaAmigavel, char permiteAcesso) {
+    public UsuarioPermissaoTela(long id, Usuario usuario, String tela, String telaAmigavel, boolean permiteAcesso) {
         this.id = id;
         this.usuario = usuario;
         this.tela = tela;
         this.telaAmigavel = telaAmigavel;
         this.permiteAcesso = permiteAcesso;
     }
-    public UsuarioPermissaoTela(long id, Usuario usuario, String tela, String telaAmigavel, char permiteAcesso, Set usuarioPermissaoTelaAcoeses) {
+    public UsuarioPermissaoTela(long id, Usuario usuario, String tela, String telaAmigavel, boolean permiteAcesso, Set usuarioPermissaoTelaAcoeses) {
        this.id = id;
        this.usuario = usuario;
        this.tela = tela;
@@ -66,11 +66,11 @@ public class UsuarioPermissaoTela  implements java.io.Serializable {
     public void setTelaAmigavel(String telaAmigavel) {
         this.telaAmigavel = telaAmigavel;
     }
-    public char getPermiteAcesso() {
+    public boolean getPermiteAcesso() {
         return this.permiteAcesso;
     }
     
-    public void setPermiteAcesso(char permiteAcesso) {
+    public void setPermiteAcesso(boolean permiteAcesso) {
         this.permiteAcesso = permiteAcesso;
     }
     public Set getUsuarioPermissaoTelaAcoeses() {

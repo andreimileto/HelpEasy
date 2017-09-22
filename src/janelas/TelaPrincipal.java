@@ -290,8 +290,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_ImnClientesActionPerformed
 
     private void ImnPermissoesUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnPermissoesUsuarioActionPerformed
-        JdgPermissoesUsuario permissoesUsuario = new JdgPermissoesUsuario(this, true);
-        permissoesUsuario.setVisible(true);
+        JdgListaPermissoes listaPermissoes = new JdgListaPermissoes(this, true,userH);
+        listaPermissoes.setVisible(true);
     }//GEN-LAST:event_ImnPermissoesUsuarioActionPerformed
 
     /**

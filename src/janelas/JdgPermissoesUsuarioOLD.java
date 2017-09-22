@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
  *
  * @author Mileto
  */
-public class JdgPermissoesUsuario extends javax.swing.JDialog {
+public class JdgPermissoesUsuarioOLD extends javax.swing.JDialog {
 
     /**
      * Creates new form JdgCadastroCidade
@@ -64,7 +64,7 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
     long idBtnLocalizarJdgCadastroPrioridade;
     long idBtnSalvarJdgPermissoesUsuario;
 
-    public JdgPermissoesUsuario(java.awt.Frame parent, boolean modal) {
+    public JdgPermissoesUsuarioOLD(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
 //        Validacao.setaPermissoes(this.getClass().getName(), this.jPanel1);
@@ -619,151 +619,151 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
         for (int i = 0; i < permissoes.size(); i++) {
 
             if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCidade")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnSalvar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkSalvarCidade.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCidade")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnLocalizar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkLocalizarCidade.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCidade")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnExcluir")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkExcluirCidade.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCliente")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnSalvar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkSalvarCliente.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCliente")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnLocalizar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkLocalizarCliente.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroCliente")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnExcluir")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkExcluirCliente.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgAlteracaoSenha")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnSalvar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkSalvarAlteracaoSenha.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgParametrosSistema")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnEnableAuditoria")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkAtivarAuditoria.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgParametrosSistema")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnDisableAuditoria")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkDesativarAuditoria.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroFase")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnSalvar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkSalvarCadastroFase.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroFase")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnLocalizar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkLocalizarCadastroFase.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroFase")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnExcluir")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkExcluirCadastroFase.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroProjeto")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnSalvar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkSalvarCadastroProjeto.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroProjeto")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnLocalizar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkLocalizarCadastroProjeto.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroProjeto")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnExcluir")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkExcluirCadastroProjeto.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroMotivo")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnSalvar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkSalvarCadastroMotivo.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroMotivo")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnLocalizar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkLocalizarCadastroMotivo.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroMotivo")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnExcluir")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkExcluirCadastroMotivo.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroUsuario")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnSalvar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkSalvarCadastroUsuario.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroUsuario")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnLocalizar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkLocalizarCadastroUsuario.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroUsuario")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnExcluir")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkExcluirCadastroUsuario.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroPrioridade")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnSalvar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkSalvarCadastroPrioridade.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroPrioridade")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnLocalizar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkLocalizarCadastroPrioridade.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgCadastroPrioridade")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnExcluir")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkExcluirCadastroPrioridade.setSelected(true);
 
             } else if (permissoes.get(i).getUsuarioPermissaoTela().getTela().equals("janelas.JdgPermissoesUsuario")
-                    && permissoes.get(i).getPermiteAcesso() == 'S'
+                    && permissoes.get(i).getPermiteAcesso() == true
                     && permissoes.get(i).getAcao().equals("btnSalvar")
                     && permissoes.get(i).getUsuarioPermissaoTela().getUsuario().getId() == usuarios.getId()) {
                 chkSalvarPermissoesUsuario.setSelected(true);
@@ -925,14 +925,14 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTela.setId(idJdgParametrosSistema);
 
             usuarioPermissaoTela.setUsuario(usuarios);
-            usuarioPermissaoTela.setPermiteAcesso('S');
+            usuarioPermissaoTela.setPermiteAcesso(true);
 
             usuarioPermissaoTelaAcoes.setAcao("btnEnableAuditoria");
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             if (chkAtivarAuditoria.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setId(idBtnEnableAuditoriaParametrosSistema);
             usuarioPermissaoTela.setId(idJdgParametrosSistema);
@@ -942,12 +942,12 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setId(idBtnDisableAuditoriaParametrosSistema);
 
             usuarioPermissaoTela.setUsuario(usuarios);
-            usuarioPermissaoTela.setPermiteAcesso('S');
+            usuarioPermissaoTela.setPermiteAcesso(true);
             usuarioPermissaoTelaAcoes.setAcao("btnDisableAuditoria");
             if (chkDesativarAuditoria.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -956,9 +956,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setId(idBtnSalvarJdgAlteracaoSenha);
             usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
             if (chkSalvarAlteracaoSenha.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -968,9 +968,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setId(idBtnSalvarJdgCadastroCidade);
             usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
             if (chkSalvarCidade.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -978,9 +978,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
             usuarioPermissaoTelaAcoes.setId(idBtnExcluirJdgCadastroCidade);
             if (chkExcluirCidade.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -988,9 +988,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
             usuarioPermissaoTelaAcoes.setId(idBtnLocalizarJdgCadastroCidade);
             if (chkLocalizarCidade.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1000,9 +1000,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setId(idBtnSalvarJdgCadastroCliente);
             usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
             if (chkSalvarCliente.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1010,9 +1010,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
             usuarioPermissaoTelaAcoes.setId(idBtnExcluirJdgCadastroCliente);
             if (chkExcluirCliente.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1020,9 +1020,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
             usuarioPermissaoTelaAcoes.setId(idBtnLocalizarJdgCadastroCliente);
             if (chkLocalizarCliente.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1032,9 +1032,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setId(idBtnSalvarJdgCadastroMotivo);
             usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
             if (chkSalvarCadastroMotivo.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1042,9 +1042,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
             usuarioPermissaoTelaAcoes.setId(idBtnExcluirJdgCadastroMotivo);
             if (chkExcluirCadastroMotivo.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1052,9 +1052,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
             usuarioPermissaoTelaAcoes.setId(idBtnLocalizarJdgCadastroMotivo);
             if (chkLocalizarCadastroMotivo.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1064,9 +1064,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setId(idBtnSalvarJdgCadastroProjeto);
             usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
             if (chkSalvarCadastroProjeto.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1074,9 +1074,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
             usuarioPermissaoTelaAcoes.setId(idBtnExcluirJdgCadastroProjeto);
             if (chkExcluirCadastroProjeto.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1084,9 +1084,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
             usuarioPermissaoTelaAcoes.setId(idBtnLocalizarJdgCadastroProjeto);
             if (chkLocalizarCadastroMotivo.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1096,9 +1096,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setId(idBtnSalvarJdgCadastroUsuario);
             usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
             if (chkSalvarCadastroUsuario.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1106,9 +1106,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
             usuarioPermissaoTelaAcoes.setId(idBtnExcluirJdgCadastroUsuario);
             if (chkExcluirCadastroUsuario.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1116,9 +1116,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
             usuarioPermissaoTelaAcoes.setId(idBtnLocalizarJdgCadastroUsuario);
             if (chkLocalizarCadastroUsuario.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1128,9 +1128,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setId(idBtnSalvarJdgCadastroFase);
             usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
             if (chkSalvarCadastroFase.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1138,9 +1138,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
             usuarioPermissaoTelaAcoes.setId(idBtnExcluirJdgCadastroFase);
             if (chkExcluirCadastroFase.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1148,9 +1148,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
             usuarioPermissaoTelaAcoes.setId(idBtnLocalizarJdgCadastroFase);
             if (chkLocalizarCadastroFase.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1160,9 +1160,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setId(idBtnSalvarJdgCadastroPrioridade);
             usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
             if (chkSalvarCadastroPrioridade.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1170,9 +1170,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnExcluir");
             usuarioPermissaoTelaAcoes.setId(idBtnExcluirJdgCadastroPrioridade);
             if (chkExcluirCadastroPrioridade.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1180,9 +1180,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setAcao("btnLocalizar");
             usuarioPermissaoTelaAcoes.setId(idBtnLocalizarJdgCadastroPrioridade);
             if (chkLocalizarCadastroPrioridade.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1191,9 +1191,9 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
             usuarioPermissaoTelaAcoes.setId(idBtnSalvarJdgPermissoesUsuario);
             usuarioPermissaoTelaAcoes.setAcao("btnSalvar");
             if (chkSalvarPermissoesUsuario.isSelected()) {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('S');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(true);
             } else {
-                usuarioPermissaoTelaAcoes.setPermiteAcesso('N');
+                usuarioPermissaoTelaAcoes.setPermiteAcesso(false);
             }
             usuarioPermissaoTelaAcoes.setUsuarioPermissaoTela(usuarioPermissaoTela);
             usuarioPermissaoTelaAcoesDAO.salvar(usuarioPermissaoTelaAcoes);
@@ -1247,21 +1247,23 @@ public class JdgPermissoesUsuario extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JdgPermissoesUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgPermissoesUsuarioOLD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JdgPermissoesUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgPermissoesUsuarioOLD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JdgPermissoesUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgPermissoesUsuarioOLD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JdgPermissoesUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgPermissoesUsuarioOLD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JdgPermissoesUsuario dialog = new JdgPermissoesUsuario(new javax.swing.JFrame(), true);
+                JdgPermissoesUsuarioOLD dialog = new JdgPermissoesUsuarioOLD(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
@@ -39,30 +38,13 @@ made subject to such option by the copyright holder.
 
 Contributor(s):
 -->
-<hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/helpeasy</property>
-    <property name="hibernate.connection.username">postgres</property>
-    <property name="hibernate.connection.password">postgres</property>
-    <property name="show_sql">true</property>
-    <property name="format_sql">true</property>
-    <mapping resource="apoio/hibernate.hbm.xml"/>
-    <mapping resource="entidade/Motivo.hbm.xml"/>
-    <mapping resource="entidade/UsuarioPermissaoTelaAcoes.hbm.xml"/>
-    <mapping resource="entidade/Projeto.hbm.xml"/>
-    <mapping resource="entidade/MovimentoTarefa.hbm.xml"/>
-    <mapping resource="entidade/Fase.hbm.xml"/>
-    <mapping resource="entidade/Prioridade.hbm.xml"/>
-    <mapping resource="entidade/Cidade.hbm.xml"/>
-    <mapping resource="entidade/UsuarioPermissaoTela.hbm.xml"/>
-    <mapping resource="entidade/Cliente.hbm.xml"/>
-    <mapping resource="entidade/Versao.hbm.xml"/>
-    <mapping resource="entidade/Modulo.hbm.xml"/>
-    <mapping resource="entidade/Usuario.hbm.xml"/>
-    <mapping resource="entidade/TarefaUsuario.hbm.xml"/>
-    <mapping resource="entidade/Auditoria.hbm.xml"/>
-    <mapping resource="entidade/Tarefa.hbm.xml"/>
-  </session-factory>
-</hibernate-configuration>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+
+</hibernate-mapping>

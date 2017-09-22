@@ -257,7 +257,7 @@ CREATE TABLE usuario_permissao_tela (
         id_usuario INT NOT NULL,
         tela VARCHAR(100) NOT NULL,
         tela_amigavel VARCHAR(100) NOT NULL,
-	permite_acesso CHAR(1) NOT NULL,
+	permite_acesso boolean NOT NULL,
         PRIMARY KEY (id),
         CONSTRAINT fk_usuario_permissao_tela_id_usuario
             FOREIGN KEY (id_usuario)
@@ -270,7 +270,7 @@ CREATE TABLE usuario_permissao_tela_acoes (
         id_tela INT NOT NULL,
         acao VARCHAR(100) NOT NULL,
         acao_amigavel VARCHAR(100) NOT NULL,
-	permite_acesso CHAR(1) NOT NULL,
+	permite_acesso boolean NOT NULL,
         PRIMARY KEY (id),
                 CONSTRAINT usuario_permissao_tela_id_tela
             FOREIGN KEY (id_tela)
@@ -278,31 +278,31 @@ CREATE TABLE usuario_permissao_tela_acoes (
 );
 
 
-INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroCliente','Cadastro de Cliente','S');
-INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroCliente','Cadastro de Cliente','S');
-INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroFase','Cadastro de Fase','S');
-INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroFase','Cadastro de Fase','S');
-insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroCidade','Cadastro de Cidade','S');
-insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroCidade','Cadastro de Cidade','S');
-insert into usuario_permissao_tela values(default,1,'janelas.JdgAlteracaoSenha','Cadastro de Senha','S');
-insert into usuario_permissao_tela values(default,2,'janelas.JdgAlteracaoSenha','Cadastro de Senha','S');
-insert into usuario_permissao_tela values(default,1,'janelas.JdgParametrosSistema','Cadastro de Sistema','S');
-insert into usuario_permissao_tela values(default,2,'janelas.JdgParametrosSistema','Cadastro de Sistema','S');
-insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroProjeto','Cadastro de Projeto','S');
-insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroProjeto','Cadastro de Projeto','S');
-insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroMotivo','Cadastro de Motivo','S');
-insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroMotivo','Cadastro de Motivo','S');
-insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroUsuario','Cadastro de Usuário','S');
-insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroUsuario','Cadastro de Usuário','S');
-insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroPrioridade','Cadastro de Prioridade','S');
-insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroPrioridade','Cadastro de Prioridade','S');
-insert into usuario_permissao_tela values(default,1,'janelas.JdgPermissoesUsuario','Cadastro de Usuário','S');
-insert into usuario_permissao_tela values(default,2,'janelas.JdgPermissoesUsuario','Cadastro de Usuário','S');
+INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroCliente','Cadastro de Cliente',true);
+INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroCliente','Cadastro de Cliente',true);
+INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroFase','Cadastro de Fase',true);
+INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroFase','Cadastro de Fase',true);
+insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroCidade','Cadastro de Cidade',true);
+insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroCidade','Cadastro de Cidade',true);
+insert into usuario_permissao_tela values(default,1,'janelas.JdgAlteracaoSenha','Cadastro de Senha',true);
+insert into usuario_permissao_tela values(default,2,'janelas.JdgAlteracaoSenha','Cadastro de Senha',true);
+insert into usuario_permissao_tela values(default,1,'janelas.JdgParametrosSistema','Cadastro de Sistema',true);
+insert into usuario_permissao_tela values(default,2,'janelas.JdgParametrosSistema','Cadastro de Sistema',true);
+insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroProjeto','Cadastro de Projeto',true);
+insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroProjeto','Cadastro de Projeto',true);
+insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroMotivo','Cadastro de Motivo',true);
+insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroMotivo','Cadastro de Motivo',true);
+insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroUsuario','Cadastro de Usuário',true);
+insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroUsuario','Cadastro de Usuário',true);
+insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroPrioridade','Cadastro de Prioridade',true);
+insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroPrioridade','Cadastro de Prioridade',true);
+insert into usuario_permissao_tela values(default,1,'janelas.JdgPermissoesUsuario','Cadastro de Usuário',true);
+insert into usuario_permissao_tela values(default,2,'janelas.JdgPermissoesUsuario','Cadastro de Usuário',true);
 
 
-INSERT INTO usuario_permissao_tela_acoes values (default,24,'btnSalvar','Salvar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,24,'btnLocalizar','Localizar','N');
-INSERT INTO usuario_permissao_tela_acoes values (default,24,'btnExcluir','Excluir','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,25,'btnSalvar','Salvar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,25,'btnLocalizar','Localizar','S');
-INSERT INTO usuario_permissao_tela_acoes values (default,25,'btnExcluir','Excluir','N');
+INSERT INTO usuario_permissao_tela_acoes values (default,24,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (default,24,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (default,24,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela_acoes values (default,25,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (default,25,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (default,25,'btnExcluir','Excluir',true);

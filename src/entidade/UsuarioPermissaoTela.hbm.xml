@@ -17,7 +17,7 @@
         <property name="telaAmigavel" type="string">
             <column name="tela_amigavel" length="100" not-null="true" />
         </property>
-        <property name="permiteAcesso" type="char">
+        <property name="permiteAcesso" type="boolean">
             <column name="permite_acesso" length="1" not-null="true" />
         </property>
         <set name="usuarioPermissaoTelaAcoeses" table="usuario_permissao_tela_acoes" inverse="true" lazy="true" fetch="select">

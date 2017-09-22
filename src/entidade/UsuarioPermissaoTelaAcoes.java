@@ -13,12 +13,12 @@ public class UsuarioPermissaoTelaAcoes  implements java.io.Serializable {
      private UsuarioPermissaoTela usuarioPermissaoTela;
      private String acao;
      private String acaoAmigavel;
-     private char permiteAcesso;
+     private boolean permiteAcesso;
 
     public UsuarioPermissaoTelaAcoes() {
     }
 
-    public UsuarioPermissaoTelaAcoes(long id, UsuarioPermissaoTela usuarioPermissaoTela, String acao, String acaoAmigavel, char permiteAcesso) {
+    public UsuarioPermissaoTelaAcoes(long id, UsuarioPermissaoTela usuarioPermissaoTela, String acao, String acaoAmigavel, boolean permiteAcesso) {
        this.id = id;
        this.usuarioPermissaoTela = usuarioPermissaoTela;
        this.acao = acao;
@@ -54,11 +54,11 @@ public class UsuarioPermissaoTelaAcoes  implements java.io.Serializable {
     public void setAcaoAmigavel(String acaoAmigavel) {
         this.acaoAmigavel = acaoAmigavel;
     }
-    public char getPermiteAcesso() {
+    public boolean getPermiteAcesso() {
         return this.permiteAcesso;
     }
     
-    public void setPermiteAcesso(char permiteAcesso) {
+    public void setPermiteAcesso(boolean permiteAcesso) {
         this.permiteAcesso = permiteAcesso;
     }
 
