@@ -60,6 +60,7 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
 
         btnLocalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizar.setText("Localizar");
+        btnLocalizar.setName("btnLocalizar"); // NOI18N
         btnLocalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLocalizarActionPerformed(evt);
@@ -68,6 +69,7 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
 
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
         btnSalvar.setText("Salvar");
+        btnSalvar.setName("btnSalvar"); // NOI18N
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
@@ -76,6 +78,7 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
 
         btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixeira16x16.png"))); // NOI18N
         btnExcluir.setText("Excluir");
+        btnExcluir.setName("btnExcluir"); // NOI18N
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcluirActionPerformed(evt);
@@ -84,6 +87,7 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))); // NOI18N
         btnSair.setText("Sair");
+        btnSair.setName("btnSair"); // NOI18N
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);

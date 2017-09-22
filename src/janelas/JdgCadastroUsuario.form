@@ -161,6 +161,7 @@
               <Image iconType="3" name="/imagens/confirmar.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Salvar"/>
+            <Property name="name" type="java.lang.String" value="btnSalvar" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarActionPerformed"/>
@@ -172,6 +173,7 @@
               <Image iconType="3" name="/imagens/lixeira16x16.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Excluir"/>
+            <Property name="name" type="java.lang.String" value="btnExcluir" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirActionPerformed"/>
@@ -183,6 +185,7 @@
               <Image iconType="3" name="/imagens/icon_Schutdown16.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sair"/>
+            <Property name="name" type="java.lang.String" value="btnSair" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
@@ -194,6 +197,7 @@
               <Image iconType="3" name="/imagens/Lupa3.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Localizar"/>
+            <Property name="name" type="java.lang.String" value="btnLocalizar" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLocalizarActionPerformed"/>

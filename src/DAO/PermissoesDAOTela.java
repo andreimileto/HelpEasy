@@ -8,11 +8,9 @@ package DAO;
 import apoio.HibernateUtil;
 import entidade.Usuario;
 import entidade.UsuarioPermissaoTela;
-import entidade.UsuarioPermissaoTelaAcoes;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
 
 /**
@@ -20,26 +18,25 @@ import org.hibernate.Session;
  * @author Mileto
  */
 
-public class PermissoesDAO {
+public class PermissoesDAOTela {
     Usuario usuario;
-    public ArrayList<UsuarioPermissaoTelaAcoes> listarPermissoes(Usuario usuario) {
+    public ArrayList<UsuarioPermissaoTela> listarPermissoes(Usuario usuario) {
         this.usuario = usuario;
+        List resultado = null;
         
-        ArrayList<UsuarioPermissaoTelaAcoes> lista = new ArrayList<>();
+        ArrayList<UsuarioPermissaoTela> lista = new ArrayList<>();
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             String sql = "";
-            sql = "from UsuarioPermissaoTela upt, UsuarioPermissaoTelaAcoes upta "
-                        +"where upt.id = id_tela "
-                        +"and id_usuario="+usuario.getId();
+            sql = "from UsuarioPermissaoTela where id_usuario="+usuario.getId();
+            
             org.hibernate.Query q = session.createQuery(sql);
+            resultado = q.list();
 
-            List<Object[]> listResult = q.list();
-
-            for (Object[] o : listResult) {
-                UsuarioPermissaoTelaAcoes acoes = (UsuarioPermissaoTelaAcoes) o[1];
-                lista.add(acoes);
+            for (Object o : resultado) {
+                UsuarioPermissaoTela tela = ((UsuarioPermissaoTela) ((Object) o));
+                lista.add(tela);
             }
 
         } catch (HibernateException he) {

@@ -4,22 +4,18 @@
  */
 package apoio;
 
-import DAO.PermissoesDAO;
+import DAO.PermissoesDAOAcoes;
+import DAO.PermissoesDAOTela;
 import com.toedter.calendar.JDateChooser;
-import entidade.Cliente;
 import entidade.UsuarioPermissaoTela;
 import entidade.UsuarioPermissaoTelaAcoes;
 import janelas.TelaPrincipal;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
-import org.hibernate.Session;
-import org.hibernate.jdbc.Work;
+
 
 /**
  *
@@ -29,7 +25,8 @@ public class Validacao {
 
     private static final int[] pesoCPF = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2};
     private static final int[] pesoCNPJ = {6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
-    private static String sRetorno = "";
+    private static boolean bRetornoAcao = false;
+    private static boolean bRetornoTela = false;
 
     private static int calcularDigito(String str, int[] peso) {
         int soma = 0;
@@ -147,33 +144,91 @@ public class Validacao {
     public static void setaPermissoes(String sClasse, JPanel panel) {
         for (int i = 0; i < panel.getComponentCount(); i++) {
             if (panel.getComponent(i) instanceof JButton) {
-                panel.getComponent(i).setEnabled(pegaPermissao(sClasse, panel.getComponent(i).getName()));
+                panel.getComponent(i).setEnabled(pegaPermissaoAcao(sClasse, panel.getComponent(i).getName()));
             }
         }
     }
-
-    public static boolean pegaPermissao(String sTela, String sAcao) {
+    
+    public static void setaPermissoes(JMenuBar jMenu) { 
+        javax.swing.JMenuItem menuItem = null;
+        javax.swing.JMenu menuPai = null;
+        javax.swing.JMenu menuPaiSub = null;
+        java.awt.Component[] components;
         try {
-            PermissoesDAO perissoesDAO = new PermissoesDAO();
+            for (int i = 0; i < jMenu.getMenuCount(); i++) {
+            menuPai = jMenu.getMenu(i);
+            //System.out.println(menuPai.getText());
+            components = menuPai.getMenuComponents();
+            if (menuPai.getName() == null) {
+                 menuPai.setEnabled(false);
+            }
+            else {
+                 menuPai.setEnabled(pegaPermissaoTela(menuPai.getName()));
+            }
+            for (int x = 0; x < components.length; x++) {
+                if (components[x] instanceof javax.swing.JMenu) {
+                    menuPaiSub = ((javax.swing.JMenu) components[x]);
+                    //System.out.println("-> " + menuPaiSub.getText());
+                    if (menuPaiSub.getName() == null) {
+                         menuPaiSub.setEnabled(false);
+                    }
+                    else {
+                         menuPaiSub.setEnabled(pegaPermissaoTela(menuPaiSub.getName()));
+                    }
+                } else if (components[x] instanceof javax.swing.JMenuItem) {
+                    menuItem = ((javax.swing.JMenuItem) components[x]);
+                    //System.out.println("-> " + menuItem.getText());
+                   if (menuItem.getName() == null) {
+                        menuItem.setEnabled(false);
+                     }
+                   else {
+                       menuItem.setEnabled(pegaPermissaoTela(menuItem.getName()));
+                   }
+                }
+            }
+        }
+        } catch (Exception e) {
+            System.out.println("erro " + e.getMessage());
+        }
+    }
+       
+    public static boolean pegaPermissaoAcao(String sTela, String sAcao) {
+        try {
+            PermissoesDAOAcoes perissoesDAO = new PermissoesDAOAcoes();
             ArrayList<UsuarioPermissaoTelaAcoes> permissoes = new ArrayList<>();
-            sRetorno = "";
+            bRetornoAcao = false;
             permissoes = perissoesDAO.listarPermissoes(TelaPrincipal.userH);
             for (int i = 0; i < permissoes.size(); i++) {
-                System.out.println("acao"+permissoes.get(i).getAcao());
-                System.out.println("tela"+permissoes.get(i).getUsuarioPermissaoTela().getTela());
+                //System.out.println("acao"+permissoes.get(i).getAcao());
+                //System.out.println("tela"+permissoes.get(i).getUsuarioPermissaoTela().getTela());
                 //System.out.println("idusuario"+permissoes.get(i).getUsuarioPermissaoTela().getUsuario());
                 if (sTela.equals(permissoes.get(i).getUsuarioPermissaoTela().getTela()) && sAcao.equals(permissoes.get(i).getAcao())) {
-                    sRetorno = "" + permissoes.get(i).getPermiteAcesso();
+                    bRetornoAcao = permissoes.get(i).getPermiteAcesso();
                 }
             }
         } catch (Exception e) {
             System.out.println("ver erro" + e.getMessage());
         }
-        if (sRetorno.equals("S")) {
-            return true;
-        } else {
-            return false;
+        return bRetornoAcao;
+    }
+    
+        public static boolean pegaPermissaoTela(String sTela) {
+        try {
+            PermissoesDAOTela perissoesTelaDAO = new PermissoesDAOTela();
+            ArrayList<UsuarioPermissaoTela> permissoesTela = new ArrayList<>();
+            bRetornoTela = false;
+            permissoesTela = perissoesTelaDAO.listarPermissoes(TelaPrincipal.userH);
+            //System.out.println("tela " + sTela);
+            for (int i = 0; i < permissoesTela.size(); i++) {
+                // System.out.println("tela for" + permissoesTela.get(i).getTela());
+                if (sTela.equals(permissoesTela.get(i).getTela())) {
+                    bRetornoTela = permissoesTela.get(i).getPermiteAcesso();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("ver erro" + e.getMessage());
         }
+        return bRetornoTela;
     }
     
     public static void populaPermissao(boolean bTodos) {

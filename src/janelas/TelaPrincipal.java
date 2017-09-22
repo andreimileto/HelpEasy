@@ -6,6 +6,7 @@
 package janelas;
 
 import apoio.LogHeasy;
+import apoio.Validacao;
 import entidade.Usuario;
 
 /**
@@ -31,6 +32,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         lblUsuario.setText(usuario.getLogin());
         userH = usuario;
+        Validacao.setaPermissoes(this.jMenuBar1);
     }
 
     /**
@@ -115,9 +117,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Cadastros");
+        jMenu1.setName("menuCadastro"); // NOI18N
 
         ImnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Iconusers48.png"))); // NOI18N
         ImnClientes.setText("Clientes");
+        ImnClientes.setName("janelas.JdgCadastroCliente"); // NOI18N
         ImnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImnClientesActionPerformed(evt);
@@ -127,6 +131,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         imnCidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IconLocation.png"))); // NOI18N
         imnCidades.setText("Cidades");
+        imnCidades.setName("janelas.JdgCadastroCidade"); // NOI18N
         imnCidades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imnCidadesActionPerformed(evt);
@@ -137,9 +142,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu4.setText("Configurações");
+        jMenu4.setName("menuConfiguracoes"); // NOI18N
 
         imnParametrosSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/preferences_desktop_user_password.png"))); // NOI18N
         imnParametrosSistema.setText("Alterar senha");
+        imnParametrosSistema.setName("janelas.JdgAlteracaoSenha"); // NOI18N
         imnParametrosSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imnParametrosSistemaActionPerformed(evt);
@@ -148,6 +155,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu4.add(imnParametrosSistema);
 
         jMenuItem1.setText("Parâmetros do Sistema");
+        jMenuItem1.setName("janelas.JdgParametrosSistema"); // NOI18N
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -158,6 +166,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         ImnCadastroUsuario.setText("Gerência");
+        ImnCadastroUsuario.setName("menuGerencia"); // NOI18N
         ImnCadastroUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImnCadastroUsuarioActionPerformed(evt);
@@ -165,6 +174,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         ImnCadastroFase.setText("Cadastro de fase");
+        ImnCadastroFase.setName("janelas.JdgCadastroFase"); // NOI18N
         ImnCadastroFase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImnCadastroFaseActionPerformed(evt);
@@ -173,6 +183,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImnCadastroUsuario.add(ImnCadastroFase);
 
         ImnCadastroProjeto.setText("Cadastro de projeto");
+        ImnCadastroProjeto.setName("janelas.JdgCadastroProjeto"); // NOI18N
         ImnCadastroProjeto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImnCadastroProjetoActionPerformed(evt);
@@ -181,6 +192,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImnCadastroUsuario.add(ImnCadastroProjeto);
 
         imnCadastroMotivo.setText("Cadastro de motivo");
+        imnCadastroMotivo.setName("janelas.JdgCadastroMotivo"); // NOI18N
         imnCadastroMotivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imnCadastroMotivoActionPerformed(evt);
@@ -189,6 +201,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImnCadastroUsuario.add(imnCadastroMotivo);
 
         imnCadastroUsuario.setText("Cadastro de usuário");
+        imnCadastroUsuario.setName("janelas.JdgCadastroUsuario"); // NOI18N
         imnCadastroUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imnCadastroUsuarioActionPerformed(evt);
@@ -197,6 +210,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImnCadastroUsuario.add(imnCadastroUsuario);
 
         ImnCadastroPrioridade.setText("Cadastro de prioridade");
+        ImnCadastroPrioridade.setName("janelas.JdgCadastroPrioridade"); // NOI18N
         ImnCadastroPrioridade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImnCadastroPrioridadeActionPerformed(evt);
@@ -205,6 +219,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImnCadastroUsuario.add(ImnCadastroPrioridade);
 
         ImnPermissoesUsuario.setText("Permissões do usuário");
+        ImnPermissoesUsuario.setName("janelas.JdgPermissoesUsuario"); // NOI18N
         ImnPermissoesUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImnPermissoesUsuarioActionPerformed(evt);

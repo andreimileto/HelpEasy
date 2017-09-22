@@ -5,7 +5,7 @@
  */
 package janelas;
 
-import DAO.PermissoesDAO;
+import DAO.PermissoesDAOAcoes;
 import DAO.UsuarioDAO;
 import controle.ControleUsuario;
 import entidade.Usuario;
@@ -72,7 +72,7 @@ public class JdgPermissoesUsuario2OLD extends javax.swing.JDialog {
 //usuario.setNome("andrei");
 //usuario.setSituacao('A');
 
-//        PermissoesDAO permissoesDAO = new PermissoesDAO();
+//        PermissoesDAOAcoes permissoesDAO = new PermissoesDAOAcoes();
 //       permissoes = permissoesDAO.listarPermissoes(usuario);
 UsuarioDAO usuarioDAO = new UsuarioDAO();
 permissoes = usuarioDAO.listarTodos();

@@ -7,6 +7,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastros"/>
+            <Property name="name" type="java.lang.String" value="menuCadastro" noResource="true"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ImnClientes">
@@ -15,6 +16,7 @@
                   <Image iconType="3" name="/imagens/Iconusers48.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Clientes"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroCliente" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnClientesActionPerformed"/>
@@ -26,6 +28,7 @@
                   <Image iconType="3" name="/imagens/IconLocation.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cidades"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroCidade" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="imnCidadesActionPerformed"/>
@@ -36,6 +39,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu4">
           <Properties>
             <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xf5;es"/>
+            <Property name="name" type="java.lang.String" value="menuConfiguracoes" noResource="true"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="imnParametrosSistema">
@@ -44,6 +48,7 @@
                   <Image iconType="3" name="/imagens/preferences_desktop_user_password.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Alterar senha"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgAlteracaoSenha" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="imnParametrosSistemaActionPerformed"/>
@@ -52,6 +57,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Par&#xe2;metros do Sistema"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgParametrosSistema" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
@@ -62,6 +68,7 @@
         <Menu class="javax.swing.JMenu" name="ImnCadastroUsuario">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ger&#xea;ncia"/>
+            <Property name="name" type="java.lang.String" value="menuGerencia" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroUsuarioActionPerformed"/>
@@ -70,6 +77,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroFase">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cadastro de fase"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroFase" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroFaseActionPerformed"/>
@@ -78,6 +86,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroProjeto">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cadastro de projeto"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroProjeto" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroProjetoActionPerformed"/>
@@ -86,6 +95,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="imnCadastroMotivo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cadastro de motivo"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroMotivo" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="imnCadastroMotivoActionPerformed"/>
@@ -94,6 +104,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="imnCadastroUsuario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cadastro de usu&#xe1;rio"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroUsuario" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="imnCadastroUsuarioActionPerformed"/>
@@ -102,6 +113,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroPrioridade">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cadastro de prioridade"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroPrioridade" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroPrioridadeActionPerformed"/>
@@ -110,6 +122,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="ImnPermissoesUsuario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Permiss&#xf5;es do usu&#xe1;rio"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgPermissoesUsuario" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnPermissoesUsuarioActionPerformed"/>

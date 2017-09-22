@@ -85,6 +85,7 @@ public class JdgAlteracaoSenha extends javax.swing.JDialog {
 
         btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
         btnConfirmar.setText("Confirmar");
+        btnConfirmar.setName("btnConfirmar"); // NOI18N
         btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmarActionPerformed(evt);
@@ -93,6 +94,7 @@ public class JdgAlteracaoSenha extends javax.swing.JDialog {
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))); // NOI18N
         btnSair.setText("Sair");
+        btnSair.setName("btnSair"); // NOI18N
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);

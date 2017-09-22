@@ -5,7 +5,7 @@
  */
 package janelas;
 
-import DAO.PermissoesDAO;
+import DAO.PermissoesDAOAcoes;
 import DAO.UsuarioDAO;
 import DAO.UsuarioPermissaoTelaAcoesDAO;
 import apoio.Validacao;
@@ -614,7 +614,7 @@ public class JdgPermissoesUsuarioOLD extends javax.swing.JDialog {
         limparPermissoes();
         UsuarioPermissaoTelaAcoes usuarioPermissaoTelaAcoes = new UsuarioPermissaoTelaAcoes();
         ArrayList<UsuarioPermissaoTelaAcoes> permissoes = new ArrayList<>();
-        PermissoesDAO permissoesDAO = new PermissoesDAO();
+        PermissoesDAOAcoes permissoesDAO = new PermissoesDAOAcoes();
         permissoes = permissoesDAO.listarPermissoes(usuarios);
         for (int i = 0; i < permissoes.size(); i++) {
 
