@@ -11,8 +11,10 @@ import DAO.UsuarioPermissaoTelaAcoesDAO;
 import DAO.UsuarioPermissaoTelaDAO;
 import controle.ControleUsuario;
 import entidade.Usuario;
+import entidade.UsuarioPermissaoTela;
 import entidade.UsuarioPermissaoTelaAcoes;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -25,12 +27,14 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
 //    ControleUsuario controleUsuario = new ControleUsuario();
     PermissoesDAOAcoes permissoesDAO = new PermissoesDAOAcoes();
     ArrayList<UsuarioPermissaoTelaAcoes> permissoes;
+    String telaSelecionada;
 
     public JdgListaPermissoes(java.awt.Frame parent, boolean modal, Usuario usuario) {
         super(parent, modal);
         initComponents();
         this.usuario = usuario;
-      //  listarPermissoes();
+
+        //  listarPermissoes();
         //listarTelas();
     }
 
@@ -38,18 +42,18 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-       // listarPermissoes();
-       // listarTelas();
+        // listarPermissoes();
+        // listarTelas();
     }
 
     private void listarPermissoes() {
         try {
             //setar para tabela modelo de dados
-            tblUsuarios.setModel(this.obterDadosParaJTable());
-            tblUsuarios.getColumnModel().getColumn(0).setPreferredWidth(0);
-            tblUsuarios.getColumnModel().getColumn(1).setPreferredWidth(100);
-            tblUsuarios.getColumnModel().getColumn(2).setPreferredWidth(0);
-            tblUsuarios.getColumnModel().getColumn(3).setPreferredWidth(0);
+            tblAcoes.setModel(this.obterDadosParaJTable());
+            tblAcoes.getColumnModel().getColumn(0).setPreferredWidth(0);
+            tblAcoes.getColumnModel().getColumn(1).setPreferredWidth(100);
+            tblAcoes.getColumnModel().getColumn(2).setPreferredWidth(0);
+            tblAcoes.getColumnModel().getColumn(3).setPreferredWidth(0);
 
         } catch (Exception ex) {
             janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(), ex.getMessage());
@@ -76,32 +80,31 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
             }
         };
 
-       // UsuarioDAO usuarioDAO = new UsuarioDAO();
+        // UsuarioDAO usuarioDAO = new UsuarioDAO();
         permissoes = permissoesDAO.listarPermissoes(usuario);
 
         dtm.addColumn("ID");
         dtm.addColumn("TELA");
-        dtm.addColumn("BOTÃO");
+        dtm.addColumn("AÇÃO");
         dtm.addColumn("PERMISSÃO");
 
         for (int i = 0; i < permissoes.size(); i++) {
+//            if (permissoes.get(i).getUsuarioPermissaoTela().getId() == Integer.parseInt(telaSelecionada)) {
 
-            dtm.addRow(new Object[]{String.valueOf(permissoes.get(i).getId()),permissoes.get(i).getUsuarioPermissaoTela().getTelaAmigavel(),
-                 permissoes.get(i).getAcaoAmigavel(), permissoes.get(i).getPermiteAcesso()});
-
+            dtm.addRow(new Object[]{String.valueOf(permissoes.get(i).getId()), permissoes.get(i).getUsuarioPermissaoTela().getTelaAmigavel(),
+                permissoes.get(i).getAcaoAmigavel(), permissoes.get(i).isPermiteAcesso()});
+            //}
         }
         return dtm;
     }
-    
-    
-     private void listarTelas() {
+
+    private void listarTelas() {
         try {
             //setar para tabela modelo de dados
-            tblUsuarios2.setModel(this.obterDadosParaJTableTela());
-            tblUsuarios2.getColumnModel().getColumn(0).setPreferredWidth(0);
-            tblUsuarios2.getColumnModel().getColumn(1).setPreferredWidth(100);
-            tblUsuarios2.getColumnModel().getColumn(2).setPreferredWidth(0);
-            
+            tblTelas.setModel(this.obterDadosParaJTableTela());
+            tblTelas.getColumnModel().getColumn(0).setPreferredWidth(1);
+            tblTelas.getColumnModel().getColumn(1).setPreferredWidth(500);
+            tblTelas.getColumnModel().getColumn(2).setPreferredWidth(20);
 
         } catch (Exception ex) {
             janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(), ex.getMessage());
@@ -112,15 +115,14 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         DefaultTableModel dtm = new DefaultTableModel() {
 
             Class[] types = new Class[]{
-                java.lang.Object.class, java.lang.Object.class,  java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types[columnIndex];
             }
             boolean[] dtm = new boolean[]{
-                false, false, true,
-            };
+                false, false, true,};
 
             public boolean isCellEditable(int row, int column) {
                 return dtm[column];
@@ -132,33 +134,48 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         permissoes = permissoesDAO.listarPermissoes(usuario);
 
         dtm.addColumn("ID");
-        dtm.addColumn("TELA");        
+        dtm.addColumn("TELA");
         dtm.addColumn("PERMISSÃO");
+        //W  ArrayList<UsuarioPermissaoTelaAcoes> acoesListadas = new ArrayList<>();
+        for (int i = 0; i < permissoes.size(); i++) {
+            //  acoesListadas.add(permissoes.get(i));
+            boolean ok = true;
+//            for (int j = permissoes.size(); j > 0; j--) {
+//                if (permissoes.get(i).getUsuarioPermissaoTela().getTelaAmigavel().equals(permissoes.get(j).getUsuarioPermissaoTela().getTelaAmigavel())) {
+//                    ok = false;
+//                }
+    
+            try {
+                if (permissoes.get(i).getUsuarioPermissaoTela().getId() == permissoes.get(i - 1).getUsuarioPermissaoTela().getId()) {
+                    ok = false;
+                }
+            } catch (Exception e) {
+                ok = true;
+            }
 
-        for (int i = 0; i < permissoes.size(); i = i+3) {
-
-            dtm.addRow(new Object[]{String.valueOf(permissoes.get(i).getUsuarioPermissaoTela().getId()),
-                permissoes.get(i).getUsuarioPermissaoTela().getTelaAmigavel(), permissoes.get(i).getUsuarioPermissaoTela().getPermiteAcesso()});
+//                if (permissoes.get(i).getId() == acoesListadas.get(i).getId()) {
+//                    ok = false;
+//                }
+            if (ok) {
+                dtm.addRow(new Object[]{String.valueOf(permissoes.get(i).getUsuarioPermissaoTela().getId()),
+                    permissoes.get(i).getUsuarioPermissaoTela().getTelaAmigavel(), permissoes.get(i).getUsuarioPermissaoTela().isPermiteAcesso()});
+            }
 
         }
         return dtm;
     }
-    
-    
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblUsuarios = new javax.swing.JTable();
+        tblAcoes = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        btnConfirmar = new javax.swing.JButton();
+        btnSalvar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblUsuarios2 = new javax.swing.JTable();
+        tblTelas = new javax.swing.JTable();
         btnLocalizar = new javax.swing.JButton();
         tfdUsuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -166,111 +183,12 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Help Easy - Lista de usuários");
 
-        tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+        tblAcoes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Id", "Descrição", "Ativo", "Título 4"
+                "ID", "TELA", "AÇÃO", "PERMISSÃO"
             }
         ) {
             Class[] types = new Class [] {
@@ -288,38 +206,38 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        tblUsuarios.setFocusable(false);
-        tblUsuarios.addAncestorListener(new javax.swing.event.AncestorListener() {
+        tblAcoes.setFocusable(false);
+        tblAcoes.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tblUsuariosAncestorAdded(evt);
+                tblAcoesAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        tblUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblAcoes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblUsuariosMouseClicked(evt);
+                tblAcoesMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tblUsuariosMouseEntered(evt);
+                tblAcoesMouseEntered(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                tblUsuariosMousePressed(evt);
+                tblAcoesMousePressed(evt);
             }
         });
-        jScrollPane1.setViewportView(tblUsuarios);
+        jScrollPane1.setViewportView(tblAcoes);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 204));
         jLabel1.setText("Lista de permissões");
 
-        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Edit File-16.png"))); // NOI18N
-        btnConfirmar.setText("Editar");
-        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConfirmarActionPerformed(evt);
+                btnSalvarActionPerformed(evt);
             }
         });
 
@@ -331,7 +249,7 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
             }
         });
 
-        tblUsuarios2.setModel(new javax.swing.table.DefaultTableModel(
+        tblTelas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -347,28 +265,28 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        tblUsuarios2.setFocusable(false);
-        tblUsuarios2.addAncestorListener(new javax.swing.event.AncestorListener() {
+        tblTelas.setFocusable(false);
+        tblTelas.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tblUsuarios2AncestorAdded(evt);
+                tblTelasAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        tblUsuarios2.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblTelas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblUsuarios2MouseClicked(evt);
+                tblTelasMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tblUsuarios2MouseEntered(evt);
+                tblTelasMouseEntered(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                tblUsuarios2MousePressed(evt);
+                tblTelasMousePressed(evt);
             }
         });
-        jScrollPane2.setViewportView(tblUsuarios2);
+        jScrollPane2.setViewportView(tblTelas);
 
         btnLocalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizar.addActionListener(new java.awt.event.ActionListener() {
@@ -391,7 +309,7 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28))
@@ -426,7 +344,7 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConfirmar)
+                    .addComponent(btnSalvar)
                     .addComponent(btnSair))
                 .addContainerGap())
         );
@@ -435,21 +353,62 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 //        selecionado();
-        for (int i = 0; i < tblUsuarios.getRowCount(); i++) {
+        UsuarioPermissaoTela tela = new UsuarioPermissaoTela();
+        UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
+        UsuarioPermissaoTelaDAO usuarioPermissaoTelaDAO = new UsuarioPermissaoTelaDAO();
+        for (int i = 0; i < tblAcoes.getRowCount(); i++) {
 
-            UsuarioPermissaoTelaAcoes permiss = permissoes.get(tblUsuarios.convertRowIndexToModel(i));
-                    //convertColumnIndexToModel(i));
+            UsuarioPermissaoTelaAcoes permiss = permissoes.get(tblAcoes.convertRowIndexToModel(i));
+            //convertColumnIndexToModel(i));
 
-            if (Boolean.parseBoolean(String.valueOf(tblUsuarios.getValueAt(i, 3)))) {
+            if (Boolean.parseBoolean(String.valueOf(tblAcoes.getValueAt(i, 3)))) {
                 permiss.setPermiteAcesso(true);
             } else {
                 permiss.setPermiteAcesso(false);
             }
-            UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
-            usuarioPermissaoTelaAcoesDAO.salvar(permiss); //get().salvar(g);
+
+//            if (i<tblTelas) {
+//                
+//            }
+            if (i < tblTelas.getRowCount()) {
+                if (Boolean.parseBoolean(String.valueOf(tblTelas.getValueAt(i, 2)))) {
+                    permiss.getUsuarioPermissaoTela().setPermiteAcesso(true);
+                } else {
+                    permiss.getUsuarioPermissaoTela().setPermiteAcesso(false);
+                }
+                UsuarioPermissaoTela tela2 = new UsuarioPermissaoTela();
+            tela2.setId(permiss.getUsuarioPermissaoTela().getId());
+            tela2.setPermiteAcesso(permiss.getUsuarioPermissaoTela().isPermiteAcesso());
+            tela2.setTela(permiss.getUsuarioPermissaoTela().getTela());
+            tela2.setTelaAmigavel(permiss.getUsuarioPermissaoTela().getTelaAmigavel());
+            tela2.setUsuario(permiss.getUsuarioPermissaoTela().getUsuario());
+           // permiss.getUsuarioPermissaoTela().setUsuario(usuario);
             
+            usuarioPermissaoTelaDAO.salvar(tela2);
+            }
+
+            //  tela = permiss.getUsuarioPermissaoTela();
+            //  UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
+            usuarioPermissaoTelaAcoesDAO.salvar(permiss);
+            //get().salvar(g);
+            
+
+            try {
+                
+                System.out.println("entrou no try");
+            } catch (Exception e) {
+                System.out.println("Erro ao salvar tela " + e);
+            }
+
+//            try {
+//                usuarioPermissaoTelaDAO.salvar(tela);
+//                JOptionPane.showMessageDialog(rootPane, "Erro ao salvar tela!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+//            } catch (Exception e) {
+//                JOptionPane.showMessageDialog(rootPane, "Erro ao salvar tela!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! " + e);
+//
+//            }
 //            
 //            
 //              permiss = permissoes.get(tblUsuarios2.convertColumnIndexToModel(i));
@@ -461,68 +420,71 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
 //            }
 //          //  UsuarioPermissaoTelaDAO usuarioPermissaoTelaDAO = new UsuarioPermissaoTelaDAO();
 //            usuarioPermissaoTelaAcoesDAO.salvar(permiss);
-//            
-//            
-            
-            
         }
-        
-//        for (int i = 0; i < tblUsuarios2.getRowCount(); i++) {
-//
-//            UsuarioPermissaoTelaAcoes permiss = permissoes.get(tblUsuarios.convertColumnIndexToModel(i));
-//            //  System.out.println("parametros:"+g.getParametros());
-//            System.out.println(permiss.getPermiteAcesso());
-////              permiss.setPermiteAcesso(false);
-//            if (Boolean.parseBoolean(String.valueOf(tblUsuarios.getValueAt(i, 3)))) {
-//                permiss.setPermiteAcesso(true);
+//        ArrayList<UsuarioPermissaoTela> telas = new ArrayList<>();
+//        for (int i = 0; i < permissoes.size(); i++) {
+//            telas.add(permissoes.get(i).getUsuarioPermissaoTela());
+//        }
+//        
+//        
+//        for (int i = 0; i < tblTelas.getRowCount(); i++) {
+//            
+//            
+//            UsuarioPermissaoTela acoes = telas.get(tblTelas.convertRowIndexToModel(i));
+//                    //convertColumnIndexToModel(i));
+//                    
+//            if (Boolean.parseBoolean(String.valueOf(tblTelas.getValueAt(i, 2)))) {
+//                acoes.setPermiteAcesso(true);
 //            } else {
-//                permiss.setPermiteAcesso(false);
+//                acoes.setPermiteAcesso(false);
 //            }
-//            UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
-//            usuarioPermissaoTelaAcoesDAO.salvar(permiss); //get().salvar(g);
+//           // UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
+//            usuarioPermissaoTelaDAO.salvar(acoes);
 //        }
 
-    }//GEN-LAST:event_btnConfirmarActionPerformed
+
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
+    private void tblAcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAcoesMouseClicked
         if (evt.getClickCount() > 1) {
-            int linhaSelecionada = tblUsuarios.getSelectedRow();
+            int linhaSelecionada = tblAcoes.getSelectedRow();
             selecionado();
             dispose();
         }
-    }//GEN-LAST:event_tblUsuariosMouseClicked
+    }//GEN-LAST:event_tblAcoesMouseClicked
 
-    private void tblUsuariosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMousePressed
+    private void tblAcoesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAcoesMousePressed
 
-    }//GEN-LAST:event_tblUsuariosMousePressed
+    }//GEN-LAST:event_tblAcoesMousePressed
 
-    private void tblUsuariosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblUsuariosAncestorAdded
+    private void tblAcoesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblAcoesAncestorAdded
 
-    }//GEN-LAST:event_tblUsuariosAncestorAdded
+    }//GEN-LAST:event_tblAcoesAncestorAdded
 
-    private void tblUsuariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseEntered
+    private void tblAcoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAcoesMouseEntered
 
-    }//GEN-LAST:event_tblUsuariosMouseEntered
+    }//GEN-LAST:event_tblAcoesMouseEntered
 
-    private void tblUsuarios2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblUsuarios2AncestorAdded
+    private void tblTelasAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblTelasAncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_tblUsuarios2AncestorAdded
+    }//GEN-LAST:event_tblTelasAncestorAdded
 
-    private void tblUsuarios2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuarios2MouseClicked
-        
-    }//GEN-LAST:event_tblUsuarios2MouseClicked
+    private void tblTelasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTelasMouseClicked
+        int linha = tblTelas.getSelectedRow();
+        telaSelecionada = String.valueOf(tblTelas.getValueAt(linha, 0));
+    }//GEN-LAST:event_tblTelasMouseClicked
 
-    private void tblUsuarios2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuarios2MouseEntered
+    private void tblTelasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTelasMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_tblUsuarios2MouseEntered
+    }//GEN-LAST:event_tblTelasMouseEntered
 
-    private void tblUsuarios2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuarios2MousePressed
+    private void tblTelasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTelasMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tblUsuarios2MousePressed
+    }//GEN-LAST:event_tblTelasMousePressed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
 
@@ -551,13 +513,14 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
 //        listarPermissoes();
 //    }
     //retorna item selecionado na taleba
+
     private void selecionado() {
 
-        int row = tblUsuarios.getSelectedRow();
+        int row = tblAcoes.getSelectedRow();
         //   Usuario usuarioSelecionado = new Usuario();
-        usuario.setId(Integer.parseInt(tblUsuarios.getValueAt(row, 0).toString()));
-        usuario.setNome(tblUsuarios.getValueAt(row, 1).toString());
-        usuario.setLogin(tblUsuarios.getValueAt(row, 2).toString());
+        usuario.setId(Integer.parseInt(tblAcoes.getValueAt(row, 0).toString()));
+        usuario.setNome(tblAcoes.getValueAt(row, 1).toString());
+        usuario.setLogin(tblAcoes.getValueAt(row, 2).toString());
 //        permissoes = controleUsuario.listar(usuario);
 //        usuario.setSenha(permissoes.get(0).getSenha());
         dispose();
@@ -577,16 +540,24 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JdgListaPermissoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaPermissoes.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JdgListaPermissoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaPermissoes.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JdgListaPermissoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaPermissoes.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JdgListaPermissoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaPermissoes.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         /* Create and display the dialog */
@@ -605,15 +576,15 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnLocalizar;
     private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tblUsuarios;
-    private javax.swing.JTable tblUsuarios2;
+    private javax.swing.JTable tblAcoes;
+    private javax.swing.JTable tblTelas;
     private javax.swing.JTextField tfdUsuario;
     // End of variables declaration//GEN-END:variables
 }

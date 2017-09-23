@@ -203,7 +203,7 @@ public class Validacao {
                 //System.out.println("tela"+permissoes.get(i).getUsuarioPermissaoTela().getTela());
                 //System.out.println("idusuario"+permissoes.get(i).getUsuarioPermissaoTela().getUsuario());
                 if (sTela.equals(permissoes.get(i).getUsuarioPermissaoTela().getTela()) && sAcao.equals(permissoes.get(i).getAcao())) {
-                    bRetornoAcao = permissoes.get(i).getPermiteAcesso();
+                    bRetornoAcao = permissoes.get(i).isPermiteAcesso();
                 }
             }
         } catch (Exception e) {
@@ -222,7 +222,7 @@ public class Validacao {
             for (int i = 0; i < permissoesTela.size(); i++) {
                 // System.out.println("tela for" + permissoesTela.get(i).getTela());
                 if (sTela.equals(permissoesTela.get(i).getTela())) {
-                    bRetornoTela = permissoesTela.get(i).getPermiteAcesso();
+                    bRetornoTela = permissoesTela.get(i).isPermiteAcesso();
                 }
             }
         } catch (Exception e) {
