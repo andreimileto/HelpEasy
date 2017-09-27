@@ -23,8 +23,31 @@ import org.hibernate.Session;
  */
 public class UsuarioPermissaoTelaDAO extends DAO {
 
-   
-    
-    
+    UsuarioPermissaoTela userPerTela;
+
+    public ArrayList<UsuarioPermissaoTela> listarTodos() {
+        this.userPerTela = userPerTela;
+        List resultado = null;
+
+        ArrayList<UsuarioPermissaoTela> lista = new ArrayList<>();
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            String sql = "from usuario_permissao_tela";
+
+            org.hibernate.Query q = session.createQuery(sql);
+
+            resultado = q.list();
+
+            for (Object o : resultado) {
+                UsuarioPermissaoTela cid = ((UsuarioPermissaoTela) ((Object) o));
+                lista.add(cid);
+            }
+
+        } catch (HibernateException he) {
+            he.printStackTrace();
+        }
+        return lista;
+    }
 
 }

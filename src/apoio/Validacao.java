@@ -4,18 +4,19 @@
  */
 package apoio;
 
-import DAO.PermissoesDAOAcoes;
-import DAO.PermissoesDAOTela;
+import DAO.*;
+import entidade.*;
 import com.toedter.calendar.JDateChooser;
-import entidade.UsuarioPermissaoTela;
-import entidade.UsuarioPermissaoTelaAcoes;
 import janelas.TelaPrincipal;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
-
 
 /**
  *
@@ -148,71 +149,74 @@ public class Validacao {
             }
         }
     }
-    
-    public static void setaPermissoes(JMenuBar jMenu) { 
+
+    public static void setaPermissoes(JMenuBar jMenu) {
         javax.swing.JMenuItem menuItem = null;
         javax.swing.JMenu menuPai = null;
         javax.swing.JMenu menuPaiSub = null;
         java.awt.Component[] components;
         try {
             for (int i = 0; i < jMenu.getMenuCount(); i++) {
-            menuPai = jMenu.getMenu(i);
-            //System.out.println(menuPai.getText());
-            components = menuPai.getMenuComponents();
-            if (menuPai.getName() == null) {
+                menuPai = jMenu.getMenu(i);
+                //System.out.println(menuPai.getText());
+                components = menuPai.getMenuComponents();
+                /*if (menuPai.getName() == null) {
                  menuPai.setEnabled(false);
             }
             else {
                  menuPai.setEnabled(pegaPermissaoTela(menuPai.getName()));
-            }
-            for (int x = 0; x < components.length; x++) {
-                if (components[x] instanceof javax.swing.JMenu) {
-                    menuPaiSub = ((javax.swing.JMenu) components[x]);
-                    //System.out.println("-> " + menuPaiSub.getText());
-                    if (menuPaiSub.getName() == null) {
+            }*/
+                for (int x = 0; x < components.length; x++) {
+                    if (components[x] instanceof javax.swing.JMenu) {
+                        menuPaiSub = ((javax.swing.JMenu) components[x]);
+                        //System.out.println("-> " + menuPaiSub.getText());
+                        /*if (menuPaiSub.getName() == null) {
                          menuPaiSub.setEnabled(false);
                     }
                     else {
                          menuPaiSub.setEnabled(pegaPermissaoTela(menuPaiSub.getName()));
+                    }*/
+                    } else if (components[x] instanceof javax.swing.JMenuItem) {
+                        menuItem = ((javax.swing.JMenuItem) components[x]);
+                        //System.out.println("-> " + menuItem.getText());
+                        if (menuItem.getName() == null) {
+                            menuItem.setEnabled(false);
+                        } else {
+                            menuItem.setEnabled(pegaPermissaoTela(menuItem.getName()));
+                        }
                     }
-                } else if (components[x] instanceof javax.swing.JMenuItem) {
-                    menuItem = ((javax.swing.JMenuItem) components[x]);
-                    //System.out.println("-> " + menuItem.getText());
-                   if (menuItem.getName() == null) {
-                        menuItem.setEnabled(false);
-                     }
-                   else {
-                       menuItem.setEnabled(pegaPermissaoTela(menuItem.getName()));
-                   }
                 }
             }
-        }
         } catch (Exception e) {
             System.out.println("erro " + e.getMessage());
         }
     }
-       
+
     public static boolean pegaPermissaoAcao(String sTela, String sAcao) {
-        try {
-            PermissoesDAOAcoes perissoesDAO = new PermissoesDAOAcoes();
-            ArrayList<UsuarioPermissaoTelaAcoes> permissoes = new ArrayList<>();
-            bRetornoAcao = false;
-            permissoes = perissoesDAO.listarPermissoes(TelaPrincipal.userH);
-            for (int i = 0; i < permissoes.size(); i++) {
-                //System.out.println("acao"+permissoes.get(i).getAcao());
-                //System.out.println("tela"+permissoes.get(i).getUsuarioPermissaoTela().getTela());
-                //System.out.println("idusuario"+permissoes.get(i).getUsuarioPermissaoTela().getUsuario());
-                if (sTela.equals(permissoes.get(i).getUsuarioPermissaoTela().getTela()) && sAcao.equals(permissoes.get(i).getAcao())) {
-                    bRetornoAcao = permissoes.get(i).isPermiteAcesso();
+        if (sAcao.equals("btnSair")) {
+            bRetornoAcao = true;
+        } else {
+            try {
+                PermissoesDAOAcoes perissoesDAO = new PermissoesDAOAcoes();
+                ArrayList<UsuarioPermissaoTelaAcoes> permissoes = new ArrayList<>();
+                bRetornoAcao = false;
+                permissoes = perissoesDAO.listarPermissoes(TelaPrincipal.userH);
+                for (int i = 0; i < permissoes.size(); i++) {
+                    //System.out.println("acao"+permissoes.get(i).getAcao());
+                    //System.out.println("tela"+permissoes.get(i).getUsuarioPermissaoTela().getTela());
+                    //System.out.println("idusuario"+permissoes.get(i).getUsuarioPermissaoTela().getUsuario());
+                    if (sTela.equals(permissoes.get(i).getUsuarioPermissaoTela().getTela()) && sAcao.equals(permissoes.get(i).getAcao())) {
+                        bRetornoAcao = permissoes.get(i).isPermiteAcesso();
+                    }
                 }
+            } catch (Exception e) {
+                System.out.println("ver erro" + e.getMessage());
             }
-        } catch (Exception e) {
-            System.out.println("ver erro" + e.getMessage());
         }
         return bRetornoAcao;
     }
-    
-        public static boolean pegaPermissaoTela(String sTela) {
+
+    public static boolean pegaPermissaoTela(String sTela) {
         try {
             PermissoesDAOTela perissoesTelaDAO = new PermissoesDAOTela();
             ArrayList<UsuarioPermissaoTela> permissoesTela = new ArrayList<>();
@@ -230,10 +234,56 @@ public class Validacao {
         }
         return bRetornoTela;
     }
-    
-    public static void populaPermissao(boolean bTodos) {
-         
-        
+
+    public static void populaPermissao() {
+        String arquivoCSV = "permissoes.csv";
+        BufferedReader br = null;
+        String linha = "";
+        String csvDivisor = ";";
+        try {
+            ArrayList<Usuario> usuarios;
+            ArrayList<UsuarioPermissaoTela> userPermTela;
+            ArrayList<UsuarioPermissaoTelaAcoes> userPermTelaAcoes;
+            
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            UsuarioPermissaoTelaDAO usuarioPermissaoTelaDAO = new UsuarioPermissaoTelaDAO();
+            UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
+            
+            usuarios = usuarioDAO.listarTodos();
+            userPermTela = usuarioPermissaoTelaDAO.listarTodos();
+            userPermTelaAcoes = usuarioPermissaoTelaAcoesDAO.listarTodos();
+            
+            br = new BufferedReader(new FileReader(arquivoCSV));
+            while ((linha = br.readLine()) != null) {
+
+                String[] permissoes = linha.split(csvDivisor);
+               
+                for (int i = 0; i < usuarios.size(); i++) {
+                    for (int i2 = 0; i2 < userPermTela.size(); i2++) {
+                        if (userPermTela.get(i2).getId() == usuarios.get(i).getId() )
+                        for (int i3 = 0; i3 < userPermTela.size(); i3++) {
+                            
+                        }
+                    }
+                }
+                
+                System.out.println("tela " + permissoes[0] + " tela_am " + permissoes[1] 
+                +       " acao " + permissoes[2] + " acao_am " + permissoes[3]);
+
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
-    
 }

@@ -106,7 +106,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         tfdRazaoSocial = new javax.swing.JTextField();
         lblCidade = new javax.swing.JLabel();
         tfdCidade = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnLocalizaCidade = new javax.swing.JButton();
         lblEndereco = new javax.swing.JLabel();
         tfdEndereco = new javax.swing.JTextField();
         btnLocalizar = new javax.swing.JButton();
@@ -190,13 +190,14 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         tfdCidade.setEditable(false);
         jPanel1.add(tfdCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 270, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLocalizaCidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizaCidade.setName("btnSalvar"); // NOI18N
+        btnLocalizaCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnLocalizaCidadeActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 30, 23));
+        jPanel1.add(btnLocalizaCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 30, 23));
 
         lblEndereco.setText("Endereço");
         jPanel1.add(lblEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
@@ -258,7 +259,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         atualizarCamposFormatados();
     }//GEN-LAST:event_cbxTipoItemStateChanged
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnLocalizaCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizaCidadeActionPerformed
         int auxIdCidade = cliente.getCidade().getId();
         String auxDescricaoCidade = cliente.getCidade().getDescricao();
         //System.out.println(cliente.getCidade().getId() + "Id antes...");
@@ -277,7 +278,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         }
         
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnLocalizaCidadeActionPerformed
 
     private void tffCpfCnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tffCpfCnpjActionPerformed
 
@@ -578,11 +579,11 @@ preValidacao = "Erro ao salvar cliente:\n";
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnLocalizaCidade;
     private javax.swing.JButton btnLocalizar;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvar1;
     private javax.swing.JComboBox<String> cbxTipo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCidade;

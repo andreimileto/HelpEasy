@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import org.hibernate.Session;
 import org.hibernate.jdbc.Work;
 
-
 /**
  *
  * @author User
@@ -26,7 +25,7 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
     public JdgParametrosSistema(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        Validacao.setaPermissoes(this.getClass().getName(),this.jPanel1);
+        Validacao.setaPermissoes(this.getClass().getName(), this.jPanel1);
     }
 
     /**
@@ -39,8 +38,8 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnEnableAuditoria = new javax.swing.JToggleButton();
-        btnDisableAuditoria = new javax.swing.JToggleButton();
+        btnEnableAuditoria = new javax.swing.JButton();
+        btnDisableAuditoria = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -65,11 +64,11 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(193, 193, 193)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDisableAuditoria)
-                    .addComponent(btnEnableAuditoria, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(216, Short.MAX_VALUE))
+                    .addComponent(btnEnableAuditoria))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,7 +87,7 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,9 +97,29 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnEnableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnableAuditoriaActionPerformed
+        // TODO add your handling code here:
+        try {
+            Session sessao = HibernateUtil.getSessionFactory().openSession();
+            sessao.beginTransaction();
+
+            sessao.doWork(new Work() {
+                public void execute(Connection connection) throws SQLException {
+                    CallableStatement call = connection.prepareCall("{ call fnenableauditoria() }");
+                    call.execute();
+                    call = connection.prepareCall("{ call fnGravaUsuarioSessao(2,'Leandro') }");
+                    call.execute();
+                }
+            });
+
+            sessao.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println("erro da função: " + e);
+        }
+    }//GEN-LAST:event_btnEnableAuditoriaActionPerformed
+
     private void btnDisableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisableAuditoriaActionPerformed
-        // TODO add your handling code here:    
-      
+        // TODO add your handling code here:
         try {
             Session sessao = HibernateUtil.getSessionFactory().openSession();
             sessao.beginTransaction();
@@ -119,27 +138,6 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
             System.out.println("erro da função: " + e);
         }
     }//GEN-LAST:event_btnDisableAuditoriaActionPerformed
-
-    private void btnEnableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnableAuditoriaActionPerformed
-        // TODO add your handling code here:
-            try {
-            Session sessao = HibernateUtil.getSessionFactory().openSession();
-            sessao.beginTransaction();
-
-            sessao.doWork(new Work() {
-                public void execute(Connection connection) throws SQLException {
-                    CallableStatement call = connection.prepareCall("{ call fnenableauditoria() }");
-                    call.execute();
-                    call = connection.prepareCall("{ call fnGravaUsuarioSessao(2,'Leandro') }");
-                    call.execute();
-                }
-            });
-
-            sessao.getTransaction().commit();
-        } catch (Exception e) {
-            System.out.println("erro da função: " + e);
-        }
-    }//GEN-LAST:event_btnEnableAuditoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,8 +183,8 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btnDisableAuditoria;
-    private javax.swing.JToggleButton btnEnableAuditoria;
+    private javax.swing.JButton btnDisableAuditoria;
+    private javax.swing.JButton btnEnableAuditoria;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

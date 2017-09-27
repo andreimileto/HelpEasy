@@ -26,7 +26,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -43,12 +43,12 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnDisableAuditoria" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnEnableAuditoria" min="-2" pref="136" max="-2" attributes="0"/>
+                      <Component id="btnEnableAuditoria" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="216" max="32767" attributes="0"/>
+                  <EmptySpace pref="105" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -65,7 +65,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JToggleButton" name="btnEnableAuditoria">
+        <Component class="javax.swing.JButton" name="btnEnableAuditoria">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ativa Auditoria"/>
             <Property name="name" type="java.lang.String" value="btnEnableAuditoria" noResource="true"/>
@@ -74,7 +74,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnableAuditoriaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="btnDisableAuditoria">
+        <Component class="javax.swing.JButton" name="btnDisableAuditoria">
           <Properties>
             <Property name="text" type="java.lang.String" value="Desabilita Auditoria"/>
             <Property name="name" type="java.lang.String" value="btnDisableAuditoria" noResource="true"/>
