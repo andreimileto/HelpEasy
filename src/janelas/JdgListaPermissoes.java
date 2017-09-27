@@ -368,60 +368,23 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         //  UsuarioPermissaoTela tela = new UsuarioPermissaoTela();
         UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
         UsuarioPermissaoTelaDAO usuarioPermissaoTelaDAO = new UsuarioPermissaoTelaDAO();
-        //UsuarioPermissaoTela tela2 = new UsuarioPermissaoTela();
+boolean ok = true;
+        for (int i = 0; i < permissoesEmEdicao.size(); i++) {
 
-        for (int i = 0; i < permissoesEmEdicao.size(); i++) {
-//            Session session = HibernateUtil.getSessionFactory().openSession(); 
-//                   session.close();
-            System.out.println("edição......................." + permissoesEmEdicao.get(i).getUsuarioPermissaoTela().isPermiteAcesso());
-        }
-        for (int i = 0; i < permissoesEmEdicao.size(); i++) {
-//tblAcoes.getRowCount()
             UsuarioPermissaoTelaAcoes permiss = permissoesEmEdicao.get(tblAcoes.convertRowIndexToModel(i));
-            //convertColumnIndexToModel(i));
+            
 
-//            if (Boolean.parseBoolean(String.valueOf(tblAcoes.getValueAt(i, 3)))) {
-//                permiss.setPermiteAcesso(true);
-//            } else {
-//                permiss.setPermiteAcesso(false);
-//            }
-//            if (i<tblTelas) {
-//                
-//            }
-            if (i < tblTelas.getRowCount()) {
-                if (Boolean.parseBoolean(String.valueOf(tblTelas.getValueAt(i, 2)))) {
-                    permiss.getUsuarioPermissaoTela().setPermiteAcesso(true);
-                } else {
-                    permiss.getUsuarioPermissaoTela().setPermiteAcesso(false);
-                }
-
-                boolean ok = true;
-
-//                tela2.setId(permiss.getUsuarioPermissaoTela().getId());
-//                tela2.setPermiteAcesso(permiss.getUsuarioPermissaoTela().isPermiteAcesso());
-//                tela2.setTela(permiss.getUsuarioPermissaoTela().getTela());
-//                tela2.setTelaAmigavel(permiss.getUsuarioPermissaoTela().getTelaAmigavel());
-//                tela2.setUsuario(permiss.getUsuarioPermissaoTela().getUsuario());
-                for (int j = 0; j < permissoesEmEdicao.size(); j++) {
-                    System.out.println("edição......................." + permissoesEmEdicao.get(j).getUsuarioPermissaoTela().isPermiteAcesso());
-                }
-
-                permiss.getUsuarioPermissaoTela().setId(permissoesEmEdicao.get(i).getUsuarioPermissaoTela().getId());
-                permiss.getUsuarioPermissaoTela().setPermiteAcesso(permissoesEmEdicao.get(i).getUsuarioPermissaoTela().isPermiteAcesso());
-                permiss.getUsuarioPermissaoTela().setTela(permissoesEmEdicao.get(i).getUsuarioPermissaoTela().getTela());
-                permiss.getUsuarioPermissaoTela().setTelaAmigavel(permissoesEmEdicao.get(i).getUsuarioPermissaoTela().getTelaAmigavel());
-                permiss.getUsuarioPermissaoTela().setUsuario(permissoesEmEdicao.get(i).getUsuarioPermissaoTela().getUsuario());
-                permiss.getUsuarioPermissaoTela().setUsuario(usuario);
-                if (ok) {
-
-                    usuarioPermissaoTelaDAO.salvar(permiss.getUsuarioPermissaoTela());
-                }
-
+            if (usuarioPermissaoTelaDAO.salvar(permissoesEmEdicao.get(i).getUsuarioPermissaoTela()) && usuarioPermissaoTelaAcoesDAO.salvar(permiss)) {
+                
+            }else{
+                ok = false;
             }
-
-            usuarioPermissaoTelaAcoesDAO.salvar(permiss);
-
         }
+        if (ok) {
+                    JOptionPane.showMessageDialog(rootPane, "Alteração de permissões do usuário salva com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao salvar as alterações, verifique com o suporte.");
+                }
 
 
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -492,16 +455,15 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
 //        }
         //--
 
-        for (int i = 0; i < permissoesEmEdicao.size(); i++) {
-            System.out.println("edição!!!!!!!!!!!!!!!!! " + permissoesEmEdicao.get(i).getUsuarioPermissaoTela().isPermiteAcesso());
-            System.out.println("edição!!!!!!!!!!!!!!!!! permissao " + permissoes.get(i).getUsuarioPermissaoTela().isPermiteAcesso());
-        }
-
+//        for (int i = 0; i < permissoesEmEdicao.size(); i++) {
+//            System.out.println("edição!!!!!!!!!!!!!!!!! " + permissoesEmEdicao.get(i).getUsuarioPermissaoTela().isPermiteAcesso());
+////            System.out.println("edição!!!!!!!!!!!!!!!!! permissao " + permissoes.get(i).getUsuarioPermissaoTela().isPermiteAcesso());
+//        }
         int linha = tblTelas.getSelectedRow();
         telaSelecionada = tblTelas.getValueAt(linha, 1).toString();
 
         //JOptionPane.showMessageDialog(rootPane, telaSelecionada);
-        //  listarPermissoes();
+        listarPermissoes();
 
     }//GEN-LAST:event_tblTelasMouseClicked
 
