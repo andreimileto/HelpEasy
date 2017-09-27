@@ -9,7 +9,6 @@ import DAO.PermissoesDAOAcoes;
 import DAO.UsuarioDAO;
 import DAO.UsuarioPermissaoTelaAcoesDAO;
 import DAO.UsuarioPermissaoTelaDAO;
-import apoio.HibernateUtil;
 import controle.ControleUsuario;
 import entidade.Usuario;
 import entidade.UsuarioPermissaoTela;
@@ -17,7 +16,6 @@ import entidade.UsuarioPermissaoTelaAcoes;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import org.hibernate.Session;
 
 /**
  *
@@ -29,14 +27,12 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
 //    ControleUsuario controleUsuario = new ControleUsuario();
     PermissoesDAOAcoes permissoesDAO = new PermissoesDAOAcoes();
     ArrayList<UsuarioPermissaoTelaAcoes> permissoes;
-    ArrayList<UsuarioPermissaoTelaAcoes> permissoesEmEdicao = new ArrayList<>();
     String telaSelecionada;
 
     public JdgListaPermissoes(java.awt.Frame parent, boolean modal, Usuario usuario) {
         super(parent, modal);
         initComponents();
         this.usuario = usuario;
-        permissoes = permissoesDAO.listarPermissoes(usuario);
 
         //  listarPermissoes();
         //listarTelas();
@@ -85,27 +81,19 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         };
 
         // UsuarioDAO usuarioDAO = new UsuarioDAO();
-//        if (permissoesEmEdicao.size()<1) {
-//            permissoes = permissoesDAO.listarPermissoes(usuario);
-//                       
-//        }else{
-//            permissoes = new ArrayList<>();
-//            for (int i = 0; i < permissoesEmEdicao.size(); i++) {
-//            permissoes.add(permissoesEmEdicao.get(i));    
-//            }
-//            
-//        }
+        permissoes = permissoesDAO.listarPermissoes(usuario);
+
         dtm.addColumn("ID");
         dtm.addColumn("TELA");
         dtm.addColumn("AÇÃO");
         dtm.addColumn("PERMISSÃO");
 
         for (int i = 0; i < permissoes.size(); i++) {
-            if (permissoes.get(i).getUsuarioPermissaoTela().getTelaAmigavel().equals(telaSelecionada)) {
+//            if (permissoes.get(i).getUsuarioPermissaoTela().getId() == Integer.parseInt(telaSelecionada)) {
 
-                dtm.addRow(new Object[]{String.valueOf(permissoes.get(i).getId()), permissoes.get(i).getUsuarioPermissaoTela().getTelaAmigavel(),
-                    permissoes.get(i).getAcaoAmigavel(), permissoes.get(i).isPermiteAcesso()});
-            }
+            dtm.addRow(new Object[]{String.valueOf(permissoes.get(i).getId()), permissoes.get(i).getUsuarioPermissaoTela().getTelaAmigavel(),
+                permissoes.get(i).getAcaoAmigavel(), permissoes.get(i).isPermiteAcesso()});
+            //}
         }
         return dtm;
     }
@@ -143,7 +131,8 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         };
 
         //UsuarioDAO usuarioDAO = new UsuarioDAO();
-        //  permissoes = permissoesDAO.listarPermissoes(usuario);
+        permissoes = permissoesDAO.listarPermissoes(usuario);
+
         dtm.addColumn("ID");
         dtm.addColumn("TELA");
         dtm.addColumn("PERMISSÃO");
@@ -155,7 +144,7 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
 //                if (permissoes.get(i).getUsuarioPermissaoTela().getTelaAmigavel().equals(permissoes.get(j).getUsuarioPermissaoTela().getTelaAmigavel())) {
 //                    ok = false;
 //                }
-
+    
             try {
                 if (permissoes.get(i).getUsuarioPermissaoTela().getId() == permissoes.get(i - 1).getUsuarioPermissaoTela().getId()) {
                     ok = false;
@@ -163,6 +152,7 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
             } catch (Exception e) {
                 ok = true;
             }
+
 //                if (permissoes.get(i).getId() == acoesListadas.get(i).getId()) {
 //                    ok = false;
 //                }
@@ -313,6 +303,16 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(28, 28, 28))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -326,16 +326,6 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -350,9 +340,9 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
                     .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnSair))
@@ -365,26 +355,20 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 //        selecionado();
-        //  UsuarioPermissaoTela tela = new UsuarioPermissaoTela();
+        UsuarioPermissaoTela tela = new UsuarioPermissaoTela();
         UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
         UsuarioPermissaoTelaDAO usuarioPermissaoTelaDAO = new UsuarioPermissaoTelaDAO();
-        //UsuarioPermissaoTela tela2 = new UsuarioPermissaoTela();
+        for (int i = 0; i < tblAcoes.getRowCount(); i++) {
 
-        for (int i = 0; i < permissoesEmEdicao.size(); i++) {
-//            Session session = HibernateUtil.getSessionFactory().openSession(); 
-//                   session.close();
-            System.out.println("edição......................." + permissoesEmEdicao.get(i).getUsuarioPermissaoTela().isPermiteAcesso());
-        }
-        for (int i = 0; i < permissoesEmEdicao.size(); i++) {
-//tblAcoes.getRowCount()
-            UsuarioPermissaoTelaAcoes permiss = permissoesEmEdicao.get(tblAcoes.convertRowIndexToModel(i));
+            UsuarioPermissaoTelaAcoes permiss = permissoes.get(tblAcoes.convertRowIndexToModel(i));
             //convertColumnIndexToModel(i));
 
-//            if (Boolean.parseBoolean(String.valueOf(tblAcoes.getValueAt(i, 3)))) {
-//                permiss.setPermiteAcesso(true);
-//            } else {
-//                permiss.setPermiteAcesso(false);
-//            }
+            if (Boolean.parseBoolean(String.valueOf(tblAcoes.getValueAt(i, 3)))) {
+                permiss.setPermiteAcesso(true);
+            } else {
+                permiss.setPermiteAcesso(false);
+            }
+
 //            if (i<tblTelas) {
 //                
 //            }
@@ -394,34 +378,69 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
                 } else {
                     permiss.getUsuarioPermissaoTela().setPermiteAcesso(false);
                 }
-
-                boolean ok = true;
-
-//                tela2.setId(permiss.getUsuarioPermissaoTela().getId());
-//                tela2.setPermiteAcesso(permiss.getUsuarioPermissaoTela().isPermiteAcesso());
-//                tela2.setTela(permiss.getUsuarioPermissaoTela().getTela());
-//                tela2.setTelaAmigavel(permiss.getUsuarioPermissaoTela().getTelaAmigavel());
-//                tela2.setUsuario(permiss.getUsuarioPermissaoTela().getUsuario());
-                for (int j = 0; j < permissoesEmEdicao.size(); j++) {
-                    System.out.println("edição......................." + permissoesEmEdicao.get(j).getUsuarioPermissaoTela().isPermiteAcesso());
-                }
-
-                permiss.getUsuarioPermissaoTela().setId(permissoesEmEdicao.get(i).getUsuarioPermissaoTela().getId());
-                permiss.getUsuarioPermissaoTela().setPermiteAcesso(permissoesEmEdicao.get(i).getUsuarioPermissaoTela().isPermiteAcesso());
-                permiss.getUsuarioPermissaoTela().setTela(permissoesEmEdicao.get(i).getUsuarioPermissaoTela().getTela());
-                permiss.getUsuarioPermissaoTela().setTelaAmigavel(permissoesEmEdicao.get(i).getUsuarioPermissaoTela().getTelaAmigavel());
-                permiss.getUsuarioPermissaoTela().setUsuario(permissoesEmEdicao.get(i).getUsuarioPermissaoTela().getUsuario());
-                permiss.getUsuarioPermissaoTela().setUsuario(usuario);
-                if (ok) {
-
-                    usuarioPermissaoTelaDAO.salvar(permiss.getUsuarioPermissaoTela());
-                }
-
+                UsuarioPermissaoTela tela2 = new UsuarioPermissaoTela();
+            tela2.setId(permiss.getUsuarioPermissaoTela().getId());
+            tela2.setPermiteAcesso(permiss.getUsuarioPermissaoTela().isPermiteAcesso());
+            tela2.setTela(permiss.getUsuarioPermissaoTela().getTela());
+            tela2.setTelaAmigavel(permiss.getUsuarioPermissaoTela().getTelaAmigavel());
+            tela2.setUsuario(permiss.getUsuarioPermissaoTela().getUsuario());
+           // permiss.getUsuarioPermissaoTela().setUsuario(usuario);
+            
+            usuarioPermissaoTelaDAO.salvar(tela2);
             }
 
+            //  tela = permiss.getUsuarioPermissaoTela();
+            //  UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
             usuarioPermissaoTelaAcoesDAO.salvar(permiss);
+            //get().salvar(g);
+            
 
+            try {
+                
+                System.out.println("entrou no try");
+            } catch (Exception e) {
+                System.out.println("Erro ao salvar tela " + e);
+            }
+
+//            try {
+//                usuarioPermissaoTelaDAO.salvar(tela);
+//                JOptionPane.showMessageDialog(rootPane, "Erro ao salvar tela!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ");
+//            } catch (Exception e) {
+//                JOptionPane.showMessageDialog(rootPane, "Erro ao salvar tela!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! " + e);
+//
+//            }
+//            
+//            
+//              permiss = permissoes.get(tblUsuarios2.convertColumnIndexToModel(i));
+//
+//            if (Boolean.parseBoolean(String.valueOf(tblUsuarios2.getValueAt(i, 2)))) {
+//                permiss.setPermiteAcesso(true);
+//            } else {
+//                permiss.setPermiteAcesso(false);
+//            }
+//          //  UsuarioPermissaoTelaDAO usuarioPermissaoTelaDAO = new UsuarioPermissaoTelaDAO();
+//            usuarioPermissaoTelaAcoesDAO.salvar(permiss);
         }
+//        ArrayList<UsuarioPermissaoTela> telas = new ArrayList<>();
+//        for (int i = 0; i < permissoes.size(); i++) {
+//            telas.add(permissoes.get(i).getUsuarioPermissaoTela());
+//        }
+//        
+//        
+//        for (int i = 0; i < tblTelas.getRowCount(); i++) {
+//            
+//            
+//            UsuarioPermissaoTela acoes = telas.get(tblTelas.convertRowIndexToModel(i));
+//                    //convertColumnIndexToModel(i));
+//                    
+//            if (Boolean.parseBoolean(String.valueOf(tblTelas.getValueAt(i, 2)))) {
+//                acoes.setPermiteAcesso(true);
+//            } else {
+//                acoes.setPermiteAcesso(false);
+//            }
+//           // UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
+//            usuarioPermissaoTelaDAO.salvar(acoes);
+//        }
 
 
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -431,20 +450,11 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void tblAcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAcoesMouseClicked
-
-        int linhaSelecionada = tblAcoes.getSelectedRow();
-        int idAcao = Integer.parseInt(tblAcoes.getValueAt(linhaSelecionada, 0).toString());
-        for (int i = 0; i < permissoes.size(); i++) {
-            if (permissoes.get(i).getId() == idAcao) {
-
-                if (Boolean.parseBoolean(String.valueOf(tblAcoes.getValueAt(linhaSelecionada, 3)))) {
-                    permissoes.get(i).setPermiteAcesso(true);
-                } else {
-                    permissoes.get(i).setPermiteAcesso(false);
-                }
-            }
+        if (evt.getClickCount() > 1) {
+            int linhaSelecionada = tblAcoes.getSelectedRow();
+            selecionado();
+            dispose();
         }
-
     }//GEN-LAST:event_tblAcoesMouseClicked
 
     private void tblAcoesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAcoesMousePressed
@@ -464,45 +474,8 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
     }//GEN-LAST:event_tblTelasAncestorAdded
 
     private void tblTelasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTelasMouseClicked
-        int linhaSelecionada = tblTelas.getSelectedRow();
-        int idTela = Integer.parseInt(tblTelas.getValueAt(linhaSelecionada, 0).toString());
-        for (int i = 0; i < permissoes.size(); i++) {
-            if (permissoes.get(i).getUsuarioPermissaoTela().getId() == idTela) {
-
-                if (Boolean.parseBoolean(String.valueOf(tblTelas.getValueAt(linhaSelecionada, 2)))) {
-                    permissoes.get(i).getUsuarioPermissaoTela().setPermiteAcesso(true);
-                } else {
-                    permissoes.get(i).getUsuarioPermissaoTela().setPermiteAcesso(false);
-                }
-                permissoesEmEdicao.add(permissoes.get(i));
-            }
-        }
-        //--
-//        int linhaSelecionada = tblAcoes.getSelectedRow();
-//        int idAcao = Integer.parseInt(tblAcoes.getValueAt(linhaSelecionada, 0).toString());
-//        for (int i = 0; i < permissoes.size(); i++) {
-//            if (permissoes.get(i).getId() == idAcao) {
-//                
-//                if (Boolean.parseBoolean(String.valueOf(tblAcoes.getValueAt(linhaSelecionada, 3)))) {
-//                    permissoes.get(i).setPermiteAcesso(true);
-//                } else {
-//                    permissoes.get(i).setPermiteAcesso(false);
-//                }
-//            }
-//        }
-        //--
-
-        for (int i = 0; i < permissoesEmEdicao.size(); i++) {
-            System.out.println("edição!!!!!!!!!!!!!!!!! " + permissoesEmEdicao.get(i).getUsuarioPermissaoTela().isPermiteAcesso());
-            System.out.println("edição!!!!!!!!!!!!!!!!! permissao " + permissoes.get(i).getUsuarioPermissaoTela().isPermiteAcesso());
-        }
-
         int linha = tblTelas.getSelectedRow();
-        telaSelecionada = tblTelas.getValueAt(linha, 1).toString();
-
-        //JOptionPane.showMessageDialog(rootPane, telaSelecionada);
-        //  listarPermissoes();
-
+        telaSelecionada = String.valueOf(tblTelas.getValueAt(linha, 0));
     }//GEN-LAST:event_tblTelasMouseClicked
 
     private void tblTelasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTelasMouseEntered
@@ -522,10 +495,7 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
 
         tfdUsuario.setText(usuario.getLogin());
         if (tfdUsuario.getText().length() > 0) {
-            permissoes = new ArrayList<>();
             //listarpermissoes();
-            permissoes = permissoesDAO.listarPermissoes(usuario);
-            permissoesEmEdicao = new ArrayList<>();
             listarTelas();
             listarPermissoes();
         }

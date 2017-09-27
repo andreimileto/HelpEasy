@@ -25,7 +25,7 @@ public abstract class DAO {
 
             Transaction t = session.beginTransaction();
 
-            session.merge(o);
+            session.saveOrUpdate(o);
 
             t.commit();
 
@@ -33,11 +33,9 @@ public abstract class DAO {
         } catch (HibernateException he) {
             //janelas.TelaPrincipal.logH.gravaErro(o.getClass().getName(),janelas.TelaPrincipal.userH.getLogin(),"err");
             he.printStackTrace();
-        } 
-        finally {
-          //  session.close();
+        } finally {
+            session.close();
         }
-        
         return retorno;
     }
 }
