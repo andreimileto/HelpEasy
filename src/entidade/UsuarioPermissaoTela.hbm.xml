@@ -6,7 +6,7 @@
     <class name="entidade.UsuarioPermissaoTela" table="usuario_permissao_tela" schema="public">
         <id name="id" type="long">
             <column name="id" />
-            <generator class="assigned"></generator>
+            <generator class="identity"></generator>
         </id>
         <many-to-one name="usuario" class="entidade.Usuario" fetch="select">
             <column name="id_usuario" not-null="true" />

@@ -6,7 +6,7 @@
     <class name="entidade.Usuario" table="usuario" schema="public">
         <id name="id" type="int">
             <column name="id" />
-            <generator class="assigned"></generator>
+            <generator class="identity"></generator>
         </id>
         <property name="nome" type="string">
             <column name="nome" length="150" not-null="true" />
