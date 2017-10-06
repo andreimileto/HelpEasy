@@ -9,27 +9,43 @@
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/Validacao.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroUsuario.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaPermissoes.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Tarefa.hbm.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/UsuarioPermissaoTelaDAO.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/Formatacao.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/TarefaUsuario.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Usuario.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Cidade.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroTarefa.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Prioridade.hbm.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgParametrosSistema.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Cliente.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/HibernateUtil.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/ClienteDAO.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Modulo.hbm.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/Script.sql</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/hibernate.reveng.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleCliente.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaUsuario.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/TelaPrincipal.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroCliente.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Auditoria.hbm.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/UsuarioPermissaoTelaAcoes.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroProjeto.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/PermissoesDAOAcoes.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/DAO.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/UsuarioPermissaoTela.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Auditoria.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Versao.hbm.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/UsuarioPermissaoTela.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Fase.hbm.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/UsuarioDAO.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/UsuarioPermissaoTelaAcoes.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Projeto.hbm.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/hibernate.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Motivo.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Cliente.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/MovimentoTarefa.hbm.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/UsuarioPermissaoTelaAcoesDAO.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/IDAO.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleUsuario.java</file>
