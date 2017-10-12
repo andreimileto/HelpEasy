@@ -6,7 +6,9 @@
 package janelas;
 
 import apoio.Validacao;
+import controle.ControlePrioridade;
 import controle.ControleProjeto;
+import entidade.Prioridade;
 import entidade.Projeto;
 import javax.swing.JOptionPane;
 
@@ -19,7 +21,7 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
     /**
      * Creates new form JdgCadastroProjeto
      */
-    Projeto projeto;
+    Prioridade prioridade;
 
     public JdgCadastroPrioridade(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -167,16 +169,16 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         if (tfdNome.getText().length() > 2) {
             try {
-                Projeto projeto = new Projeto();
-                projeto.setDescricao(tfdNome.getText());
-                projeto.setSituacao('A');
+                prioridade = new Prioridade();
+                prioridade.setDescricao(tfdNome.getText());
+                prioridade.setSituacao('A');
 
                 if (!tfdCodigo.getText().isEmpty()) {
-                    projeto.setId(Integer.parseInt(tfdCodigo.getText()));
+                    prioridade.setId(Integer.parseInt(tfdCodigo.getText()));
                 }
 
-                ControleProjeto controleProjeto = new ControleProjeto();
-                String mensagem = controleProjeto.salvar(projeto);
+                ControlePrioridade contorlePrioridade = new ControlePrioridade();
+                String mensagem = contorlePrioridade.salvar(prioridade);
                 if (mensagem.equalsIgnoreCase("ok")) {
                     JOptionPane.showMessageDialog(null, "Prioridade salvo com sucesso!");
                     limparCampos();
@@ -198,18 +200,18 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         if (tfdCodigo.getText().length() > 0) {
 
-            int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a prioridade " + projeto.getDescricao() + "?");
+            int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a prioridade " + prioridade.getDescricao() + "?");
             if (exclusao == 0) {
 
                 try {
-                    projeto.setSituacao('I');
+                    prioridade.setSituacao('I');
 
-                    ControleProjeto controleProjeto = new ControleProjeto();
-                    String mensagem = controleProjeto.salvar(projeto);
+                    ControlePrioridade controlePrioridade = new ControlePrioridade();
+                    String mensagem = controlePrioridade.salvar(prioridade);
 
                     if (mensagem.equalsIgnoreCase("ok")) {
-                        JOptionPane.showMessageDialog(rootPane, "prioridade " + projeto.getDescricao() + " excluído com sucesso");
-                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "projeto " + projeto.getDescricao() + " excluído com sucesso");
+                        JOptionPane.showMessageDialog(rootPane, "prioridade " + prioridade.getDescricao() + " excluído com sucesso");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "projeto " + prioridade.getDescricao() + " excluído com sucesso");
                         limparCampos();
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Erro ao excluir prioridade. ");
@@ -228,18 +230,18 @@ public class JdgCadastroPrioridade extends javax.swing.JDialog {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-        projeto = new Projeto();
-        JdgListaProjeto listaProjeto = new JdgListaProjeto(null, true, projeto);
-        listaProjeto.setVisible(true);
-        if (projeto.getId() > 0) {
-            tfdCodigo.setText(String.valueOf(projeto.getId()));
+        prioridade = new Prioridade();
+        JdgListaPrioridade listaPrioridade = new JdgListaPrioridade(null, true, prioridade);
+        listaPrioridade.setVisible(true);
+        if (prioridade.getId() > 0) {
+            tfdCodigo.setText(String.valueOf(prioridade.getId()));
         }
 
-        tfdNome.setText(projeto.getDescricao());
+        tfdNome.setText(prioridade.getDescricao());
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
     private void limparCampos() {
-        projeto = new Projeto();
+        prioridade = new Prioridade();
         tfdCodigo.setText("");
         tfdNome.setText("");
     }

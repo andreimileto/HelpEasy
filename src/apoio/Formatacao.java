@@ -227,9 +227,19 @@ public class Formatacao {
     public static String getDataAtual() {
         Date now = new Date();
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+      //  System.out.println(df.format(now));
         String dataHoje = df.format(now);
 
         return dataHoje;
+    }
+    
+    public static Date getDataAtualEmDate() throws ParseException {
+        Date now = new Date();
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+      //  System.out.println(df.format(now));
+        String dataHoje = df.format(now);
+        Date data = df.parse(dataHoje);
+        return data ;
     }
     
     public static String getSenhaMD5(String senha){

@@ -5,7 +5,9 @@
  */
 package janelas;
 
+import controle.ControlePrioridade;
 import controle.ControleProjeto;
+import entidade.Prioridade;
 import entidade.Projeto;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
@@ -14,30 +16,30 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Mileto
  */
-public class JdgListaProjeto extends javax.swing.JDialog {
+public class JdgListaPrioridade extends javax.swing.JDialog {
 
-    Projeto projeto;
+    Prioridade prioridade;
 
-    public JdgListaProjeto(java.awt.Frame parent, boolean modal, Projeto projeto) {
+    public JdgListaPrioridade(java.awt.Frame parent, boolean modal, Prioridade prioridade) {
         super(parent, modal);
         initComponents();
-        this.projeto = projeto;
-        listarProjeto();
+        this.prioridade = prioridade;
+        listarPrioridade();
     }
 
-    public JdgListaProjeto(java.awt.Frame parent, boolean modal) {
+    public JdgListaPrioridade(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         
-        listarProjeto();
+        listarPrioridade();
     }
 
-    private void listarProjeto() {
+    private void listarPrioridade() {
         try {
             //setar para tabela modelo de dados
-            tblCidades.setModel(this.obterDadosParaJTable());
-            tblCidades.getColumnModel().getColumn(0).setPreferredWidth(0);
-            tblCidades.getColumnModel().getColumn(1).setPreferredWidth(270);
+            tblPrioridades.setModel(this.obterDadosParaJTable());
+            tblPrioridades.getColumnModel().getColumn(0).setPreferredWidth(0);
+            tblPrioridades.getColumnModel().getColumn(1).setPreferredWidth(270);
             
 
         } catch (Exception ex) {
@@ -52,15 +54,15 @@ public class JdgListaProjeto extends javax.swing.JDialog {
             }
         };
 
-        projeto.setDescricao(tfdDescricao.getText());
-        ControleProjeto controleProjeto = new ControleProjeto();
-        ArrayList<Projeto> projetos = controleProjeto.listar(projeto);
+        prioridade.setDescricao(tfdDescricao.getText());
+        ControlePrioridade controlePrioridade = new ControlePrioridade();
+        ArrayList<Prioridade> prioridades = controlePrioridade.listar(prioridade);
         dtm.addColumn("ID");
         dtm.addColumn("DESCRIÇÃO");
 
-        for (int i = 0; i < projetos.size(); i++) {
-            dtm.addRow(new String[]{String.valueOf(projetos.get(i).getId()),
-                projetos.get(i).getDescricao()});
+        for (int i = 0; i < prioridades.size(); i++) {
+            dtm.addRow(new String[]{String.valueOf(prioridades.get(i).getId()),
+                prioridades.get(i).getDescricao()});
         }
         return dtm;
     }
@@ -70,7 +72,7 @@ public class JdgListaProjeto extends javax.swing.JDialog {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblCidades = new javax.swing.JTable();
+        tblPrioridades = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         btnConfirmar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
@@ -80,7 +82,7 @@ public class JdgListaProjeto extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Help Easy - Lista de projetos");
 
-        tblCidades.setModel(new javax.swing.table.DefaultTableModel(
+        tblPrioridades.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -195,32 +197,32 @@ public class JdgListaProjeto extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        tblCidades.setFocusable(false);
-        tblCidades.addAncestorListener(new javax.swing.event.AncestorListener() {
+        tblPrioridades.setFocusable(false);
+        tblPrioridades.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tblCidadesAncestorAdded(evt);
+                tblPrioridadesAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        tblCidades.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblPrioridades.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblCidadesMouseClicked(evt);
+                tblPrioridadesMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tblCidadesMouseEntered(evt);
+                tblPrioridadesMouseEntered(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                tblCidadesMousePressed(evt);
+                tblPrioridadesMousePressed(evt);
             }
         });
-        jScrollPane1.setViewportView(tblCidades);
+        jScrollPane1.setViewportView(tblPrioridades);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 204));
-        jLabel1.setText("Lista de Projetos");
+        jLabel1.setText("Lista de Prioridades");
 
         btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Edit File-16.png"))); // NOI18N
         btnConfirmar.setText("Editar");
@@ -305,37 +307,37 @@ public class JdgListaProjeto extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void tblCidadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCidadesMouseClicked
+    private void tblPrioridadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPrioridadesMouseClicked
         if (evt.getClickCount() > 1) {
-            int linhaSelecionada = tblCidades.getSelectedRow();
+            int linhaSelecionada = tblPrioridades.getSelectedRow();
             selecionado();
             dispose();
         }
-    }//GEN-LAST:event_tblCidadesMouseClicked
+    }//GEN-LAST:event_tblPrioridadesMouseClicked
 
-    private void tblCidadesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCidadesMousePressed
+    private void tblPrioridadesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPrioridadesMousePressed
 
-    }//GEN-LAST:event_tblCidadesMousePressed
+    }//GEN-LAST:event_tblPrioridadesMousePressed
 
-    private void tblCidadesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblCidadesAncestorAdded
+    private void tblPrioridadesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblPrioridadesAncestorAdded
 
-    }//GEN-LAST:event_tblCidadesAncestorAdded
+    }//GEN-LAST:event_tblPrioridadesAncestorAdded
 
-    private void tblCidadesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCidadesMouseEntered
+    private void tblPrioridadesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPrioridadesMouseEntered
 
-    }//GEN-LAST:event_tblCidadesMouseEntered
+    }//GEN-LAST:event_tblPrioridadesMouseEntered
     private void listar() {
         try {
-        projeto.setDescricao(tfdDescricao.getText().toUpperCase());
-        System.out.println("descricao == " + projeto.getDescricao()); 
-        ControleProjeto controleProjeto = new ControleProjeto();
-        controleProjeto.listar(projeto);
+        prioridade.setDescricao(tfdDescricao.getText().toUpperCase());
+        System.out.println("descricao == " + prioridade.getDescricao()); 
+        ControlePrioridade contorlePrioridade = new ControlePrioridade();
+        contorlePrioridade.listar(prioridade);
         } catch (Exception e) {
             janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),e.getMessage());
         }
         
         
-        listarProjeto();
+        listarPrioridade();
     }
     private void tfdDescricaoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdDescricaoKeyPressed
 
@@ -348,9 +350,9 @@ public class JdgListaProjeto extends javax.swing.JDialog {
 
     private void selecionado() {
 
-        int row = tblCidades.getSelectedRow();
-        this.projeto.setId(Integer.parseInt(tblCidades.getValueAt(row, 0).toString()));
-        this.projeto.setDescricao(tblCidades.getValueAt(row, 1).toString());
+        int row = tblPrioridades.getSelectedRow();
+        this.prioridade.setId(Integer.parseInt(tblPrioridades.getValueAt(row, 0).toString()));
+        this.prioridade.setDescricao(tblPrioridades.getValueAt(row, 1).toString());
         dispose();
     }
 
@@ -371,20 +373,21 @@ public class JdgListaProjeto extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JdgListaProjeto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaPrioridade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JdgListaProjeto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaPrioridade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JdgListaProjeto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaPrioridade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JdgListaProjeto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaPrioridade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JdgListaProjeto dialog = new JdgListaProjeto(new javax.swing.JFrame(), true);
+                JdgListaPrioridade dialog = new JdgListaPrioridade(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -402,7 +405,7 @@ public class JdgListaProjeto extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblCidades;
+    private javax.swing.JTable tblPrioridades;
     private javax.swing.JTextField tfdDescricao;
     // End of variables declaration//GEN-END:variables
 }

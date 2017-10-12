@@ -411,7 +411,34 @@ cliente.setSituacao('I');
     }//GEN-LAST:event_tfdEnderecoActionPerformed
 
     private void btnSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar1ActionPerformed
-        // TODO add your handling code here:
+      //  if (validarCampos()) {
+        if (tfdId.getText().length()>0) {
+            cliente.setId(Integer.parseInt(tfdId.getText()));
+        }
+            cliente.setRazaoSocial(tfdRazaoSocial.getText());
+            cliente.setCpfCnpj(tffCpfCnpj.getText().replace(".", "").replace("-", "").replace("/", ""));
+            cliente.setEndereco(tfdEndereco.getText());
+            cliente.setTelefone(tffTelefone.getText().replace("(", "").replace(")", "").replace("-", "").replace(" ", ""));
+            cliente.setCidade(cidade);
+              if (cbxTipo.getSelectedIndex() == 0) {
+                  cliente.setTipoCadastro('F');
+              }else{
+                  cliente.setTipoCadastro('J');
+              }
+      
+         cliente.setSituacao('A');
+        
+            ControleCliente controleCliente = new ControleCliente();
+            String mensagem = controleCliente.salvar(cliente);
+            if (mensagem.equals("ok")) {
+                limparCampos();
+                JOptionPane.showMessageDialog(rootPane, "Cliente cadastrado com sucesso");
+            }else{
+                JOptionPane.showMessageDialog(rootPane, mensagem);
+            }
+        
+        
+      //  }
     }//GEN-LAST:event_btnSalvar1ActionPerformed
     private boolean validarCampos() {
 //        lblRazaoSocial.setForeground(Color.black);
