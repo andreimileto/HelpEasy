@@ -73,7 +73,7 @@ IF (TG_OP = 'INSERT') THEN
 	ordem,
 	campos)
 	VALUES(
-	fnPegaUsuarioSessao(),
+	cast(current_setting('myapp.user') as int),
 	TG_TABLE_NAME,
 	substr(TG_OP, 1, 1),
 	'INSERT',
@@ -88,7 +88,7 @@ IF (TG_OP = 'UPDATE') THEN
 	ordem,
 	campos)
 	VALUES(
-	fnPegaUsuarioSessao(),
+	cast(current_setting('myapp.user') as int),
 	TG_TABLE_NAME,
 	substr(TG_OP, 1, 1),
 	'UPDATE',

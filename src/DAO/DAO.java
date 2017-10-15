@@ -6,7 +6,9 @@
 package DAO;
 
 import apoio.HibernateUtil;
+import janelas.TelaPrincipal;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -24,6 +26,8 @@ public abstract class DAO {
             session = HibernateUtil.getSessionFactory().openSession();
 
             Transaction t = session.beginTransaction();
+            Query query = session.createSQLQuery("set session \"myapp.user\" = " + TelaPrincipal.userH.getId());
+            query.executeUpdate();
 
             session.merge(o);
 

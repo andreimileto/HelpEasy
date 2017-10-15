@@ -107,8 +107,6 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
                 public void execute(Connection connection) throws SQLException {
                     CallableStatement call = connection.prepareCall("{ call fnenableauditoria() }");
                     call.execute();
-                    call = connection.prepareCall("{ call fnGravaUsuarioSessao(2,'Leandro') }");
-                    call.execute();
                 }
             });
 
@@ -127,8 +125,6 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
             sessao.doWork(new Work() {
                 public void execute(Connection connection) throws SQLException {
                     CallableStatement call = connection.prepareCall("{ call fndisableauditoria() }");
-                    call.execute();
-                    call = connection.prepareCall("{ call fnLimpaSessao() }");
                     call.execute();
                 }
             });

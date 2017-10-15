@@ -258,14 +258,14 @@ public class Validacao {
 
                 String[] permissoes = linha.split(csvDivisor);
                
-                for (int i = 0; i < usuarios.size(); i++) {
+                /*for (int i = 0; i < usuarios.size(); i++) {
                     for (int i2 = 0; i2 < userPermTela.size(); i2++) {
                         if (userPermTela.get(i2).getId() == usuarios.get(i).getId() )
                         for (int i3 = 0; i3 < userPermTela.size(); i3++) {
                             
                         }
                     }
-                }
+                }*/
                 
                 System.out.println("tela " + permissoes[0] + " tela_am " + permissoes[1] 
                 +       " acao " + permissoes[2] + " acao_am " + permissoes[3]);
