@@ -61,10 +61,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImnTarefa = new javax.swing.JMenuItem();
         ImnCadastroUsuario = new javax.swing.JMenu();
         ImnCadastroFase = new javax.swing.JMenuItem();
-        ImnCadastroProjeto = new javax.swing.JMenuItem();
+        ImnCadastroModulo = new javax.swing.JMenuItem();
         imnCadastroMotivo = new javax.swing.JMenuItem();
-        imnCadastroUsuario = new javax.swing.JMenuItem();
         ImnCadastroPrioridade = new javax.swing.JMenuItem();
+        ImnCadastroProjeto = new javax.swing.JMenuItem();
+        imnCadastroUsuario = new javax.swing.JMenuItem();
+        ImnCadastroVersao = new javax.swing.JMenuItem();
         ImnPermissoesUsuario = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         imnParametrosSistema = new javax.swing.JMenuItem();
@@ -190,14 +192,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(ImnCadastroFase);
 
-        ImnCadastroProjeto.setText("Cadastro de projeto");
-        ImnCadastroProjeto.setName("janelas.JdgCadastroProjeto"); // NOI18N
-        ImnCadastroProjeto.addActionListener(new java.awt.event.ActionListener() {
+        ImnCadastroModulo.setText("Cadastro de módulo");
+        ImnCadastroModulo.setName("janelas.JdgCadastroModulo"); // NOI18N
+        ImnCadastroModulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImnCadastroProjetoActionPerformed(evt);
+                ImnCadastroModuloActionPerformed(evt);
             }
         });
-        ImnCadastroUsuario.add(ImnCadastroProjeto);
+        ImnCadastroUsuario.add(ImnCadastroModulo);
 
         imnCadastroMotivo.setText("Cadastro de motivo");
         imnCadastroMotivo.setName("janelas.JdgCadastroMotivo"); // NOI18N
@@ -208,6 +210,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(imnCadastroMotivo);
 
+        ImnCadastroPrioridade.setText("Cadastro de prioridade");
+        ImnCadastroPrioridade.setName("janelas.JdgCadastroPrioridade"); // NOI18N
+        ImnCadastroPrioridade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImnCadastroPrioridadeActionPerformed(evt);
+            }
+        });
+        ImnCadastroUsuario.add(ImnCadastroPrioridade);
+
+        ImnCadastroProjeto.setText("Cadastro de projeto");
+        ImnCadastroProjeto.setName("janelas.JdgCadastroProjeto"); // NOI18N
+        ImnCadastroProjeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImnCadastroProjetoActionPerformed(evt);
+            }
+        });
+        ImnCadastroUsuario.add(ImnCadastroProjeto);
+
         imnCadastroUsuario.setText("Cadastro de usuário");
         imnCadastroUsuario.setName("janelas.JdgCadastroUsuario"); // NOI18N
         imnCadastroUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -217,14 +237,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(imnCadastroUsuario);
 
-        ImnCadastroPrioridade.setText("Cadastro de prioridade");
-        ImnCadastroPrioridade.setName("janelas.JdgCadastroPrioridade"); // NOI18N
-        ImnCadastroPrioridade.addActionListener(new java.awt.event.ActionListener() {
+        ImnCadastroVersao.setText("Cadastro de versão");
+        ImnCadastroVersao.setName("janelas.JdgCadastroVersao"); // NOI18N
+        ImnCadastroVersao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImnCadastroPrioridadeActionPerformed(evt);
+                ImnCadastroVersaoActionPerformed(evt);
             }
         });
-        ImnCadastroUsuario.add(ImnCadastroPrioridade);
+        ImnCadastroUsuario.add(ImnCadastroVersao);
 
         ImnPermissoesUsuario.setText("Permissões do usuário");
         ImnPermissoesUsuario.setName("janelas.JdgPermissoesUsuario"); // NOI18N
@@ -350,6 +370,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_menuItemSairActionPerformed
 
+    private void ImnCadastroModuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnCadastroModuloActionPerformed
+        JdgCadastroModulo cadastroModulo = new JdgCadastroModulo(this, true);
+        cadastroModulo.setVisible(true);
+    }//GEN-LAST:event_ImnCadastroModuloActionPerformed
+
+    private void ImnCadastroVersaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnCadastroVersaoActionPerformed
+        JdgCadastroVersao cadastroVersao = new JdgCadastroVersao(this, true);
+        cadastroVersao.setVisible(true);
+    }//GEN-LAST:event_ImnCadastroVersaoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -390,9 +420,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem ImnCadastroFase;
+    private javax.swing.JMenuItem ImnCadastroModulo;
     private javax.swing.JMenuItem ImnCadastroPrioridade;
     private javax.swing.JMenuItem ImnCadastroProjeto;
     private javax.swing.JMenu ImnCadastroUsuario;
+    private javax.swing.JMenuItem ImnCadastroVersao;
     private javax.swing.JMenuItem ImnClientes;
     private javax.swing.JMenuItem ImnPermissoesUsuario;
     private javax.swing.JMenuItem ImnTarefa;

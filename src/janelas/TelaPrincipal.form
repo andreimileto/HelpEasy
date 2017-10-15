@@ -87,13 +87,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroFaseActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroProjeto">
+            <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroModulo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastro de projeto"/>
-                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroProjeto" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Cadastro de m&#xf3;dulo"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroModulo" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroProjetoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroModuloActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="imnCadastroMotivo">
@@ -105,6 +105,24 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="imnCadastroMotivoActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroPrioridade">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cadastro de prioridade"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroPrioridade" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroPrioridadeActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroProjeto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cadastro de projeto"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroProjeto" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroProjetoActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="imnCadastroUsuario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cadastro de usu&#xe1;rio"/>
@@ -114,13 +132,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="imnCadastroUsuarioActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroPrioridade">
+            <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroVersao">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastro de prioridade"/>
-                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroPrioridade" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Cadastro de vers&#xe3;o"/>
+                <Property name="name" type="java.lang.String" value="janelas.JdgCadastroVersao" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroPrioridadeActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImnCadastroVersaoActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ImnPermissoesUsuario">
