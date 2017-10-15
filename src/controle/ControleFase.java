@@ -6,9 +6,7 @@
 package controle;
 
 import DAO.FaseDAO;
-import DAO.MotivoDAO;
 import entidade.Fase;
-import entidade.Motivo;
 
 
 import java.util.ArrayList;
