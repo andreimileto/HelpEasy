@@ -251,6 +251,23 @@ CREATE TABLE IF NOT EXISTS tarefa_usuario (
 ;
 
 
+CREATE EXTENSION hstore;
+CREATE TABLE IF NOT EXISTS auditoria
+(
+  id serial,
+  id_usuario INT NOT NULL,
+  tabela VARCHAR(100) NOT NULL,
+  data_hora timestamp default now(),
+  tipo CHAR(1) NOT NULL,
+  campos hstore,
+  PRIMARY KEY (id),
+  CONSTRAINT fk_auditoria_usuario
+    FOREIGN KEY (id_usuario)
+    REFERENCES usuario (id)
+  
+)
+
+
 --DROP TABLE usuario_permissao_tela;
 
 CREATE TABLE usuario_permissao_tela (

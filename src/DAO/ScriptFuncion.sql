@@ -70,13 +70,11 @@ IF (TG_OP = 'INSERT') THEN
 	id_usuario,
 	tabela,
 	tipo,
-	ordem,
 	campos)
 	VALUES(
 	cast(current_setting('myapp.user') as int),
 	TG_TABLE_NAME,
 	substr(TG_OP, 1, 1),
-	'INSERT',
 	v_fields);
 END IF;
 
@@ -85,13 +83,11 @@ IF (TG_OP = 'UPDATE') THEN
 	id_usuario,
 	tabela,
 	tipo,
-	ordem,
 	campos)
 	VALUES(
 	cast(current_setting('myapp.user') as int),
 	TG_TABLE_NAME,
 	substr(TG_OP, 1, 1),
-	'UPDATE',
 	v_fields_old);
 END IF;
 RETURN NULL;

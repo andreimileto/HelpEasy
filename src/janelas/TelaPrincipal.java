@@ -52,14 +52,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        menuArquivo = new javax.swing.JMenu();
+        menuItemSair = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         ImnClientes = new javax.swing.JMenuItem();
         imnCidades = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         ImnTarefa = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        imnParametrosSistema = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
         ImnCadastroUsuario = new javax.swing.JMenu();
         ImnCadastroFase = new javax.swing.JMenuItem();
         ImnCadastroProjeto = new javax.swing.JMenuItem();
@@ -67,6 +66,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         imnCadastroUsuario = new javax.swing.JMenuItem();
         ImnCadastroPrioridade = new javax.swing.JMenuItem();
         ImnPermissoesUsuario = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        imnParametrosSistema = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Help Easy");
@@ -115,9 +117,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 389, Short.MAX_VALUE)
+                .addGap(0, 391, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        menuArquivo.setText("Arquivo");
+        menuArquivo.setName("menuArquivo"); // NOI18N
+
+        menuItemSair.setText("Sair");
+        menuItemSair.setName("menuSempreVisivel"); // NOI18N
+        menuItemSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemSairActionPerformed(evt);
+            }
+        });
+        menuArquivo.add(menuItemSair);
+
+        jMenuBar1.add(menuArquivo);
 
         jMenu1.setText("Cadastros");
         jMenu1.setName("menuCadastro"); // NOI18N
@@ -156,30 +172,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu2.add(ImnTarefa);
 
         jMenuBar1.add(jMenu2);
-
-        jMenu4.setText("Configurações");
-        jMenu4.setName("menuConfiguracoes"); // NOI18N
-
-        imnParametrosSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/preferences_desktop_user_password.png"))); // NOI18N
-        imnParametrosSistema.setText("Alterar senha");
-        imnParametrosSistema.setName("janelas.JdgAlteracaoSenha"); // NOI18N
-        imnParametrosSistema.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imnParametrosSistemaActionPerformed(evt);
-            }
-        });
-        jMenu4.add(imnParametrosSistema);
-
-        jMenuItem1.setText("Parâmetros do Sistema");
-        jMenuItem1.setName("janelas.JdgParametrosSistema"); // NOI18N
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem1);
-
-        jMenuBar1.add(jMenu4);
 
         ImnCadastroUsuario.setText("Gerência");
         ImnCadastroUsuario.setName("menuGerencia"); // NOI18N
@@ -244,6 +236,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImnCadastroUsuario.add(ImnPermissoesUsuario);
 
         jMenuBar1.add(ImnCadastroUsuario);
+
+        jMenu4.setText("Configurações");
+        jMenu4.setName("menuConfiguracoes"); // NOI18N
+
+        imnParametrosSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/preferences_desktop_user_password.png"))); // NOI18N
+        imnParametrosSistema.setText("Alterar senha");
+        imnParametrosSistema.setName("janelas.JdgAlteracaoSenha"); // NOI18N
+        imnParametrosSistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imnParametrosSistemaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(imnParametrosSistema);
+
+        jMenuItem1.setText("Parâmetros do Sistema");
+        jMenuItem1.setName("janelas.JdgParametrosSistema"); // NOI18N
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
 
@@ -330,6 +346,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroTarefa.setVisible(true);
     }//GEN-LAST:event_ImnTarefaActionPerformed
 
+    private void menuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_menuItemSairActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -391,5 +411,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lblVersao;
+    private javax.swing.JMenu menuArquivo;
+    private javax.swing.JMenuItem menuItemSair;
     // End of variables declaration//GEN-END:variables
 }

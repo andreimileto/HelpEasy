@@ -1,1 +1,44 @@
 --nada
+
+DELETE FROM usuario_permissao_tela_acoes;
+DELETE FROM usuario_permissao_tela;
+
+INSERT INTO usuario_permissao_tela values (10,2,'janelas.JdgCadastroCliente','Cadastro de Cliente',true);
+INSERT INTO usuario_permissao_tela_acoes values (10,10,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (11,10,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (12,10,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela values (20,2,'janelas.JdgCadastroFase','Cadastro de Fase',true);
+INSERT INTO usuario_permissao_tela_acoes values (20,20,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (21,20,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (22,20,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela values (30,2,'janelas.JdgCadastroCidade','Cadastro de Cidade',true);
+INSERT INTO usuario_permissao_tela_acoes values (30,30,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (31,30,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (32,30,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela values (40,2,'janelas.JdgParametrosSistema','Cadastro de Sistema',true);
+INSERT INTO usuario_permissao_tela_acoes values (40,40,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (41,40,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (42,40,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela values (50,2,'janelas.JdgCadastroProjeto','Cadastro de Projeto',true);
+INSERT INTO usuario_permissao_tela_acoes values (50,50,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (51,50,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (52,50,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela values (60,2,'janelas.JdgCadastroMotivo','Cadastro de Motivo',true);
+INSERT INTO usuario_permissao_tela_acoes values (60,60,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (61,60,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (62,60,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela values (70,2,'janelas.JdgCadastroUsuario','Cadastro de Usuário',true);
+INSERT INTO usuario_permissao_tela_acoes values (70,70,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (71,70,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (72,70,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela values (80,2,'janelas.JdgCadastroPrioridade','Cadastro de Prioridade',true);
+INSERT INTO usuario_permissao_tela_acoes values (80,80,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (81,80,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (82,80,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela values (90,2,'janelas.JdgPermissoesUsuario','Cadastro de Usuário',true);
+INSERT INTO usuario_permissao_tela_acoes values (90,90,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (91,90,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (92,90,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela values (100,2,'janelas.JdgParametrosSistema','Parâmetros do Sistema',true);
+INSERT INTO usuario_permissao_tela_acoes values (100,100,'btnEnableAuditoria','Ativa Auditoria',true);
+INSERT INTO usuario_permissao_tela_acoes values (101,100,'btnDisableAuditoria','Desativa Auditoria',true);

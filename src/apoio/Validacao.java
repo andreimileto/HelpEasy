@@ -217,20 +217,24 @@ public class Validacao {
     }
 
     public static boolean pegaPermissaoTela(String sTela) {
-        try {
-            PermissoesDAOTela perissoesTelaDAO = new PermissoesDAOTela();
-            ArrayList<UsuarioPermissaoTela> permissoesTela = new ArrayList<>();
-            bRetornoTela = false;
-            permissoesTela = perissoesTelaDAO.listarPermissoes(TelaPrincipal.userH);
-            //System.out.println("tela " + sTela);
-            for (int i = 0; i < permissoesTela.size(); i++) {
-                // System.out.println("tela for" + permissoesTela.get(i).getTela());
-                if (sTela.equals(permissoesTela.get(i).getTela())) {
-                    bRetornoTela = permissoesTela.get(i).isPermiteAcesso();
+        if (sTela.equals("menuSempreVisivel")) {
+            bRetornoTela = true;
+        } else {
+            try {
+                PermissoesDAOTela perissoesTelaDAO = new PermissoesDAOTela();
+                ArrayList<UsuarioPermissaoTela> permissoesTela = new ArrayList<>();
+                bRetornoTela = false;
+                permissoesTela = perissoesTelaDAO.listarPermissoes(TelaPrincipal.userH);
+                //System.out.println("tela " + sTela);
+                for (int i = 0; i < permissoesTela.size(); i++) {
+                    // System.out.println("tela for" + permissoesTela.get(i).getTela());
+                    if (sTela.equals(permissoesTela.get(i).getTela())) {
+                        bRetornoTela = permissoesTela.get(i).isPermiteAcesso();
+                    }
                 }
+            } catch (Exception e) {
+                System.out.println("ver erro" + e.getMessage());
             }
-        } catch (Exception e) {
-            System.out.println("ver erro" + e.getMessage());
         }
         return bRetornoTela;
     }
@@ -244,20 +248,20 @@ public class Validacao {
             ArrayList<Usuario> usuarios;
             ArrayList<UsuarioPermissaoTela> userPermTela;
             ArrayList<UsuarioPermissaoTelaAcoes> userPermTelaAcoes;
-            
+
             UsuarioDAO usuarioDAO = new UsuarioDAO();
             UsuarioPermissaoTelaDAO usuarioPermissaoTelaDAO = new UsuarioPermissaoTelaDAO();
             UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
-            
+
             usuarios = usuarioDAO.listarTodos();
             userPermTela = usuarioPermissaoTelaDAO.listarTodos();
             userPermTelaAcoes = usuarioPermissaoTelaAcoesDAO.listarTodos();
-            
+
             br = new BufferedReader(new FileReader(arquivoCSV));
             while ((linha = br.readLine()) != null) {
 
                 String[] permissoes = linha.split(csvDivisor);
-               
+
                 /*for (int i = 0; i < usuarios.size(); i++) {
                     for (int i2 = 0; i2 < userPermTela.size(); i2++) {
                         if (userPermTela.get(i2).getId() == usuarios.get(i).getId() )
@@ -266,9 +270,8 @@ public class Validacao {
                         }
                     }
                 }*/
-                
-                System.out.println("tela " + permissoes[0] + " tela_am " + permissoes[1] 
-                +       " acao " + permissoes[2] + " acao_am " + permissoes[3]);
+                System.out.println("tela " + permissoes[0] + " tela_am " + permissoes[1]
+                        + " acao " + permissoes[2] + " acao_am " + permissoes[3]);
 
             }
 
