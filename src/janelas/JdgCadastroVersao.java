@@ -6,8 +6,8 @@
 package janelas;
 
 import apoio.Validacao;
-import controle.ControleFase;
-import entidade.Fase;
+import controle.ControleVersao;
+import entidade.Versao;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
 public class JdgCadastroVersao extends javax.swing.JDialog {
 
     /**
-     * Creates new form JdgCadastroFase
+     * Creates new form JdgCadastroVersao
      */
-    Fase fase;
+    Versao versao;
 
     public JdgCadastroVersao(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -48,9 +48,9 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
         btnLocalizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Help Easy - Cadastro de fase");
+        setTitle("Help Easy - Cadastro de Versão");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro fase", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro Versão", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
 
         jLabel1.setText("Código:");
 
@@ -146,7 +146,7 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -156,6 +156,10 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1.getAccessibleContext().setAccessibleName("Cadastro versão");
+
+        getAccessibleContext().setAccessibleName("Help Easy - Cadastro de Módulo");
 
         pack();
         setLocationRelativeTo(null);
@@ -167,73 +171,73 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         if (tfdCodigo.getText().length() > 0) {
-            int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a fase " + fase.getDescricao() + "?");
+            int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a versão " + versao.getDescricao() + "?");
             if (exclusao == 0) {
 
                 try {
-                    fase.setSituacao('I');
-                    ControleFase controleFase = new ControleFase();
-                    String mensagem = controleFase.salvar(fase);
+                    versao.setSituacao('I');
+                    ControleVersao controleVersao = new ControleVersao();
+                    String mensagem = controleVersao.salvar(versao);
 
                     if (mensagem.equalsIgnoreCase("ok")) {
 
-                        JOptionPane.showMessageDialog(rootPane, "Fase " + fase.getDescricao() + " Excluída com sucesso");
-                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Fase " + fase.getDescricao() + " Excluída com sucesso");
+                        JOptionPane.showMessageDialog(rootPane, "Versão " + versao.getDescricao() + " Excluída com sucesso");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Versão " + versao.getDescricao() + " Excluída com sucesso");
                         limparCampos();
                     } else {
-                        JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
-                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase.");
+                        JOptionPane.showMessageDialog(rootPane, "Erro ao excluir versão.");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir versão.");
                     }
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase.");
-                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase.");
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir versão.");
+                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir versão.");
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir fase\nNenhuma fase selecionada.");
-            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir fase\nNenhuma fase selecionada.");
+            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir versão\nNenhuma versão selecionada.");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir versão\nNenhuma versão selecionada.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
         try {
-            Fase fase = new Fase();
-            fase.setDescricao(tfdNome.getText());
+            Versao versao = new Versao();
+            versao.setDescricao(tfdNome.getText());
             if (!tfdCodigo.getText().isEmpty()) {
-                fase.setId(Integer.parseInt(tfdCodigo.getText()));
+                versao.setId(Integer.parseInt(tfdCodigo.getText()));
             }
-            fase.setSituacao('A');
+            versao.setSituacao('A');
 
-            ControleFase controleFase = new ControleFase();
-            String mensagem = controleFase.salvar(fase);
+            ControleVersao controleVersao = new ControleVersao();
+            String mensagem = controleVersao.salvar(versao);
             if (mensagem.equals("ok")) {
                 limparCampos();
-                JOptionPane.showMessageDialog(rootPane, "Fase cadastrada com sucesso!");
+                JOptionPane.showMessageDialog(rootPane, "Versão cadastrada com sucesso!");
             } else {
                 JOptionPane.showMessageDialog(rootPane, mensagem);
             }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar fase");
-            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao salvar fase.");
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar versão");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao salvar versão.");
         }
 
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-        fase = new Fase();
-        JdgListaFase listaFase = new JdgListaFase(null, true, fase);
-        listaFase.setVisible(true);
-        if (fase.getId() > 0) {
-            tfdCodigo.setText(String.valueOf(fase.getId()));
-            tfdNome.setText(fase.getDescricao());
+        versao = new Versao();
+        JdgListaVersao listaVersao = new JdgListaVersao(null, true, versao);
+        listaVersao.setVisible(true);
+        if (versao.getId() > 0) {
+            tfdCodigo.setText(String.valueOf(versao.getId()));
+            tfdNome.setText(versao.getDescricao());
         }
 
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
     private void limparCampos() {
-        fase = new Fase();
+        versao = new Versao();
         tfdCodigo.setText("");
         tfdNome.setText("");
     }
@@ -268,7 +272,7 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JdgCadastroFase dialog = new JdgCadastroFase(new javax.swing.JFrame(), true);
+                JdgCadastroVersao dialog = new JdgCadastroVersao(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

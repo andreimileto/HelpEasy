@@ -42,3 +42,11 @@ INSERT INTO usuario_permissao_tela_acoes values (92,90,'btnExcluir','Excluir',tr
 INSERT INTO usuario_permissao_tela values (100,2,'janelas.JdgParametrosSistema','Parâmetros do Sistema',true);
 INSERT INTO usuario_permissao_tela_acoes values (100,100,'btnEnableAuditoria','Ativa Auditoria',true);
 INSERT INTO usuario_permissao_tela_acoes values (101,100,'btnDisableAuditoria','Desativa Auditoria',true);
+INSERT INTO usuario_permissao_tela values (110,2,'janelas.JdgCadastroModulo','Cadastro de Módulo',true);
+INSERT INTO usuario_permissao_tela_acoes values (110,110,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (111,110,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (112,110,'btnExcluir','Excluir',true);
+INSERT INTO usuario_permissao_tela values (120,2,'janelas.JdgCadastroVersao','Cadastro de Versão',true);
+INSERT INTO usuario_permissao_tela_acoes values (120,120,'btnSalvar','Salvar',true);
+INSERT INTO usuario_permissao_tela_acoes values (121,120,'btnLocalizar','Localizar',true);
+INSERT INTO usuario_permissao_tela_acoes values (122,120,'btnExcluir','Excluir',true);

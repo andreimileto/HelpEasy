@@ -5,8 +5,8 @@
  */
 package janelas;
 
-import controle.ControleFase;
-import entidade.Fase;
+import controle.ControleModulo;
+import entidade.Modulo;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class JdgListaModulo extends javax.swing.JDialog {
 
-    Fase fase;
+    Modulo modulo;
 
-    public JdgListaModulo(java.awt.Frame parent, boolean modal, Fase fase) {
+    public JdgListaModulo(java.awt.Frame parent, boolean modal, Modulo modulo) {
         super(parent, modal);
         initComponents();
-        this.fase = fase;
+        this.modulo = modulo;
         listaMotivo();
     }
 
@@ -51,15 +51,15 @@ public class JdgListaModulo extends javax.swing.JDialog {
             }
         };
 
-        fase.setDescricao(tfdDescricao.getText());
-        ControleFase controleFase = new ControleFase();
-        ArrayList<Fase> fases = controleFase.listar(fase);
+        modulo.setDescricao(tfdDescricao.getText());
+        ControleModulo controleModulo = new ControleModulo();
+        ArrayList<Modulo> versoes = controleModulo.listar(modulo);
         dtm.addColumn("ID");
         dtm.addColumn("DESCRIÇÃO");
 
-        for (int i = 0; i < fases.size(); i++) {
-            dtm.addRow(new String[]{String.valueOf(fases.get(i).getId()),
-                fases.get(i).getDescricao()});
+        for (int i = 0; i < versoes.size(); i++) {
+            dtm.addRow(new String[]{String.valueOf(versoes.get(i).getId()),
+                versoes.get(i).getDescricao()});
         }
 
         return dtm;
@@ -78,7 +78,7 @@ public class JdgListaModulo extends javax.swing.JDialog {
         tfdDescricao = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Help Easy - Lista de fases");
+        setTitle("Help Easy - Lista de módulo");
 
         tblCidades.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -220,7 +220,7 @@ public class JdgListaModulo extends javax.swing.JDialog {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 204));
-        jLabel1.setText("Lista de Fases");
+        jLabel1.setText("Lista de Módulo");
 
         btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Edit File-16.png"))); // NOI18N
         btnConfirmar.setText("Editar");
@@ -326,10 +326,10 @@ public class JdgListaModulo extends javax.swing.JDialog {
     }//GEN-LAST:event_tblCidadesMouseEntered
     private void listar() {
         try {
-        fase.setDescricao(tfdDescricao.getText().toUpperCase());
-        System.out.println("descricao == " + fase.getDescricao()); 
-        ControleFase controleFase = new ControleFase();
-        controleFase.listar(fase);
+        modulo.setDescricao(tfdDescricao.getText().toUpperCase());
+        System.out.println("descricao == " + modulo.getDescricao()); 
+        ControleModulo controleModulo = new ControleModulo();
+        controleModulo.listar(modulo);
         } catch (Exception e) {
             janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),e.getMessage());
         }
@@ -349,8 +349,8 @@ public class JdgListaModulo extends javax.swing.JDialog {
     //retorna item selecionado na taleba
     private void selecionado() {
         int row = tblCidades.getSelectedRow();
-        this.fase.setId(Integer.parseInt(tblCidades.getValueAt(row, 0).toString()));
-        this.fase.setDescricao(tblCidades.getValueAt(row, 1).toString());
+        this.modulo.setId(Integer.parseInt(tblCidades.getValueAt(row, 0).toString()));
+        this.modulo.setDescricao(tblCidades.getValueAt(row, 1).toString());
         dispose();
     }
 
@@ -371,20 +371,20 @@ public class JdgListaModulo extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JdgListaFase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaModulo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JdgListaFase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaModulo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JdgListaFase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaModulo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JdgListaFase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JdgListaModulo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JdgListaFase dialog = new JdgListaFase(new javax.swing.JFrame(), true);
+                JdgListaModulo dialog = new JdgListaModulo(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
