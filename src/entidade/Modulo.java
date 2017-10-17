@@ -32,6 +32,9 @@ public class Modulo  implements java.io.Serializable {
     public Modulo() {
     }
 
+    public Modulo(Projeto projeto) {
+        this.projeto=projeto;
+    }
 	
     public Modulo(int id, Projeto projeto, String descricao, char situacao) {
         this.id = id;

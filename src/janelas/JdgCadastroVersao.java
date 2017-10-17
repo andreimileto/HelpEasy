@@ -8,6 +8,7 @@ package janelas;
 import apoio.Validacao;
 import controle.ControleVersao;
 import entidade.Versao;
+import entidade.Projeto;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +20,8 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
     /**
      * Creates new form JdgCadastroVersao
      */
-    Versao versao;
+    Projeto projeto = new Projeto();
+    Versao versao = new Versao(projeto);
 
     public JdgCadastroVersao(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -46,11 +48,14 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
         btnExcluir = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         btnLocalizar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btnLocalizaProjeto = new javax.swing.JButton();
+        tdfProjeto = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Help Easy - Cadastro de Versão");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro Versão", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro versão", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
 
         jLabel1.setText("Código:");
 
@@ -95,20 +100,22 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
             }
         });
 
+        jLabel3.setText("Projeto");
+
+        btnLocalizaProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizaProjeto.setName("btnSalvar"); // NOI18N
+        btnLocalizaProjeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizaProjetoActionPerformed(evt);
+            }
+        });
+
+        tdfProjeto.setEditable(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfdCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,6 +126,24 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfdCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tdfProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnLocalizaProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,11 +152,17 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(tfdCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(tdfProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLocalizaProjeto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                    .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSair)
                     .addComponent(btnExcluir)
@@ -157,10 +188,6 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.getAccessibleContext().setAccessibleName("Cadastro versão");
-
-        getAccessibleContext().setAccessibleName("Help Easy - Cadastro de Módulo");
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -171,7 +198,7 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         if (tfdCodigo.getText().length() > 0) {
-            int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a versão " + versao.getDescricao() + "?");
+            int exclusao = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a versao " + versao.getDescricao() + "?");
             if (exclusao == 0) {
 
                 try {
@@ -181,21 +208,21 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
 
                     if (mensagem.equalsIgnoreCase("ok")) {
 
-                        JOptionPane.showMessageDialog(rootPane, "Versão " + versao.getDescricao() + " Excluída com sucesso");
-                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Versão " + versao.getDescricao() + " Excluída com sucesso");
+                        JOptionPane.showMessageDialog(rootPane, "Versao " + versao.getDescricao() + " Excluída com sucesso");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "versao " + versao.getDescricao() + " Excluída com sucesso");
                         limparCampos();
                     } else {
-                        JOptionPane.showMessageDialog(rootPane, "Erro ao excluir versão.");
-                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir versão.");
+                        JOptionPane.showMessageDialog(rootPane, "Erro ao excluir versao.");
+                        janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir versao.");
                     }
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir versão.");
-                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir versão.");
+                    JOptionPane.showMessageDialog(rootPane, "Erro ao excluir versao.");
+                    janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir versao.");
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir versão\nNenhuma versão selecionada.");
-            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir versão\nNenhuma versão selecionada.");
+            JOptionPane.showMessageDialog(rootPane, "Erro ao excluir versao\nNenhuma versao selecionada.");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao excluir versao\nNenhuma versao selecionada.");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -208,38 +235,63 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
                 versao.setId(Integer.parseInt(tfdCodigo.getText()));
             }
             versao.setSituacao('A');
-
+            versao.setProjeto(projeto);
             ControleVersao controleVersao = new ControleVersao();
             String mensagem = controleVersao.salvar(versao);
             if (mensagem.equals("ok")) {
                 limparCampos();
-                JOptionPane.showMessageDialog(rootPane, "Versão cadastrada com sucesso!");
+                JOptionPane.showMessageDialog(rootPane, "Versao cadastrada com sucesso!");
             } else {
                 JOptionPane.showMessageDialog(rootPane, mensagem);
             }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar versão");
-            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao salvar versão.");
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar versao");
+            janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Erro ao salvar versao.");
         }
 
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
         versao = new Versao();
-        JdgListaVersao listaVersao = new JdgListaVersao(null, true, versao);
+        JdgListaVersao listaVersao = new JdgListaVersao(null, true, versao, projeto);
         listaVersao.setVisible(true);
         if (versao.getId() > 0) {
             tfdCodigo.setText(String.valueOf(versao.getId()));
             tfdNome.setText(versao.getDescricao());
+            tdfProjeto.setText(versao.getProjeto().getDescricao());
         }
 
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
+    private void btnLocalizaProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizaProjetoActionPerformed
+        int auxIdProjeto = versao.getProjeto().getId();
+        String auxDescricaoVersao = versao.getProjeto().getDescricao();
+        versao.setSituacao('A');
+        JdgListaProjeto listaProjeto = new JdgListaProjeto(null, true, projeto);
+        listaProjeto.setVisible(true);
+        versao.setProjeto(projeto);
+        if (versao.getProjeto().getId() > 0 && versao.getProjeto().getDescricao().length() > 0) {
+            tdfProjeto.setText(versao.getProjeto().getDescricao());
+        } else {
+            versao.setId(auxIdProjeto);
+            versao.setDescricao(auxDescricaoVersao);
+            versao.setProjeto(projeto);
+            tdfProjeto.setText(versao.getProjeto().getDescricao());
+        }
+
+    }//GEN-LAST:event_btnLocalizaProjetoActionPerformed
+
     private void limparCampos() {
-        versao = new Versao();
         tfdCodigo.setText("");
         tfdNome.setText("");
+        tdfProjeto.setText("");
+        versao.setId(0);
+        versao.setDescricao("");
+        versao.setSituacao('0');
+        projeto.setId(0);
+        projeto.setDescricao("");
+        projeto.setSituacao('0');
     }
 
     /**
@@ -286,12 +338,15 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnLocalizaProjeto;
     private javax.swing.JButton btnLocalizar;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField tdfProjeto;
     private javax.swing.JTextField tfdCodigo;
     private javax.swing.JTextField tfdNome;
     // End of variables declaration//GEN-END:variables

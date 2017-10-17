@@ -32,6 +32,10 @@ public class Versao  implements java.io.Serializable {
 
     public Versao() {
     }
+    
+    public Versao(Projeto projeto) {
+        this.projeto=projeto;
+    }
 
 	
     public Versao(int id, Projeto projeto, String descricao, char situacao) {

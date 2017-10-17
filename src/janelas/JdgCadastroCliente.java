@@ -262,13 +262,11 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
     private void btnLocalizaCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizaCidadeActionPerformed
         int auxIdCidade = cliente.getCidade().getId();
         String auxDescricaoCidade = cliente.getCidade().getDescricao();
-        //System.out.println(cliente.getCidade().getId() + "Id antes...");
         cidade.setSituacao('A');
         JdgListaCidade listaCidade = new JdgListaCidade(null, true, cidade);
         listaCidade.setVisible(true);
         cliente.setCidade(cidade);
         if (cliente.getCidade().getId() > 0 && cliente.getCidade().getDescricao().length() > 0) {
-            //System.out.println("entrou no if do id > 0");
             tfdCidade.setText(cliente.getCidade().getDescricao());
         } else {
             cidade.setId(auxIdCidade);
@@ -544,8 +542,6 @@ preValidacao = "Erro ao salvar cliente:\n";
             if (cliente.getTipoCadastro() == 'F') {
                 cbxTipo.setSelectedIndex(0);
             } else {
-                //  System.out.println("entrou no else");
-                //System.out.println(cliente.getTipoCadastro() + "....");
                 cbxTipo.setSelectedIndex(1);
             }
             tfdId.setText(String.valueOf(cliente.getId()));

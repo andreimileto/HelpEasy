@@ -8,6 +8,7 @@ package janelas;
 import apoio.Validacao;
 import controle.ControleModulo;
 import entidade.Modulo;
+import entidade.Projeto;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +20,9 @@ public class JdgCadastroModulo extends javax.swing.JDialog {
     /**
      * Creates new form JdgCadastroModulo
      */
-    Modulo modulo;
+    //Modulo modulo;
+    Projeto projeto = new Projeto();
+    Modulo modulo = new Modulo(projeto);
 
     public JdgCadastroModulo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -46,6 +49,9 @@ public class JdgCadastroModulo extends javax.swing.JDialog {
         btnExcluir = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         btnLocalizar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btnLocalizaProjeto = new javax.swing.JButton();
+        tdfProjeto = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Help Easy - Cadastro de Módulo");
@@ -95,20 +101,22 @@ public class JdgCadastroModulo extends javax.swing.JDialog {
             }
         });
 
+        jLabel3.setText("Projeto");
+
+        btnLocalizaProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizaProjeto.setName("btnSalvar"); // NOI18N
+        btnLocalizaProjeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizaProjetoActionPerformed(evt);
+            }
+        });
+
+        tdfProjeto.setEditable(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfdCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,6 +127,24 @@ public class JdgCadastroModulo extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfdCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tdfProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnLocalizaProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,11 +153,17 @@ public class JdgCadastroModulo extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(tfdCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(tdfProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLocalizaProjeto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                    .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSair)
                     .addComponent(btnExcluir)
@@ -156,8 +188,6 @@ public class JdgCadastroModulo extends javax.swing.JDialog {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        getAccessibleContext().setAccessibleName("Help Easy - Cadastro de Módulo");
 
         pack();
         setLocationRelativeTo(null);
@@ -206,7 +236,7 @@ public class JdgCadastroModulo extends javax.swing.JDialog {
                 modulo.setId(Integer.parseInt(tfdCodigo.getText()));
             }
             modulo.setSituacao('A');
-
+            modulo.setProjeto(projeto);
             ControleModulo controleModulo = new ControleModulo();
             String mensagem = controleModulo.salvar(modulo);
             if (mensagem.equals("ok")) {
@@ -225,19 +255,47 @@ public class JdgCadastroModulo extends javax.swing.JDialog {
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
         modulo = new Modulo();
-        JdgListaModulo listaModulo = new JdgListaModulo(null, true, modulo);
+        JdgListaModulo listaModulo = new JdgListaModulo(null, true, modulo, projeto);
         listaModulo.setVisible(true);
         if (modulo.getId() > 0) {
             tfdCodigo.setText(String.valueOf(modulo.getId()));
             tfdNome.setText(modulo.getDescricao());
+            tdfProjeto.setText(modulo.getProjeto().getDescricao());
         }
 
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
+    private void btnLocalizaProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizaProjetoActionPerformed
+        int auxIdProjeto = modulo.getProjeto().getId();
+        String auxDescricaoModulo = modulo.getProjeto().getDescricao();
+        modulo.setSituacao('A');
+        JdgListaProjeto listaProjeto = new JdgListaProjeto(null, true, projeto);
+        listaProjeto.setVisible(true);
+        modulo.setProjeto(projeto);
+        if (modulo.getProjeto().getId() > 0 && modulo.getProjeto().getDescricao().length() > 0) {
+            tdfProjeto.setText(modulo.getProjeto().getDescricao());
+        } else {
+            modulo.setId(auxIdProjeto);
+            modulo.setDescricao(auxDescricaoModulo);
+            modulo.setProjeto(projeto);
+            tdfProjeto.setText(modulo.getProjeto().getDescricao());
+        }
+
+    }//GEN-LAST:event_btnLocalizaProjetoActionPerformed
+
     private void limparCampos() {
-        modulo = new Modulo();
+        //modulo = new Modulo();
+        
         tfdCodigo.setText("");
         tfdNome.setText("");
+        tdfProjeto.setText("");
+        
+        modulo.setId(0);
+        modulo.setDescricao("");
+        modulo.setSituacao('0');
+        projeto.setId(0);
+        projeto.setDescricao("");
+        projeto.setSituacao('0');
     }
 
     /**
@@ -284,12 +342,15 @@ public class JdgCadastroModulo extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnLocalizaProjeto;
     private javax.swing.JButton btnLocalizar;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField tdfProjeto;
     private javax.swing.JTextField tfdCodigo;
     private javax.swing.JTextField tfdNome;
     // End of variables declaration//GEN-END:variables

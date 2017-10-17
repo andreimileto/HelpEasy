@@ -27,10 +27,18 @@ public class VersaoDAO extends DAO{
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            String sql = "from versao  "                    
-                    + "where upper(descricao)  like '" + versao.getDescricao().toUpperCase() + "%' "
-                    + "and situacao ='A'"
-                    + " order by descricao";
+            String sql = "";
+            if (versao.getId() == 0) {
+                sql = "from Versao "                    
+                        + "where upper(descricao)  like '" + versao.getDescricao().toUpperCase() + "%' "
+                        + "and situacao ='A'"
+                        + " order by descricao";
+            } else {
+                sql = "from Versao "                    
+                        + "where id = " + versao.getId()
+                        + "and situacao ='A'"
+                        + " order by descricao";
+            }
             String sel = sql;
             System.out.println(sel);
             org.hibernate.Query q = session.createQuery(sql);

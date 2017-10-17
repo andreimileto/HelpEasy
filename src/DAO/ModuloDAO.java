@@ -27,10 +27,18 @@ public class ModuloDAO extends DAO{
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            String sql = "from modulo  "                    
-                    + "where upper(descricao)  like '" + modulo.getDescricao().toUpperCase() + "%' "
-                    + "and situacao ='A'"
-                    + " order by descricao";
+            String sql = "";
+            if (modulo.getId() == 0) {
+                sql = "from Modulo "                    
+                        + "where upper(descricao)  like '" + modulo.getDescricao().toUpperCase() + "%' "
+                        + "and situacao ='A'"
+                        + " order by descricao";
+            } else {
+                sql = "from Modulo "                    
+                        + "where id = " + modulo.getId()
+                        + "and situacao ='A'"
+                        + " order by descricao";
+            }
             String sel = sql;
             System.out.println(sel);
             org.hibernate.Query q = session.createQuery(sql);
