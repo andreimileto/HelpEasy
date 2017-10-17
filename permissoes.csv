@@ -29,3 +29,6 @@ janelas.JdgCadastroCidade;Cadastro de Cidade;btnExcluir;Excluir
 janelas.JdgAlteracaoSenha;Alterar Senha;btnConfirmar;Confirmar
 janelas.JdgParametrosSistema;Parametros do Sistema;btnEnableAuditoria;Ativar Auditoria
 janelas.JdgParametrosSistema;Parametros do Sistema;btnDisableAuditoria;Desativar Auditoria
+janelas.JdgCadastroTarefa;Cadastro de Tarefa;btnSalvar;Salvar
+janelas.JdgCadastroTarefa;Cadastro de Tarefa;btnLocalizar;Localizar
+janelas.JdgCadastroTarefa;Cadastro de Tarefa;btnExcluir;Excluir
