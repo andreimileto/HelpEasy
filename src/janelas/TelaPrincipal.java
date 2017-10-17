@@ -247,7 +247,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImnCadastroUsuario.add(ImnCadastroVersao);
 
         ImnPermissoesUsuario.setText("Permissões do usuário");
-        ImnPermissoesUsuario.setName("janelas.JdgPermissoesUsuario"); // NOI18N
+        ImnPermissoesUsuario.setName("janelas.JdgListaPermissoes"); // NOI18N
         ImnPermissoesUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImnPermissoesUsuarioActionPerformed(evt);

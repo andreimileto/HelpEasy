@@ -13,10 +13,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+import org.hibernate.Session;
 
 /**
  *
@@ -245,31 +247,11 @@ public class Validacao {
         String linha = "";
         String csvDivisor = ";";
         try {
-            ArrayList<Usuario> usuarios;
-            ArrayList<UsuarioPermissaoTela> userPermTela;
-            ArrayList<UsuarioPermissaoTelaAcoes> userPermTelaAcoes;
-
-            UsuarioDAO usuarioDAO = new UsuarioDAO();
-            UsuarioPermissaoTelaDAO usuarioPermissaoTelaDAO = new UsuarioPermissaoTelaDAO();
-            UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
-
-            usuarios = usuarioDAO.listarTodos();
-            userPermTela = usuarioPermissaoTelaDAO.listarTodos();
-            userPermTelaAcoes = usuarioPermissaoTelaAcoesDAO.listarTodos();
-
             br = new BufferedReader(new FileReader(arquivoCSV));
             while ((linha = br.readLine()) != null) {
 
                 String[] permissoes = linha.split(csvDivisor);
 
-                /*for (int i = 0; i < usuarios.size(); i++) {
-                    for (int i2 = 0; i2 < userPermTela.size(); i2++) {
-                        if (userPermTela.get(i2).getId() == usuarios.get(i).getId() )
-                        for (int i3 = 0; i3 < userPermTela.size(); i3++) {
-                            
-                        }
-                    }
-                }*/
                 System.out.println("tela " + permissoes[0] + " tela_am " + permissoes[1]
                         + " acao " + permissoes[2] + " acao_am " + permissoes[3]);
 
@@ -279,7 +261,9 @@ public class Validacao {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
+        } catch (Exception e) {
+            System.out.println("erro " + e.getMessage());
+        }finally {
             if (br != null) {
                 try {
                     br.close();

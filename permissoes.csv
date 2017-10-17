@@ -1,18 +1,31 @@
-janelas.JdgCadastroCliente;Cadastro da Cidade;btnSalvar;Salvar
-janelas.JdgCadastroCliente;Cadastro da Cidade;btnLocalizar;Localizar
-janelas.JdgCadastroCliente;Cadastro da Cidade;btnExcluir;Excluir
 janelas.JdgCadastroFase;Cadastro de Fase;btnSalvar;Salvar
 janelas.JdgCadastroFase;Cadastro de Fase;btnLocalizar;Localizar
 janelas.JdgCadastroFase;Cadastro de Fase;btnExcluir;Excluir
-janelas.JdgCadastroCidade;Cadastro de Cidade;btnSalvar;Salvar
-janelas.JdgCadastroCidade;Cadastro de Cidade;btnLocalizar;Localizar
-janelas.JdgCadastroCidade;Cadastro de Cidade;btnExcluir;Excluir
-janelas.JdgCadastroProjeto;Cadastro de Projeto;btnSalvar;Salvar
-janelas.JdgCadastroProjeto;Cadastro de Projeto;btnLocalizar;Localizar
-janelas.JdgCadastroProjeto;Cadastro de Projeto;btnExcluir;Excluir
+janelas.JdgCadastroModulo;Cadastro de Modulo;btnSalvar;Salvar
+janelas.JdgCadastroModulo;Cadastro de Modulo;btnLocalizar;Localizar
+janelas.JdgCadastroModulo;Cadastro de Modulo;btnExcluir;Excluir
 janelas.JdgCadastroMotivo;Cadastro de Motivo;btnSalvar;Salvar
 janelas.JdgCadastroMotivo;Cadastro de Motivo;btnLocalizar;Localizar
 janelas.JdgCadastroMotivo;Cadastro de Motivo;btnExcluir;Excluir
 janelas.JdgCadastroPrioridade;Cadastro de Prioridade;btnSalvar;Salvar
 janelas.JdgCadastroPrioridade;Cadastro de Prioridade;btnLocalizar;Localizar
 janelas.JdgCadastroPrioridade;Cadastro de Prioridade;btnExcluir;Excluir
+janelas.JdgCadastroProjeto;Cadastro de Projeto;btnSalvar;Salvar
+janelas.JdgCadastroProjeto;Cadastro de Projeto;btnLocalizar;Localizar
+janelas.JdgCadastroProjeto;Cadastro de Projeto;btnExcluir;Excluir
+janelas.JdgCadastroUsuario;Cadastro de Usuario;btnSalvar;Salvar
+janelas.JdgCadastroUsuario;Cadastro de Usuario;btnLocalizar;Localizar
+janelas.JdgCadastroUsuario;Cadastro de Usuario;btnExcluir;Excluir
+janelas.JdgCadastroVersao;Cadastro de Versao;btnSalvar;Salvar
+janelas.JdgCadastroVersao;Cadastro de Versao;btnLocalizar;Localizar
+janelas.JdgCadastroVersao;Cadastro de Versao;btnExcluir;Excluir
+janelas.JdgListaPermissoes;Cadastro de Permissao;btnSalvar;Salvar
+janelas.JdgCadastroCliente;Cadastro da Cliente;btnSalvar;Salvar
+janelas.JdgCadastroCliente;Cadastro da Cliente;btnLocalizar;Localizar
+janelas.JdgCadastroCliente;Cadastro da Cliente;btnExcluir;Excluir
+janelas.JdgCadastroCidade;Cadastro de Cidade;btnSalvar;Salvar
+janelas.JdgCadastroCidade;Cadastro de Cidade;btnLocalizar;Localizar
+janelas.JdgCadastroCidade;Cadastro de Cidade;btnExcluir;Excluir
+janelas.JdgAlteracaoSenha;Alterar Senha;btnConfirmar;Confirmar
+janelas.JdgParametrosSistema;Parametros do Sistema;btnEnableAuditoria;Ativar Auditoria
+janelas.JdgParametrosSistema;Parametros do Sistema;btnDisableAuditoria;Desativar Auditoria

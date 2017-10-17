@@ -1,52 +1,58 @@
---nada
+DROP TABLE telas;
+CREATE TABLE telas
+(
+  tela varchar(100) NOT NULL,
+  tela_amigavel varchar(100) NOT NULL,
+  acao varchar(100) NOT NULL,
+  acao_amigavel varchar(100) NOT NULL
+  );
 
-DELETE FROM usuario_permissao_tela_acoes;
-DELETE FROM usuario_permissao_tela;
+DELETE FROM telas;
 
-INSERT INTO usuario_permissao_tela values (10,2,'janelas.JdgCadastroCliente','Cadastro de Cliente',true);
-INSERT INTO usuario_permissao_tela_acoes values (10,10,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (11,10,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (12,10,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela values (20,2,'janelas.JdgCadastroFase','Cadastro de Fase',true);
-INSERT INTO usuario_permissao_tela_acoes values (20,20,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (21,20,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (22,20,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela values (30,2,'janelas.JdgCadastroCidade','Cadastro de Cidade',true);
-INSERT INTO usuario_permissao_tela_acoes values (30,30,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (31,30,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (32,30,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela values (40,2,'janelas.JdgParametrosSistema','Cadastro de Sistema',true);
-INSERT INTO usuario_permissao_tela_acoes values (40,40,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (41,40,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (42,40,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela values (50,2,'janelas.JdgCadastroProjeto','Cadastro de Projeto',true);
-INSERT INTO usuario_permissao_tela_acoes values (50,50,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (51,50,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (52,50,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela values (60,2,'janelas.JdgCadastroMotivo','Cadastro de Motivo',true);
-INSERT INTO usuario_permissao_tela_acoes values (60,60,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (61,60,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (62,60,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela values (70,2,'janelas.JdgCadastroUsuario','Cadastro de Usuário',true);
-INSERT INTO usuario_permissao_tela_acoes values (70,70,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (71,70,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (72,70,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela values (80,2,'janelas.JdgCadastroPrioridade','Cadastro de Prioridade',true);
-INSERT INTO usuario_permissao_tela_acoes values (80,80,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (81,80,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (82,80,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela values (90,2,'janelas.JdgPermissoesUsuario','Cadastro de Usuário',true);
-INSERT INTO usuario_permissao_tela_acoes values (90,90,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (91,90,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (92,90,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela values (100,2,'janelas.JdgParametrosSistema','Parâmetros do Sistema',true);
-INSERT INTO usuario_permissao_tela_acoes values (100,100,'btnEnableAuditoria','Ativa Auditoria',true);
-INSERT INTO usuario_permissao_tela_acoes values (101,100,'btnDisableAuditoria','Desativa Auditoria',true);
-INSERT INTO usuario_permissao_tela values (110,2,'janelas.JdgCadastroModulo','Cadastro de Módulo',true);
-INSERT INTO usuario_permissao_tela_acoes values (110,110,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (111,110,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (112,110,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela values (120,2,'janelas.JdgCadastroVersao','Cadastro de Versão',true);
-INSERT INTO usuario_permissao_tela_acoes values (120,120,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (121,120,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (122,120,'btnExcluir','Excluir',true);
+COPY telas FROM 'C:/om/permissoes.csv'  using delimiters ';';
+
+--DROP VIEW viewPermissoes;
+CREATE VIEW viewPermissoes as
+SELECT 
+	u.id as id_usuario
+	,u.nome as usuario
+	,upt.id as id_tela
+	,upt.tela
+	,upt.tela_amigavel
+	,upt.permite_acesso as permite_acesso_tela
+	,upta.id as id_tela_acao
+	,upta.acao
+	,upta.acao_amigavel
+	,upta.permite_acesso as permite_acesso_acao
+FROM usuario u
+	LEFT JOIN usuario_permissao_tela upt on u.id = upt.id_usuario
+	LEFT JOIN usuario_permissao_tela_acoes upta on upt.id = upta.id_tela;
+
+--DROP VIEW viewTelas;
+CREATE VIEW viewTelas as
+SELECT t.*,u.id as id_usuario FROM telas t,usuario u;
+
+--DROP VIEW viewTelasFaltantes ;
+create view viewTelasFaltantes as
+select distinct vT.id_usuario,vT.tela,vT.tela_amigavel,true as permite_acesso 
+from viewTelas vT
+left join viewPermissoes vP on vP.tela = vT.tela and vP.id_usuario = vT.id_usuario
+where vP.tela is null
+
+--DROP VIEW viewTelasAcoesFaltantes;
+create view viewTelasAcoesFaltantes as
+select 
+	distinct upt.id as id_tela,vT.acao,vT.acao_amigavel,true as permite_acesso 
+from viewTelas vT
+	inner join usuario_permissao_tela upt on vT.tela = upt.Tela
+	left join viewPermissoes vP on vP.tela = vT.tela and vP.id_usuario = vT.id_usuario and vP.acao = vT.acao
+where 
+	vP.tela is null
+
+--INSERE PERMISSÕES TELA;
+insert into usuario_permissao_tela (id_usuario,tela,tela_amigavel,permite_acesso) 
+select * from viewTelasFaltantes;
+
+--INSERE PERMISSÕES AÇÕES;
+insert into usuario_permissao_tela_acoes (id_tela,acao,acao_amigavel,permite_acesso) 
+select * from viewTelasAcoesFaltantes;

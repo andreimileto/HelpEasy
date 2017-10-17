@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/janelas/JdgListaVersao.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/janelas/JdgCadastroModulo.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/janelas/JdgCadastroVersao.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/janelas/JdgListaModulo.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/janelas/JdgListaPermissoes.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/scripts/ScriptTestes.sql</file>
+            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/janelas/JdgAlteracaoSenha.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/janelas/TelaPrincipal.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/janelas/JdgParametrosSistema.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeans/HelpEasy/src/apoio/Validacao.java</file>
         </group>
     </open-files>
 </project-private>
