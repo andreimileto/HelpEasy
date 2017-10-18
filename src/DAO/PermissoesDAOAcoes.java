@@ -30,7 +30,8 @@ public class PermissoesDAOAcoes {
             String sql = "";
             sql = "from UsuarioPermissaoTela upt, UsuarioPermissaoTelaAcoes upta "
                         +"where upt.id = id_tela "
-                        +"and id_usuario="+usuario.getId();
+                        +"and id_usuario="+usuario.getId()
+                    +"order by id_tela";
             org.hibernate.Query q = session.createQuery(sql);
 
             List<Object[]> listResult = q.list();

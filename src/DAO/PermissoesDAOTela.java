@@ -29,7 +29,7 @@ public class PermissoesDAOTela {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             String sql = "";
-            sql = "from UsuarioPermissaoTela where id_usuario="+usuario.getId();
+            sql = "from UsuarioPermissaoTela where id_usuario="+usuario.getId() + "order by id";
             
             org.hibernate.Query q = session.createQuery(sql);
             resultado = q.list();

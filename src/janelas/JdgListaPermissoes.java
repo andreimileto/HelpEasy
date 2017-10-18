@@ -389,6 +389,7 @@ boolean ok = true;
             }
         }
         if (ok) {
+            dispose();
                     JOptionPane.showMessageDialog(rootPane, "Alteração de permissões do usuário salva com sucesso!");
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao salvar as alterações, verifique com o suporte.");
