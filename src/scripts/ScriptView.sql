@@ -31,7 +31,7 @@ SELECT t.*,u.id as id_usuario FROM telas t,usuario u;
 
 --DROP VIEW viewTelasFaltantes ;
 create view viewTelasFaltantes as
-select distinct vT.id_usuario,vT.tela,vT.tela_amigavel,false as permite_acesso 
+select distinct vT.id_usuario,vT.tela,vT.tela_amigavel,true as permite_acesso 
 from viewTelas vT
 left join viewPermissoes vP on vP.tela = vT.tela and vP.id_usuario = vT.id_usuario
 where vP.tela is null;
@@ -39,7 +39,7 @@ where vP.tela is null;
 --DROP VIEW viewTelasAcoesFaltantes;
 create view viewTelasAcoesFaltantes as
 select 
-	distinct upt.id as id_tela,vT.acao,vT.acao_amigavel,false as permite_acesso 
+	distinct upt.id as id_tela,vT.acao,vT.acao_amigavel,true as permite_acesso 
 from viewTelas vT
 	inner join usuario_permissao_tela upt on vT.tela = upt.Tela
 	left join viewPermissoes vP on vP.tela = vT.tela and vP.id_usuario = vT.id_usuario and vP.acao = vT.acao

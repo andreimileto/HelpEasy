@@ -8,7 +8,7 @@
  * Created: 25/08/2017
  */
 
-CREATE EXTENSION hstore;
+--CREATE EXTENSION hstore;
 
 --Função de Auditoria;
 CREATE OR REPLACE FUNCTION fnAuditoria() RETURNS trigger LANGUAGE plpgsql AS $function$

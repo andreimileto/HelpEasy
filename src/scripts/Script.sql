@@ -265,11 +265,10 @@ CREATE TABLE IF NOT EXISTS auditoria
     FOREIGN KEY (id_usuario)
     REFERENCES usuario (id)
   
-)
+);
 
 
 --DROP TABLE usuario_permissao_tela;
-
 CREATE TABLE usuario_permissao_tela (
         id bigserial,
         id_usuario INT NOT NULL,
@@ -295,32 +294,12 @@ CREATE TABLE usuario_permissao_tela_acoes (
             REFERENCES usuario_permissao_tela (id)
 );
 
-
-INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroCliente','Cadastro de Cliente',true);
-INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroCliente','Cadastro de Cliente',true);
-INSERT INTO usuario_permissao_tela values (default,1,'janelas.JdgCadastroFase','Cadastro de Fase',true);
-INSERT INTO usuario_permissao_tela values (default,2,'janelas.JdgCadastroFase','Cadastro de Fase',true);
-insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroCidade','Cadastro de Cidade',true);
-insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroCidade','Cadastro de Cidade',true);
-insert into usuario_permissao_tela values(default,1,'janelas.JdgAlteracaoSenha','Cadastro de Senha',true);
-insert into usuario_permissao_tela values(default,2,'janelas.JdgAlteracaoSenha','Cadastro de Senha',true);
-insert into usuario_permissao_tela values(default,1,'janelas.JdgParametrosSistema','Cadastro de Sistema',true);
-insert into usuario_permissao_tela values(default,2,'janelas.JdgParametrosSistema','Cadastro de Sistema',true);
-insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroProjeto','Cadastro de Projeto',true);
-insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroProjeto','Cadastro de Projeto',true);
-insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroMotivo','Cadastro de Motivo',true);
-insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroMotivo','Cadastro de Motivo',true);
-insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroUsuario','Cadastro de Usuário',true);
-insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroUsuario','Cadastro de Usuário',true);
-insert into usuario_permissao_tela values(default,1,'janelas.JdgCadastroPrioridade','Cadastro de Prioridade',true);
-insert into usuario_permissao_tela values(default,2,'janelas.JdgCadastroPrioridade','Cadastro de Prioridade',true);
-insert into usuario_permissao_tela values(default,1,'janelas.JdgPermissoesUsuario','Cadastro de Usuário',true);
-insert into usuario_permissao_tela values(default,2,'janelas.JdgPermissoesUsuario','Cadastro de Usuário',true);
-
-
-INSERT INTO usuario_permissao_tela_acoes values (default,24,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (default,24,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (default,24,'btnExcluir','Excluir',true);
-INSERT INTO usuario_permissao_tela_acoes values (default,25,'btnSalvar','Salvar',true);
-INSERT INTO usuario_permissao_tela_acoes values (default,25,'btnLocalizar','Localizar',true);
-INSERT INTO usuario_permissao_tela_acoes values (default,25,'btnExcluir','Excluir',true);
+--DROP TABLE telas;
+CREATE TABLE telas
+(
+	tela varchar(100) NOT NULL,
+	tela_amigavel varchar(100) NOT NULL,
+	acao varchar(100) NOT NULL,
+	acao_amigavel varchar(100) NOT NULL,
+	PRIMARY KEY (tela,acao)
+);
