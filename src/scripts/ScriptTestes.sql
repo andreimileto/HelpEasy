@@ -1,13 +1,10 @@
-DROP TABLE telas;
-CREATE TABLE telas
-(
-  tela varchar(100) NOT NULL,
-  tela_amigavel varchar(100) NOT NULL,
-  acao varchar(100) NOT NULL,
-  acao_amigavel varchar(100) NOT NULL,
-   PRIMARY KEY (tela,acao)
-  );
+/*
 
-DELETE FROM telas;
+    1. Executar Scripts.sql;
+    2. Executar ScriptFuncion.sql;
+    3. Executar ScriptTrigger.sql;
+    4. Executar ScriptView.sql;
 
-COPY telas FROM 'C:/om/permissoes.csv'  using delimiters ';';
+    Entrar no sistema precisa funcionar tudo, principalmente as permissões com tudo liberado;
+
+*/
