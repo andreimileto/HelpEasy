@@ -304,3 +304,41 @@ CREATE TABLE telas
 	acao_amigavel varchar(100) NOT NULL,
 	PRIMARY KEY (id)
 );
+
+
+delete from telas;
+
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (1, 'janelas.JdgCadastroFase', 'Cadastro de Fase', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (2, 'janelas.JdgCadastroFase', 'Cadastro de Fase', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (3, 'janelas.JdgCadastroFase', 'Cadastro de Fase', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (4, 'janelas.JdgCadastroModulo', 'Cadastro de Modulo', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (5, 'janelas.JdgCadastroModulo', 'Cadastro de Modulo', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (6, 'janelas.JdgCadastroModulo', 'Cadastro de Modulo', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (7, 'janelas.JdgCadastroMotivo', 'Cadastro de Motivo', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (8, 'janelas.JdgCadastroMotivo', 'Cadastro de Motivo', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (9, 'janelas.JdgCadastroMotivo', 'Cadastro de Motivo', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (10, 'janelas.JdgCadastroPrioridade', 'Cadastro de Prioridade', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (11, 'janelas.JdgCadastroPrioridade', 'Cadastro de Prioridade', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (12, 'janelas.JdgCadastroPrioridade', 'Cadastro de Prioridade', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (13, 'janelas.JdgCadastroProjeto', 'Cadastro de Projeto', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (14, 'janelas.JdgCadastroProjeto', 'Cadastro de Projeto', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (15, 'janelas.JdgCadastroProjeto', 'Cadastro de Projeto', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (16, 'janelas.JdgCadastroUsuario', 'Cadastro de Usuario', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (17, 'janelas.JdgCadastroUsuario', 'Cadastro de Usuario', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (18, 'janelas.JdgCadastroUsuario', 'Cadastro de Usuario', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (19, 'janelas.JdgCadastroVersao', 'Cadastro de Versao', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (20, 'janelas.JdgCadastroVersao', 'Cadastro de Versao', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (21, 'janelas.JdgCadastroVersao', 'Cadastro de Versao', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (22, 'janelas.JdgListaPermissoes', 'Cadastro de Permissao', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (23, 'janelas.JdgCadastroCliente', 'Cadastro da Cliente', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (24, 'janelas.JdgCadastroCliente', 'Cadastro da Cliente', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (25, 'janelas.JdgCadastroCliente', 'Cadastro da Cliente', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (26, 'janelas.JdgCadastroCidade', 'Cadastro de Cidade', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (27, 'janelas.JdgCadastroCidade', 'Cadastro de Cidade', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (28, 'janelas.JdgCadastroCidade', 'Cadastro de Cidade', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (29, 'janelas.JdgAlteracaoSenha', 'Alterar Senha', 'btnConfirmar', 'Confirmar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (30, 'janelas.JdgParametrosSistema', 'Parametros do Sistema', 'btnEnableAuditoria', 'Ativar Auditoria');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (31, 'janelas.JdgParametrosSistema', 'Parametros do Sistema', 'btnDisableAuditoria', 'Desativar Auditoria');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (32, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (33, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (34, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnExcluir', 'Excluir');

@@ -6,6 +6,7 @@
 package janelas;
 
 import apoio.Formatacao;
+import apoio.Validacao;
 import controle.ControleUsuario;
 import entidade.Usuario;
 import java.awt.Color;

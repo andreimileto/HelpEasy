@@ -246,21 +246,7 @@ public class Validacao {
     }
 
     public static void populaPermissao() {
-        String arquivoCSV = "permissoes.csv";
-        BufferedReader br = null;
-        String linha = "";
-        String csvDivisor = ";";
-        try {
-            br = new BufferedReader(new FileReader(arquivoCSV));
-            while ((linha = br.readLine()) != null) {
-
-                String[] permissoes = linha.split(csvDivisor);
-
-                System.out.println("tela " + permissoes[0] + " tela_am " + permissoes[1]
-                        + " acao " + permissoes[2] + " acao_am " + permissoes[3]);
-
-            }
-            
+        try {       
             Session sessao = HibernateUtil.getSessionFactory().openSession();
             sessao.beginTransaction();
 
@@ -273,20 +259,8 @@ public class Validacao {
 
             sessao.getTransaction().commit();
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        }catch (Exception e) {
             System.out.println("erro " + e.getMessage());
-        }finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 }

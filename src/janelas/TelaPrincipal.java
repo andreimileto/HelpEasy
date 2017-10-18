@@ -28,12 +28,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public TelaPrincipal(Usuario usuario) {
+        Validacao.populaPermissao();
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         lblUsuario.setText(usuario.getLogin());
         userH = usuario;
         Validacao.setaPermissoes(this.jMenuBar1);
-        Validacao.populaPermissao();
     }
 
     /**
