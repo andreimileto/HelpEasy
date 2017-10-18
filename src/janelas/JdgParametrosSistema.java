@@ -99,40 +99,12 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
 
     private void btnEnableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnableAuditoriaActionPerformed
         // TODO add your handling code here:
-        try {
-            Session sessao = HibernateUtil.getSessionFactory().openSession();
-            sessao.beginTransaction();
-
-            sessao.doWork(new Work() {
-                public void execute(Connection connection) throws SQLException {
-                    CallableStatement call = connection.prepareCall("{ call fnenableauditoria() }");
-                    call.execute();
-                }
-            });
-
-            sessao.getTransaction().commit();
-        } catch (Exception e) {
-            System.out.println("erro da função: " + e);
-        }
+        Validacao.ativaAuditoria();
     }//GEN-LAST:event_btnEnableAuditoriaActionPerformed
 
     private void btnDisableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisableAuditoriaActionPerformed
         // TODO add your handling code here:
-        try {
-            Session sessao = HibernateUtil.getSessionFactory().openSession();
-            sessao.beginTransaction();
-
-            sessao.doWork(new Work() {
-                public void execute(Connection connection) throws SQLException {
-                    CallableStatement call = connection.prepareCall("{ call fndisableauditoria() }");
-                    call.execute();
-                }
-            });
-
-            sessao.getTransaction().commit();
-        } catch (Exception e) {
-            System.out.println("erro da função: " + e);
-        }
+        Validacao.desativaAuditoria();
     }//GEN-LAST:event_btnDisableAuditoriaActionPerformed
 
     /**

@@ -263,4 +263,42 @@ public class Validacao {
             System.out.println("erro " + e.getMessage());
         }
     }
+    
+       public static void desativaAuditoria() {
+        try {       
+            Session sessao = HibernateUtil.getSessionFactory().openSession();
+            sessao.beginTransaction();
+
+            sessao.doWork(new Work() {
+                public void execute(Connection connection) throws SQLException {
+                    CallableStatement call = connection.prepareCall("{ call fndisableauditoria() }");
+                    call.execute();
+                }
+            });
+
+            sessao.getTransaction().commit();
+
+        }catch (Exception e) {
+            System.out.println("erro " + e.getMessage());
+        }
+    }
+       
+       public static void ativaAuditoria() {
+        try {       
+            Session sessao = HibernateUtil.getSessionFactory().openSession();
+            sessao.beginTransaction();
+
+            sessao.doWork(new Work() {
+                public void execute(Connection connection) throws SQLException {
+                    CallableStatement call = connection.prepareCall("{ call fnenableauditoria() }");
+                    call.execute();
+                }
+            });
+
+            sessao.getTransaction().commit();
+
+        }catch (Exception e) {
+            System.out.println("erro " + e.getMessage());
+        }
+    }
 }
