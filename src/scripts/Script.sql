@@ -297,9 +297,10 @@ CREATE TABLE usuario_permissao_tela_acoes (
 --DROP TABLE telas;
 CREATE TABLE telas
 (
+	id bigserial,
 	tela varchar(100) NOT NULL,
 	tela_amigavel varchar(100) NOT NULL,
 	acao varchar(100) NOT NULL,
 	acao_amigavel varchar(100) NOT NULL,
-	PRIMARY KEY (tela,acao)
+	PRIMARY KEY (id)
 );

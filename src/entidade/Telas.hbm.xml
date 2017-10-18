@@ -3,22 +3,22 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 17/10/2017 22:28:35 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="entidade.UsuarioPermissaoTelaAcoes" table="usuario_permissao_tela_acoes" schema="public" optimistic-lock="version">
+    <class name="entidade.Telas" table="telas" schema="public" optimistic-lock="version">
         <id name="id" type="long">
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="usuarioPermissaoTela" class="entidade.UsuarioPermissaoTela" fetch="select">
-            <column name="id_tela" not-null="true" />
-        </many-to-one>
+        <property name="tela" type="string">
+            <column name="tela" length="100" not-null="true" />
+        </property>
+        <property name="telaAmigavel" type="string">
+            <column name="tela_amigavel" length="100" not-null="true" />
+        </property>
         <property name="acao" type="string">
             <column name="acao" length="100" not-null="true" />
         </property>
         <property name="acaoAmigavel" type="string">
             <column name="acao_amigavel" length="100" not-null="true" />
-        </property>
-        <property name="permiteAcesso" type="boolean">
-            <column name="permite_acesso" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>
