@@ -129,3 +129,15 @@ CREATE OR REPLACE FUNCTION fnEnableAuditoria() RETURNS void AS $$
 	ALTER TABLE Movimento_Tarefa ENABLE TRIGGER trgAuditoriaMovimentoTarefa;
         END;
 $$ LANGUAGE plpgsql;
+
+
+--Função para Popular Permissao;
+CREATE OR REPLACE FUNCTION fnPopulaPermissao() RETURNS void AS $$
+    BEGIN
+	insert into usuario_permissao_tela (id_usuario,tela,tela_amigavel,permite_acesso) 
+	select * from viewTelasFaltantes;
+
+	insert into usuario_permissao_tela_acoes (id_tela,acao,acao_amigavel,permite_acesso) 
+	select * from viewTelasAcoesFaltantes;
+	END;
+$$ LANGUAGE plpgsql;

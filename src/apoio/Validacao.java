@@ -12,6 +12,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
@@ -19,6 +22,7 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import org.hibernate.Session;
+import org.hibernate.jdbc.Work;
 
 /**
  *
@@ -256,6 +260,18 @@ public class Validacao {
                         + " acao " + permissoes[2] + " acao_am " + permissoes[3]);
 
             }
+            
+            Session sessao = HibernateUtil.getSessionFactory().openSession();
+            sessao.beginTransaction();
+
+            sessao.doWork(new Work() {
+                public void execute(Connection connection) throws SQLException {
+                    CallableStatement call = connection.prepareCall("{ call fnpopulapermissao() }");
+                    call.execute();
+                }
+            });
+
+            sessao.getTransaction().commit();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -33,7 +33,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblUsuario.setText(usuario.getLogin());
         userH = usuario;
         Validacao.setaPermissoes(this.jMenuBar1);
-        //Validacao.populaPermissao();
+        Validacao.populaPermissao();
     }
 
     /**

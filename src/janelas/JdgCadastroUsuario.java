@@ -256,6 +256,7 @@ public class JdgCadastroUsuario extends javax.swing.JDialog {
                     limparCampos();
                     JOptionPane.showMessageDialog(rootPane, "Usuário cadastrado com sucesso!");
                     janelas.TelaPrincipal.logH.gravaInfo(this.getClass().getName(), "Usuário cadastrado com sucesso!");
+                    Validacao.populaPermissao();
                 } else {
                     if (mensagem.contains("Já existe um usuário cadastrado com esse login")) {
                         tfdLogin.requestFocus();
