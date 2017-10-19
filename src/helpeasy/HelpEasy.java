@@ -6,6 +6,7 @@
 package helpeasy;
 
 import apoio.ConexaoBD;
+import apoio.Formatacao;
 import janelas.JdgCadastroCidade;
 import janelas.Senha;
 import janelas.TelaPrincipal;
@@ -22,6 +23,9 @@ public class HelpEasy {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+       
+        
+        
         try {
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

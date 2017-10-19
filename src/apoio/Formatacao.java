@@ -3,6 +3,7 @@ package apoio;
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import com.toedter.calendar.JDateChooser;
+import java.io.File;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -255,4 +256,17 @@ public class Formatacao {
             
             return senhaCriptografada;
     }
+    
+    public static void criarDiretorioTarefa(String idDarefa) {
+        try {
+            File patch = new File("tarefas");
+            File diretorio = new File(patch.getAbsolutePath()+"\\"+idDarefa);
+            //new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))
+            diretorio.mkdir();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao criar o diretorio");
+            System.out.println(ex);
+        }
+    }
+    
 }

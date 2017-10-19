@@ -7,6 +7,7 @@ package controle;
 
 import DAO.ClienteDAO;
 import DAO.TarefaDAO;
+import apoio.Formatacao;
 import entidade.Cliente;
 import entidade.Tarefa;
 import entidade.Versao;
@@ -23,49 +24,48 @@ public class ControleTarefa {
     public String salvar(Tarefa tarefa) {
         this.tarefa = tarefa;
         String mensagem = "Erro ao salvar tarefa:\n";
-         TarefaDAO tarefaDAO = new TarefaDAO();
+        TarefaDAO tarefaDAO = new TarefaDAO();
         if (tarefa.getSituacao() == 'A') {
-            
+
             if (tarefa.getTitulo().length() < 1) {
                 mensagem = mensagem + "- Título não está preenchido\n";
             }
-            
-            if (tarefa.getDescricao().length()<1) {
+
+            if (tarefa.getDescricao().length() < 1) {
                 mensagem = mensagem + "- Descrição não está preenchida\n";
             }
-            if (tarefa.getCliente().getId()==0) {
-                
+            if (tarefa.getCliente().getId() == 0) {
+
             }
-            if (tarefa.getFase().getId()<1) {
+            if (tarefa.getFase().getId() < 1) {
                 mensagem = mensagem + "- Fase não está preenchida\n";
             }
-            if (tarefa.getModulo().getId()<1) {
+            if (tarefa.getModulo().getId() < 1) {
                 mensagem = mensagem + "- Módulo não está preenchido\n";
             }
-            
-            if (tarefa.getMotivo().getId()<1) {
+
+            if (tarefa.getMotivo().getId() < 1) {
                 mensagem = mensagem + "- Motivo não está preenchido\n";
             }
-            if (tarefa.getPrioridade().getId()<1) {
+            if (tarefa.getPrioridade().getId() < 1) {
                 mensagem = mensagem + "- Prioridade não está preenchido\n";
             }
-            
-            if (tarefa.getProjeto().getId()<1) {
+
+            if (tarefa.getProjeto().getId() < 1) {
                 mensagem = mensagem + "- Projeto não está preenchido\n";
             }
-            
-            if (tarefa.getVersaoByIdVersaoBug().getId()<1) {
+
+            if (tarefa.getVersaoByIdVersaoBug().getId() < 1) {
                 Versao versaoBug = new Versao();
                 versaoBug.setId(1);
                 tarefa.setVersaoByIdVersaoBug(versaoBug);
             }
-            
-            if (tarefa.getVersaoByIdVersaoCorrecao().getId()<1) {
+
+            if (tarefa.getVersaoByIdVersaoCorrecao().getId() < 1) {
                 Versao versaoCorrecao = new Versao();
                 versaoCorrecao.setId(1);
                 tarefa.setVersaoByIdVersaoBug(versaoCorrecao);
             }
-            
 
 //            if (cliente.getEndereco().length() > 150) {
 //                mensagem = mensagem + "Endereço não pode ultrapassar 150 caracteres\n";
@@ -123,16 +123,18 @@ public class ControleTarefa {
 //            //caso as duas validações acima não interfira no cadastro, será efetuado o cadasro
             if (mensagem.length() < 26) {
                 if (tarefaDAO.salvar(tarefa)) {
+                    int maiorId = tarefaDAO.ultimoId(tarefa);
+                    Formatacao.criarDiretorioTarefa(maiorId + "");
                     return "ok";
                 } else {
                     return mensagem = mensagem + "\nEntre em contato com o suporte";
 
                 }
             } else {
-                    return mensagem;
+                return mensagem;
             }
         } else {
-           
+
             if (tarefaDAO.salvar(tarefa)) {
                 return "ok";
             } else {
@@ -148,5 +150,4 @@ public class ControleTarefa {
 //        ClienteDAO clienteDAO = new ClienteDAO();
 //        return clienteDAO.listar(this.cliente);
 //    }
-
 }

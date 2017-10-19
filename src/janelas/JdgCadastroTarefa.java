@@ -1,5 +1,6 @@
 package janelas;
 
+import DAO.TarefaDAO;
 import apoio.Formatacao;
 import controle.ControleTarefa;
 import entidade.Cidade;
@@ -44,7 +45,8 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
     Modulo modulo;
     Usuario usuarioAutor;
     Usuario usuarioResponsavel;
-    public JdgCadastroTarefa(java.awt.Frame parent, boolean modal,Usuario usuarioAutor) {
+
+    public JdgCadastroTarefa(java.awt.Frame parent, boolean modal, Usuario usuarioAutor) {
         super(parent, modal);
         initComponents();
         tarefa = new Tarefa();
@@ -61,8 +63,8 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         this.usuarioAutor = usuarioAutor;
         listarDados();
     }
-    
-     public JdgCadastroTarefa(java.awt.Frame parent, boolean modal) {
+
+    public JdgCadastroTarefa(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         cidade = new Cidade();
@@ -74,7 +76,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         modulo = new Modulo();
         versaoBug = new Versao();
         versaoCorrecao = new Versao();
-        
+
         listarDados();
     }
 
@@ -175,6 +177,11 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
         btnLocalizarModulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizarModulo.setEnabled(false);
+        btnLocalizarModulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarModuloActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Autor:");
 
@@ -223,6 +230,11 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
         btnLocalizarVersaoBug.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizarVersaoBug.setEnabled(false);
+        btnLocalizarVersaoBug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarVersaoBugActionPerformed(evt);
+            }
+        });
 
         btnLocalizarMotivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizarMotivo.addActionListener(new java.awt.event.ActionListener() {
@@ -244,6 +256,11 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
         btnLocalizarVersaoCorrecao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizarVersaoCorrecao.setEnabled(false);
+        btnLocalizarVersaoCorrecao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarVersaoCorrecaoActionPerformed(evt);
+            }
+        });
 
         tfdVersaoCorrecao.setEditable(false);
 
@@ -614,6 +631,12 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         listaProjeto.setVisible(true);
         if (projeto.getId() > 0) {
             tfdNomeProjeto.setText(projeto.getDescricao());
+            versaoBug.setProjeto(projeto);
+            versaoCorrecao.setProjeto(projeto);
+            modulo.setProjeto(projeto);
+            btnLocalizarVersaoBug.setEnabled(true);
+            btnLocalizarVersaoCorrecao.setEnabled(true);
+            btnLocalizarModulo.setEnabled(true);
         }
 
 
@@ -653,18 +676,20 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLocalizarFaseActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-         if (tfdId.getText().length()>0) {
+        if (tfdId.getText().length() > 0) {
             tarefa.setId(Integer.parseInt(tfdId.getText()));
         }
         tarefa.setTitulo(tfdTituloTarefa.getText());
         tarefa.setDescricao(tfaDescricaoTarefa.getText());
         tarefa.setCliente(cliente);
         tarefa.setFase(fase);
-        //inserido manual, pois ainda não foi feito os cadastros:
-        modulo.setId(1);
-        versaoBug.setId(1);
-        versaoCorrecao.setId(1);
-        //---------
+//        //inserido manual, pois ainda não foi feito os cadastros:
+//        modulo.setId(1);
+//        versaoBug.setId(1);
+//        versaoCorrecao.setId(1);
+//        //---------
+//        
+        
         tarefa.setModulo(modulo);
         tarefa.setMotivo(motivo);
         tarefa.setPrioridade(prioridade);
@@ -678,35 +703,29 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         try {
             dataAtual = Formatacao.getDataAtualEmDate();
             tarefa.setDatahoraCriacao(dataAtual);
-        tarefa.setDatahoraPrevisao(JdcPrevisão.getDate());
-        tarefa.setDatahoraConclusao(dataAtual);
+            tarefa.setDatahoraPrevisao(JdcPrevisão.getDate());
+            tarefa.setDatahoraConclusao(dataAtual);
         } catch (ParseException ex) {
             Logger.getLogger(JdgCadastroTarefa.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
-        
-        ControleTarefa controleTarefa = new ControleTarefa();
-       String mensagem =  controleTarefa.salvar(tarefa);
-        
 
-        
+        ControleTarefa controleTarefa = new ControleTarefa();
+        String mensagem = controleTarefa.salvar(tarefa);
+
+        if (mensagem.equals("ok")) {
+            limparCampos();
+            TarefaDAO tarefaDAO = new TarefaDAO();
             
-            
-            if (mensagem.equals("ok")) {
-                limparCampos();
-                JOptionPane.showMessageDialog(rootPane, "Tarefa registrada com sucesso");
-                
-            }else{
-                JOptionPane.showMessageDialog(rootPane, mensagem);
-            }
-        
-        
-       
+            JOptionPane.showMessageDialog(rootPane, "Tarefa registrada com sucesso");
+
+        } else {
+            JOptionPane.showMessageDialog(rootPane, mensagem);
+        }
+
+
     }//GEN-LAST:event_btnSalvarActionPerformed
 
-    private void limparCampos(){
+    private void limparCampos() {
         cliente = new Cliente();
         motivo = new Motivo();
         usuarioResponsavel = new Usuario();
@@ -729,15 +748,43 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         tfdVersaoBug.setText("");
         tfdVersaoCorrecao.setText("");
     }
-    
+
     private void btnLocalizarResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarResponsavelActionPerformed
-        JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true,usuarioResponsavel);
+        JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, usuarioResponsavel);
         listaUsuario.setVisible(true);
         if (usuarioResponsavel.getId() > 0) {
             tfdNomeResponsavel.setText(usuarioResponsavel.getNome());
 
         }
     }//GEN-LAST:event_btnLocalizarResponsavelActionPerformed
+
+    private void btnLocalizarModuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarModuloActionPerformed
+        JdgListaModulo listaModulo = new JdgListaModulo(null, true, modulo, projeto);
+        listaModulo.setVisible(true);
+        if (modulo.getId() > 0) {
+            tfdNomeModulo.setText(modulo.getDescricao());
+        }
+    }//GEN-LAST:event_btnLocalizarModuloActionPerformed
+
+    private void btnLocalizarVersaoBugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarVersaoBugActionPerformed
+        JdgListaVersao listaVersao = new JdgListaVersao(null, true, versaoBug, projeto);
+        listaVersao.setVisible(true);
+        if (versaoBug.getId() > 0) {
+
+            tfdVersaoBug.setText(versaoBug.getDescricao());
+
+        }
+    }//GEN-LAST:event_btnLocalizarVersaoBugActionPerformed
+
+    private void btnLocalizarVersaoCorrecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarVersaoCorrecaoActionPerformed
+        JdgListaVersao listaVersao = new JdgListaVersao(null, true, versaoCorrecao, projeto);
+        listaVersao.setVisible(true);
+        if (versaoCorrecao.getId() > 0) {
+
+            tfdVersaoCorrecao.setText(versaoCorrecao.getDescricao());
+
+        }
+    }//GEN-LAST:event_btnLocalizarVersaoCorrecaoActionPerformed
 
     /**
      * @param args the command line arguments

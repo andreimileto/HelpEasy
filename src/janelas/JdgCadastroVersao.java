@@ -253,7 +253,8 @@ public class JdgCadastroVersao extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-        versao = new Versao();
+        projeto = new Projeto();
+        versao = new Versao(projeto);
         JdgListaVersao listaVersao = new JdgListaVersao(null, true, versao, projeto);
         listaVersao.setVisible(true);
         if (versao.getId() > 0) {

@@ -254,7 +254,8 @@ public class JdgCadastroModulo extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-        modulo = new Modulo();
+        projeto = new Projeto();
+        modulo = new Modulo(projeto);
         JdgListaModulo listaModulo = new JdgListaModulo(null, true, modulo, projeto);
         listaModulo.setVisible(true);
         if (modulo.getId() > 0) {

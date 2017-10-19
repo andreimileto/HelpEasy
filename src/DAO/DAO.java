@@ -6,19 +6,23 @@
 package DAO;
 
 import apoio.HibernateUtil;
+import entidade.Cidade;
 import janelas.TelaPrincipal;
+import java.util.ArrayList;
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 
 /**
  *
  * @author Mileto
  */
 public abstract class DAO {
-     public boolean salvar(Object o) {
+
+    public boolean salvar(Object o) {
+
         Session session = HibernateUtil.getSessionFactory().openSession();
         boolean retorno = false;
         try {
@@ -30,16 +34,16 @@ public abstract class DAO {
             query.executeUpdate();
 
             session.merge(o);
-
             t.commit();
-
             retorno = true;
+
         } catch (HibernateException he) {
             //janelas.TelaPrincipal.logH.gravaErro(o.getClass().getName(),janelas.TelaPrincipal.userH.getLogin(),"err");
             he.printStackTrace();
         } finally {
             session.close();
         }
+
         return retorno;
     }
 }

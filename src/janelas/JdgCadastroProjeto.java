@@ -58,6 +58,8 @@ public class JdgCadastroProjeto extends javax.swing.JDialog {
 
         jLabel3.setText("Nome:");
 
+        tfdCodigo.setEditable(false);
+
         btnLocalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizar.setText("Localizar");
         btnLocalizar.setName("btnLocalizar"); // NOI18N

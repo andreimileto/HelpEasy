@@ -5,7 +5,12 @@
  */
 package DAO;
 
+import apoio.HibernateUtil;
 import entidade.Tarefa;
+import java.util.ArrayList;
+import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 
 /**
  *
@@ -58,5 +63,36 @@ public class TarefaDAO extends DAO {
 ////        }
 //        return lista;
 //    }
+    public int ultimoId(Tarefa tarefa) {
 
+        this.tarefa = tarefa;
+        List resultado = null;
+        ArrayList<Tarefa> lista = new ArrayList<>();
+        int id = 0;
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+
+            String sql = "";
+
+            sql = "select max(id) from Tarefa  ";
+
+            String sel = sql;
+            // System.out.println(sel + " select cliente");
+            org.hibernate.Query q = session.createQuery(sql);
+            resultado = q.list();
+          
+            for (Object o : resultado) {
+                 id = ((Integer) ((Object) o));
+                //lista.add(tar);
+            }
+
+//
+        } catch (HibernateException he) {
+            he.printStackTrace();
+        }// finally {
+//            session.close();
+
+        return id;
+    }
 }

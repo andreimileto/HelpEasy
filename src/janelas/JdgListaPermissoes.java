@@ -54,10 +54,10 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         try {
             //setar para tabela modelo de dados
             tblAcoes.setModel(this.obterDadosParaJTable());
-            tblAcoes.getColumnModel().getColumn(0).setPreferredWidth(0);
-            tblAcoes.getColumnModel().getColumn(1).setPreferredWidth(100);
-            tblAcoes.getColumnModel().getColumn(2).setPreferredWidth(0);
-            tblAcoes.getColumnModel().getColumn(3).setPreferredWidth(0);
+            tblAcoes.getColumnModel().getColumn(0).setPreferredWidth(1);
+            tblAcoes.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblAcoes.getColumnModel().getColumn(2).setPreferredWidth(200);
+            tblAcoes.getColumnModel().getColumn(3).setPreferredWidth(20);
 
         } catch (Exception ex) {
             janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(), ex.getMessage());
@@ -115,7 +115,7 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
             //setar para tabela modelo de dados
             tblTelas.setModel(this.obterDadosParaJTableTela());
             tblTelas.getColumnModel().getColumn(0).setPreferredWidth(1);
-            tblTelas.getColumnModel().getColumn(1).setPreferredWidth(500);
+            tblTelas.getColumnModel().getColumn(1).setPreferredWidth(470);
             tblTelas.getColumnModel().getColumn(2).setPreferredWidth(20);
 
         } catch (Exception ex) {
@@ -355,11 +355,11 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
                         .addComponent(tfdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)

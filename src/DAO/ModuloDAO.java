@@ -16,10 +16,11 @@ import org.hibernate.Session;
  *
  * @author Mileto
  */
-public class ModuloDAO extends DAO{
+public class ModuloDAO extends DAO {
 
     Modulo modulo;
-     public ArrayList<Modulo> listar(Modulo modulo) {
+
+    public ArrayList<Modulo> listar(Modulo modulo) {
         this.modulo = modulo;
         List resultado = null;
 
@@ -28,16 +29,48 @@ public class ModuloDAO extends DAO{
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             String sql = "";
-            if (modulo.getId() == 0) {
-                sql = "from Modulo "                    
-                        + "where upper(descricao)  like '" + modulo.getDescricao().toUpperCase() + "%' "
-                        + "and situacao ='A'"
-                        + " order by descricao";
-            } else {
-                sql = "from Modulo "                    
-                        + "where id = " + modulo.getId()
-                        + "and situacao ='A'"
-                        + " order by descricao";
+            try {
+
+                if (modulo.getProjeto().getId() < 1) {
+                    if (modulo.getId() == 0) {
+                        sql = "from Modulo "
+                                + "where upper(descricao)  like '" + modulo.getDescricao().toUpperCase() + "%' "
+                                + "and situacao ='A'"
+                                + " order by descricao";
+                    } else {
+                        sql = "from Modulo "
+                                + "where id = " + modulo.getId()
+                                + "and situacao ='A'"
+                                + " order by descricao";
+                    }
+
+                } else {
+                    if (modulo.getId() == 0) {
+                        sql = "from Modulo "
+                                + " where upper(descricao)  like '" + modulo.getDescricao().toUpperCase() + "%' "
+                                + " and id_projeto = " + modulo.getProjeto().getId()
+                                + " and situacao ='A'"
+                                + " order by descricao";
+                    } else {
+                        sql = "from Modulo "
+                                + " where id = " + modulo.getId()
+                                + " and id_projeto = " + modulo.getProjeto().getId()
+                                + " and situacao ='A'"
+                                + " order by descricao";
+                    }
+                }
+            } catch (Exception e) {
+                if (modulo.getId() == 0) {
+                    sql = "from Modulo "
+                            + "where upper(descricao)  like '" + modulo.getDescricao().toUpperCase() + "%' "
+                            + "and situacao ='A'"
+                            + " order by descricao";
+                } else {
+                    sql = "from Modulo "
+                            + "where id = " + modulo.getId()
+                            + "and situacao ='A'"
+                            + " order by descricao";
+                }
             }
             String sel = sql;
             System.out.println(sel);
@@ -55,5 +88,5 @@ public class ModuloDAO extends DAO{
         }
         return lista;
     }
-    
+
 }

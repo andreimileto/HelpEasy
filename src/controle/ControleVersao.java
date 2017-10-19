@@ -25,15 +25,20 @@ public class ControleVersao {
          if (versao.getDescricao().length()<3) {
             return "Erro ao salvar Versao\nÉ preciso que o nome tenha mais que dois caracteres na descrição";
         }
+         if (versao.getProjeto().getId()<1) {
+             return "Erro ao salvar versão\nProjeto precisa ser selecionado";
+         }
         
         VersaoDAO versaoDAO = new VersaoDAO();
-        ArrayList<Versao> versaos = new ArrayList<>();
-        versaos= listar(versao);
+        ArrayList<Versao> versoes = new ArrayList<>();
+        versoes= listar(versao);
         
         //verifica se existe algum cadastro com o mesmo nome que seja um ID diferente do que está alterando.
-        for (int i = 0; i < versaos.size(); i++) {
-            if (this.versao.getDescricao().equalsIgnoreCase(versaos.get(i).getDescricao()) && versao.getId()!= versaos.get(i).getId()) {
-                return "Erro ao salvar Versao\nJá existe um cadastro com esse nome!";
+        for (int i = 0; i < versoes.size(); i++) {
+            if (this.versao.getDescricao().equalsIgnoreCase(versoes.get(i).getDescricao()) 
+                    && versao.getId()!= versoes.get(i).getId()
+                    && versao.getProjeto().getId() == versoes.get(i).getProjeto().getId()) {
+                return "Erro ao salvar Versao\nJá existe um cadastro com esse nome e mesmo projeto!";
             }
 
         }
