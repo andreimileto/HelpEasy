@@ -11,12 +11,25 @@ CREATE TABLE usuario (
   situacao CHAR(1) NOT NULL,
   PRIMARY KEY (id));
 
-
 --Insere os Usuários Padrões;
 --Senha: 123456--
 insert into usuario values(default,'Andrei','andrei','e10adc3949ba59abbe56e057f20f883e','A');
 --Senha: 123456--       
 insert into usuario values (default,'Leandro','leandro','e10adc3949ba59abbe56e057f20f883e','A');
+
+
+-- -----------------------------------------------------
+-- Table envio_email
+-- -----------------------------------------------------
+create table envio_email( 
+    id serial not null,
+    dominio char(1) not null,
+    email VARCHAR(100) not null,
+    senha VARCHAR(100) not null,
+    titulo VARCHAR(250) not null,
+    mensagem TEXT,
+    envio_ativo char(1),
+    constraint pk PRIMARY key (id));
 
 
 -- -----------------------------------------------------
@@ -92,6 +105,7 @@ CREATE TABLE IF NOT EXISTS cliente (
   clientecol VARCHAR(45) NULL,
   endereco VARCHAR(150) NULL,
   telefone VARCHAR(15) NULL,
+  email VARCHAR(150) NULL,
   situacao CHAR(1) NOT NULL,
   PRIMARY KEY (id),
   --INDEX fk_cliente_cidade1_idx (id_cidade),

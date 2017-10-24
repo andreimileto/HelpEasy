@@ -1,5 +1,5 @@
 package entidade;
-// Generated 22/09/2017 22:10:23 by Hibernate Tools 4.3.1
+// Generated 23/10/2017 22:08:46 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -92,7 +92,7 @@ public class Tarefa  implements java.io.Serializable {
      @Id 
 
     
-    @Column(name="id", nullable=false)
+    @Column(name="id", unique=true, nullable=false)
     public int getId() {
         return this.id;
     }
@@ -283,4 +283,5 @@ public class Tarefa  implements java.io.Serializable {
 
 
 }
+
 

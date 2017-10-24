@@ -7,6 +7,7 @@ package janelas;
 
 import apoio.LogHeasy;
 import apoio.Validacao;
+import entidade.EnvioEmail;
 import entidade.Usuario;
 
 /**
@@ -20,6 +21,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
 //    Usuario usuario;
     public static Usuario userH = new Usuario();
+    public static EnvioEmail envioEmail = new EnvioEmail();
 
     public TelaPrincipal() {
         initComponents();
@@ -71,6 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         imnParametrosSistema = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Help Easy");
@@ -279,6 +282,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem1);
 
+        jMenuItem2.setText("Configuração de E-mail");
+        jMenuItem2.setName("janelas.JdgCadastroEmail"); // NOI18N
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem2);
+        jMenuItem2.getAccessibleContext().setAccessibleName("Cadastro de Email");
+
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -380,6 +393,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroVersao.setVisible(true);
     }//GEN-LAST:event_ImnCadastroVersaoActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        JdgCadastroEmail cadastroEmail = new JdgCadastroEmail(this, true);
+        cadastroEmail.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -439,6 +457,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblUsuario;

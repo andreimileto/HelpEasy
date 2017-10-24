@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/10/2017 22:08:46 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidade.EnvioEmail" table="envio_email" schema="public" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="dominio" type="int">
+            <column name="dominio"  not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true" />
+        </property>
+        <property name="senha" type="string">
+            <column name="senha" length="100" not-null="true" />
+        </property>
+        <property name="titulo" type="string">
+            <column name="titulo" length="250" not-null="true" />
+        </property>
+        <property name="mensagem" type="string">
+            <column name="mensagem" />
+        </property>
+        <property name="envioAtivo" type="java.lang.Character">
+            <column name="envio_ativo" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

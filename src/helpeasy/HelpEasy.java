@@ -7,9 +7,19 @@ package helpeasy;
 
 import apoio.ConexaoBD;
 import apoio.Formatacao;
+import apoio.Util;
 import janelas.JdgCadastroCidade;
 import janelas.Senha;
 import janelas.TelaPrincipal;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+import javax.mail.MessagingException;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -18,12 +28,16 @@ import javax.swing.UIManager;
  * @author Mileto
  */
 public class HelpEasy {
-
+    List<String> to;
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MessagingException {
+        
+        
+        
        
+     //   Util.enviodeEmail();
         
         
         try {

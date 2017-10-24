@@ -113,6 +113,12 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
         btnExcluir = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         btnSalvar1 = new javax.swing.JButton();
+        lblEndereco1 = new javax.swing.JLabel();
+        tfdEndereco1 = new javax.swing.JTextField();
+        lblEndereco2 = new javax.swing.JLabel();
+        tfdEndereco2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        tfdEmail = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EasyPDV - Cadastro Cliente");
@@ -217,7 +223,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                 btnLocalizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLocalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        jPanel1.add(btnLocalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
 
         btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixeira16x16.png"))); // NOI18N
         btnExcluir.setText("Excluir");
@@ -227,7 +233,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                 btnExcluirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 100, -1));
+        jPanel1.add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 100, -1));
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))); // NOI18N
         btnSair.setText("Sair");
@@ -237,7 +243,7 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                 btnSairActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 90, -1));
+        jPanel1.add(btnSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 90, -1));
 
         btnSalvar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
         btnSalvar1.setText("Salvar");
@@ -247,9 +253,33 @@ public class JdgCadastroCliente extends javax.swing.JDialog {
                 btnSalvar1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalvar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 100, -1));
+        jPanel1.add(btnSalvar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 100, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 11, 470, 270));
+        lblEndereco1.setText("Endereço");
+        jPanel1.add(lblEndereco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        tfdEndereco1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfdEndereco1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tfdEndereco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 370, -1));
+
+        lblEndereco2.setText("Endereço");
+        jPanel1.add(lblEndereco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        tfdEndereco2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfdEndereco2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tfdEndereco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 370, -1));
+
+        jLabel1.setText("E-mail");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        jPanel1.add(tfdEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 370, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 11, 470, 300));
 
         pack();
         setLocationRelativeTo(null);
@@ -319,6 +349,7 @@ cliente.setSituacao('I');
         tfdCidade.setText("");
         tfdRazaoSocial.setText("");
         tfdEndereco.setText("");
+        tfdEmail.setText("");
         
         tfdRazaoSocial.requestFocus();
         tffCpfCnpj.setEnabled(true);
@@ -354,17 +385,7 @@ cliente.setSituacao('I');
     }//GEN-LAST:event_tffTelefoneFocusLost
 
     private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
-//        limparCampos();
-//        JdgListaCliente clientes = new JdgListaCliente(null, true, cliente, cidade);
-//        clientes.setVisible(true);
-//        if (cliente.getId() > 0) {
-//            tffCpfCnpj.setEnabled(false);
-//            cbxTipo.setEnabled(false);
-//        }else{
-//           tffCpfCnpj.setEnabled(true); 
-//           
-//        }
-//        verificarCadastroSelecionado();
+
 
         limparCampos();
         JdgListaCliente clientes = new JdgListaCliente(null, true, cliente, cidade);
@@ -418,6 +439,7 @@ cliente.setSituacao('I');
             cliente.setEndereco(tfdEndereco.getText());
             cliente.setTelefone(tffTelefone.getText().replace("(", "").replace(")", "").replace("-", "").replace(" ", ""));
             cliente.setCidade(cidade);
+            cliente.setEmail(tfdEmail.getText());
               if (cbxTipo.getSelectedIndex() == 0) {
                   cliente.setTipoCadastro('F');
               }else{
@@ -438,6 +460,14 @@ cliente.setSituacao('I');
         
       //  }
     }//GEN-LAST:event_btnSalvar1ActionPerformed
+
+    private void tfdEndereco1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfdEndereco1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfdEndereco1ActionPerformed
+
+    private void tfdEndereco2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfdEndereco2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfdEndereco2ActionPerformed
     private boolean validarCampos() {
 //        lblRazaoSocial.setForeground(Color.black);
 //        lblEndereco.setForeground(Color.black);
@@ -550,6 +580,7 @@ preValidacao = "Erro ao salvar cliente:\n";
             tfdEndereco.setText(cliente.getEndereco());
             tffCpfCnpj.setText(cliente.getCpfCnpj());
             tffTelefone.setText(cliente.getTelefone());
+            tfdEmail.setText(cliente.getEmail());
           
             
         } else {
@@ -607,16 +638,22 @@ preValidacao = "Erro ao salvar cliente:\n";
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvar1;
     private javax.swing.JComboBox<String> cbxTipo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCidade;
     private javax.swing.JLabel lblCpfCnpj;
     private javax.swing.JLabel lblEndereco;
+    private javax.swing.JLabel lblEndereco1;
+    private javax.swing.JLabel lblEndereco2;
     private javax.swing.JLabel lblRazaoSocial;
     private javax.swing.JLabel lblSituacaoCPFCNPJ;
     private javax.swing.JLabel lblTelefone;
     private javax.swing.JTextField tfdCidade;
+    private javax.swing.JTextField tfdEmail;
     private javax.swing.JTextField tfdEndereco;
+    private javax.swing.JTextField tfdEndereco1;
+    private javax.swing.JTextField tfdEndereco2;
     private javax.swing.JTextField tfdId;
     private javax.swing.JTextField tfdRazaoSocial;
     private javax.swing.JFormattedTextField tffCpfCnpj;

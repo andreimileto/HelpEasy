@@ -49,6 +49,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
             tblListaClientes.getColumnModel().getColumn(3).setPreferredWidth(80);
             tblListaClientes.getColumnModel().getColumn(4).setPreferredWidth(170);
             tblListaClientes.getColumnModel().getColumn(5).setPreferredWidth(20);
+            tblListaClientes.getColumnModel().getColumn(5).setPreferredWidth(20);
          
 
         } catch (Exception ex) {
@@ -76,6 +77,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
         dtm.addColumn("CIDADE");
         dtm.addColumn("ENDEREÇO");
         dtm.addColumn("TELEFONE");
+        dtm.addColumn("E-MAIL");
 
         for (int i = 0; i < clientes.size(); i++) {       
             
@@ -84,7 +86,8 @@ public class JdgListaCliente extends javax.swing.JDialog {
                 clientes.get(i).getCpfCnpj(),
                 String.valueOf(clientes.get(i).getCidade().getDescricao()),
                 String.valueOf(clientes.get(i).getEndereco()),
-                String.valueOf(clientes.get(i).getTelefone())
+                String.valueOf(clientes.get(i).getTelefone()),
+                clientes.get(i).getEmail()
             });
         }
         return dtm;
@@ -103,6 +106,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
         cliente.setCpfCnpj(clientes.get(0).getCpfCnpj());
         cliente.setTipoCadastro(clientes.get(0).getTipoCadastro());
         cliente.setTelefone(clientes.get(0).getTelefone());
+        cliente.setEmail(clientes.get(0).getEmail());
 
         dispose();
     }

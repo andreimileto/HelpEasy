@@ -12,6 +12,7 @@ import entidade.Cliente;
 import entidade.Tarefa;
 import entidade.Versao;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -123,8 +124,10 @@ public class ControleTarefa {
 //            //caso as duas validações acima não interfira no cadastro, será efetuado o cadasro
             if (mensagem.length() < 26) {
                 if (tarefaDAO.salvar(tarefa)) {
-                    int maiorId = tarefaDAO.ultimoId(tarefa);
-                    Formatacao.criarDiretorioTarefa(maiorId + "");
+                    //int maiorId = tarefaDAO.ultimoId(tarefa);
+                    //Formatacao.criarDiretorioTarefa(maiorId + "");
+                    
+                    JOptionPane.showMessageDialog(null, "Id tarefa "+tarefa.getId());
                     return "ok";
                 } else {
                     return mensagem = mensagem + "\nEntre em contato com o suporte";

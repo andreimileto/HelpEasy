@@ -2,6 +2,7 @@ package janelas;
 
 import DAO.TarefaDAO;
 import apoio.Formatacao;
+import apoio.Util;
 import controle.ControleTarefa;
 import entidade.Cidade;
 import entidade.Cliente;
@@ -711,11 +712,12 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
         ControleTarefa controleTarefa = new ControleTarefa();
         String mensagem = controleTarefa.salvar(tarefa);
-
+JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE "+cliente.getEmail());
         if (mensagem.equals("ok")) {
-            limparCampos();
-            TarefaDAO tarefaDAO = new TarefaDAO();
             
+            //TarefaDAO tarefaDAO = new TarefaDAO();
+            Util.enviodeEmail(cliente);
+            limparCampos();
             JOptionPane.showMessageDialog(rootPane, "Tarefa registrada com sucesso");
 
         } else {
