@@ -322,6 +322,7 @@ CREATE TABLE telas
 
 delete from telas;
 
+
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (1, 'janelas.JdgCadastroFase', 'Cadastro de Fase', 'btnSalvar', 'Salvar');
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (2, 'janelas.JdgCadastroFase', 'Cadastro de Fase', 'btnLocalizar', 'Localizar');
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (3, 'janelas.JdgCadastroFase', 'Cadastro de Fase', 'btnExcluir', 'Excluir');
@@ -353,6 +354,8 @@ INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (2
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (29, 'janelas.JdgAlteracaoSenha', 'Alterar Senha', 'btnConfirmar', 'Confirmar');
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (30, 'janelas.JdgParametrosSistema', 'Parametros do Sistema', 'btnEnableAuditoria', 'Ativar Auditoria');
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (31, 'janelas.JdgParametrosSistema', 'Parametros do Sistema', 'btnDisableAuditoria', 'Desativar Auditoria');
-INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (32, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnSalvar', 'Salvar');
-INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (33, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnLocalizar', 'Localizar');
-INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (34, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (32, 'janelas.JdgParametrosSistema', 'Parametros do Sistema', 'btnExportaXMLClientes', 'Exporta XML Cliente');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (33, 'janelas.JdgParametrosSistema', 'Parametros do Sistema', 'btnImportaXMLClientes', 'Importa XML Cliente');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (34, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnSalvar', 'Salvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (35, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnLocalizar', 'Localizar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (36, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnExcluir', 'Excluir');

@@ -5,14 +5,6 @@
  */
 package janelas;
 
-import apoio.HibernateUtil;
-import apoio.Validacao;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.SQLException;
-import org.hibernate.Session;
-import org.hibernate.jdbc.Work;
-
 /**
  *
  * @author User
@@ -25,7 +17,7 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
     public JdgParametrosSistema(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        Validacao.setaPermissoes(this.getClass().getName(), this.jPanel1);
+        apoio.Validacao.setaPermissoes(this.getClass().getName(), this.jPanel1);
     }
 
     /**
@@ -37,9 +29,13 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         btnEnableAuditoria = new javax.swing.JButton();
         btnDisableAuditoria = new javax.swing.JButton();
+        btnExportaXMLClientes = new javax.swing.JButton();
+        btnImportaXMLClientes = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -59,25 +55,54 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
             }
         });
 
+        btnExportaXMLClientes.setText("Exporta XML Clientes");
+        btnExportaXMLClientes.setName("btnExportaXMLClientes"); // NOI18N
+        btnExportaXMLClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportaXMLClientesActionPerformed(evt);
+            }
+        });
+
+        btnImportaXMLClientes.setText("Importa XML Clientes");
+        btnImportaXMLClientes.setName("btnImportaXMLClientes"); // NOI18N
+        btnImportaXMLClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImportaXMLClientesActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Arquivos serão exportados na pasta \"exportacao\"");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(193, 193, 193)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDisableAuditoria, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                    .addComponent(btnEnableAuditoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnDisableAuditoria)
-                    .addComponent(btnEnableAuditoria))
-                .addContainerGap(105, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(btnExportaXMLClientes)
+                    .addComponent(btnImportaXMLClientes))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnEnableAuditoria)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEnableAuditoria)
+                    .addComponent(btnExportaXMLClientes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDisableAuditoria)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDisableAuditoria)
+                    .addComponent(btnImportaXMLClientes))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -99,13 +124,21 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
 
     private void btnEnableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnableAuditoriaActionPerformed
         // TODO add your handling code here:
-        Validacao.ativaAuditoria();
+        apoio.Validacao.ativaAuditoria();
     }//GEN-LAST:event_btnEnableAuditoriaActionPerformed
 
     private void btnDisableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisableAuditoriaActionPerformed
         // TODO add your handling code here:
-        Validacao.desativaAuditoria();
+        apoio.Validacao.desativaAuditoria();
     }//GEN-LAST:event_btnDisableAuditoriaActionPerformed
+
+    private void btnExportaXMLClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportaXMLClientesActionPerformed
+        apoio.XML.ExportaXmlCliente();
+    }//GEN-LAST:event_btnExportaXMLClientesActionPerformed
+
+    private void btnImportaXMLClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImportaXMLClientesActionPerformed
+        apoio.XML.ImportaXmlCliente();
+    }//GEN-LAST:event_btnImportaXMLClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,6 +186,10 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDisableAuditoria;
     private javax.swing.JButton btnEnableAuditoria;
+    private javax.swing.JButton btnExportaXMLClientes;
+    private javax.swing.JButton btnImportaXMLClientes;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables
 }

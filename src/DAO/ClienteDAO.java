@@ -33,11 +33,11 @@ public class ClienteDAO extends DAO {
 
             if (cliente.getId() == 0) {
 
-                sql = "from Cliente  "
-                        + "where (upper(razao_social)  like '%" + cliente.getRazaoSocial().toUpperCase() + "%' "
+                sql = "from Cliente ";
+                        /*+ "where (upper(razao_social)  like '%" + cliente.getRazaoSocial().toUpperCase() + "%' "
                         + "or cpf_cnpj like '%" + cliente.getCpfCnpj().replace(".", "").replace("-", "").replace("/", "") + "%')"
                         + "and situacao ='A'"
-                        + " order by razao_social";
+                        + " order by razao_social";*/
             } else {
                 sql = "from Cliente  "
                         + "where (upper(razao_social)  like '%" + cliente.getRazaoSocial().toUpperCase() + "%' "
@@ -59,9 +59,36 @@ public class ClienteDAO extends DAO {
 
         } catch (HibernateException he) {
             he.printStackTrace();
-        }// finally {
-//            session.close();
-//        }
+        }
+        return lista;
+    }
+    
+    
+    public ArrayList<Cliente> listarTodos() {
+        this.cliente = cliente;
+        List resultado = null;
+
+        ArrayList<Cliente> lista = new ArrayList<>();
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            String sql = "";
+
+                sql = "from Cliente where situacao ='A'";
+            String sel = sql;
+            System.out.println(sel + " select cliente");
+            org.hibernate.Query q = session.createQuery(sql);
+
+            resultado = q.list();
+
+            for (Object o : resultado) {
+                Cliente cli = ((Cliente) ((Object) o));
+                lista.add(cli);
+            }
+
+        } catch (HibernateException he) {
+            he.printStackTrace();
+        }
         return lista;
     }
 

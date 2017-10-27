@@ -1,0 +1,35 @@
+<cliente>
+  <id>6</id>
+  <cidade class="entidade.Cidade_$$_jvst9d4_1" resolves-to="org.hibernate.proxy.pojo.javassist.SerializableProxy">
+    <entityName>entidade.Cidade</entityName>
+    <id class="int">1</id>
+    <readOnly>false</readOnly>
+    <persistentClass>entidade.Cidade</persistentClass>
+    <interfaces>
+      <java-class>org.hibernate.proxy.HibernateProxy</java-class>
+    </interfaces>
+    <getIdentifierMethodClass>entidade.Cidade</getIdentifierMethodClass>
+    <setIdentifierMethodClass>entidade.Cidade</setIdentifierMethodClass>
+    <getIdentifierMethodName>getId</getIdentifierMethodName>
+    <setIdentifierMethodName>setId</setIdentifierMethodName>
+    <setIdentifierMethodParams>
+      <java-class>int</java-class>
+    </setIdentifierMethodParams>
+  </cidade>
+  <razaoSocial>tete</razaoSocial>
+  <cpfCnpj>11111111111</cpfCnpj>
+  <tipoCadastro>F</tipoCadastro>
+  <endereco>teste</endereco>
+  <telefone>11111111111</telefone>
+  <email>teste</email>
+  <situacao>A</situacao>
+  <tarefas class="org.hibernate.collection.internal.PersistentSet">
+    <initialized>false</initialized>
+    <owner class="cliente" reference="../.."/>
+    <cachedSize>-1</cachedSize>
+    <role>entidade.Cliente.tarefas</role>
+    <key class="int">6</key>
+    <dirty>false</dirty>
+    <specjLazyLoad>false</specjLazyLoad>
+  </tarefas>
+</cliente>

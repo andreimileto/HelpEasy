@@ -6,7 +6,6 @@
 package janelas;
 
 import apoio.Formatacao;
-import apoio.Validacao;
 import controle.ControleUsuario;
 import entidade.Usuario;
 import java.awt.Color;
@@ -21,7 +20,7 @@ public class Senha extends javax.swing.JFrame {
 
     public Senha() {
         initComponents();
-        count = 0;
+        count = 0;        
     }
     private void habilitarBotao() {
         if (tfUsuario.getText().length() > 0 && pfSenha.getText().length() > 0) {
