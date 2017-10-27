@@ -5,6 +5,8 @@
  */
 package janelas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -38,6 +40,9 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("HelpEasy - Parâmetros do Sistema");
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parâmetros Sistema", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
 
         btnEnableAuditoria.setText("Ativa Auditoria");
         btnEnableAuditoria.setName("btnEnableAuditoria"); // NOI18N
@@ -102,7 +107,7 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
                     .addComponent(btnImportaXMLClientes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,19 +130,23 @@ public class JdgParametrosSistema extends javax.swing.JDialog {
     private void btnEnableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnableAuditoriaActionPerformed
         // TODO add your handling code here:
         apoio.Validacao.ativaAuditoria();
+        JOptionPane.showMessageDialog(null,"Auditoria ativada");
     }//GEN-LAST:event_btnEnableAuditoriaActionPerformed
 
     private void btnDisableAuditoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisableAuditoriaActionPerformed
         // TODO add your handling code here:
         apoio.Validacao.desativaAuditoria();
+        JOptionPane.showMessageDialog(null,"Auditoria desativada");
     }//GEN-LAST:event_btnDisableAuditoriaActionPerformed
 
     private void btnExportaXMLClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportaXMLClientesActionPerformed
         apoio.XML.ExportaXmlCliente();
+        JOptionPane.showMessageDialog(null,"Clientes exportados.");
     }//GEN-LAST:event_btnExportaXMLClientesActionPerformed
 
     private void btnImportaXMLClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImportaXMLClientesActionPerformed
         apoio.XML.ImportaXmlCliente();
+        JOptionPane.showMessageDialog(null,"Clientes importados.");
     }//GEN-LAST:event_btnImportaXMLClientesActionPerformed
 
     /**

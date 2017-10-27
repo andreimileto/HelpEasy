@@ -24,7 +24,7 @@ import java.util.Scanner;
 public class XML {
 
     public static void ExportaXmlCliente() {
-        String xml="";
+        String xml = "";
         try {
             XStream xStream = new XStream();
             xStream.alias("cliente", Cliente.class);
@@ -34,13 +34,8 @@ public class XML {
 
             for (int i = 0; i < clientes.size(); i++) {
                 xml = xStream.toXML(clientes.get(i));
-                File arquivo = new File("./exportacaoClientes/cliente_"+clientes.get(i).getId()+".XML"); 
-                FileWriter fw = new FileWriter(arquivo);  
-                BufferedWriter bw = new BufferedWriter(fw);  
-                bw.write(xml);  
-                bw.flush();  
-                bw.close();  
-            }           
+                gravarArquivo("./exportacaoClientes/cliente_" + clientes.get(i).getCpfCnpj()+ ".XML", xml);
+            }
         } catch (Exception e) {
             System.out.println("erro " + e.getMessage());
         }
@@ -53,45 +48,46 @@ public class XML {
             ClienteDAO cliDAO = new ClienteDAO();
             xStream.alias("cliente", Cliente.class);
             File arquivos[];
-            String sLinhaCompleta="";
+
             File diretorio = new File("./exportacaoClientes/");
             arquivos = diretorio.listFiles();
-            for(int i = 0; i < arquivos.length; i++){
+            for (int i = 0; i < arquivos.length; i++) {
                 System.out.println(arquivos[i]);
-                sLinhaCompleta="";
-                BufferedReader br = new BufferedReader(new FileReader(arquivos[i]));
-                while(br.ready()){
-                   String linha = br.readLine();
-                   sLinhaCompleta = sLinhaCompleta + linha;
-                   
-                }
-                System.out.println("xxx"+sLinhaCompleta);
-                Cliente novoCliente = (Cliente) xStream.fromXML(sLinhaCompleta);
+                Cliente novoCliente = (Cliente) xStream.fromXML(lerArquivo(arquivos[i].toString()));
                 cliDAO.salvar(novoCliente);
-                br.close();
             }
-            
-            /*
-
-
-            ClienteDAO cliDAO = new ClienteDAO();
-
-            ArrayList<Cliente> clientes = cliDAO.listarTodos();
-
-            String xml = xStream.toXML(clientes);
-            System.out.println("x" + xml);
-
-            //Cliente novoCliente = (Cliente)xStream.fromXML(xml);
-            for (int i = 0; i < clientes.size(); i++) {
-                xml = xStream.toXML(clientes.get(i));
-            }
-
-            Cliente novoCliente = (Cliente) xStream.fromXML(xml);
-            
-            */
-
         } catch (Exception e) {
             System.out.println("erro " + e.getMessage());
+        }
+    }
+
+    public static String lerArquivo(String sArquivo) {
+        String sLinhaCompleta = "";
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(sArquivo));
+            while (br.ready()) {
+                String linha = br.readLine();
+                sLinhaCompleta = sLinhaCompleta + linha;
+
+            }
+            br.close();
+        } catch (Exception e) {
+            System.out.println("erro " + e.getMessage());
+        }
+        return sLinhaCompleta;
+    }
+
+    public static void gravarArquivo(String sArquivo, String xml) {
+        try {
+            File arquivo = new File(sArquivo);
+            FileWriter fw = new FileWriter(arquivo);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(xml);
+            bw.flush();
+            bw.close();
+        } catch (Exception e) {
+
         }
     }
 }

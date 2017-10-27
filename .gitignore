@@ -50,3 +50,5 @@ HelpEasy.log
 src/DAO/UsuarioDAO.java
 src/janelas/Senha.java
 src/janelas/TelaPrincipal.java
+exportacaoClientes/cliente_1.XML
+exportacaoClientes/cliente_6.XML
