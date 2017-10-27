@@ -229,7 +229,7 @@ CREATE TABLE IF NOT EXISTS movimento_tarefa (
   id serial,
   id_tarefa INT NOT NULL,
   descricao text NOT NULL,
-  datahora_movimento TIMESTAMP NOT NULL,
+  datahora_movimento timestamp default now(),
   situacao CHAR(1) NOT NULL,
   anexo VARCHAR(45) NULL,
   PRIMARY KEY (id),

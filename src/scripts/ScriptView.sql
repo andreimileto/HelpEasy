@@ -41,7 +41,7 @@ create view viewTelasAcoesFaltantes as
 select 
 	distinct upt.id as id_tela,vT.acao,vT.acao_amigavel,true as permite_acesso 
 from viewTelas vT
-	inner join usuario_permissao_tela upt on vT.tela = upt.Tela
+	inner join usuario_permissao_tela upt on vT.tela = upt.Tela and vT.id_usuario = upt.id_usuario
 	left join viewPermissoes vP on vP.tela = vT.tela and vP.id_usuario = vT.id_usuario and vP.acao = vT.acao
 where 
 	vP.tela is null;
