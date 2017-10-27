@@ -151,20 +151,20 @@ CREATE TABLE IF NOT EXISTS modulo (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS tarefa (
   id serial,
-  id_cliente INT NOT NULL,
+  id_cliente INT,
   id_projeto INT NOT NULL,
   id_motivo INT NOT NULL,
   id_prioridade INT NOT NULL,
   id_fase INT NOT NULL,
   id_modulo INT NOT NULL,
-  id_versao_bug INT NOT NULL,
-  id_versao_correcao INT NOT NULL,
+  id_versao_bug INT,
+  id_versao_correcao INT,
   id_usuario_autor INT NOT NULL,
   id_usuario_responsavel INT NOT NULL,
   titulo VARCHAR(150) NOT NULL,
   descricao text NULL,
   datahora_criacao TIMESTAMP NOT NULL,
-  datahora_previsao TIMESTAMP NOT NULL,
+  datahora_previsao TIMESTAMP,
   datahora_conclusao TIMESTAMP NULL,
   situacao CHAR(1) NOT NULL,
   PRIMARY KEY (id),
@@ -359,3 +359,4 @@ INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (3
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (34, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnSalvar', 'Salvar');
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (35, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnLocalizar', 'Localizar');
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (36, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnExcluir', 'Excluir');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (37, 'janelas.JdgCadastroEmail', 'Cadastro de Email', 'btnSalvar', 'btnSalvar');
