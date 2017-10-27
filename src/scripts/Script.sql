@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS tarefa (
   id_usuario_responsavel INT NOT NULL,
   titulo VARCHAR(150) NOT NULL,
   descricao text NULL,
-  datahora_criacao TIMESTAMP NOT NULL,
+  datahora_criacao timestamp default now(),
   datahora_previsao TIMESTAMP,
   datahora_conclusao TIMESTAMP NULL,
   situacao CHAR(1) NOT NULL,
