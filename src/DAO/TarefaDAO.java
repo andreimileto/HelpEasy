@@ -69,8 +69,43 @@ public class TarefaDAO extends DAO {
 
   //          if (tarefa.getId() == 0) {
 
-                sql = "from Tarefa  ";
+                sql = "from Tarefa "
+                        + "where 1=1  ";
+                
+                if (tarefa.getId()>0) {
+                sql = sql + " and id = "+tarefa.getId()+" ";
+            }
+                
+                if (tarefa.getCliente().getId()>0) {
+                sql = sql + " and id_cliente = "+tarefa.getCliente().getId()+" ";
+            }
+                if (tarefa.getFase().getId()>0) {
+                sql = sql + " and id_fase = "+tarefa.getFase().getId()+" ";
+            }
 
+                 if (tarefa.getModulo().getId()>0) {
+                sql = sql + " and id_modulo = "+tarefa.getModulo().getId()+" ";
+            }
+                  if (tarefa.getMotivo().getId()>0) {
+                sql = sql + " and id_motivo = "+tarefa.getMotivo().getId()+" ";
+            }
+                  
+                   if (tarefa.getPrioridade().getId()>0) {
+                sql = sql + " and id_prioridade = "+tarefa.getPrioridade().getId()+" ";
+            }
+                    if (tarefa.getProjeto().getId()>0) {
+                sql = sql + " and id_projeto = "+tarefa.getProjeto().getId()+" ";
+            }
+                  
+                     if (tarefa.getUsuarioByIdUsuarioAutor().getId()>0) {
+                sql = sql + " and id_autor = "+tarefa.getUsuarioByIdUsuarioAutor().getId()+" ";
+            }
+                     if (tarefa.getUsuarioByIdUsuarioResponsavel().getId()>0) {
+                sql = sql + " and id_responsavel = "+tarefa.getUsuarioByIdUsuarioResponsavel().getId()+" ";
+            }
+                     sql = sql + " and titulo like '%"+tarefa.getTitulo()+"%'"
+                             + " and descricao like '%"+tarefa.getDescricao()+"%'";
+                  
             String sel = sql;
          
             org.hibernate.Query q = session.createQuery(sql);

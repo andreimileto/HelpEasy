@@ -213,12 +213,41 @@ public class JdgListaTarefa extends javax.swing.JDialog {
 
         jLabel1 = new javax.swing.JLabel();
         tfdFiltro = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        cbxStatus = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaTarefas = new javax.swing.JTable();
         btnConfirmar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        tfdNomeResponsavel = new javax.swing.JTextField();
+        btnLocalizarResponsavel = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        tfdNomeProjeto = new javax.swing.JTextField();
+        btnLocalizarProjeto = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        tfdNomeMotivo = new javax.swing.JTextField();
+        btnLocalizarMotivo = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        tfdNomeCliente = new javax.swing.JTextField();
+        btnLocalizarCliente = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        tfdVersaoBug = new javax.swing.JTextField();
+        btnLocalizarVersaoBug = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        tfdVersaoCorrecao = new javax.swing.JTextField();
+        btnLocalizarVersaoCorrecao = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        tfdFase = new javax.swing.JTextField();
+        btnLocalizarFase = new javax.swing.JButton();
+        tfdNomePrioridade = new javax.swing.JTextField();
+        btnLocalizarPrioridade = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        tfdAutor = new javax.swing.JTextField();
+        btnLocalizarAutor = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        tfdId = new javax.swing.JTextField();
+        btnLocalizarId = new javax.swing.JButton();
+        btnLocalizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EasyPDV - Lista de clientes");
@@ -230,14 +259,6 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         tfdFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 tfdFiltroKeyReleased(evt);
-            }
-        });
-
-        jLabel3.setText("Status:");
-
-        cbxStatus.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cbxStatusItemStateChanged(evt);
             }
         });
 
@@ -275,49 +296,299 @@ public class JdgListaTarefa extends javax.swing.JDialog {
             }
         });
 
+        jLabel10.setText("Responsável:");
+
+        tfdNomeResponsavel.setEditable(false);
+
+        btnLocalizarResponsavel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarResponsavel.setPreferredSize(new java.awt.Dimension(51, 25));
+        btnLocalizarResponsavel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarResponsavelActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Projeto:");
+
+        tfdNomeProjeto.setEditable(false);
+
+        btnLocalizarProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarProjeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarProjetoActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Motivo:");
+
+        tfdNomeMotivo.setEditable(false);
+
+        btnLocalizarMotivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarMotivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarMotivoActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Cliente:");
+
+        tfdNomeCliente.setEditable(false);
+
+        btnLocalizarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarClienteActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Versão BUG:");
+
+        tfdVersaoBug.setEditable(false);
+
+        btnLocalizarVersaoBug.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarVersaoBug.setEnabled(false);
+        btnLocalizarVersaoBug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarVersaoBugActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Correção:");
+
+        tfdVersaoCorrecao.setEditable(false);
+
+        btnLocalizarVersaoCorrecao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarVersaoCorrecao.setEnabled(false);
+        btnLocalizarVersaoCorrecao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarVersaoCorrecaoActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Fase:");
+
+        tfdFase.setEditable(false);
+
+        btnLocalizarFase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarFase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarFaseActionPerformed(evt);
+            }
+        });
+
+        tfdNomePrioridade.setEditable(false);
+
+        btnLocalizarPrioridade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarPrioridade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarPrioridadeActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Prioridade:");
+
+        jLabel12.setText("Autor:");
+
+        tfdAutor.setEditable(false);
+
+        btnLocalizarAutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarAutor.setPreferredSize(new java.awt.Dimension(51, 25));
+        btnLocalizarAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarAutorActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("Fase:");
+
+        tfdId.setEditable(false);
+
+        btnLocalizarId.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarIdActionPerformed(evt);
+            }
+        });
+
+        btnLocalizar.setText("Localizar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(434, 434, 434)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(234, 234, 234)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 796, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfdNomePrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnLocalizarPrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel13))
+                                .addGap(4, 4, 4)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(tfdId, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnLocalizarId, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(tfdNomeResponsavel)
+                                            .addComponent(tfdNomeProjeto)
+                                            .addComponent(tfdNomeMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(2, 2, 2)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(btnLocalizarMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(btnLocalizarProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(btnLocalizarResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(tfdVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnLocalizarVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(tfdVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(btnLocalizarVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tfdFase, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(btnLocalizarFase, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(36, 36, 36)
+                                        .addComponent(tfdNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnLocalizarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(tfdAutor)
+                                        .addGap(2, 2, 2)
+                                        .addComponent(btnLocalizarAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(tfdFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnLocalizar)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tfdFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(9, 9, 9)
                 .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel12)
+                            .addComponent(btnLocalizarAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfdAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(8, 8, 8))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnLocalizarId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfdId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel10))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnLocalizarResponsavel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfdNomeResponsavel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tfdNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3))
+                            .addComponent(btnLocalizarProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnLocalizarMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tfdNomeMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel4))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(tfdNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel2))
+                                    .addComponent(btnLocalizarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(tfdVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel7))
+                                    .addComponent(btnLocalizarVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(tfdFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnLocalizar))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel8)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(tfdVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(btnLocalizarVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnLocalizarFase, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tfdFase, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(tfdNomePrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel6))
+                                                .addComponent(btnLocalizarPrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))))))
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfdFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(cbxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirmar)
                     .addComponent(btnSair))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -332,10 +603,6 @@ public class JdgListaTarefa extends javax.swing.JDialog {
             janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(), ex.getMessage());
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
-
-    private void cbxStatusItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxStatusItemStateChanged
-
-    }//GEN-LAST:event_cbxStatusItemStateChanged
 
     private void tfdFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdFiltroKeyReleased
 
@@ -356,6 +623,100 @@ public class JdgListaTarefa extends javax.swing.JDialog {
             this.setVisible(false);
         }
     }//GEN-LAST:event_tblListaTarefasMouseClicked
+
+    private void btnLocalizarResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarResponsavelActionPerformed
+        JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, usuarioResponsavel);
+        listaUsuario.setVisible(true);
+        if (usuarioResponsavel.getId() > 0) {
+            tfdNomeResponsavel.setText(usuarioResponsavel.getNome());
+
+        }
+    }//GEN-LAST:event_btnLocalizarResponsavelActionPerformed
+
+    private void btnLocalizarProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarProjetoActionPerformed
+
+        JdgListaProjeto listaProjeto = new JdgListaProjeto(null, true, projeto);
+        listaProjeto.setVisible(true);
+        if (projeto.getId() > 0) {
+            tfdNomeProjeto.setText(projeto.getDescricao());
+            versaoBug.setProjeto(projeto);
+            versaoCorrecao.setProjeto(projeto);
+            modulo.setProjeto(projeto);
+            btnLocalizarVersaoBug.setEnabled(true);
+            btnLocalizarVersaoCorrecao.setEnabled(true);
+            btnLocalizarModulo.setEnabled(true);
+        }
+
+    }//GEN-LAST:event_btnLocalizarProjetoActionPerformed
+
+    private void btnLocalizarMotivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarMotivoActionPerformed
+
+        JdgListaMotivo listaMotivo = new JdgListaMotivo(null, true, motivo);
+        listaMotivo.setVisible(true);
+
+        if (motivo.getId() > 0) {
+            tfdNomeMotivo.setText(motivo.getDescricao());
+
+        }
+    }//GEN-LAST:event_btnLocalizarMotivoActionPerformed
+
+    private void btnLocalizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarClienteActionPerformed
+        //   limparCampos();
+        JdgListaCliente clientes = new JdgListaCliente(null, true, cliente, cidade);
+        clientes.setVisible(true);
+        if (cliente.getId() > 0) {
+            tfdNomeCliente.setText(cliente.getRazaoSocial());
+
+        }
+    }//GEN-LAST:event_btnLocalizarClienteActionPerformed
+
+    private void btnLocalizarVersaoBugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarVersaoBugActionPerformed
+        JdgListaVersao listaVersao = new JdgListaVersao(null, true, versaoBug, projeto);
+        listaVersao.setVisible(true);
+        if (versaoBug.getId() > 0) {
+
+            tfdVersaoBug.setText(versaoBug.getDescricao());
+
+        }
+    }//GEN-LAST:event_btnLocalizarVersaoBugActionPerformed
+
+    private void btnLocalizarVersaoCorrecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarVersaoCorrecaoActionPerformed
+        JdgListaVersao listaVersao = new JdgListaVersao(null, true, versaoCorrecao, projeto);
+        listaVersao.setVisible(true);
+        if (versaoCorrecao.getId() > 0) {
+
+            tfdVersaoCorrecao.setText(versaoCorrecao.getDescricao());
+
+        }
+    }//GEN-LAST:event_btnLocalizarVersaoCorrecaoActionPerformed
+
+    private void btnLocalizarFaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarFaseActionPerformed
+
+        JdgListaFase listaFase = new JdgListaFase(null, true, fase);
+        listaFase.setVisible(true);
+        if (fase.getId() > 0) {
+            tfdFase.setText(fase.getDescricao());
+
+        }
+    }//GEN-LAST:event_btnLocalizarFaseActionPerformed
+
+    private void btnLocalizarPrioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarPrioridadeActionPerformed
+
+        JdgListaPrioridade listaPrioridade = new JdgListaPrioridade(null, true, prioridade);
+        listaPrioridade.setVisible(true);
+        if (prioridade.getId() > 0) {
+            tfdNomePrioridade.setText(prioridade.getDescricao());
+        }
+
+    }//GEN-LAST:event_btnLocalizarPrioridadeActionPerformed
+
+    private void btnLocalizarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarAutorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLocalizarAutorActionPerformed
+
+    private void btnLocalizarIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLocalizarIdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -404,12 +765,41 @@ public class JdgListaTarefa extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfirmar;
+    private javax.swing.JButton btnLocalizar;
+    private javax.swing.JButton btnLocalizarAutor;
+    private javax.swing.JButton btnLocalizarCliente;
+    private javax.swing.JButton btnLocalizarFase;
+    private javax.swing.JButton btnLocalizarId;
+    private javax.swing.JButton btnLocalizarMotivo;
+    private javax.swing.JButton btnLocalizarPrioridade;
+    private javax.swing.JButton btnLocalizarProjeto;
+    private javax.swing.JButton btnLocalizarResponsavel;
+    private javax.swing.JButton btnLocalizarVersaoBug;
+    private javax.swing.JButton btnLocalizarVersaoCorrecao;
     private javax.swing.JButton btnSair;
-    private javax.swing.JComboBox<String> cbxStatus;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblListaTarefas;
+    private javax.swing.JTextField tfdAutor;
+    private javax.swing.JTextField tfdFase;
     private javax.swing.JTextField tfdFiltro;
+    private javax.swing.JTextField tfdId;
+    private javax.swing.JTextField tfdNomeCliente;
+    private javax.swing.JTextField tfdNomeMotivo;
+    private javax.swing.JTextField tfdNomePrioridade;
+    private javax.swing.JTextField tfdNomeProjeto;
+    private javax.swing.JTextField tfdNomeResponsavel;
+    private javax.swing.JTextField tfdVersaoBug;
+    private javax.swing.JTextField tfdVersaoCorrecao;
     // End of variables declaration//GEN-END:variables
 }
