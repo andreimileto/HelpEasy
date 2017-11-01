@@ -452,7 +452,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ArrayList<Tarefa> tarefas = new ArrayList<>();
         ControleTarefa controleTarefa = new ControleTarefa();
         tarefas = controleTarefa.listarUmId(tarefa);
-        tarefa = tarefas.get(0);
+        try {
+        tarefa = tarefas.get(0);    
+        } catch (Exception e) {
+            
+        }
+        
         
        // JOptionPane.showMessageDialog(rootPane, tarefa.getTitulo());
         

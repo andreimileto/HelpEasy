@@ -70,7 +70,7 @@ public class TarefaDAO extends DAO {
   //          if (tarefa.getId() == 0) {
 
                 sql = "from Tarefa "
-                        + "where 1=1  ";
+                        + "where 1=1 ";
                 
                 if (tarefa.getId()>0) {
                 sql = sql + " and id = "+tarefa.getId()+" ";
@@ -98,13 +98,21 @@ public class TarefaDAO extends DAO {
             }
                   
                      if (tarefa.getUsuarioByIdUsuarioAutor().getId()>0) {
-                sql = sql + " and id_autor = "+tarefa.getUsuarioByIdUsuarioAutor().getId()+" ";
+                sql = sql + " and id_usuario_autor = "+tarefa.getUsuarioByIdUsuarioAutor().getId()+" ";
             }
                      if (tarefa.getUsuarioByIdUsuarioResponsavel().getId()>0) {
-                sql = sql + " and id_responsavel = "+tarefa.getUsuarioByIdUsuarioResponsavel().getId()+" ";
+                sql = sql + " and id_usuario_responsavel = "+tarefa.getUsuarioByIdUsuarioResponsavel().getId()+" ";
             }
-                     sql = sql + " and titulo like '%"+tarefa.getTitulo()+"%'"
-                             + " and descricao like '%"+tarefa.getDescricao()+"%'";
+                     
+                       if (tarefa.getVersaoByIdVersaoBug().getId()>0) {
+                sql = sql + " and id_versao_bug = "+tarefa.getVersaoByIdVersaoBug().getId()+" ";
+            }
+                     if (tarefa.getVersaoByIdVersaoCorrecao().getId()>0) {
+                sql = sql + " and id_versao_correcao = "+tarefa.getVersaoByIdVersaoCorrecao().getId()+" ";
+            }
+                     
+                     sql = sql + " and (upper (titulo) like '%"+tarefa.getTitulo().toUpperCase()+"%'"
+                             + " or upper (descricao) like '%"+tarefa.getDescricao().toUpperCase()+"%')";
                   
             String sel = sql;
          

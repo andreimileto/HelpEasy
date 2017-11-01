@@ -54,7 +54,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.tarefa = tarefa;
-        listarTarefas();
+        //listarTarefas();
     }
 
     public JdgListaTarefa(java.awt.Frame parent, boolean modal, Tarefa tarefa, Motivo motivo,Usuario autor, Usuario responsavel, Projeto projeto, Prioridade prioridade, Modulo modulo, Versao versaoBug, Versao versaoCorrecao,Fase fase,Cliente cliente) {
@@ -85,7 +85,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         tarefa.setCliente(cliente);
                 
         // this.cid = cid;
-        listarTarefas();
+        //listarTarefas();
 
     }
 
@@ -99,7 +99,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
             tblListaTarefas.getColumnModel().getColumn(3).setPreferredWidth(80);
             tblListaTarefas.getColumnModel().getColumn(4).setPreferredWidth(80);
             tblListaTarefas.getColumnModel().getColumn(5).setPreferredWidth(20);
-            tblListaTarefas.getColumnModel().getColumn(5).setPreferredWidth(20);
+            
 
         } catch (Exception ex) {
             System.out.println("Erro " + ex);
@@ -117,6 +117,12 @@ public class JdgListaTarefa extends javax.swing.JDialog {
 //        cid.setDescricao("");
 //        cliente.setRazaoSocial(tfdFiltro.getText());
 //        cliente.setCpfCnpj(tfdFiltro.getText());
+if (tarefa.getTitulo()==null) {
+            tarefa.setTitulo("");
+        }
+        if (tarefa.getDescricao() == null) {
+            tarefa.setDescricao("");
+        }
         TarefaDAO tarDAO = new TarefaDAO();
         ArrayList<Tarefa> tarefas = tarDAO.listar(tarefa);
 
@@ -126,7 +132,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         dtm.addColumn("AUTOR");
         dtm.addColumn("RESPONSÁVEL");
         dtm.addColumn("FASE");
-        dtm.addColumn("ÚLTIMA MODIFICAÇÃO");
+        
 
         for (int i = 0; i < tarefas.size(); i++) {
 
@@ -136,7 +142,8 @@ public class JdgListaTarefa extends javax.swing.JDialog {
                 String.valueOf(tarefas.get(i).getUsuarioByIdUsuarioAutor().getNome()),
                 String.valueOf(tarefas.get(i).getUsuarioByIdUsuarioResponsavel().getNome()),
                 String.valueOf(tarefas.get(i).getFase().getDescricao()),
-                String.valueOf(tarefas.get(i).getDatahoraConclusao())
+//                String.valueOf(tarefas.get(i).getDatahoraConclusao())
+                
             });
         }
         return dtm;
@@ -211,77 +218,53 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        tfdFiltro = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblListaTarefas = new javax.swing.JTable();
         btnConfirmar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        tfdFiltroId = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        tfdNomeCliente = new javax.swing.JTextField();
+        btnLocalizarCliente = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        tfdAutor = new javax.swing.JTextField();
+        btnLocalizarAutor = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         tfdNomeResponsavel = new javax.swing.JTextField();
         btnLocalizarResponsavel = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        tfdNomePrioridade = new javax.swing.JTextField();
+        btnLocalizarPrioridade = new javax.swing.JButton();
         tfdNomeProjeto = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         btnLocalizarProjeto = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         tfdNomeMotivo = new javax.swing.JTextField();
         btnLocalizarMotivo = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        tfdNomeCliente = new javax.swing.JTextField();
-        btnLocalizarCliente = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        tfdVersaoBug = new javax.swing.JTextField();
-        btnLocalizarVersaoBug = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        tfdVersaoCorrecao = new javax.swing.JTextField();
-        btnLocalizarVersaoCorrecao = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        tfdNomeModulo = new javax.swing.JTextField();
+        btnLocalizarModulo = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         tfdFase = new javax.swing.JTextField();
         btnLocalizarFase = new javax.swing.JButton();
-        tfdNomePrioridade = new javax.swing.JTextField();
-        btnLocalizarPrioridade = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        tfdAutor = new javax.swing.JTextField();
-        btnLocalizarAutor = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        tfdId = new javax.swing.JTextField();
-        btnLocalizarId = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        tfdVersaoBug = new javax.swing.JTextField();
+        btnLocalizarVersaoBug = new javax.swing.JButton();
+        tfdVersaoCorrecao = new javax.swing.JTextField();
+        btnLocalizarVersaoCorrecao = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        tfdFiltro = new javax.swing.JTextField();
         btnLocalizar = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblListaTarefas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EasyPDV - Lista de clientes");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 204));
-        jLabel1.setText("Lista Cadastro de Cliente");
-
-        tfdFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                tfdFiltroKeyReleased(evt);
-            }
-        });
-
-        tblListaTarefas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tblListaTarefas.setFocusable(false);
-        tblListaTarefas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblListaTarefasMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tblListaTarefas);
-
-        btnConfirmar.setText("Editar");
+        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
+        btnConfirmar.setText("Selecionar");
         btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmarActionPerformed(evt);
@@ -296,43 +279,20 @@ public class JdgListaTarefa extends javax.swing.JDialog {
             }
         });
 
-        jLabel10.setText("Responsável:");
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de tarefas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(0, 51, 255))); // NOI18N
 
-        tfdNomeResponsavel.setEditable(false);
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(0, 0, 255))); // NOI18N
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(tfdFiltroId, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 79, -1));
 
-        btnLocalizarResponsavel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
-        btnLocalizarResponsavel.setPreferredSize(new java.awt.Dimension(51, 25));
-        btnLocalizarResponsavel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocalizarResponsavelActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Projeto:");
-
-        tfdNomeProjeto.setEditable(false);
-
-        btnLocalizarProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
-        btnLocalizarProjeto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocalizarProjetoActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Motivo:");
-
-        tfdNomeMotivo.setEditable(false);
-
-        btnLocalizarMotivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
-        btnLocalizarMotivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocalizarMotivoActionPerformed(evt);
-            }
-        });
+        jLabel9.setText("ID:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel2.setText("Cliente:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, -1, -1));
 
         tfdNomeCliente.setEditable(false);
+        jPanel1.add(tfdNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 180, -1));
 
         btnLocalizarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -340,56 +300,13 @@ public class JdgListaTarefa extends javax.swing.JDialog {
                 btnLocalizarClienteActionPerformed(evt);
             }
         });
-
-        jLabel7.setText("Versão BUG:");
-
-        tfdVersaoBug.setEditable(false);
-
-        btnLocalizarVersaoBug.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
-        btnLocalizarVersaoBug.setEnabled(false);
-        btnLocalizarVersaoBug.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocalizarVersaoBugActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setText("Correção:");
-
-        tfdVersaoCorrecao.setEditable(false);
-
-        btnLocalizarVersaoCorrecao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
-        btnLocalizarVersaoCorrecao.setEnabled(false);
-        btnLocalizarVersaoCorrecao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocalizarVersaoCorrecaoActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setText("Fase:");
-
-        tfdFase.setEditable(false);
-
-        btnLocalizarFase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
-        btnLocalizarFase.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocalizarFaseActionPerformed(evt);
-            }
-        });
-
-        tfdNomePrioridade.setEditable(false);
-
-        btnLocalizarPrioridade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
-        btnLocalizarPrioridade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocalizarPrioridadeActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Prioridade:");
+        jPanel1.add(btnLocalizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 30, 25));
 
         jLabel12.setText("Autor:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         tfdAutor.setEditable(false);
+        jPanel1.add(tfdAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 180, -1));
 
         btnLocalizarAutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
         btnLocalizarAutor.setPreferredSize(new java.awt.Dimension(51, 25));
@@ -398,197 +315,213 @@ public class JdgListaTarefa extends javax.swing.JDialog {
                 btnLocalizarAutorActionPerformed(evt);
             }
         });
+        jPanel1.add(btnLocalizarAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 30, -1));
 
-        jLabel13.setText("Fase:");
+        jLabel10.setText("Responsável:");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        tfdId.setEditable(false);
+        tfdNomeResponsavel.setEditable(false);
+        jPanel1.add(tfdNomeResponsavel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 180, -1));
 
-        btnLocalizarId.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
-        btnLocalizarId.addActionListener(new java.awt.event.ActionListener() {
+        btnLocalizarResponsavel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarResponsavel.setPreferredSize(new java.awt.Dimension(51, 25));
+        btnLocalizarResponsavel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocalizarIdActionPerformed(evt);
+                btnLocalizarResponsavelActionPerformed(evt);
             }
         });
+        jPanel1.add(btnLocalizarResponsavel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 30, -1));
 
-        btnLocalizar.setText("Localizar");
+        jLabel6.setText("Prioridade:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
+
+        tfdNomePrioridade.setEditable(false);
+        jPanel1.add(tfdNomePrioridade, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 180, -1));
+
+        btnLocalizarPrioridade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarPrioridade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarPrioridadeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLocalizarPrioridade, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 30, 25));
+
+        tfdNomeProjeto.setEditable(false);
+        jPanel1.add(tfdNomeProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 180, -1));
+
+        jLabel3.setText("Projeto:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        btnLocalizarProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarProjeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarProjetoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLocalizarProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 30, 24));
+
+        jLabel4.setText("Motivo:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
+
+        tfdNomeMotivo.setEditable(false);
+        jPanel1.add(tfdNomeMotivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 180, -1));
+
+        btnLocalizarMotivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarMotivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarMotivoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLocalizarMotivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 30, 25));
+
+        jLabel5.setText("Módulo:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
+
+        tfdNomeModulo.setEditable(false);
+        jPanel1.add(tfdNomeModulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 180, -1));
+
+        btnLocalizarModulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarModulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarModuloActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLocalizarModulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, 30, 25));
+
+        jLabel11.setText("Fase:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, -1, -1));
+
+        tfdFase.setEditable(false);
+        jPanel1.add(tfdFase, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 180, -1));
+
+        btnLocalizarFase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarFase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarFaseActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLocalizarFase, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, 30, 25));
+
+        jLabel7.setText("Versão BUG:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, -1, -1));
+
+        tfdVersaoBug.setEditable(false);
+        jPanel1.add(tfdVersaoBug, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 180, -1));
+
+        btnLocalizarVersaoBug.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarVersaoBug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarVersaoBugActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLocalizarVersaoBug, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 40, 30, 25));
+
+        tfdVersaoCorrecao.setEditable(false);
+        jPanel1.add(tfdVersaoCorrecao, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 180, -1));
+
+        btnLocalizarVersaoCorrecao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarVersaoCorrecao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarVersaoCorrecaoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLocalizarVersaoCorrecao, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 30, 25));
+
+        jLabel8.setText("Correção:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, -1, -1));
+
+        tfdFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfdFiltroKeyReleased(evt);
+            }
+        });
+        jPanel1.add(tfdFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 480, -1));
+
+        btnLocalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizar.setText("Buscar");
+        btnLocalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLocalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 110, -1));
+
+        jLabel13.setText("Título/Desc.:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        tblListaTarefas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "CLIENTE", "TÍTULO", "AUTOR", "RESPONSÁVEL", "FASE"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblListaTarefas.setFocusable(false);
+        tblListaTarefas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblListaTarefasMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblListaTarefas);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 904, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 3, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(234, 234, 234)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 796, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(tfdNomePrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLocalizarPrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel13))
-                                .addGap(4, 4, 4)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(tfdId, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnLocalizarId, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tfdNomeResponsavel)
-                                            .addComponent(tfdNomeProjeto)
-                                            .addComponent(tfdNomeMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(2, 2, 2)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(btnLocalizarMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(btnLocalizarProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(btnLocalizarResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel8))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(tfdVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnLocalizarVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(tfdVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(btnLocalizarVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(tfdFase, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(btnLocalizarFase, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(36, 36, 36)
-                                        .addComponent(tfdNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnLocalizarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel12)
-                                        .addGap(33, 33, 33)
-                                        .addComponent(tfdAutor)
-                                        .addGap(2, 2, 2)
-                                        .addComponent(btnLocalizarAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addComponent(tfdFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnLocalizar)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel12)
-                            .addComponent(btnLocalizarAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfdAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(8, 8, 8))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(btnLocalizarId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tfdId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jLabel10))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnLocalizarResponsavel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tfdNomeResponsavel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(tfdNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3))
-                            .addComponent(btnLocalizarProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnLocalizarMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(tfdNomeMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tfdNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel2))
-                                    .addComponent(btnLocalizarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tfdVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel7))
-                                    .addComponent(btnLocalizarVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tfdFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnLocalizar))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel8)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(tfdVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(btnLocalizarVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(btnLocalizarFase, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tfdFase, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                    .addComponent(tfdNomePrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel6))
-                                                .addComponent(btnLocalizarPrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))))))
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirmar)
                     .addComponent(btnSair))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -625,19 +558,26 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     }//GEN-LAST:event_tblListaTarefasMouseClicked
 
     private void btnLocalizarResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarResponsavelActionPerformed
-        JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, usuarioResponsavel);
+        int idResponsavel = responsavel.getId();
+        String nomeResponsavel = responsavel.getNome();
+        JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, responsavel);
         listaUsuario.setVisible(true);
-        if (usuarioResponsavel.getId() > 0) {
-            tfdNomeResponsavel.setText(usuarioResponsavel.getNome());
+        
+        if (responsavel.getId() > 0) {
+            tfdNomeResponsavel.setText(responsavel.getNome());
 
+        }else{
+            responsavel.setId(idResponsavel);
+            responsavel.setNome(nomeResponsavel);
         }
     }//GEN-LAST:event_btnLocalizarResponsavelActionPerformed
 
     private void btnLocalizarProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarProjetoActionPerformed
-
+projeto.setId(0);
+projeto.setDescricao("");
         JdgListaProjeto listaProjeto = new JdgListaProjeto(null, true, projeto);
         listaProjeto.setVisible(true);
-        if (projeto.getId() > 0) {
+        if (projeto.getId() > 0 && projeto.getDescricao().length()>0) {
             tfdNomeProjeto.setText(projeto.getDescricao());
             versaoBug.setProjeto(projeto);
             versaoCorrecao.setProjeto(projeto);
@@ -661,19 +601,36 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLocalizarMotivoActionPerformed
 
     private void btnLocalizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarClienteActionPerformed
-        //   limparCampos();
-        JdgListaCliente clientes = new JdgListaCliente(null, true, cliente, cidade);
+        
+        int idCliente = cliente.getId();
+        String nomeCliente = cliente.getRazaoSocial();
+        //int idCidade = cliente.getCidade().getId();
+        cid = new Cidade();
+       // cliente = new Cliente();
+        cliente.setCidade(cid);
+        
+        JdgListaCliente clientes = new JdgListaCliente(null, true, cliente, cid);
         clientes.setVisible(true);
-        if (cliente.getId() > 0) {
+        if (cliente.getId() > 0 && cliente.getRazaoSocial().length()>0) {
             tfdNomeCliente.setText(cliente.getRazaoSocial());
 
+        }else{
+            cliente.setId(idCliente);
+           // cid.setId(idCidade);
+            cliente.setRazaoSocial(nomeCliente);
+            cliente.setCidade(cid);
+            tfdNomeCliente.setText(cliente.getRazaoSocial());
         }
     }//GEN-LAST:event_btnLocalizarClienteActionPerformed
 
     private void btnLocalizarVersaoBugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarVersaoBugActionPerformed
+        projeto = new Projeto();
+        versaoBug.setProjeto(projeto);
+        versaoBug.setId(0);
+        versaoBug.setDescricao("");
         JdgListaVersao listaVersao = new JdgListaVersao(null, true, versaoBug, projeto);
         listaVersao.setVisible(true);
-        if (versaoBug.getId() > 0) {
+        if (versaoBug.getId() > 0 && versaoBug.getDescricao().length() > 0) {
 
             tfdVersaoBug.setText(versaoBug.getDescricao());
 
@@ -681,9 +638,12 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLocalizarVersaoBugActionPerformed
 
     private void btnLocalizarVersaoCorrecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarVersaoCorrecaoActionPerformed
+        versaoCorrecao.setId(0);
+        versaoCorrecao.setDescricao("");
+
         JdgListaVersao listaVersao = new JdgListaVersao(null, true, versaoCorrecao, projeto);
         listaVersao.setVisible(true);
-        if (versaoCorrecao.getId() > 0) {
+        if (versaoCorrecao.getId() > 0 && versaoCorrecao.getDescricao().length()>0) {
 
             tfdVersaoCorrecao.setText(versaoCorrecao.getDescricao());
 
@@ -691,32 +651,80 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLocalizarVersaoCorrecaoActionPerformed
 
     private void btnLocalizarFaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarFaseActionPerformed
-
+        int idFase = fase.getId();
+        String nomeFase = fase.getDescricao();
+       // fase  = new Fase();
         JdgListaFase listaFase = new JdgListaFase(null, true, fase);
         listaFase.setVisible(true);
-        if (fase.getId() > 0) {
+        if (fase.getId() > 0 && fase.getDescricao().length()>0) {
             tfdFase.setText(fase.getDescricao());
 
+        }else{
+            fase.setId(idFase);
+            fase.setDescricao(nomeFase);
+            tfdFase.setText(fase.getDescricao());
         }
+      
+        
+     
+        
+        
+        
+        
+        
     }//GEN-LAST:event_btnLocalizarFaseActionPerformed
 
     private void btnLocalizarPrioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarPrioridadeActionPerformed
-
+        
         JdgListaPrioridade listaPrioridade = new JdgListaPrioridade(null, true, prioridade);
         listaPrioridade.setVisible(true);
-        if (prioridade.getId() > 0) {
+        if (prioridade.getId() > 0 && prioridade.getDescricao().length()>0) {
             tfdNomePrioridade.setText(prioridade.getDescricao());
         }
 
     }//GEN-LAST:event_btnLocalizarPrioridadeActionPerformed
 
     private void btnLocalizarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarAutorActionPerformed
-        // TODO add your handling code here:
+
+   autor.setId(0);
+   autor.setNome("");
+        JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, autor);
+        listaUsuario.setVisible(true);
+        
+        if (autor.getId() > 0 && autor.getNome().length()>0) {
+            tfdAutor.setText(autor.getNome());
+
+        }
     }//GEN-LAST:event_btnLocalizarAutorActionPerformed
 
-    private void btnLocalizarIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLocalizarIdActionPerformed
+    private void btnLocalizarModuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarModuloActionPerformed
+        modulo.setDescricao("");
+        modulo.setId(0);
+        modulo.setProjeto(projeto);
+        JdgListaModulo listaModulo = new JdgListaModulo(null, true, modulo, projeto);
+        listaModulo.setVisible(true);
+        if (modulo.getId() > 0 && modulo.getDescricao().length()>0) {
+            tfdNomeModulo.setText(modulo.getDescricao());
+        }
+    }//GEN-LAST:event_btnLocalizarModuloActionPerformed
+
+    private void btnLocalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarActionPerformed
+        tarefa.setTitulo(tfdFiltro.getText());
+        tarefa.setDescricao(tfdFiltro.getText());
+        try {
+            int id = Integer.parseInt(tfdFiltroId.getText());
+            if (id > 0) {
+                //JOptionPane.showMessageDialog(rootPane, "id tarefa"+id);
+            tarefa.setId(id);    
+       //     JOptionPane.showMessageDialog(rootPane, "id tarefa"+tarefa.getId());
+            }
+            
+        } catch (Exception e) {
+            tarefa.setId(0);
+        }
+       // tarefa.setFase(fase);
+        listarTarefas();
+    }//GEN-LAST:event_btnLocalizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -769,7 +777,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     private javax.swing.JButton btnLocalizarAutor;
     private javax.swing.JButton btnLocalizarCliente;
     private javax.swing.JButton btnLocalizarFase;
-    private javax.swing.JButton btnLocalizarId;
+    private javax.swing.JButton btnLocalizarModulo;
     private javax.swing.JButton btnLocalizarMotivo;
     private javax.swing.JButton btnLocalizarPrioridade;
     private javax.swing.JButton btnLocalizarProjeto;
@@ -777,7 +785,6 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     private javax.swing.JButton btnLocalizarVersaoBug;
     private javax.swing.JButton btnLocalizarVersaoCorrecao;
     private javax.swing.JButton btnSair;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -785,16 +792,21 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblListaTarefas;
     private javax.swing.JTextField tfdAutor;
     private javax.swing.JTextField tfdFase;
     private javax.swing.JTextField tfdFiltro;
-    private javax.swing.JTextField tfdId;
+    private javax.swing.JTextField tfdFiltroId;
     private javax.swing.JTextField tfdNomeCliente;
+    private javax.swing.JTextField tfdNomeModulo;
     private javax.swing.JTextField tfdNomeMotivo;
     private javax.swing.JTextField tfdNomePrioridade;
     private javax.swing.JTextField tfdNomeProjeto;

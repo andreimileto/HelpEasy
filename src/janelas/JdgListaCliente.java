@@ -122,8 +122,6 @@ public class JdgListaCliente extends javax.swing.JDialog {
 
         jLabel1 = new javax.swing.JLabel();
         tfdFiltro = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        cbxStatus = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaClientes = new javax.swing.JTable();
         btnConfirmar = new javax.swing.JButton();
@@ -139,14 +137,6 @@ public class JdgListaCliente extends javax.swing.JDialog {
         tfdFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 tfdFiltroKeyReleased(evt);
-            }
-        });
-
-        jLabel3.setText("Status:");
-
-        cbxStatus.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cbxStatusItemStateChanged(evt);
             }
         });
 
@@ -169,6 +159,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblListaClientes);
 
+        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
         btnConfirmar.setText("Editar");
         btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,10 +195,6 @@ public class JdgListaCliente extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(tfdFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -216,10 +203,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
                 .addGap(9, 9, 9)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfdFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(cbxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(tfdFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -240,20 +224,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
             janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(),ex.getMessage());
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
-
-    private void cbxStatusItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxStatusItemStateChanged
-        listar();
-    }//GEN-LAST:event_cbxStatusItemStateChanged
-    private void listar() {
-        if (cbxStatus.getSelectedIndex() == 0) {
-            cliente.setSituacao('A');
-        } else if (cbxStatus.getSelectedIndex() == 1) {
-            cliente.setSituacao('I');
-        } else {
-            cliente.setSituacao(' ');
-        }
-        listarCidades();
-    }
+   
     private void tfdFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfdFiltroKeyReleased
         cliente.setCpfCnpj(tfdFiltro.getText());
         cliente.setRazaoSocial(tfdFiltro.getText());
@@ -322,9 +293,7 @@ public class JdgListaCliente extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnSair;
-    private javax.swing.JComboBox<String> cbxStatus;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblListaClientes;
     private javax.swing.JTextField tfdFiltro;

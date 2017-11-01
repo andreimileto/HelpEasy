@@ -127,14 +127,15 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         colaboradores = tarefaUsuarioDAO.listar(tarefaUsuario);
         listarDados();
         listarColaboradores();
+        habilitarDesabilitarBotoes();
     }
 
     private void listarDados() {
         try {
             if (tarefa.getId() > 0) {
                 tfdId.setText(tarefa.getId() + "");
-                JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getId() + "..id autor..");
-                JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getNome() + "..nome autor..");
+             //   JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getId() + "..id autor..");
+               // JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getNome() + "..nome autor..");
                 tfdNomeAutor.setText(tarefa.getUsuarioByIdUsuarioAutor().getNome());
                 tfdNomeResponsavel.setText(tarefa.getUsuarioByIdUsuarioResponsavel().getNome());
                 tfdNomeCliente.setText(tarefa.getCliente().getRazaoSocial());
@@ -149,7 +150,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
                 tfaDescricaoTarefa.setText(tarefa.getDescricao());
                 tfdVersaoBug.setText(tarefa.getVersaoByIdVersaoBug().getDescricao());
                 tfdVersaoCorrecao.setText(tarefa.getVersaoByIdVersaoCorrecao().getDescricao());
-                JOptionPane.showMessageDialog(rootPane, tarefa.getDatahoraPrevisao() + "previsao");
+           //     JOptionPane.showMessageDialog(rootPane, tarefa.getDatahoraPrevisao() + "previsao");
                 JdcPrevisão.setDate(tarefa.getDatahoraPrevisao());
                 JdcInclusao.setDate(tarefa.getDatahoraCriacao());
                 JdcUltimaModificacao.setDate(tarefa.getDatahoraConclusao());
@@ -934,7 +935,18 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
     
     private void habilitarDesabilitarBotoes(){
-        if (true) {
+        if (tarefa.getId()>0) {
+            btnLocalizarModulo.setEnabled(true);
+            btnLocalizarColaboradores.setEnabled(true);
+            btnLocalizarVersaoBug.setEnabled(true);
+            btnLocalizarVersaoCorrecao.setEnabled(true);
+            tfaNovoMovimento.setEnabled(true);
+        }else{
+             btnLocalizarModulo.setEnabled(false);
+            btnLocalizarColaboradores.setEnabled(false);
+            btnLocalizarVersaoBug.setEnabled(false);
+            btnLocalizarVersaoCorrecao.setEnabled(false);
+            tfaNovoMovimento.setEnabled(false);
             
         }
     }
@@ -972,12 +984,24 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
          if (novoUsuario.getId()>0) {
-             tarefaUsuario = new TarefaUsuario();
+             boolean ok = true;
+             
+             for (int i = 0; i < colaboradores.size(); i++) {
+                 if (novoUsuario.getId() == colaboradores.get(i).getUsuario().getId()) {
+                     ok = false;
+                 }
+             }
+             if (ok) {
+                 tarefaUsuario = new TarefaUsuario();
             tarefaUsuario.setUsuario(novoUsuario);
             tarefaUsuario.setTarefa(tarefa);
             colaboradores.add(tarefaUsuario);
             listarColaboradores();
-            
+             }else{
+                 JOptionPane.showMessageDialog(rootPane, "Erro ao adicionar colaborador:\nColaborador já adicionado na lista.");
+             }
+             
+            tfdNomeColaborador.setText("");
         }
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
