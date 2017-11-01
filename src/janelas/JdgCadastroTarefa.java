@@ -44,7 +44,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
     Versao versaoBug;
     Versao versaoCorrecao;
     Modulo modulo;
-    Usuario usuarioAutor;
+    Usuario autor;
     Usuario usuarioResponsavel;
 
     public JdgCadastroTarefa(java.awt.Frame parent, boolean modal, Usuario usuarioAutor) {
@@ -61,7 +61,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         versaoBug = new Versao();
         versaoCorrecao = new Versao();
         usuarioResponsavel = new Usuario();
-        this.usuarioAutor = usuarioAutor;
+        this.autor = usuarioAutor;
         listarDados();
     }
 
@@ -80,14 +80,67 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
         listarDados();
     }
+    
+    public JdgCadastroTarefa(java.awt.Frame parent, boolean modal,Tarefa tarefa, Motivo motivo, Usuario autor,Usuario responsavel,Modulo modulo, Projeto projeto, Prioridade prioridade, Fase fase, Versao versaoBug, Versao versaoCorrecao,Cliente cliente) {
+        super(parent, modal);
+        initComponents();
+
+        this.cidade = new Cidade();
+        
+        this.tarefa = tarefa;
+        this.motivo = motivo;
+        tarefa.setMotivo(motivo);
+        this.autor = autor;
+        tarefa.setUsuarioByIdUsuarioAutor(autor);
+        this.usuarioResponsavel= responsavel;
+        tarefa.setUsuarioByIdUsuarioResponsavel(responsavel);
+        this.projeto=projeto;
+        tarefa.setProjeto(projeto);
+        this.prioridade = prioridade;
+        tarefa.setPrioridade(prioridade);
+        this.modulo =modulo;
+        tarefa.setModulo(modulo);
+        this.versaoBug = versaoBug;
+        tarefa.setVersaoByIdVersaoBug(versaoBug);
+        this.versaoCorrecao = versaoCorrecao;
+        tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
+        this.fase = fase;
+        tarefa.setFase(fase);
+        this.cliente = cliente;
+        this.cliente.setCidade(cidade);
+        tarefa.setCliente(cliente);
+        listarDados();
+    }
+    
 
     private void listarDados() {
         try {
             if (tarefa.getId() > 0) {
+                tfdId.setText(tarefa.getId()+"");
+                JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getId() +"..id autor..");
+                JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getNome() +"..nome autor..");
+                tfdNomeAutor.setText(tarefa.getUsuarioByIdUsuarioAutor().getNome());
+                tfdNomeResponsavel.setText(tarefa.getUsuarioByIdUsuarioResponsavel().getNome());
+                tfdNomeCliente.setText(tarefa.getCliente().getRazaoSocial());
+                tfdFase.setText(tarefa.getFase().getDescricao());
+                tfdNomeModulo.setText(tarefa.getModulo().getDescricao());
+              // JOptionPane.showMessageDialog(rootPane, "id do motivo é..."+tarefa.getMotivo().getId());
+             //  JOptionPane.showMessageDialog(rootPane, "descrição do motivo é..."+tarefa.getMotivo().getDescricao());
+                tfdNomeMotivo.setText(tarefa.getMotivo().getDescricao());
+                tfdNomePrioridade.setText(tarefa.getPrioridade().getDescricao());
+                tfdNomeProjeto.setText(tarefa.getProjeto().getDescricao());
+                tfdTituloTarefa.setText(tarefa.getTitulo());
+                tfaDescricaoTarefa.setText(tarefa.getDescricao());
+                tfdVersaoBug.setText(tarefa.getVersaoByIdVersaoBug().getDescricao());
+                tfdVersaoCorrecao.setText(tarefa.getVersaoByIdVersaoCorrecao().getDescricao());
+                JOptionPane.showMessageDialog(rootPane, tarefa.getDatahoraPrevisao()+"previsao");
+                JdcPrevisão.setDate(tarefa.getDatahoraPrevisao());
+                JdcInclusao.setDate(tarefa.getDatahoraCriacao());
+                JdcUltimaModificacao.setDate(tarefa.getDatahoraConclusao());
 
             } else {
                 tfaNovoMovimento.setEnabled(false);
-                tfdNomeAutor.setText(usuarioAutor.getNome());
+                tfdNomeAutor.setText(autor.getNome());
             }
         } catch (Exception e) {
             tfaNovoMovimento.setEnabled(false);
@@ -698,7 +751,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         tarefa.setSituacao('A');
         tarefa.setVersaoByIdVersaoBug(versaoBug);
         tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
-        tarefa.setUsuarioByIdUsuarioAutor(usuarioAutor);
+        tarefa.setUsuarioByIdUsuarioAutor(autor);
         tarefa.setUsuarioByIdUsuarioResponsavel(usuarioResponsavel);
         Date dataAtual;
         try {

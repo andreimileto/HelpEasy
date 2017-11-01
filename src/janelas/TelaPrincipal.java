@@ -7,8 +7,20 @@ package janelas;
 
 import apoio.LogHeasy;
 import apoio.Validacao;
+import controle.ControleTarefa;
+import entidade.Cliente;
 import entidade.EnvioEmail;
+import entidade.Fase;
+import entidade.Modulo;
+import entidade.Motivo;
+import entidade.Prioridade;
+import entidade.Projeto;
+import entidade.Tarefa;
 import entidade.Usuario;
+import entidade.Versao;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,13 +34,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 //    Usuario usuario;
     public static Usuario userH = new Usuario();
     public static EnvioEmail envioEmail = new EnvioEmail();
-
+    
     public TelaPrincipal() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-
+        
     }
-
+    
     public TelaPrincipal(Usuario usuario) {
         Validacao.populaPermissao();
         initComponents();
@@ -61,6 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         imnCidades = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         ImnTarefa = new javax.swing.JMenuItem();
+        imnListaTarefas = new javax.swing.JMenuItem();
         ImnCadastroUsuario = new javax.swing.JMenu();
         ImnCadastroFase = new javax.swing.JMenuItem();
         ImnCadastroModulo = new javax.swing.JMenuItem();
@@ -175,6 +188,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu2.add(ImnTarefa);
+
+        imnListaTarefas.setText("Lista de tarefas");
+        imnListaTarefas.setName("janelas.JdgListaTarefas"); // NOI18N
+        imnListaTarefas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imnListaTarefasActionPerformed(evt);
+            }
+        });
+        jMenu2.add(imnListaTarefas);
 
         jMenuBar1.add(jMenu2);
 
@@ -349,7 +371,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void ImnCadastroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnCadastroUsuarioActionPerformed
-
+        
 
     }//GEN-LAST:event_ImnCadastroUsuarioActionPerformed
 
@@ -370,12 +392,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_ImnClientesActionPerformed
 
     private void ImnPermissoesUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnPermissoesUsuarioActionPerformed
-        JdgListaPermissoes listaPermissoes = new JdgListaPermissoes(this, true,userH);
+        JdgListaPermissoes listaPermissoes = new JdgListaPermissoes(this, true, userH);
         listaPermissoes.setVisible(true);
     }//GEN-LAST:event_ImnPermissoesUsuarioActionPerformed
 
     private void ImnTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnTarefaActionPerformed
-        JdgCadastroTarefa cadastroTarefa = new JdgCadastroTarefa(this, true,userH);
+        JdgCadastroTarefa cadastroTarefa = new JdgCadastroTarefa(this, true, userH);
         cadastroTarefa.setVisible(true);
     }//GEN-LAST:event_ImnTarefaActionPerformed
 
@@ -398,11 +420,57 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroEmail.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void imnListaTarefasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imnListaTarefasActionPerformed
+        Cliente cliente = new Cliente();
+        Modulo modulo = new Modulo();
+        Prioridade prioridade = new Prioridade();
+        Projeto projeto = new Projeto();
+        Fase fase = new Fase();
+        Versao versaoBug = new Versao();
+        Versao versaoCorrecao = new Versao();
+        Usuario autor = new Usuario();
+        Usuario responsavel = new Usuario();
+        Date data = new Date();
+        Motivo motivo = new Motivo();
+        Tarefa tarefa = new Tarefa();
+//        tarefa.setCliente(cliente);
+//        tarefa.setFase(fase);
+//        tarefa.setModulo(modulo);
+//        tarefa.setMotivo(motivo);
+//        tarefa.setPrioridade(prioridade);
+//        tarefa.setProjeto(projeto);
+//        tarefa.setSituacao('A');
+//        tarefa.setUsuarioByIdUsuarioAutor(autor);
+//        tarefa.setUsuarioByIdUsuarioResponsavel(responsavel);
+//        tarefa.setVersaoByIdVersaoBug(versaoBug);
+//        tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
+//        tarefa.setTitulo("aaa");
+        
+        JdgListaTarefa listaTarefa = new JdgListaTarefa(null, true, tarefa,motivo,autor, responsavel, projeto, prioridade, modulo, versaoBug, versaoCorrecao, fase,cliente);
+        listaTarefa.setVisible(true);
+        
+        ArrayList<Tarefa> tarefas = new ArrayList<>();
+        ControleTarefa controleTarefa = new ControleTarefa();
+        tarefas = controleTarefa.listarUmId(tarefa);
+        tarefa = tarefas.get(0);
+        
+       // JOptionPane.showMessageDialog(rootPane, tarefa.getTitulo());
+        
+
+        if (tarefa.getId()>0) {
+           // JOptionPane.showMessageDialog(rootPane, motivo.getId() + tarefa.getMotivo().getId());
+//            motivo.setId(tarefa.getMotivo().getId());
+//            tarefa.setMotivo(motivo);
+            JdgCadastroTarefa cadastroTarefa = new JdgCadastroTarefa(null, true,tarefa,motivo,autor, responsavel, modulo, projeto, prioridade, fase, versaoBug, versaoCorrecao,cliente);
+            cadastroTarefa.setVisible(true);
+        }
+    }//GEN-LAST:event_imnListaTarefasActionPerformed
+
     /**
      * @param args the command line arguments
      */
     static final LogHeasy logH = new LogHeasy();
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -449,6 +517,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem imnCadastroMotivo;
     private javax.swing.JMenuItem imnCadastroUsuario;
     private javax.swing.JMenuItem imnCidades;
+    private javax.swing.JMenuItem imnListaTarefas;
     private javax.swing.JMenuItem imnParametrosSistema;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

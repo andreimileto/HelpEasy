@@ -148,9 +148,15 @@ public class ControleTarefa {
 
     }
 
-//    public ArrayList<Cliente> listar(Cliente cliente) {
-//        this.cliente = cliente;
-//        ClienteDAO clienteDAO = new ClienteDAO();
-//        return clienteDAO.listar(this.cliente);
-//    }
+    public ArrayList<Tarefa> listar(Tarefa tarefa) {
+        this.tarefa = tarefa;
+        TarefaDAO tarefaDAO = new TarefaDAO();
+        return tarefaDAO.listar(this.tarefa);
+    }
+    
+    public ArrayList<Tarefa> listarUmId(Tarefa tarefa) {
+        this.tarefa = tarefa;
+        TarefaDAO tarefaDAO = new TarefaDAO();
+        return tarefaDAO.listarUmId(this.tarefa);
+    }
 }

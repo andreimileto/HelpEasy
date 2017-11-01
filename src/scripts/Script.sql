@@ -360,3 +360,4 @@ INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (3
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (35, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnLocalizar', 'Localizar');
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (36, 'janelas.JdgCadastroTarefa', 'Cadastro de Tarefa', 'btnExcluir', 'Excluir');
 INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (37, 'janelas.JdgCadastroEmail', 'Cadastro de Email', 'btnSalvar', 'btnSalvar');
+INSERT INTO public.telas(id, tela, tela_amigavel, acao, acao_amigavel) VALUES (38, 'janelas.JdgListaTarefas', 'Lista de Tarefa', 'btnLocalizar', 'Localizar');
