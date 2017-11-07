@@ -222,8 +222,8 @@ public class JdgListaProjeto extends javax.swing.JDialog {
         jLabel1.setForeground(new java.awt.Color(0, 0, 204));
         jLabel1.setText("Lista de Projetos");
 
-        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Edit File-16.png"))); // NOI18N
-        btnConfirmar.setText("Editar");
+        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
+        btnConfirmar.setText("Selecionar");
         btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmarActionPerformed(evt);

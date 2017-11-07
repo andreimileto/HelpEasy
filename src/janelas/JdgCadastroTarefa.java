@@ -1,6 +1,7 @@
 package janelas;
 
-import DAO.TarefaDAO;
+import DAO.ClienteDAO;
+import DAO.TarefaUsuarioDAO;
 import apoio.Formatacao;
 import apoio.Util;
 import controle.ControleTarefa;
@@ -12,13 +13,16 @@ import entidade.Motivo;
 import entidade.Prioridade;
 import entidade.Projeto;
 import entidade.Tarefa;
+import entidade.TarefaUsuario;
 import entidade.Usuario;
 import entidade.Versao;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -44,8 +48,11 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
     Versao versaoBug;
     Versao versaoCorrecao;
     Modulo modulo;
-    Usuario usuarioAutor;
+    Usuario autor;
     Usuario usuarioResponsavel;
+    ArrayList<TarefaUsuario> colaboradores;
+    TarefaUsuario tarefaUsuario;
+    Usuario novoUsuario;
 
     public JdgCadastroTarefa(java.awt.Frame parent, boolean modal, Usuario usuarioAutor) {
         super(parent, modal);
@@ -61,7 +68,9 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         versaoBug = new Versao();
         versaoCorrecao = new Versao();
         usuarioResponsavel = new Usuario();
-        this.usuarioAutor = usuarioAutor;
+        this.autor = usuarioAutor;
+        colaboradores = new ArrayList<>();
+        tarefaUsuario = new TarefaUsuario();
         listarDados();
     }
 
@@ -77,17 +86,83 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         modulo = new Modulo();
         versaoBug = new Versao();
         versaoCorrecao = new Versao();
-
+        colaboradores = new ArrayList<>();
+        tarefaUsuario = new TarefaUsuario();
         listarDados();
+    }
+
+    public JdgCadastroTarefa(java.awt.Frame parent, boolean modal, Tarefa tarefa, Motivo motivo, Usuario autor, Usuario responsavel, Modulo modulo, Projeto projeto, Prioridade prioridade, Fase fase, Versao versaoBug, Versao versaoCorrecao, Cliente cliente) {
+        super(parent, modal);
+        initComponents();
+
+        this.cidade = new Cidade();
+
+        this.tarefa = tarefa;
+        this.motivo = motivo;
+        tarefa.setMotivo(motivo);
+        this.autor = autor;
+        tarefa.setUsuarioByIdUsuarioAutor(autor);
+        this.usuarioResponsavel = responsavel;
+        tarefa.setUsuarioByIdUsuarioResponsavel(responsavel);
+        this.projeto = projeto;
+        tarefa.setProjeto(projeto);
+        this.prioridade = prioridade;
+        tarefa.setPrioridade(prioridade);
+        this.modulo = modulo;
+        tarefa.setModulo(modulo);
+        this.versaoBug = versaoBug;
+        tarefa.setVersaoByIdVersaoBug(versaoBug);
+        this.versaoCorrecao = versaoCorrecao;
+        tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
+        this.fase = fase;
+        tarefa.setFase(fase);
+        this.cliente = cliente;
+        this.cliente.setCidade(cidade);
+        tarefa.setCliente(cliente);
+        colaboradores = new ArrayList<>();
+        tarefaUsuario = new TarefaUsuario();
+        tarefaUsuario.setTarefa(tarefa);
+        tarefaUsuario.setUsuario(novoUsuario);
+        TarefaUsuarioDAO tarefaUsuarioDAO = new TarefaUsuarioDAO();
+        colaboradores = tarefaUsuarioDAO.listar(tarefaUsuario);
+        listarDados();
+        listarColaboradores();
+        habilitarDesabilitarBotoes();
     }
 
     private void listarDados() {
         try {
             if (tarefa.getId() > 0) {
+                tfdId.setText(tarefa.getId() + "");
+             //   JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getId() + "..id autor..");
+               // JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getNome() + "..nome autor..");
+                tfdNomeAutor.setText(tarefa.getUsuarioByIdUsuarioAutor().getNome());
+                tfdNomeResponsavel.setText(tarefa.getUsuarioByIdUsuarioResponsavel().getNome());
+                tfdNomeCliente.setText(tarefa.getCliente().getRazaoSocial());
+                tfdFase.setText(tarefa.getFase().getDescricao());
+                tfdNomeModulo.setText(tarefa.getModulo().getDescricao());
+                // JOptionPane.showMessageDialog(rootPane, "id do motivo é..."+tarefa.getMotivo().getId());
+                //  JOptionPane.showMessageDialog(rootPane, "descrição do motivo é..."+tarefa.getMotivo().getDescricao());
+                tfdNomeMotivo.setText(tarefa.getMotivo().getDescricao());
+                tfdNomePrioridade.setText(tarefa.getPrioridade().getDescricao());
+                tfdNomeProjeto.setText(tarefa.getProjeto().getDescricao());
+                tfdTituloTarefa.setText(tarefa.getTitulo());
+                tfaDescricaoTarefa.setText(tarefa.getDescricao());
+                tfdVersaoBug.setText(tarefa.getVersaoByIdVersaoBug().getDescricao());
+                tfdVersaoCorrecao.setText(tarefa.getVersaoByIdVersaoCorrecao().getDescricao());
+           //     JOptionPane.showMessageDialog(rootPane, tarefa.getDatahoraPrevisao() + "previsao");
+                JdcPrevisão.setDate(tarefa.getDatahoraPrevisao());
+                JdcInclusao.setDate(tarefa.getDatahoraCriacao());
+                JdcUltimaModificacao.setDate(tarefa.getDatahoraConclusao());
+                btnAdicionar.setEnabled(true);
+                btnLocalizarColaboradores.setEnabled(true);
+                btnLocalizarModulo.setEnabled(true);
+                btnLocalizarVersaoBug.setEnabled(true);
+                btnLocalizarVersaoCorrecao.setEnabled(true);
 
             } else {
                 tfaNovoMovimento.setEnabled(false);
-                tfdNomeAutor.setText(usuarioAutor.getNome());
+                tfdNomeAutor.setText(autor.getNome());
             }
         } catch (Exception e) {
             tfaNovoMovimento.setEnabled(false);
@@ -135,13 +210,19 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         btnLocalizarVersaoCorrecao = new javax.swing.JButton();
         tfdVersaoCorrecao = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        btnLocalizarResponsavel = new javax.swing.JButton();
         JdcInclusao = new com.toedter.calendar.JDateChooser();
         jLabel15 = new javax.swing.JLabel();
         JdcPrevisão = new com.toedter.calendar.JDateChooser();
         jLabel16 = new javax.swing.JLabel();
         JdcUltimaModificacao = new com.toedter.calendar.JDateChooser();
         jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tfdNomeColaborador = new javax.swing.JTextField();
+        btnLocalizarColaboradores = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblColaboradores = new javax.swing.JTable();
+        btnAdicionar = new javax.swing.JButton();
+        btnLocalizarResponsavel = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tfaDescricaoTarefa = new javax.swing.JTextArea();
@@ -267,13 +348,6 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
         jLabel8.setText("Correção:");
 
-        btnLocalizarResponsavel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
-        btnLocalizarResponsavel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLocalizarResponsavelActionPerformed(evt);
-            }
-        });
-
         JdcInclusao.setEnabled(false);
 
         jLabel15.setText("Inclusão:");
@@ -284,6 +358,52 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
         jLabel17.setText("modificação:");
 
+        jLabel18.setText("Colaboradores:");
+
+        tfdNomeColaborador.setEditable(false);
+
+        btnLocalizarColaboradores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarColaboradores.setEnabled(false);
+        btnLocalizarColaboradores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarColaboradoresActionPerformed(evt);
+            }
+        });
+
+        tblColaboradores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "ID TAREFA", "NOME"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tblColaboradores);
+
+        btnAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/more.png"))); // NOI18N
+        btnAdicionar.setEnabled(false);
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
+
+        btnLocalizarResponsavel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lupa3.png"))); // NOI18N
+        btnLocalizarResponsavel.setPreferredSize(new java.awt.Dimension(51, 25));
+        btnLocalizarResponsavel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocalizarResponsavelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -292,169 +412,198 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel3))
+                                .addGap(4, 4, 4)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfdNomeResponsavel, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(tfdNomeProjeto)
+                                    .addComponent(tfdNomeMotivo)
+                                    .addComponent(tfdNomeModulo, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(2, 2, 2)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnLocalizarMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnLocalizarProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnLocalizarModulo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(27, 27, 27))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(btnLocalizarResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel8))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(tfdVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(btnLocalizarVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                .addComponent(tfdVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(6, 6, 6)
+                                                .addComponent(btnLocalizarVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel2)
+                                            .addGap(36, 36, 36)
+                                            .addComponent(tfdNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(btnLocalizarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel11)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(JdcPrevisão, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                                    .addComponent(tfdFase, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(6, 6, 6)
+                                                    .addComponent(btnLocalizarFase, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGap(39, 39, 39))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfdNomePrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnLocalizarPrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(10, 10, 10)
+                                .addComponent(tfdNomeColaborador, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnLocalizarColaboradores, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(20, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(26, 26, 26)
                         .addComponent(tfdId, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(10, 10, 10)
                         .addComponent(tfdNomeAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tfdNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLocalizarResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel16))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JdcPrevisão, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(tfdNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnLocalizarProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(tfdNomeMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnLocalizarMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(tfdNomeModulo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnLocalizarModulo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(tfdNomePrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnLocalizarPrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tfdNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLocalizarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel15))
-                                        .addGap(16, 16, 16)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(tfdVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(6, 6, 6)
-                                                .addComponent(btnLocalizarVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(tfdFase, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnLocalizarFase, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(JdcInclusao, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel17)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(JdcUltimaModificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfdVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnLocalizarVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 531, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JdcInclusao, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JdcUltimaModificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(tfdId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9)
-                    .addComponent(tfdNomeAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel10)
-                                .addComponent(tfdNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnLocalizarResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 6, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JdcInclusao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JdcUltimaModificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17))
+                        .addGap(17, 17, 17)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel4))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tfdNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnLocalizarProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel7)
-                                            .addComponent(tfdVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(btnLocalizarVersaoBug, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(tfdNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel2))
+                                    .addComponent(btnLocalizarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(tfdVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel7))
+                                    .addComponent(btnLocalizarVersaoBug, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnLocalizarMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfdNomeMotivo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(btnLocalizarModulo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(tfdNomeModulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel5)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnLocalizarPrioridade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(tfdNomePrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel6)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(JdcPrevisão, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel8)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(btnLocalizarVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(tfdVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnLocalizarFase, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfdFase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(JdcInclusao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel15))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(JdcUltimaModificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel17))))))
-                        .addContainerGap(22, Short.MAX_VALUE))
+                                        .addGap(3, 3, 3)
+                                        .addComponent(jLabel18))
+                                    .addComponent(tfdNomeColaborador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnLocalizarColaboradores, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(12, 12, 12)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnLocalizarCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfdId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel2)
-                                .addComponent(tfdNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(tfdNomeAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel15))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel9))))
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel10))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnLocalizarResponsavel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfdNomeResponsavel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tfdNomeProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3))
+                            .addComponent(btnLocalizarProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnLocalizarMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tfdNomeMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel4))
+                            .addComponent(jLabel8)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfdVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnLocalizarVersaoCorrecao, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnLocalizarFase, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel11)
+                                        .addComponent(tfdFase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(21, 21, 21)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(JdcPrevisão, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addComponent(jLabel16))))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btnLocalizarModulo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addGap(3, 3, 3)
+                                            .addComponent(jLabel5))
+                                        .addComponent(tfdNomeModulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(tfdNomePrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel6))
+                                        .addComponent(btnLocalizarPrioridade, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap())
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -471,16 +620,16 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfdTituloTarefa)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addComponent(tfdTituloTarefa, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13)
                             .addComponent(jLabel12))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -493,8 +642,8 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -538,18 +687,20 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane2))
+                        .addContainerGap())
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnLocalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -558,13 +709,12 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnSalvar)
-                        .addComponent(btnExcluir)
-                        .addComponent(btnSair))
-                    .addComponent(btnLocalizar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvar)
+                    .addComponent(btnExcluir)
+                    .addComponent(btnSair)
+                    .addComponent(btnLocalizar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -584,7 +734,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -595,10 +745,10 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(11, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -690,7 +840,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 //        versaoCorrecao.setId(1);
 //        //---------
 //        
-        
+
         tarefa.setModulo(modulo);
         tarefa.setMotivo(motivo);
         tarefa.setPrioridade(prioridade);
@@ -698,7 +848,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         tarefa.setSituacao('A');
         tarefa.setVersaoByIdVersaoBug(versaoBug);
         tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
-        tarefa.setUsuarioByIdUsuarioAutor(usuarioAutor);
+        tarefa.setUsuarioByIdUsuarioAutor(autor);
         tarefa.setUsuarioByIdUsuarioResponsavel(usuarioResponsavel);
         Date dataAtual;
         try {
@@ -712,9 +862,17 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
         ControleTarefa controleTarefa = new ControleTarefa();
         String mensagem = controleTarefa.salvar(tarefa);
-JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE "+cliente.getEmail());
+        JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE " + cliente.getEmail());
         if (mensagem.equals("ok")) {
-            
+            if (colaboradores.size()>0) {
+                for (int i = 0; i < colaboradores.size(); i++) {
+                TarefaUsuarioDAO tarefaUsuarioDAO = new TarefaUsuarioDAO();    
+                tarefaUsuarioDAO.salvar(colaboradores.get(i));
+                }
+                
+                
+            }
+
             //TarefaDAO tarefaDAO = new TarefaDAO();
             Util.enviodeEmail(cliente);
             limparCampos();
@@ -749,6 +907,13 @@ JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE "+cliente.getEmail());
         tfdNomeProjeto.setText("");
         tfdVersaoBug.setText("");
         tfdVersaoCorrecao.setText("");
+        tfdNomeAutor.setText("");
+        JdcInclusao.setDate(null);
+        JdcPrevisão.setDate(null);
+        JdcUltimaModificacao.setDate(null);
+        tfdId.setText("");
+        colaboradores = new ArrayList<>();
+        listarColaboradores();
     }
 
     private void btnLocalizarResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarResponsavelActionPerformed
@@ -768,6 +933,23 @@ JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE "+cliente.getEmail());
         }
     }//GEN-LAST:event_btnLocalizarModuloActionPerformed
 
+    
+    private void habilitarDesabilitarBotoes(){
+        if (tarefa.getId()>0) {
+            btnLocalizarModulo.setEnabled(true);
+            btnLocalizarColaboradores.setEnabled(true);
+            btnLocalizarVersaoBug.setEnabled(true);
+            btnLocalizarVersaoCorrecao.setEnabled(true);
+            tfaNovoMovimento.setEnabled(true);
+        }else{
+             btnLocalizarModulo.setEnabled(false);
+            btnLocalizarColaboradores.setEnabled(false);
+            btnLocalizarVersaoBug.setEnabled(false);
+            btnLocalizarVersaoCorrecao.setEnabled(false);
+            tfaNovoMovimento.setEnabled(false);
+            
+        }
+    }
     private void btnLocalizarVersaoBugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarVersaoBugActionPerformed
         JdgListaVersao listaVersao = new JdgListaVersao(null, true, versaoBug, projeto);
         listaVersao.setVisible(true);
@@ -787,6 +969,79 @@ JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE "+cliente.getEmail());
 
         }
     }//GEN-LAST:event_btnLocalizarVersaoCorrecaoActionPerformed
+
+    private void btnLocalizarColaboradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarColaboradoresActionPerformed
+        
+         novoUsuario = new Usuario();
+        JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, novoUsuario);
+        listaUsuario.setVisible(true);
+        
+        tfdNomeColaborador.setText(novoUsuario.getNome());
+       
+             
+
+    }//GEN-LAST:event_btnLocalizarColaboradoresActionPerformed
+
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+         if (novoUsuario.getId()>0) {
+             boolean ok = true;
+             
+             for (int i = 0; i < colaboradores.size(); i++) {
+                 if (novoUsuario.getId() == colaboradores.get(i).getUsuario().getId()) {
+                     ok = false;
+                 }
+             }
+             if (ok) {
+                 tarefaUsuario = new TarefaUsuario();
+            tarefaUsuario.setUsuario(novoUsuario);
+            tarefaUsuario.setTarefa(tarefa);
+            colaboradores.add(tarefaUsuario);
+            listarColaboradores();
+             }else{
+                 JOptionPane.showMessageDialog(rootPane, "Erro ao adicionar colaborador:\nColaborador já adicionado na lista.");
+             }
+             
+            tfdNomeColaborador.setText("");
+        }
+    }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void listarColaboradores() {
+        try {
+            //setar para tabela modelo de dados
+            tblColaboradores.setModel(this.obterDadosParaTabelaCompleto());
+            tblColaboradores.getColumnModel().getColumn(0).setPreferredWidth(1);
+            tblColaboradores.getColumnModel().getColumn(1).setPreferredWidth(1);
+            tblColaboradores.getColumnModel().getColumn(2).setPreferredWidth(100);
+
+        } catch (Exception ex) {
+            System.out.println("erro listarColaboradores "+ex);
+            janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(), ex.getMessage());
+        }
+    }
+
+    private DefaultTableModel obterDadosParaTabelaCompleto() throws Exception {
+        DefaultTableModel dtm = new DefaultTableModel() {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+
+//        TarefaUsuarioDAO tarefaUsuarioDAO = new TarefaUsuarioDAO();
+//         colaboradores = tarefaUsuarioDAO.listar(tarefaUsuario);
+
+        dtm.addColumn("ID");
+        dtm.addColumn("ID TAREFA");
+        dtm.addColumn("NOME");
+
+        for (int i = 0; i < colaboradores.size(); i++) {
+
+            dtm.addRow(new String[]{String.valueOf(colaboradores.get(i).getUsuario().getId()),
+                String.valueOf(colaboradores.get(i).getTarefa().getId()),
+                colaboradores.get(i).getUsuario().getNome()
+            });
+        }
+        return dtm;
+    }
 
     /**
      * @param args the command line arguments
@@ -834,9 +1089,11 @@ JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE "+cliente.getEmail());
     private com.toedter.calendar.JDateChooser JdcInclusao;
     private com.toedter.calendar.JDateChooser JdcPrevisão;
     private com.toedter.calendar.JDateChooser JdcUltimaModificacao;
+    private javax.swing.JButton btnAdicionar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLocalizar;
     private javax.swing.JButton btnLocalizarCliente;
+    private javax.swing.JButton btnLocalizarColaboradores;
     private javax.swing.JButton btnLocalizarFase;
     private javax.swing.JButton btnLocalizarModulo;
     private javax.swing.JButton btnLocalizarMotivo;
@@ -856,6 +1113,7 @@ JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE "+cliente.getEmail());
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -870,12 +1128,15 @@ JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE "+cliente.getEmail());
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable tblColaboradores;
     private javax.swing.JTextArea tfaDescricaoTarefa;
     private javax.swing.JTextArea tfaNovoMovimento;
     private javax.swing.JTextField tfdFase;
     private javax.swing.JTextField tfdId;
     private javax.swing.JTextField tfdNomeAutor;
     private javax.swing.JTextField tfdNomeCliente;
+    private javax.swing.JTextField tfdNomeColaborador;
     private javax.swing.JTextField tfdNomeModulo;
     private javax.swing.JTextField tfdNomeMotivo;
     private javax.swing.JTextField tfdNomePrioridade;
