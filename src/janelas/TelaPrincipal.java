@@ -180,6 +180,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu2.setText("Tarefas");
 
+        ImnTarefa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastrodetarefaicone.png"))); // NOI18N
         ImnTarefa.setText("Tarefa");
         ImnTarefa.setName("janelas.JdgCadastroTarefa"); // NOI18N
         ImnTarefa.addActionListener(new java.awt.event.ActionListener() {
@@ -189,6 +190,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(ImnTarefa);
 
+        imnListaTarefas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tarefaicon.png"))); // NOI18N
         imnListaTarefas.setText("Lista de tarefas");
         imnListaTarefas.setName("janelas.JdgListaTarefas"); // NOI18N
         imnListaTarefas.addActionListener(new java.awt.event.ActionListener() {
@@ -208,6 +210,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        ImnCadastroFase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastrofaseicone.png"))); // NOI18N
         ImnCadastroFase.setText("Cadastro de fase");
         ImnCadastroFase.setName("janelas.JdgCadastroFase"); // NOI18N
         ImnCadastroFase.addActionListener(new java.awt.event.ActionListener() {
@@ -217,6 +220,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(ImnCadastroFase);
 
+        ImnCadastroModulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastromoduloicone48.png"))); // NOI18N
         ImnCadastroModulo.setText("Cadastro de módulo");
         ImnCadastroModulo.setName("janelas.JdgCadastroModulo"); // NOI18N
         ImnCadastroModulo.addActionListener(new java.awt.event.ActionListener() {
@@ -226,6 +230,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(ImnCadastroModulo);
 
+        imnCadastroMotivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastromotivoicon48.png"))); // NOI18N
         imnCadastroMotivo.setText("Cadastro de motivo");
         imnCadastroMotivo.setName("janelas.JdgCadastroMotivo"); // NOI18N
         imnCadastroMotivo.addActionListener(new java.awt.event.ActionListener() {
@@ -235,6 +240,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(imnCadastroMotivo);
 
+        ImnCadastroPrioridade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastroprioridadeicon48.png"))); // NOI18N
         ImnCadastroPrioridade.setText("Cadastro de prioridade");
         ImnCadastroPrioridade.setName("janelas.JdgCadastroPrioridade"); // NOI18N
         ImnCadastroPrioridade.addActionListener(new java.awt.event.ActionListener() {
@@ -244,6 +250,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(ImnCadastroPrioridade);
 
+        ImnCadastroProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastroferramentaicone48.png"))); // NOI18N
         ImnCadastroProjeto.setText("Cadastro de projeto");
         ImnCadastroProjeto.setName("janelas.JdgCadastroProjeto"); // NOI18N
         ImnCadastroProjeto.addActionListener(new java.awt.event.ActionListener() {
@@ -253,6 +260,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(ImnCadastroProjeto);
 
+        imnCadastroUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastrarusuarioicone48.png"))); // NOI18N
         imnCadastroUsuario.setText("Cadastro de usuário");
         imnCadastroUsuario.setName("janelas.JdgCadastroUsuario"); // NOI18N
         imnCadastroUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -262,6 +270,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(imnCadastroUsuario);
 
+        ImnCadastroVersao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastroversaoicone48.png"))); // NOI18N
         ImnCadastroVersao.setText("Cadastro de versão");
         ImnCadastroVersao.setName("janelas.JdgCadastroVersao"); // NOI18N
         ImnCadastroVersao.addActionListener(new java.awt.event.ActionListener() {
@@ -271,6 +280,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ImnCadastroUsuario.add(ImnCadastroVersao);
 
+        ImnPermissoesUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/permissoesusuarioicone48.png"))); // NOI18N
         ImnPermissoesUsuario.setText("Permissões do usuário");
         ImnPermissoesUsuario.setName("janelas.JdgListaPermissoes"); // NOI18N
         ImnPermissoesUsuario.addActionListener(new java.awt.event.ActionListener() {

@@ -112,7 +112,9 @@ public class TarefaDAO extends DAO {
             }
                      
                      sql = sql + " and (upper (titulo) like '%"+tarefa.getTitulo().toUpperCase()+"%'"
-                             + " or upper (descricao) like '%"+tarefa.getDescricao().toUpperCase()+"%')";
+                             + " or upper (descricao) like '%"+tarefa.getDescricao().toUpperCase()+"%') "
+                             + " and situacao = 'A' "
+                             + "order by id";
                   
             String sel = sql;
          

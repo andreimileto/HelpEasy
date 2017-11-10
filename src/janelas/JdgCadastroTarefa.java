@@ -1,6 +1,7 @@
 package janelas;
 
 import DAO.ClienteDAO;
+import DAO.TarefaDAO;
 import DAO.TarefaUsuarioDAO;
 import apoio.Formatacao;
 import apoio.Util;
@@ -666,6 +667,11 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixeira16x16.png"))); // NOI18N
         btnExcluir.setText("Excluir");
         btnExcluir.setName("btnExcluir"); // NOI18N
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_Schutdown16.png"))); // NOI18N
         btnSair.setText("Sair");
@@ -1004,6 +1010,19 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
             tfdNomeColaborador.setText("");
         }
     }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        int retornoMensagem = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a tarefa "+tarefa.getId() +" ?");
+        if (retornoMensagem ==0) {
+            tarefa.setSituacao('I');
+            ControleTarefa controleTarefa = new ControleTarefa();
+            String retorno = controleTarefa.salvar(tarefa);
+            if (retorno.equalsIgnoreCase("ok")) {
+                JOptionPane.showMessageDialog(rootPane, "tarefa "+tarefa.getId()+" excluída com sucesso!");
+                limparCampos();
+            }
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void listarColaboradores() {
         try {

@@ -15,6 +15,8 @@ import entidade.Usuario;
 import entidade.UsuarioPermissaoTela;
 import entidade.UsuarioPermissaoTelaAcoes;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.hibernate.Session;
@@ -234,8 +236,14 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 tblAcoesMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tblAcoesMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tblAcoesMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblAcoesMouseReleased(evt);
             }
         });
         jScrollPane1.setViewportView(tblAcoes);
@@ -376,24 +384,37 @@ public class JdgListaPermissoes extends javax.swing.JDialog {
         //  UsuarioPermissaoTela tela = new UsuarioPermissaoTela();
         UsuarioPermissaoTelaAcoesDAO usuarioPermissaoTelaAcoesDAO = new UsuarioPermissaoTelaAcoesDAO();
         UsuarioPermissaoTelaDAO usuarioPermissaoTelaDAO = new UsuarioPermissaoTelaDAO();
-boolean ok = true;
-        for (int i = 0; i < permissoesEmEdicao.size(); i++) {
+        boolean ok = true;
+//        for (int i = 0; i < permissoesEmEdicao.size(); i++) {
+//
+//            UsuarioPermissaoTelaAcoes permiss = permissoesEmEdicao.get(tblAcoes.convertRowIndexToModel(i));
+//
+//            if (usuarioPermissaoTelaDAO.salvar(permissoesEmEdicao.get(i).getUsuarioPermissaoTela()) && usuarioPermissaoTelaAcoesDAO.salvar(permiss)) {
+//
+//            } else {
+//                ok = false;
+//            }
+//        }
 
-            UsuarioPermissaoTelaAcoes permiss = permissoesEmEdicao.get(tblAcoes.convertRowIndexToModel(i));
-            
+    for (int i = 0; i < permissoes.size(); i++) {
 
-            if (usuarioPermissaoTelaDAO.salvar(permissoesEmEdicao.get(i).getUsuarioPermissaoTela()) && usuarioPermissaoTelaAcoesDAO.salvar(permiss)) {
-                
-            }else{
+            UsuarioPermissaoTelaAcoes permiss = permissoes.get(tblAcoes.convertRowIndexToModel(i));
+
+            if (usuarioPermissaoTelaDAO.salvar(permissoes.get(i).getUsuarioPermissaoTela()) && usuarioPermissaoTelaAcoesDAO.salvar(permiss)) {
+
+            } else {
                 ok = false;
             }
         }
+
+
+
         if (ok) {
             dispose();
-                    JOptionPane.showMessageDialog(rootPane, "Alteração de permissões do usuário salva com sucesso!");
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "Erro ao salvar as alterações, verifique com o suporte.");
-                }
+            JOptionPane.showMessageDialog(rootPane, "Alteração de permissões do usuário salva com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar as alterações, verifique com o suporte.");
+        }
 
 
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -403,10 +424,10 @@ boolean ok = true;
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void tblAcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAcoesMouseClicked
-
+        tblAcoes.setEnabled(false);
         int linhaSelecionada = tblAcoes.getSelectedRow();
         int idAcao = Integer.parseInt(tblAcoes.getValueAt(linhaSelecionada, 0).toString());
-        for (int i = 0; i < permissoes.size(); i++) {
+        for (int i = 0; i < permissoes.size(); i++ ) {
             if (permissoes.get(i).getId() == idAcao) {
 
                 if (Boolean.parseBoolean(String.valueOf(tblAcoes.getValueAt(linhaSelecionada, 3)))) {
@@ -416,11 +437,21 @@ boolean ok = true;
                 }
             }
         }
-
+//        try {
+//            //Thread.currentThread().sleep(350);
+//            
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(JdgListaPermissoes.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        tblAcoes.setEnabled(true);
     }//GEN-LAST:event_tblAcoesMouseClicked
 
     private void tblAcoesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAcoesMousePressed
-
+//        try {
+//            Thread.currentThread().sleep(350);
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(JdgListaPermissoes.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_tblAcoesMousePressed
 
     private void tblAcoesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblAcoesAncestorAdded
@@ -436,6 +467,7 @@ boolean ok = true;
     }//GEN-LAST:event_tblTelasAncestorAdded
 
     private void tblTelasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTelasMouseClicked
+        tblTelas.setEnabled(false);
         int linhaSelecionada = tblTelas.getSelectedRow();
         int idTela = Integer.parseInt(tblTelas.getValueAt(linhaSelecionada, 0).toString());
         for (int i = 0; i < permissoes.size(); i++) {
@@ -473,7 +505,12 @@ boolean ok = true;
 
         //JOptionPane.showMessageDialog(rootPane, telaSelecionada);
         listarPermissoes();
-
+        try {
+            Thread.currentThread().sleep(350);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(JdgListaPermissoes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tblTelas.setEnabled(true);
     }//GEN-LAST:event_tblTelasMouseClicked
 
     private void tblTelasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTelasMouseEntered
@@ -501,6 +538,22 @@ boolean ok = true;
             listarPermissoes();
         }
     }//GEN-LAST:event_btnLocalizarActionPerformed
+
+    private void tblAcoesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAcoesMouseReleased
+//        try {
+//            Thread.currentThread().sleep(350);
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(JdgListaPermissoes.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+    }//GEN-LAST:event_tblAcoesMouseReleased
+
+    private void tblAcoesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAcoesMouseExited
+        try {
+            Thread.currentThread().sleep(400);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(JdgListaPermissoes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tblAcoesMouseExited
 //    private void listar() {
 //        try {
 //            usuario.setNome(tfdDescricao.getText().toUpperCase());

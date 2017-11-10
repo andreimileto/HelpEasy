@@ -60,6 +60,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ImnTarefa">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/cadastrodetarefaicone.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Tarefa"/>
                 <Property name="name" type="java.lang.String" value="janelas.JdgCadastroTarefa" noResource="true"/>
               </Properties>
@@ -69,6 +72,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="imnListaTarefas">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/tarefaicon.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Lista de tarefas"/>
                 <Property name="name" type="java.lang.String" value="janelas.JdgListaTarefas" noResource="true"/>
               </Properties>
@@ -89,6 +95,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroFase">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/cadastrofaseicone.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de fase"/>
                 <Property name="name" type="java.lang.String" value="janelas.JdgCadastroFase" noResource="true"/>
               </Properties>
@@ -98,6 +107,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroModulo">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/cadastromoduloicone48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de m&#xf3;dulo"/>
                 <Property name="name" type="java.lang.String" value="janelas.JdgCadastroModulo" noResource="true"/>
               </Properties>
@@ -107,6 +119,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="imnCadastroMotivo">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/cadastromotivoicon48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de motivo"/>
                 <Property name="name" type="java.lang.String" value="janelas.JdgCadastroMotivo" noResource="true"/>
               </Properties>
@@ -116,6 +131,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroPrioridade">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/cadastroprioridadeicon48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de prioridade"/>
                 <Property name="name" type="java.lang.String" value="janelas.JdgCadastroPrioridade" noResource="true"/>
               </Properties>
@@ -125,6 +143,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroProjeto">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/cadastroferramentaicone48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de projeto"/>
                 <Property name="name" type="java.lang.String" value="janelas.JdgCadastroProjeto" noResource="true"/>
               </Properties>
@@ -134,6 +155,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="imnCadastroUsuario">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/cadastrarusuarioicone48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de usu&#xe1;rio"/>
                 <Property name="name" type="java.lang.String" value="janelas.JdgCadastroUsuario" noResource="true"/>
               </Properties>
@@ -143,6 +167,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ImnCadastroVersao">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/cadastroversaoicone48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de vers&#xe3;o"/>
                 <Property name="name" type="java.lang.String" value="janelas.JdgCadastroVersao" noResource="true"/>
               </Properties>
@@ -152,6 +179,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ImnPermissoesUsuario">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/permissoesusuarioicone48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Permiss&#xf5;es do usu&#xe1;rio"/>
                 <Property name="name" type="java.lang.String" value="janelas.JdgListaPermissoes" noResource="true"/>
               </Properties>

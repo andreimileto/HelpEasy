@@ -3,19 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaPermissoes.java</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/DAO/PermissoesDAOTela.java</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/scripts/ScriptTrigger.sql</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/DAO/UsuarioDAO.java</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/scripts/ScriptFuncion.sql</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/DAO/UsuarioPermissaoTelaDAO.java</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/DAO/UsuarioPermissaoTelaAcoesDAO.java</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/DAO/TarefaDAO.java</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/scripts/Script.sql</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/DAO/PermissoesDAOAcoes.java</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/scripts/ScriptView.sql</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaTarefa.java</file>
-            <file>file:/C:/Users/pc04/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroTarefa.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleTarefa.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaPermissoes.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/ConexaoBD.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Cidade.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Cidade.hbm.xml</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroTarefa.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/TelaPrincipal.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/TarefaDAO.java</file>
         </group>
     </open-files>
 </project-private>
