@@ -6,6 +6,6 @@
 /**
  * Author:  User
  * Created: 10/11/2017
-colocar aqui
+esse foi o ultimo arquivo de alteracao do banco.
  */
 
