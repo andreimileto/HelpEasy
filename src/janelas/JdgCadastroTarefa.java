@@ -868,7 +868,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
         ControleTarefa controleTarefa = new ControleTarefa();
         String mensagem = controleTarefa.salvar(tarefa);
-        JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE " + cliente.getEmail());
+      //  JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE " + cliente.getEmail());
         if (mensagem.equals("ok")) {
             if (colaboradores.size()>0) {
                 for (int i = 0; i < colaboradores.size(); i++) {
@@ -880,7 +880,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
             }
 
             //TarefaDAO tarefaDAO = new TarefaDAO();
-            Util.enviodeEmail(cliente);
+            Util.enviodeEmail(tarefa);
             limparCampos();
             JOptionPane.showMessageDialog(rootPane, "Tarefa registrada com sucesso");
 

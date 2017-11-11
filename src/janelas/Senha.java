@@ -172,9 +172,10 @@ public class Senha extends javax.swing.JFrame {
             if (senhaCriptografada.equals(user.getSenha())) {
                 lblValidacaologin.setText("");
                 lblValidacaologin.setForeground(Color.black);
+                dispose();
                 TelaPrincipal tela = new TelaPrincipal(user);
                 tela.setVisible(true);
-                dispose();
+                
             } else {
                 if (count == 3) {
                     JOptionPane.showMessageDialog(rootPane, "Seu sistema será encerrado por diversas falhas de login");

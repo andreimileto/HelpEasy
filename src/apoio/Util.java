@@ -8,6 +8,7 @@ package apoio;
 import controle.ControleEnvioEmail;
 import entidade.EnvioEmail;
 import entidade.Cliente;
+import entidade.Tarefa;
 import java.net.MalformedURLException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -40,9 +41,11 @@ import javax.mail.Multipart;
 public class Util {
 //Cliente cliente;
 
-    public static void enviodeEmail(Cliente cli) {
-        Cliente cliente = new Cliente();
-        cliente = cli;
+    public static void enviodeEmail(Tarefa tar) {
+        //Cliente cliente = new Cliente();
+        Tarefa tarefa = new Tarefa();
+        //cliente = cli;
+        tarefa = tar;
         EnvioEmail Email = new EnvioEmail();
         ControleEnvioEmail controleEnvioEmail = new ControleEnvioEmail();
         ArrayList<EnvioEmail> emails = new ArrayList<>();
@@ -81,24 +84,25 @@ public class Util {
                     return new PasswordAuthentication(emails.get(0).getEmail(), emails.get(0).getSenha());
                 }
             });
-            session.setDebug(true);
+           // session.setDebug(true);
             try {
                 // cria a mensagem
                 MimeMessage msg = new MimeMessage(session);
                 msg.setFrom(new InternetAddress(emails.get(0).getEmail()));
-                InternetAddress[] address = {new InternetAddress(cliente.getEmail())};
+                InternetAddress[] address = {new InternetAddress(tar.getCliente().getEmail())};
                 msg.setRecipients(Message.RecipientType.TO, address);
                 msg.setSubject(emails.get(0).getTitulo());
 
                 // cria a primeira parte da mensagem
                 MimeBodyPart mbp1 = new MimeBodyPart();
-                mbp1.setText(emails.get(0).getMensagem());
+                mbp1.setText(emails.get(0).getMensagem().replace("<cliente>", tarefa.getCliente().getRazaoSocial()));
 
                 // cria a segunda parte da mensage
                 MimeBodyPart mbp2 = new MimeBodyPart();
 
                 // anexa o arquivo na mensagem
-                FileDataSource fds = new FileDataSource("C:\\Users\\Mileto\\Documents\\NetBeansProjects\\HelpEasy\\libs\\modelo.png");
+                String path = System.getProperty("user.dir");
+                FileDataSource fds = new FileDataSource(path + "\\tarefas\\" + tarefa.getId() + "\\relatoriopadraotarefa.pdf");
                 mbp2.setDataHandler(new DataHandler(fds));
                 mbp2.setFileName(fds.getName());
 

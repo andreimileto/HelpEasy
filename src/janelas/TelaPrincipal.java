@@ -407,7 +407,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_ImnPermissoesUsuarioActionPerformed
 
     private void ImnTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnTarefaActionPerformed
-        JdgCadastroTarefa cadastroTarefa = new JdgCadastroTarefa(this, true, userH);
+        JdgCadastroTarefa cadastroTarefa = new JdgCadastroTarefa(this, false, userH);
         cadastroTarefa.setVisible(true);
     }//GEN-LAST:event_ImnTarefaActionPerformed
 
@@ -443,18 +443,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Date data = new Date();
         Motivo motivo = new Motivo();
         Tarefa tarefa = new Tarefa();
-//        tarefa.setCliente(cliente);
-//        tarefa.setFase(fase);
-//        tarefa.setModulo(modulo);
-//        tarefa.setMotivo(motivo);
-//        tarefa.setPrioridade(prioridade);
-//        tarefa.setProjeto(projeto);
-//        tarefa.setSituacao('A');
-//        tarefa.setUsuarioByIdUsuarioAutor(autor);
-//        tarefa.setUsuarioByIdUsuarioResponsavel(responsavel);
-//        tarefa.setVersaoByIdVersaoBug(versaoBug);
-//        tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
-//        tarefa.setTitulo("aaa");
+
         
         JdgListaTarefa listaTarefa = new JdgListaTarefa(null, true, tarefa,motivo,autor, responsavel, projeto, prioridade, modulo, versaoBug, versaoCorrecao, fase,cliente);
         listaTarefa.setVisible(true);

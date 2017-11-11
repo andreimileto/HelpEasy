@@ -127,7 +127,7 @@ public class ControleTarefa {
                     //int maiorId = tarefaDAO.ultimoId(tarefa);
                     //Formatacao.criarDiretorioTarefa(maiorId + "");
                     
-                    JOptionPane.showMessageDialog(null, "Id tarefa "+tarefa.getId());
+                //    JOptionPane.showMessageDialog(null, "Id tarefa "+tarefa.getId());
                     return "ok";
                 } else {
                     return mensagem = mensagem + "\nEntre em contato com o suporte";
