@@ -9,7 +9,14 @@ CREATE TABLE usuario (
   login VARCHAR(100) NOT NULL,
   senha VARCHAR(45) NOT NULL,
   situacao CHAR(1) NOT NULL,
+  datahora_ultimavisualizacao timestamp default now(),
   PRIMARY KEY (id));
+
+--Insere os Usuários Padrões;
+--Senha: 123456--
+insert into usuario values(default,'Andrei','andrei','e10adc3949ba59abbe56e057f20f883e','A');
+--Senha: 123456--       
+insert into usuario values (default,'Leandro','leandro','e10adc3949ba59abbe56e057f20f883e','A');
 
 --Insere os Usuários Padrões;
 --Senha: 123456--
@@ -223,24 +230,28 @@ CREATE TABLE IF NOT EXISTS tarefa (
 
 
 -- -----------------------------------------------------
--- Table movimento_tarefa
+-- Table tarefa_usuario
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS movimento_tarefa (
   id serial,
   id_tarefa INT NOT NULL,
+  id_usuario INT NOT NULL,
   descricao text NOT NULL,
   datahora_movimento timestamp default now(),
   situacao CHAR(1) NOT NULL,
   anexo VARCHAR(45) NULL,
   PRIMARY KEY (id),
---  INDEX fk_movimento_tarefa_tarefa_idx (id_tarefa),
   CONSTRAINT fk_movimento_tarefa_tarefa
     FOREIGN KEY (id_tarefa)
     REFERENCES tarefa (id)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+   CONSTRAINT fk_movimento_tarefa_tarefa_id_usuario
+    FOREIGN KEY (id_usuario)
+    REFERENCES usuario (id)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ;
-
 
 -- -----------------------------------------------------
 -- Table tarefa_usuario
@@ -263,7 +274,6 @@ CREATE TABLE IF NOT EXISTS tarefa_usuario (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ;
-
 
 CREATE EXTENSION hstore;
 CREATE TABLE IF NOT EXISTS auditoria

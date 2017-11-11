@@ -29,7 +29,7 @@ FROM usuario u
 CREATE VIEW viewTelas as
 SELECT t.*,u.id as id_usuario FROM telas t,usuario u;
 
---DROP VIEW viewTelasFaltantes ;
+--DROP VIEW viewTelasFaltantes;
 create view viewTelasFaltantes as
 select distinct vT.id_usuario,vT.tela,vT.tela_amigavel,true as permite_acesso 
 from viewTelas vT
@@ -45,3 +45,50 @@ from viewTelas vT
 	left join viewPermissoes vP on vP.tela = vT.tela and vP.id_usuario = vT.id_usuario and vP.acao = vT.acao
 where 
 	vP.tela is null;
+
+--DROP VIEW viewUsuariosAlteracoes;
+CREATE VIEW viewUsuariosAlteracoes as
+SELECT 
+	u.id as id_usuario
+	, T.id as id_tarefa
+	, 'Tarefa "' || cast(t.id as varchar) || '-' || t.titulo || '" foi criada pelo usuário "'
+		     || ua.id || ' - ' || ua.nome || '" e você é o responsável.' as Texto
+FROM usuario u
+	INNER JOIN tarefa t on u.Id = t.id_usuario_responsavel 
+	INNER JOIN usuario ua on ua.Id = t.id_usuario_autor
+WHERE 
+	u.datahora_ultimavisualizacao < t.datahora_criacao AND
+	t.id_usuario_responsavel  <> t.id_usuario_autor
+
+UNION ALL
+
+SELECT
+	u.id as id_usuario
+	, T.id as id_tarefa
+	, 'Tarefa "' || cast(t.id as varchar) || '-' || t.titulo || '" foi modificada pelo usuário "' 
+		     || ua.id || ' - ' || ua.nome || '" e você é o ' || 
+		     CASE WHEN id_usuario_responsavel = u.id AND id_usuario_autor = u.id THEN 'autor/responsável.' ELSE 
+		     CASE WHEN id_usuario_responsavel = u.id THEN 'responsável.' ELSE 'autor.' END END as Texto
+FROM usuario u
+	INNER JOIN tarefa t on u.Id = t.id_usuario_responsavel or u.Id = t.id_usuario_autor
+	INNER JOIN movimento_tarefa mt on t.Id = mt.id_tarefa
+	INNER JOIN usuario ua on ua.Id = mt.id_usuario
+WHERE 
+	u.datahora_ultimavisualizacao < mt.datahora_movimento
+	AND mt.id_usuario <> u.id
+
+UNION ALL
+
+SELECT
+	u.id as id_usuario
+	, T.id as id_tarefa
+	, 'Tarefa "' || cast(t.id as varchar) || '-' || t.titulo || '" foi modificada pelo usuário "' 
+		     || ua.id || ' - ' || ua.nome || '" e você é participante. ' as Texto
+FROM tarefa_usuario tu
+	INNER JOIN usuario u on tu.id_usuario = u.id
+	INNER JOIN tarefa t on t.id = tu.id_tarefa and (tu.Id_usuario = t.id_usuario_responsavel or tu.Id = t.id_usuario_autor)
+	INNER JOIN movimento_tarefa mt on t.Id = mt.id_tarefa
+	INNER JOIN usuario ua on ua.Id = mt.id_usuario
+WHERE 
+	u.datahora_ultimavisualizacao < mt.datahora_movimento
+	AND mt.id_usuario <> u.id

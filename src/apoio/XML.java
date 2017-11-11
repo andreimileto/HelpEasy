@@ -13,9 +13,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
@@ -28,10 +26,8 @@ public class XML {
         try {
             XStream xStream = new XStream();
             xStream.alias("cliente", Cliente.class);
-
             ClienteDAO cliDAO = new ClienteDAO();
             ArrayList<Cliente> clientes = cliDAO.listarTodos();
-
             for (int i = 0; i < clientes.size(); i++) {
                 xml = xStream.toXML(clientes.get(i));
                 gravarArquivo("./exportacaoClientes/cliente_" + clientes.get(i).getCpfCnpj()+ ".XML", xml);
@@ -48,11 +44,9 @@ public class XML {
             ClienteDAO cliDAO = new ClienteDAO();
             xStream.alias("cliente", Cliente.class);
             File arquivos[];
-
             File diretorio = new File("./exportacaoClientes/");
             arquivos = diretorio.listFiles();
             for (int i = 0; i < arquivos.length; i++) {
-                System.out.println(arquivos[i]);
                 Cliente novoCliente = (Cliente) xStream.fromXML(lerArquivo(arquivos[i].toString()));
                 cliDAO.salvar(novoCliente);
             }
@@ -69,7 +63,6 @@ public class XML {
             while (br.ready()) {
                 String linha = br.readLine();
                 sLinhaCompleta = sLinhaCompleta + linha;
-
             }
             br.close();
         } catch (Exception e) {
@@ -87,7 +80,7 @@ public class XML {
             bw.flush();
             bw.close();
         } catch (Exception e) {
-
+            System.out.println("erro " + e.getMessage());
         }
     }
 }

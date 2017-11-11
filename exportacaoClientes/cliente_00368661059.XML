@@ -1,6 +1,6 @@
 <cliente>
   <id>2</id>
-  <cidade class="entidade.Cidade_$$_jvst744_1" resolves-to="org.hibernate.proxy.pojo.javassist.SerializableProxy">
+  <cidade class="entidade.Cidade_$$_jvst38_1" resolves-to="org.hibernate.proxy.pojo.javassist.SerializableProxy">
     <entityName>entidade.Cidade</entityName>
     <id class="int">1</id>
     <readOnly>false</readOnly>
@@ -20,7 +20,7 @@
   <cpfCnpj>00368661059</cpfCnpj>
   <tipoCadastro>F</tipoCadastro>
   <clientecol></clientecol>
-  <endereco>TESTE</endereco>
+  <endereco>TESTE33333</endereco>
   <telefone>11111111111</telefone>
   <email>TESTE@TESTE.COM.BR</email>
   <situacao>A</situacao>
