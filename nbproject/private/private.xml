@@ -3,9 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/Senha.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/Util.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleTarefa.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroUsuario.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaPermissoes.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/apoio/ConexaoBD.java</file>
@@ -13,8 +11,11 @@
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/entidade/Cidade.hbm.xml</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgCadastroTarefa.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaTarefa.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/JdgListaProjeto.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/Senha.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/controle/ControleTarefa.java</file>
+            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/jfmDashboard.java</file>
             <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/janelas/TelaPrincipal.java</file>
-            <file>file:/C:/Users/Mileto/Documents/NetBeansProjects/HelpEasy/src/DAO/TarefaDAO.java</file>
         </group>
     </open-files>
 </project-private>
