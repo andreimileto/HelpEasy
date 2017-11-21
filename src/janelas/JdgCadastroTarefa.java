@@ -5,12 +5,14 @@ import DAO.TarefaDAO;
 import DAO.TarefaUsuarioDAO;
 import apoio.Formatacao;
 import apoio.Util;
+import controle.ControleMovimentoTarefa;
 import controle.ControleTarefa;
 import entidade.Cidade;
 import entidade.Cliente;
 import entidade.Fase;
 import entidade.Modulo;
 import entidade.Motivo;
+import entidade.MovimentoTarefa;
 import entidade.Prioridade;
 import entidade.Projeto;
 import entidade.Tarefa;
@@ -135,8 +137,8 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         try {
             if (tarefa.getId() > 0) {
                 tfdId.setText(tarefa.getId() + "");
-             //   JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getId() + "..id autor..");
-               // JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getNome() + "..nome autor..");
+                //   JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getId() + "..id autor..");
+                // JOptionPane.showMessageDialog(rootPane, tarefa.getUsuarioByIdUsuarioAutor().getNome() + "..nome autor..");
                 tfdNomeAutor.setText(tarefa.getUsuarioByIdUsuarioAutor().getNome());
                 tfdNomeResponsavel.setText(tarefa.getUsuarioByIdUsuarioResponsavel().getNome());
                 tfdNomeCliente.setText(tarefa.getCliente().getRazaoSocial());
@@ -151,7 +153,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
                 tfaDescricaoTarefa.setText(tarefa.getDescricao());
                 tfdVersaoBug.setText(tarefa.getVersaoByIdVersaoBug().getDescricao());
                 tfdVersaoCorrecao.setText(tarefa.getVersaoByIdVersaoCorrecao().getDescricao());
-           //     JOptionPane.showMessageDialog(rootPane, tarefa.getDatahoraPrevisao() + "previsao");
+                //     JOptionPane.showMessageDialog(rootPane, tarefa.getDatahoraPrevisao() + "previsao");
                 JdcPrevisão.setDate(tarefa.getDatahoraPrevisao());
                 JdcInclusao.setDate(tarefa.getDatahoraCriacao());
                 JdcUltimaModificacao.setDate(tarefa.getDatahoraConclusao());
@@ -836,17 +838,11 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         if (tfdId.getText().length() > 0) {
             tarefa.setId(Integer.parseInt(tfdId.getText()));
         }
+
         tarefa.setTitulo(tfdTituloTarefa.getText());
         tarefa.setDescricao(tfaDescricaoTarefa.getText());
         tarefa.setCliente(cliente);
         tarefa.setFase(fase);
-//        //inserido manual, pois ainda não foi feito os cadastros:
-//        modulo.setId(1);
-//        versaoBug.setId(1);
-//        versaoCorrecao.setId(1);
-//        //---------
-//        
-
         tarefa.setModulo(modulo);
         tarefa.setMotivo(motivo);
         tarefa.setPrioridade(prioridade);
@@ -868,20 +864,43 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
         ControleTarefa controleTarefa = new ControleTarefa();
         String mensagem = controleTarefa.salvar(tarefa);
-      //  JOptionPane.showMessageDialog(rootPane, "EMAIL CLIENTE " + cliente.getEmail());
         if (mensagem.equals("ok")) {
-            if (colaboradores.size()>0) {
+            if (colaboradores.size() > 0) {
                 for (int i = 0; i < colaboradores.size(); i++) {
-                TarefaUsuarioDAO tarefaUsuarioDAO = new TarefaUsuarioDAO();    
-                tarefaUsuarioDAO.salvar(colaboradores.get(i));
+                    TarefaUsuarioDAO tarefaUsuarioDAO = new TarefaUsuarioDAO();
+                    tarefaUsuarioDAO.salvar(colaboradores.get(i));
                 }
-                
-                
             }
 
-            //TarefaDAO tarefaDAO = new TarefaDAO();
+            if (tarefa.getId() > 0 && tfaNovoMovimento.getText().length()>0) {
+                MovimentoTarefa movTarefa = new MovimentoTarefa();
+                movTarefa.setTarefa(tarefa);
+                movTarefa.setDescricao(tfaNovoMovimento.getText());
+                movTarefa.setSituacao('A');
+                movTarefa.setAnexo("xxx");
+                movTarefa.setUsuario(TelaPrincipal.userH);
+                try {
+                    Date data;
+                    data = Formatacao.getDataAtualEmDate();
+                    movTarefa.setDatahoraMovimento(data);
+                } catch (ParseException ex) {
+                    TelaPrincipal.logH.gravaErro(JdgCadastroTarefa.class.getName(),"erro"); 
+                }
+                ControleMovimentoTarefa movimentotarefa = new ControleMovimentoTarefa();
+                movimentotarefa.salvar(movTarefa);
+            }
+
             Util.enviodeEmail(tarefa);
-            limparCampos();
+            if (tarefa.getId() == 0) {
+                tfaNovoMovimento.setEnabled(false);
+                tfaNovoMovimento.grabFocus();
+            } else {
+                tfaNovoMovimento.setText("");
+                tfaNovoMovimento.grabFocus();
+            }
+            tfaNovoMovimento.setEnabled(true);
+            tfaNovoMovimento.setText("");
+            tfaNovoMovimento.grabFocus();
             JOptionPane.showMessageDialog(rootPane, "Tarefa registrada com sucesso");
 
         } else {
@@ -939,21 +958,20 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnLocalizarModuloActionPerformed
 
-    
-    private void habilitarDesabilitarBotoes(){
-        if (tarefa.getId()>0) {
+    private void habilitarDesabilitarBotoes() {
+        if (tarefa.getId() > 0) {
             btnLocalizarModulo.setEnabled(true);
             btnLocalizarColaboradores.setEnabled(true);
             btnLocalizarVersaoBug.setEnabled(true);
             btnLocalizarVersaoCorrecao.setEnabled(true);
             tfaNovoMovimento.setEnabled(true);
-        }else{
-             btnLocalizarModulo.setEnabled(false);
+        } else {
+            btnLocalizarModulo.setEnabled(false);
             btnLocalizarColaboradores.setEnabled(false);
             btnLocalizarVersaoBug.setEnabled(false);
             btnLocalizarVersaoCorrecao.setEnabled(false);
             tfaNovoMovimento.setEnabled(false);
-            
+
         }
     }
     private void btnLocalizarVersaoBugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarVersaoBugActionPerformed
@@ -977,48 +995,47 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLocalizarVersaoCorrecaoActionPerformed
 
     private void btnLocalizarColaboradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarColaboradoresActionPerformed
-        
-         novoUsuario = new Usuario();
+
+        novoUsuario = new Usuario();
         JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, novoUsuario);
         listaUsuario.setVisible(true);
-        
+
         tfdNomeColaborador.setText(novoUsuario.getNome());
-       
-             
+
 
     }//GEN-LAST:event_btnLocalizarColaboradoresActionPerformed
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
-         if (novoUsuario.getId()>0) {
-             boolean ok = true;
-             
-             for (int i = 0; i < colaboradores.size(); i++) {
-                 if (novoUsuario.getId() == colaboradores.get(i).getUsuario().getId()) {
-                     ok = false;
-                 }
-             }
-             if (ok) {
-                 tarefaUsuario = new TarefaUsuario();
-            tarefaUsuario.setUsuario(novoUsuario);
-            tarefaUsuario.setTarefa(tarefa);
-            colaboradores.add(tarefaUsuario);
-            listarColaboradores();
-             }else{
-                 JOptionPane.showMessageDialog(rootPane, "Erro ao adicionar colaborador:\nColaborador já adicionado na lista.");
-             }
-             
+        if (novoUsuario.getId() > 0) {
+            boolean ok = true;
+
+            for (int i = 0; i < colaboradores.size(); i++) {
+                if (novoUsuario.getId() == colaboradores.get(i).getUsuario().getId()) {
+                    ok = false;
+                }
+            }
+            if (ok) {
+                tarefaUsuario = new TarefaUsuario();
+                tarefaUsuario.setUsuario(novoUsuario);
+                tarefaUsuario.setTarefa(tarefa);
+                colaboradores.add(tarefaUsuario);
+                listarColaboradores();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Erro ao adicionar colaborador:\nColaborador já adicionado na lista.");
+            }
+
             tfdNomeColaborador.setText("");
         }
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        int retornoMensagem = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a tarefa "+tarefa.getId() +" ?");
-        if (retornoMensagem ==0) {
+        int retornoMensagem = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja excluir a tarefa " + tarefa.getId() + " ?");
+        if (retornoMensagem == 0) {
             tarefa.setSituacao('I');
             ControleTarefa controleTarefa = new ControleTarefa();
             String retorno = controleTarefa.salvar(tarefa);
             if (retorno.equalsIgnoreCase("ok")) {
-                JOptionPane.showMessageDialog(rootPane, "tarefa "+tarefa.getId()+" excluída com sucesso!");
+                JOptionPane.showMessageDialog(rootPane, "tarefa " + tarefa.getId() + " excluída com sucesso!");
                 limparCampos();
             }
         }
@@ -1033,7 +1050,7 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
             tblColaboradores.getColumnModel().getColumn(2).setPreferredWidth(100);
 
         } catch (Exception ex) {
-            System.out.println("erro listarColaboradores "+ex);
+            System.out.println("erro listarColaboradores " + ex);
             janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(), ex.getMessage());
         }
     }
@@ -1047,7 +1064,6 @@ public class JdgCadastroTarefa extends javax.swing.JDialog {
 
 //        TarefaUsuarioDAO tarefaUsuarioDAO = new TarefaUsuarioDAO();
 //         colaboradores = tarefaUsuarioDAO.listar(tarefaUsuario);
-
         dtm.addColumn("ID");
         dtm.addColumn("ID TAREFA");
         dtm.addColumn("NOME");

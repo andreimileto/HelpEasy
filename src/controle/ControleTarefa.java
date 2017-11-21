@@ -5,14 +5,10 @@
  */
 package controle;
 
-import DAO.ClienteDAO;
 import DAO.TarefaDAO;
-import apoio.Formatacao;
-import entidade.Cliente;
 import entidade.Tarefa;
 import entidade.Versao;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *

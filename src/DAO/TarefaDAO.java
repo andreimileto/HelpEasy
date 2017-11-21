@@ -62,17 +62,8 @@ public class TarefaDAO extends DAO {
                 tarefa.setId(tarefa.getId());  
                 
                 gerarRelatorio(tarefa.getId());  
-            }
-            
-            
-                //JOptionPane.showMessageDialog(null, "id tarefa ="+tarefa.getId());
-                
-
-              //  int id = tarefa.getId();
-                
-            
+            }           
         } catch (HibernateException he) {
-            //janelas.TelaPrincipal.logH.gravaErro(o.getClass().getName(),janelas.TelaPrincipal.userH.getLogin(),"err");
             he.printStackTrace();
         } finally {
             session.close();
