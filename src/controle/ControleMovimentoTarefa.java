@@ -8,6 +8,7 @@ package controle;
 import DAO.MovimentoTarefaDAO;
 import DAO.TarefaDAO;
 import entidade.MovimentoTarefa;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -18,7 +19,7 @@ public class ControleMovimentoTarefa {
 
     MovimentoTarefa movimentoTarefa;
 
-    public String salvar(MovimentoTarefa movimentoTarefa) {
+    public String salvar(MovimentoTarefa movimentoTarefa) throws IOException {
         this.movimentoTarefa = movimentoTarefa;
         String mensagem = "Erro ao salvar tarefa:\n";
         MovimentoTarefaDAO movtarefaDAO = new MovimentoTarefaDAO();
@@ -35,6 +36,12 @@ public class ControleMovimentoTarefa {
         this.movimentoTarefa = movimentoTarefa;
         MovimentoTarefaDAO movimentotarefaDAO = new MovimentoTarefaDAO();
         return movimentotarefaDAO.listar(this.movimentoTarefa);
+    }
+    
+    public ArrayList<MovimentoTarefa> listarDescricao(MovimentoTarefa movimentoTarefa) {
+        this.movimentoTarefa = movimentoTarefa;
+        MovimentoTarefaDAO movimentotarefaDAO = new MovimentoTarefaDAO();
+        return movimentotarefaDAO.listarDescricao(this.movimentoTarefa);
     }
 
 }

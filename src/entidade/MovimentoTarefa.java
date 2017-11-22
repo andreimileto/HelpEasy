@@ -20,6 +20,10 @@ public class MovimentoTarefa  implements java.io.Serializable {
 
     public MovimentoTarefa() {
     }
+    
+    public MovimentoTarefa(Tarefa tarefa) {
+        this.tarefa = tarefa;
+    }
 
 	
     public MovimentoTarefa(int id, Tarefa tarefa, Usuario usuario, String descricao, char situacao) {
