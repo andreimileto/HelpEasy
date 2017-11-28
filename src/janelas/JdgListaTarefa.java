@@ -17,10 +17,20 @@ import entidade.Projeto;
 import entidade.Tarefa;
 import entidade.Usuario;
 import entidade.Versao;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
 import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -49,7 +59,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         initComponents();
 
     }
-    
+
     public JdgListaTarefa(java.awt.Frame parent, boolean modal, Tarefa tarefa) {
         super(parent, modal);
         initComponents();
@@ -57,7 +67,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         //listarTarefas();
     }
 
-    public JdgListaTarefa(java.awt.Frame parent, boolean modal, Tarefa tarefa, Motivo motivo,Usuario autor, Usuario responsavel, Projeto projeto, Prioridade prioridade, Modulo modulo, Versao versaoBug, Versao versaoCorrecao,Fase fase,Cliente cliente) {
+    public JdgListaTarefa(java.awt.Frame parent, boolean modal, Tarefa tarefa, Motivo motivo, Usuario autor, Usuario responsavel, Projeto projeto, Prioridade prioridade, Modulo modulo, Versao versaoBug, Versao versaoCorrecao, Fase fase, Cliente cliente) {
         super(parent, modal);
 
         initComponents();
@@ -66,13 +76,13 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         tarefa.setMotivo(motivo);
         this.autor = autor;
         tarefa.setUsuarioByIdUsuarioAutor(autor);
-        this.responsavel= responsavel;
+        this.responsavel = responsavel;
         tarefa.setUsuarioByIdUsuarioResponsavel(responsavel);
-        this.projeto=projeto;
+        this.projeto = projeto;
         tarefa.setProjeto(projeto);
         this.prioridade = prioridade;
         tarefa.setPrioridade(prioridade);
-        this.modulo =modulo;
+        this.modulo = modulo;
         tarefa.setModulo(modulo);
         this.versaoBug = versaoBug;
         tarefa.setVersaoByIdVersaoBug(versaoBug);
@@ -80,13 +90,12 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
         this.fase = fase;
         tarefa.setFase(fase);
-     
+
         this.cliente = cliente;
         tarefa.setCliente(cliente);
-                
+
         // this.cid = cid;
         //listarTarefas();
-
     }
 
     private void listarTarefas() {
@@ -99,7 +108,6 @@ public class JdgListaTarefa extends javax.swing.JDialog {
             tblListaTarefas.getColumnModel().getColumn(3).setPreferredWidth(80);
             tblListaTarefas.getColumnModel().getColumn(4).setPreferredWidth(80);
             tblListaTarefas.getColumnModel().getColumn(5).setPreferredWidth(20);
-            
 
         } catch (Exception ex) {
             System.out.println("Erro " + ex);
@@ -117,7 +125,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
 //        cid.setDescricao("");
 //        cliente.setRazaoSocial(tfdFiltro.getText());
 //        cliente.setCpfCnpj(tfdFiltro.getText());
-if (tarefa.getTitulo()==null) {
+        if (tarefa.getTitulo() == null) {
             tarefa.setTitulo("");
         }
         if (tarefa.getDescricao() == null) {
@@ -132,7 +140,6 @@ if (tarefa.getTitulo()==null) {
         dtm.addColumn("AUTOR");
         dtm.addColumn("RESPONSÁVEL");
         dtm.addColumn("FASE");
-        
 
         for (int i = 0; i < tarefas.size(); i++) {
 
@@ -141,10 +148,8 @@ if (tarefa.getTitulo()==null) {
                 tarefas.get(i).getTitulo(),
                 String.valueOf(tarefas.get(i).getUsuarioByIdUsuarioAutor().getNome()),
                 String.valueOf(tarefas.get(i).getUsuarioByIdUsuarioResponsavel().getNome()),
-                String.valueOf(tarefas.get(i).getFase().getDescricao()),
-//                String.valueOf(tarefas.get(i).getDatahoraConclusao())
-                
-            });
+                String.valueOf(tarefas.get(i).getFase().getDescricao()), //                String.valueOf(tarefas.get(i).getDatahoraConclusao())
+        });
         }
         return dtm;
     }
@@ -156,56 +161,52 @@ if (tarefa.getTitulo()==null) {
 
         TarefaDAO tarDAO = new TarefaDAO();
         ArrayList<Tarefa> tarefas = tarDAO.listarUmId(tarefa);
-        
-       // JOptionPane.showMessageDialog(null, "data previsao "+ tarefas.get(0).getDatahoraPrevisao());
 
+        // JOptionPane.showMessageDialog(null, "data previsao "+ tarefas.get(0).getDatahoraPrevisao());
         this.tarefa = tarefas.get(0);
         tarefa.setDatahoraPrevisao(tarefas.get(0).getDatahoraPrevisao());
-       // JOptionPane.showMessageDialog(rootPane, tarefa.getDatahoraPrevisao());
+        // JOptionPane.showMessageDialog(rootPane, tarefa.getDatahoraPrevisao());
         motivo.setId(tarefas.get(0).getMotivo().getId());
         motivo.setDescricao(tarefas.get(0).getMotivo().getDescricao());
         tarefa.setMotivo(motivo);
-        
+
         autor.setId(tarefas.get(0).getUsuarioByIdUsuarioAutor().getId());
-       autor.setNome(tarefas.get(0).getUsuarioByIdUsuarioAutor().getNome());
-       tarefa.setUsuarioByIdUsuarioAutor(autor);
-       
-       responsavel.setId(tarefas.get(0).getUsuarioByIdUsuarioResponsavel().getId());
-       responsavel.setNome(tarefas.get(0).getUsuarioByIdUsuarioResponsavel().getNome());
-       tarefa.setUsuarioByIdUsuarioResponsavel(responsavel);
-       
-       projeto.setId(tarefas.get(0).getProjeto().getId());
-       projeto.setDescricao(tarefas.get(0).getProjeto().getDescricao());
-       tarefa.setProjeto(projeto);
-       
-         prioridade.setId(tarefas.get(0).getPrioridade().getId());
-       prioridade.setDescricao(tarefas.get(0).getPrioridade().getDescricao());
-       tarefa.setPrioridade(prioridade);
-       
-       modulo.setId(tarefas.get(0).getModulo().getId());
+        autor.setNome(tarefas.get(0).getUsuarioByIdUsuarioAutor().getNome());
+        tarefa.setUsuarioByIdUsuarioAutor(autor);
+
+        responsavel.setId(tarefas.get(0).getUsuarioByIdUsuarioResponsavel().getId());
+        responsavel.setNome(tarefas.get(0).getUsuarioByIdUsuarioResponsavel().getNome());
+        tarefa.setUsuarioByIdUsuarioResponsavel(responsavel);
+
+        projeto.setId(tarefas.get(0).getProjeto().getId());
+        projeto.setDescricao(tarefas.get(0).getProjeto().getDescricao());
+        tarefa.setProjeto(projeto);
+
+        prioridade.setId(tarefas.get(0).getPrioridade().getId());
+        prioridade.setDescricao(tarefas.get(0).getPrioridade().getDescricao());
+        tarefa.setPrioridade(prioridade);
+
+        modulo.setId(tarefas.get(0).getModulo().getId());
         modulo.setDescricao(tarefas.get(0).getModulo().getDescricao());
-       tarefa.setModulo(modulo);
-       
-           
-       versaoBug.setId(tarefas.get(0).getVersaoByIdVersaoBug().getId());
-       versaoBug.setDescricao(tarefas.get(0).getVersaoByIdVersaoBug().getDescricao());
-       tarefa.setVersaoByIdVersaoBug(versaoBug);
-       
-       versaoCorrecao.setId(tarefas.get(0).getVersaoByIdVersaoCorrecao().getId());
-       versaoCorrecao.setDescricao(tarefas.get(0).getVersaoByIdVersaoCorrecao().getDescricao());
-       tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
-       
-       fase.setId(tarefas.get(0).getFase().getId());
-       fase.setDescricao(tarefas.get(0).getFase().getDescricao());
-       tarefa.setFase(fase);
-       
-       
-       cliente.setId(tarefas.get(0).getCliente().getId());
-       cliente.setRazaoSocial(tarefas.get(0).getCliente().getRazaoSocial());
-       cliente.setEmail(tarefas.get(0).getCliente().getEmail());
-       tarefa.setCliente(cliente);
-        
-   
+        tarefa.setModulo(modulo);
+
+        versaoBug.setId(tarefas.get(0).getVersaoByIdVersaoBug().getId());
+        versaoBug.setDescricao(tarefas.get(0).getVersaoByIdVersaoBug().getDescricao());
+        tarefa.setVersaoByIdVersaoBug(versaoBug);
+
+        versaoCorrecao.setId(tarefas.get(0).getVersaoByIdVersaoCorrecao().getId());
+        versaoCorrecao.setDescricao(tarefas.get(0).getVersaoByIdVersaoCorrecao().getDescricao());
+        tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
+
+        fase.setId(tarefas.get(0).getFase().getId());
+        fase.setDescricao(tarefas.get(0).getFase().getDescricao());
+        tarefa.setFase(fase);
+
+        cliente.setId(tarefas.get(0).getCliente().getId());
+        cliente.setRazaoSocial(tarefas.get(0).getCliente().getRazaoSocial());
+        cliente.setEmail(tarefas.get(0).getCliente().getEmail());
+        tarefa.setCliente(cliente);
+
         this.setVisible(false);
     }
 
@@ -573,22 +574,22 @@ if (tarefa.getTitulo()==null) {
         String nomeResponsavel = responsavel.getNome();
         JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, responsavel);
         listaUsuario.setVisible(true);
-        
+
         if (responsavel.getId() > 0) {
             tfdNomeResponsavel.setText(responsavel.getNome());
 
-        }else{
+        } else {
             responsavel.setId(idResponsavel);
             responsavel.setNome(nomeResponsavel);
         }
     }//GEN-LAST:event_btnLocalizarResponsavelActionPerformed
 
     private void btnLocalizarProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarProjetoActionPerformed
-projeto.setId(0);
-projeto.setDescricao("");
+        projeto.setId(0);
+        projeto.setDescricao("");
         JdgListaProjeto listaProjeto = new JdgListaProjeto(null, true, projeto);
         listaProjeto.setVisible(true);
-        if (projeto.getId() > 0 && projeto.getDescricao().length()>0) {
+        if (projeto.getId() > 0 && projeto.getDescricao().length() > 0) {
             tfdNomeProjeto.setText(projeto.getDescricao());
             versaoBug.setProjeto(projeto);
             versaoCorrecao.setProjeto(projeto);
@@ -612,22 +613,22 @@ projeto.setDescricao("");
     }//GEN-LAST:event_btnLocalizarMotivoActionPerformed
 
     private void btnLocalizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarClienteActionPerformed
-        
+
         int idCliente = cliente.getId();
         String nomeCliente = cliente.getRazaoSocial();
         //int idCidade = cliente.getCidade().getId();
         cid = new Cidade();
-       // cliente = new Cliente();
+        // cliente = new Cliente();
         cliente.setCidade(cid);
-        
+
         JdgListaCliente clientes = new JdgListaCliente(null, true, cliente, cid);
         clientes.setVisible(true);
-        if (cliente.getId() > 0 && cliente.getRazaoSocial().length()>0) {
+        if (cliente.getId() > 0 && cliente.getRazaoSocial().length() > 0) {
             tfdNomeCliente.setText(cliente.getRazaoSocial());
 
-        }else{
+        } else {
             cliente.setId(idCliente);
-           // cid.setId(idCidade);
+            // cid.setId(idCidade);
             cliente.setRazaoSocial(nomeCliente);
             cliente.setCidade(cid);
             tfdNomeCliente.setText(cliente.getRazaoSocial());
@@ -654,7 +655,7 @@ projeto.setDescricao("");
 
         JdgListaVersao listaVersao = new JdgListaVersao(null, true, versaoCorrecao, projeto);
         listaVersao.setVisible(true);
-        if (versaoCorrecao.getId() > 0 && versaoCorrecao.getDescricao().length()>0) {
+        if (versaoCorrecao.getId() > 0 && versaoCorrecao.getDescricao().length() > 0) {
 
             tfdVersaoCorrecao.setText(versaoCorrecao.getDescricao());
 
@@ -664,32 +665,26 @@ projeto.setDescricao("");
     private void btnLocalizarFaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarFaseActionPerformed
         int idFase = fase.getId();
         String nomeFase = fase.getDescricao();
-       // fase  = new Fase();
+        // fase  = new Fase();
         JdgListaFase listaFase = new JdgListaFase(null, true, fase);
         listaFase.setVisible(true);
-        if (fase.getId() > 0 && fase.getDescricao().length()>0) {
+        if (fase.getId() > 0 && fase.getDescricao().length() > 0) {
             tfdFase.setText(fase.getDescricao());
 
-        }else{
+        } else {
             fase.setId(idFase);
             fase.setDescricao(nomeFase);
             tfdFase.setText(fase.getDescricao());
         }
-      
-        
-     
-        
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_btnLocalizarFaseActionPerformed
 
     private void btnLocalizarPrioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarPrioridadeActionPerformed
-        
+
         JdgListaPrioridade listaPrioridade = new JdgListaPrioridade(null, true, prioridade);
         listaPrioridade.setVisible(true);
-        if (prioridade.getId() > 0 && prioridade.getDescricao().length()>0) {
+        if (prioridade.getId() > 0 && prioridade.getDescricao().length() > 0) {
             tfdNomePrioridade.setText(prioridade.getDescricao());
         }
 
@@ -697,12 +692,12 @@ projeto.setDescricao("");
 
     private void btnLocalizarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarAutorActionPerformed
 
-   autor.setId(0);
-   autor.setNome("");
+        autor.setId(0);
+        autor.setNome("");
         JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, autor);
         listaUsuario.setVisible(true);
-        
-        if (autor.getId() > 0 && autor.getNome().length()>0) {
+
+        if (autor.getId() > 0 && autor.getNome().length() > 0) {
             tfdAutor.setText(autor.getNome());
 
         }
@@ -714,7 +709,7 @@ projeto.setDescricao("");
         modulo.setProjeto(projeto);
         JdgListaModulo listaModulo = new JdgListaModulo(null, true, modulo, projeto);
         listaModulo.setVisible(true);
-        if (modulo.getId() > 0 && modulo.getDescricao().length()>0) {
+        if (modulo.getId() > 0 && modulo.getDescricao().length() > 0) {
             tfdNomeModulo.setText(modulo.getDescricao());
         }
     }//GEN-LAST:event_btnLocalizarModuloActionPerformed
@@ -726,22 +721,67 @@ projeto.setDescricao("");
             int id = Integer.parseInt(tfdFiltroId.getText());
             if (id > 0) {
                 //JOptionPane.showMessageDialog(rootPane, "id tarefa"+id);
-            tarefa.setId(id);    
-       //     JOptionPane.showMessageDialog(rootPane, "id tarefa"+tarefa.getId());
+                tarefa.setId(id);
+                //     JOptionPane.showMessageDialog(rootPane, "id tarefa"+tarefa.getId());
             }
-            
+
         } catch (Exception e) {
             tarefa.setId(0);
         }
-       // tarefa.setFase(fase);
+        // tarefa.setFase(fase);
         listarTarefas();
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
     private void btnTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesteActionPerformed
-        try {
-            String query = "Select * from tarefa";
-        } catch (Exception e) {
-        }
+//
+//  JFrame frame = new JFrame("Olá, JFreeChart!");
+//        frame.setResizable(false);
+//        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+//        JPanel raiz = new JPanel();
+//        raiz.setLayout(new BorderLayout());
+//        Dimension tamanho = new Dimension(600, 480);
+//        raiz.setPreferredSize(tamanho);
+//        raiz.setMinimumSize(tamanho);
+//        frame.add(raiz);
+//        frame.pack();
+//        Dimension sd = Toolkit.getDefaultToolkit().getScreenSize();
+//        frame.setLocation((sd.width - frame.getWidth()) / 2, (sd.height - frame.getHeight()) / 2);
+//
+//        // Cria o painel aonde o gráfico será mostrado.
+//        JPanel primeiroGrafico = new JPanel();
+//        Dimension tamanhoArea = new Dimension(600, 450);
+//        primeiroGrafico.setPreferredSize(tamanhoArea);
+//        primeiroGrafico.setMinimumSize(tamanhoArea);
+//        raiz.add(primeiroGrafico, BorderLayout.CENTER);
+//
+//        // Cria o botão.
+//        JPanel areaBotoes = new JPanel();
+//        JButton botao = new JButton("Criar gráfico");
+//        areaBotoes.add(botao);
+//        raiz.add(areaBotoes, BorderLayout.SOUTH);
+//
+//        // Define o que acontece ao clicar no botão.
+//        botao.addActionListener(e -> {
+//            DefaultPieDataset dpd = new DefaultPieDataset();
+//            dpd.setValue("Valor 1", 10D);
+//            dpd.setValue("Valor 2", 20D);
+//            dpd.setValue("Valor 3", 30D);
+//            dpd.setValue("Valor 4", 40D);
+//
+//            JFreeChart grafico = ChartFactory.createPieChart("Nome do Gráfico", dpd, true, true, false);
+//
+//            ChartPanel chartPanel = new ChartPanel(grafico);
+//            primeiroGrafico.add(chartPanel);
+//            primeiroGrafico.validate();
+//        });
+//
+//        // Mostra a tela.
+//        frame.setVisible(true);
+
+        GraficoPizzaDemo grafico = new GraficoPizzaDemo();
+        grafico.gerarGrafico();
+
+
     }//GEN-LAST:event_btnTesteActionPerformed
 
     /**

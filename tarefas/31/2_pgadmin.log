@@ -1,0 +1,116 @@
+2017-08-04 21:42:43 ERROR  : ERROR:  syntax error at or near "@"
+LINE 6: SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+            ^
+2017-08-04 21:43:04 ERROR  : ERROR:  syntax error at or near "ENGINE"
+LINE 1: ENGINE = InnoDB;
+        ^
+2017-08-04 21:43:08 ERROR  : ERROR:  syntax error at or near "`"
+LINE 5: CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
+                                   ^
+2017-08-04 21:44:38 ERROR  : ERROR:  syntax error at or near "INDEX"
+LINE 12:   UNIQUE INDEX login_UNIQUE (login ASC))
+                  ^
+2017-08-04 21:45:15 ERROR  : ERROR:  syntax error at or near ";"
+LINE 11:   PRIMARY KEY (id);
+                           ^
+2017-08-04 21:45:23 ERROR  : ERROR:  syntax error at or near "ASC"
+LINE 34:   INDEX fk_versao_projeto1_idx (id_projeto ASC),
+                                                    ^
+2017-08-04 21:45:44 ERROR  : ERROR:  syntax error at or near "ASC"
+LINE 90:   INDEX fk_cliente_cidade1_idx (id_cidade ASC),
+                                                   ^
+2017-08-04 21:46:13 ERROR  : ERROR:  type "fk_versao_projeto1_idx" does not exist
+LINE 34:   INDEX fk_versao_projeto1_idx (id_projeto),
+                 ^
+2017-08-04 21:47:44 ERROR  : ERROR:  relation "projeto" does not exist
+2017-08-04 21:48:39 ERROR  : ERROR:  type "blob" does not exist
+LINE 144:   descricao BLOB NULL,
+                      ^
+2017-08-04 21:48:54 ERROR  : ERROR:  cannot drop table projeto because other objects depend on it
+DETAIL:  constraint fk_versao_projeto1 on table versao depends on table projeto
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-08-04 21:49:09 ERROR  : ERROR:  type "blob" does not exist
+LINE 144:   descricao BLOB NULL,
+                      ^
+2017-08-04 21:49:23 ERROR  : ERROR:  type "blob" does not exist
+LINE 210:   descricao BLOB NOT NULL,
+                      ^
+2017-08-07 23:02:01 ERROR  : ERROR:  relation "usuario" already exists
+2017-08-07 23:02:18 ERROR  : ERROR:  cannot drop table cidade because other objects depend on it
+DETAIL:  constraint fk_cliente_cidade1 on table cliente depends on table cidade
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-08-07 23:02:38 ERROR  : ERROR:  cannot drop table cidade because other objects depend on it
+DETAIL:  constraint fk_cliente_cidade1 on table cliente depends on table cidade
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-08-11 20:42:56 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+
+2017-08-18 20:19:30 ERROR  : ERROR:  cannot drop table projeto because other objects depend on it
+DETAIL:  constraint fk_versao_projeto1 on table versao depends on table projeto
+constraint fk_modulo_projeto1 on table modulo depends on table projeto
+constraint fk_tarefa_projeto1 on table tarefa depends on table projeto
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-08-25 19:06:57 ERROR  : ERROR:  relation "cidades" does not exist
+LINE 1: delete from cidades;
+                    ^
+2017-08-28 20:06:50 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+
+2017-08-28 20:07:02 ERROR  : ERROR:  syntax error at or near "default"
+LINE 1: insert into usuario(default,'Andrei','andrei','e10adc3949ba5...
+                            ^
+2017-08-28 20:07:27 ERROR  : ERROR:  cannot drop table usuario because other objects depend on it
+DETAIL:  constraint fk_tarefa_usuario1 on table tarefa depends on table usuario
+constraint fk_tarefa_usuario2 on table tarefa depends on table usuario
+constraint fk_tarefa_has_usuario_usuario1 on table tarefa_usuario depends on table usuario
+constraint fk_auditoria_usuario1 on table auditoria depends on table usuario
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-08-28 20:08:05 ERROR  : ERROR:  syntax error at or near "default"
+LINE 1: insert into usuario(default,'Andrei','andrei','e10adc3949ba5...
+                            ^
+2017-08-28 20:08:14 ERROR  : ERROR:  syntax error at or near "'Andrei'"
+LINE 1: insert into usuario(serial,'Andrei','andrei','e10adc3949ba59...
+                                   ^
+2017-08-28 20:08:35 ERROR  : ERROR:  syntax error at or near "default"
+LINE 1: insert into usuario(default,'Andrei','andrei','e10adc3949ba5...
+                            ^
+2017-08-28 20:08:48 ERROR  : ERROR:  syntax error at or near "default"
+LINE 2: insert into usuariovalues (default,'Leandro','leandro','e10a...
+                                   ^
+2017-09-13 20:04:06 ERROR  : ERROR:  syntax error at or near "select"
+LINE 3: select *
+        ^
+2017-09-13 20:04:11 ERROR  : ERROR:  column "cnpj_cpf" does not exist
+LINE 9:             or cnpj_cpf like '%%'
+                       ^
+2017-09-13 20:51:41 ERROR  : ERROR:  syntax error at or near "id"
+LINE 1: delete from cliente whe id = 3
+                                ^
+2017-09-14 20:34:12 ERROR  : ERROR:  syntax error at or near "("
+LINE 1: alter table usuario alter column varchar(200)
+                                                ^
+2017-09-14 20:34:23 ERROR  : ERROR:  syntax error at or near "varchar"
+LINE 1: alter table usuario alter column senha varchar(200);
+                                               ^
+2017-09-14 20:34:32 ERROR  : ERROR:  syntax error at or near "varchar"
+LINE 1: alter table usuario alter  senha varchar(200);
+                                         ^
+2017-09-14 20:34:32 ERROR  : ERROR:  syntax error at or near "varchar"
+LINE 1: alter table usuario alter  senha varchar(200);
+                                         ^
+2017-09-14 20:34:41 ERROR  : ERROR:  syntax error at or near "alter"
+LINE 1: alter table usuario alter  senha alter VARCHAR(200);
+                                         ^
+2017-09-14 20:34:41 ERROR  : ERROR:  syntax error at or near "alter"
+LINE 1: alter table usuario alter  senha alter VARCHAR(200);
+                                         ^
+2017-09-15 21:36:55 ERROR  : ERROR:  syntax error at or near "CREATE"
+LINE 4: CREATE TABLE usuario_permissao_tela (
+        ^
+2017-09-15 21:56:37 ERROR  : ERROR:  syntax error at or near "|"
+LINE 1: select * from usuario|
+                             ^
+2017-09-18 18:22:16 ERROR  : ERROR:  cannot drop table modulo because other objects depend on it
+DETAIL:  constraint fk_tarefa_modulo1 on table tarefa depends on table modulo
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-09-18 18:22:22 ERROR  : ERROR:  syntax error at or near "cascade"
+LINE 1: drop cascade table modulo
+             ^

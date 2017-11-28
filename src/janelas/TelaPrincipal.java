@@ -445,7 +445,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Tarefa tarefa = new Tarefa();
 
         
-        JdgListaTarefa listaTarefa = new JdgListaTarefa(null, true, tarefa,motivo,autor, responsavel, projeto, prioridade, modulo, versaoBug, versaoCorrecao, fase,cliente);
+        JdgListaTarefa listaTarefa = new JdgListaTarefa(null, false, tarefa,motivo,autor, responsavel, projeto, prioridade, modulo, versaoBug, versaoCorrecao, fase,cliente);
         listaTarefa.setVisible(true);
         
         ArrayList<Tarefa> tarefas = new ArrayList<>();
