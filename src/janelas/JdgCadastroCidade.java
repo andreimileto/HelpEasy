@@ -45,7 +45,6 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
         btnExcluir = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         btnLocalizar = new javax.swing.JButton();
-        btnBuscaCEP = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Help Easy - Cadastro de cidade");
@@ -94,14 +93,6 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
             }
         });
 
-        btnBuscaCEP.setText("Busca CEP");
-        btnBuscaCEP.setName("btnBuscaCEP"); // NOI18N
-        btnBuscaCEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscaCEPActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -126,10 +117,8 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBuscaCEP)))
-                        .addGap(0, 16, Short.MAX_VALUE)))
+                                .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 117, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -142,9 +131,8 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscaCEP))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                    .addComponent(tfdNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnExcluir)
@@ -250,11 +238,6 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
 
     }//GEN-LAST:event_btnLocalizarActionPerformed
 
-    private void btnBuscaCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaCEPActionPerformed
-        System.out.println("1 - " + Cep.ClienteWs.getEnderecoPorCep("95900068"));
-        System.out.println("2 - " + Cep.ClienteWs.getMapPorCep("95900068"));
-    }//GEN-LAST:event_btnBuscaCEPActionPerformed
-
     private void limparCampos() {
         cidade = new Cidade();
         tfdCodigo.setText("");
@@ -304,7 +287,6 @@ public class JdgCadastroCidade extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscaCEP;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLocalizar;
     private javax.swing.JButton btnSair;
