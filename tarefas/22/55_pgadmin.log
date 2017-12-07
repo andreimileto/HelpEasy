@@ -1,0 +1,1139 @@
+2017-09-01 15:23:54 ERROR  : ERROR:  syntax error at or near "current_setting"
+LINE 1: current_setting('app.usuario')
+        ^
+2017-09-01 15:56:08 ERROR  : ERROR:  syntax error at or near "Call"
+LINE 1: Call fnDisableAuditoria()
+        ^
+2017-09-01 15:56:12 ERROR  : ERROR:  syntax error at or near "Call"
+LINE 1: Call fnDisableAuditoria();
+        ^
+2017-09-01 15:56:14 ERROR  : ERROR:  syntax error at or near "fnDisableAuditoria"
+LINE 1: fnDisableAuditoria();
+        ^
+2017-09-01 15:57:18 ERROR  : ERROR:  relation "cidades" does not exist
+LINE 1: select * from cidades
+                      ^
+2017-09-01 15:57:37 ERROR  : ERROR:  syntax error at or near "'a'"
+LINE 1: insert into cidade ('a','a')
+                            ^
+2017-09-01 15:57:42 ERROR  : ERROR:  invalid input syntax for integer: "a"
+LINE 1: insert into cidade values ('a','a')
+                                   ^
+2017-09-01 16:05:52 ERROR  : ERROR:  syntax error at or near "call"
+LINE 1: call fnDisableAuditoria()
+        ^
+2017-09-01 16:07:51 ERROR  : ERROR:  syntax error at or near "$"
+LINE 1: ...E OR REPLACE FUNCTION fnDisableAuditoria() RETURNS void AS $
+                                                                      ^
+2017-09-01 16:07:58 ERROR  : ERROR:  cannot change return type of existing function
+HINT:  Use DROP FUNCTION fndisableauditoria() first.
+2017-09-01 16:08:08 ERROR  : ERROR:  cannot change return type of existing function
+HINT:  Use DROP FUNCTION fndisableauditoria() first.
+2017-09-01 16:08:09 ERROR  : ERROR:  cannot change return type of existing function
+HINT:  Use DROP FUNCTION fndisableauditoria() first.
+2017-09-01 16:08:38 ERROR  : ERROR:  syntax error at end of input
+LINE 1: DROP FUNCTION fnenableauditoria
+                                       ^
+2017-09-01 16:08:41 ERROR  : ERROR:  cannot change return type of existing function
+HINT:  Use DROP FUNCTION fnenableauditoria() first.
+2017-09-01 16:08:58 ERROR  : ERROR:  syntax error at or near "call"
+LINE 1: call fnDisableAuditoria
+        ^
+2017-09-01 16:10:07 ERROR  : ERROR:  syntax error at or near "fnDisableAuditoria"
+LINE 1: select * fnDisableAuditoria
+                 ^
+2017-09-01 16:10:08 ERROR  : ERROR:  column "fndisableauditoria" does not exist
+LINE 1: select fnDisableAuditoria
+               ^
+2017-09-01 16:10:09 ERROR  : ERROR:  column "fndisableauditoria" does not exist
+LINE 1: select fnDisableAuditoria
+               ^
+2017-09-01 16:10:24 ERROR  : ERROR:  syntax error at or near "{"
+LINE 1: { call fnDisableAuditoria() }
+        ^
+2017-09-01 16:10:29 ERROR  : ERROR:  syntax error at or near "{"
+LINE 1: { call fnDisableAuditoria(); }
+        ^
+2017-09-01 16:19:16 ERROR  : ERROR:  cross-database references are not implemented: public.funciton.fndisableauditoria
+LINE 1:  SELECT public.funciton.fnDisableAuditoria();
+                ^
+2017-09-01 16:19:21 ERROR  : ERROR:  syntax error at or near "call"
+LINE 1:  call public.funciton.fnDisableAuditoria();
+         ^
+2017-09-01 16:21:09 ERROR  : ERROR:  trigger functions can only be called as triggers
+CONTEXT:  compilation of PL/pgSQL function "fnauditoria" near line 1
+2017-09-01 16:21:11 ERROR  : ERROR:  trigger functions can only be called as triggers
+CONTEXT:  compilation of PL/pgSQL function "fnauditoria" near line 1
+2017-09-01 16:21:19 ERROR  : ERROR:  trigger functions can only be called as triggers
+CONTEXT:  compilation of PL/pgSQL function "fnauditoria" near line 1
+2017-09-01 16:21:19 ERROR  : ERROR:  trigger functions can only be called as triggers
+CONTEXT:  compilation of PL/pgSQL function "fnauditoria" near line 1
+2017-09-01 16:21:21 ERROR  : ERROR:  syntax error at or near "call"
+LINE 1: call fnauditoria();
+        ^
+2017-09-01 16:21:48 ERROR  : ERROR:  missing FROM-clause entry for table "public"
+LINE 1: select public.fndisableauditoria
+               ^
+2017-09-01 16:34:06 ERROR  : ERROR:  column "id_usuario" is of type integer but expression is of type text
+LINE 8:  current_setting('app.usuario'),
+         ^
+HINT:  You will need to rewrite or cast the expression.
+QUERY:  INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	current_setting('app.usuario'),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)
+CONTEXT:  PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 16:34:24 ERROR  : ERROR:  column "id_usuario" is of type integer but expression is of type text
+LINE 8:  current_setting('app.usuario'),
+         ^
+HINT:  You will need to rewrite or cast the expression.
+QUERY:  INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	current_setting('app.usuario'),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)
+CONTEXT:  PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 16:42:19 ERROR  : ERROR:  column "id_usuario" is of type integer but expression is of type text
+LINE 8:  current_setting('app.usuario'),
+         ^
+HINT:  You will need to rewrite or cast the expression.
+QUERY:  INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	current_setting('app.usuario'),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)
+CONTEXT:  PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 16:46:33 ERROR  : ERROR:  unrecognized configuration parameter "app.usuario"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	to_number(current_setting('app.usuario'),'999'),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 71 at SQL statement
+2017-09-01 16:47:00 ERROR  : ERROR:  unrecognized configuration parameter "app.usuario"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	to_number(current_setting('app.usuario'),'999'),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 71 at SQL statement
+2017-09-01 16:48:25 ERROR  : ERROR:  unrecognized configuration parameter "app.usuario"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	1,
+	--TG_TABLE_NAME,
+	current_setting('app.usuario'),
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 16:48:27 ERROR  : ERROR:  unrecognized configuration parameter "app.usuario"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	1,
+	--TG_TABLE_NAME,
+	current_setting('app.usuario'),
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 72 at SQL statement
+2017-09-01 16:56:33 ERROR  : ERROR:  syntax error at or near "select"
+LINE 65:  select current_setting('app.usuario'),
+          ^
+2017-09-01 16:56:44 ERROR  : ERROR:  unrecognized configuration parameter "app.usuario"
+2017-09-01 17:02:46 ERROR  : ERROR:  function get_sessid() does not exist
+LINE 2:         INSERT INTO session_var VALUES(get_sessid(),$1,$2); 
+                                               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2017-09-01 17:02:55 ERROR  : ERROR:  function get_sessid() does not exist
+LINE 2:         INSERT INTO session_var VALUES(get_sessid(),$1,$2); 
+                                               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2017-09-01 17:04:04 ERROR  : ERROR:  function set_var(unknown, integer) does not exist
+LINE 1: select set_var('id_user',10); 
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2017-09-01 17:04:55 ERROR  : ERROR:  function set_var(unknown, integer) does not exist
+LINE 1: select set_var('id_user',10); 
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2017-09-01 17:05:05 ERROR  : ERROR:  function set_var(unknown, integer) does not exist
+LINE 1: select set_var('id_user',10); 
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2017-09-01 17:05:22 ERROR  : ERROR:  function set_var(unknown, integer) does not exist
+LINE 1: select set_var('id_user',10); 
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2017-09-01 17:12:04 ERROR  : ERROR:  table "sessa" does not exist
+2017-09-01 17:12:07 ERROR  : ERROR:  table "sessao" does not exist
+2017-09-01 17:12:13 ERROR  : ERROR:  table "session" does not exist
+2017-09-01 17:13:31 ERROR  : ERROR:  relation "session_var" does not exist
+LINE 2:         INSERT INTO session_var VALUES(get_sessid(),$1,$2); 
+                            ^
+2017-09-01 17:13:40 ERROR  : ERROR:  relation "sessao" does not exist
+LINE 2:         INSERT INTO Sessao VALUES(get_sessid(),$1,$2); 
+                            ^
+2017-09-01 17:13:51 ERROR  : ERROR:  relation "session_var" does not exist
+LINE 8:         SELECT val FROM session_var WHERE sessid = get_sessi...
+                                ^
+2017-09-01 17:14:06 ERROR  : ERROR:  column "val" does not exist
+LINE 2:         SELECT val FROM sessao WHERE sessid = get_sessid() A...
+                       ^
+2017-09-01 17:15:14 ERROR  : ERROR:  column "var" does not exist
+LINE 2: ...uario FROM sessao WHERE sessid = get_sessid() AND var = $1; 
+                                                             ^
+2017-09-01 17:15:18 ERROR  : ERROR:  column "var" does not exist
+LINE 2: ...uario FROM sessao WHERE sessid = get_sessid() AND var = $1; 
+                                                             ^
+2017-09-01 17:15:32 ERROR  : ERROR:  return type mismatch in function declared to return text
+DETAIL:  Actual return type is integer.
+CONTEXT:  SQL function "get_var"
+2017-09-01 17:15:47 ERROR  : ERROR:  cannot change return type of existing function
+HINT:  Use DROP FUNCTION get_var(character varying) first.
+2017-09-01 17:15:59 ERROR  : ERROR:  syntax error at end of input
+LINE 1: DROP FUNCTION get_var
+                             ^
+2017-09-01 17:16:02 ERROR  : ERROR:  function get_var() does not exist
+2017-09-01 17:16:06 ERROR  : ERROR:  cannot change return type of existing function
+HINT:  Use DROP FUNCTION get_var(character varying) first.
+2017-09-01 17:16:37 ERROR  : ERROR:  relation "session_var" does not exist
+LINE 2:         INSERT INTO session_var VALUES(get_sessid(),$1,$2); 
+                            ^
+QUERY:   
+        INSERT INTO session_var VALUES(get_sessid(),$1,$2); 
+        select $2; 
+
+CONTEXT:  SQL function "set_var" during startup
+2017-09-01 17:16:45 ERROR  : ERROR:  function set_var(unknown, integer) does not exist
+LINE 1: select set_var('Nome',10); 
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2017-09-01 17:16:56 ERROR  : ERROR:  column "leandro" does not exist
+LINE 1: select set_var(10,Leandro); 
+                          ^
+2017-09-01 17:19:18 ERROR  : ERROR:  syntax error at end of input
+LINE 1: drop table
+                  ^
+2017-09-01 17:20:53 ERROR  : ERROR:  cannot change return type of existing function
+HINT:  Use DROP FUNCTION fngravausuariosessao(integer,character varying) first.
+2017-09-01 17:24:17 ERROR  : ERROR:  return type mismatch in function declared to return integer
+DETAIL:  Function's final statement must be SELECT or INSERT/UPDATE/DELETE RETURNING.
+CONTEXT:  SQL function "fnlimpasessao"
+2017-09-01 17:30:17 ERROR  : ERROR:  syntax error at or near "IF"
+LINE 2: END IF;
+            ^
+2017-09-01 17:31:29 ERROR  : ERROR:  syntax error at or near "call"
+LINE 1: call fnPegaUsuarioSessao()
+        ^
+2017-09-01 17:37:15 ERROR  : ERROR:  null value in column "id_usuario" violates not-null constraint
+DETAIL:  Failing row contains (23, null, cidade, 2017-09-01 17:37:15.678718, U, UPDATE, "id"=>"8", "descricao"=>"a").
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	ordem,
+	campos)
+	VALUES(
+	fnPegaUsuarioSessao(),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	'UPDATE',
+	v_fields_old)"
+PL/pgSQL function fnauditoria() line 71 at SQL statement
+2017-09-01 17:38:49 ERROR  : ERROR:  syntax error at or near "cidades"
+LINE 1: insert cidades values (default,'leandro','a')
+               ^
+2017-09-01 17:38:53 ERROR  : ERROR:  syntax error at or near "cidade"
+LINE 1: insert cidade values (default,'leandro','a')
+               ^
+2017-09-01 17:42:57 ERROR  : ERROR:  syntax error at or near "select"
+LINE 1: create view teste select fnPegaUsuarioSessao()
+                          ^
+2017-09-01 17:45:27 ERROR  : ERROR:  relation "teste" already exists
+2017-09-01 17:45:45 ERROR  : ERROR:  syntax error at or near "elect"
+LINE 1: elect * from sessao_usuario
+        ^
+2017-09-01 17:45:50 ERROR  : ERROR:  relation "teste" already exists
+2017-09-01 17:48:28 ERROR  : ERROR:  relation "teste" already exists
+2017-09-01 18:18:32 ERROR  : ERROR:  invalid input syntax for integer: "Teste"
+LINE 1: INSERT INTO cidade values ('Teste','A');
+                                   ^
+2017-09-01 18:46:48 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+
+2017-09-01 18:49:22 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+
+2017-09-01 18:49:57 ERROR  : ERROR:  extension "pldbgapi" already exists
+2017-09-07 11:50:48 ERROR  : ERROR:  syntax error at or near "SELECT"
+LINE 2: SELECT 1,tablename,'X' FROM pg_catalog.pg_tables
+        ^
+2017-09-07 11:50:56 ERROR  : ERROR:  syntax error at or near "SELECT"
+LINE 2: SELECT 1,tablename,'X' FROM pg_catalog.pg_tables
+        ^
+2017-09-07 11:51:07 ERROR  : ERROR:  syntax error at or near "as"
+LINE 1: ...ERT INTO usuario_permissao (id_usuario,tabela,permissao) as 
+                                                                    ^
+2017-09-07 11:59:10 ERROR  : ERROR:  table "usuario_permissao" does not exist
+2017-09-07 12:02:55 ERROR  : ERROR:  null value in column "situacao" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, cidade, A, N, null).
+2017-09-07 12:03:17 ERROR  : ERROR:  null value in column "situacao" violates not-null constraint
+DETAIL:  Failing row contains (2, 1, cidade, A, N, null).
+2017-09-07 12:07:52 ERROR  : ERROR:  table "usuario_permissao" does not exist
+2017-09-08 19:16:01 ERROR  : ERROR:  syntax error at or near "4"
+LINE 44: 4
+         ^
+2017-09-15 19:11:01 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+
+2017-09-15 19:16:46 ERROR  : ERROR:  syntax error at or near "("
+LINE 5:         PRIMARY KEY (id)
+                            ^
+2017-09-15 19:24:49 ERROR  : ERROR:  column "janelas.JdgCadastroCliente" does not exist
+LINE 1: ...ERT INTO usuario_permissao_tela values (default,1,"janelas.J...
+                                                             ^
+2017-09-15 19:25:39 ERROR  : ERROR:  syntax error at or near "INSERT"
+LINE 2: INSERT INTO usuario_permissao_tela values (default,2,'janela...
+        ^
+2017-09-15 19:30:35 ERROR  : ERROR:  relation "usuario_permissao_tela_acao" does not exist
+LINE 2: inner join usuario_permissao_tela_acao pa on pt.id = pa.id_t...
+                   ^
+2017-09-15 19:30:46 ERROR  : ERROR:  relation "usuario_permissao_tela_acao" does not exist
+LINE 2: inner join usuario_permissao_tela_acao pa on pt.id = pa.id_u...
+                   ^
+2017-09-15 19:32:44 ERROR  : ERROR:  syntax error at or near "pt"
+LINE 2:  pt.id_usuario
+         ^
+2017-09-15 21:06:18 ERROR  : ERROR:  syntax error at or near "CONSTRAINT"
+LINE 7:         CONSTRAINT fk_usuario_permissao_tela_id_usuario
+                ^
+2017-09-15 21:06:22 ERROR  : ERROR:  relation "usuario_permissao_tela" already exists
+2017-09-15 21:06:24 ERROR  : ERROR:  relation "usuario_permissao_tela" already exists
+2017-09-15 21:06:25 ERROR  : ERROR:  relation "usuario_permissao_tela" already exists
+2017-09-15 21:06:26 ERROR  : ERROR:  relation "usuario_permissao_tela" already exists
+2017-09-15 21:06:42 ERROR  : ERROR:  relation "usuario_permissao_tela" does not exist
+LINE 1: INSERT INTO usuario_permissao_tela values (default,1,'janela...
+                    ^
+2017-09-15 21:06:45 ERROR  : ERROR:  relation "usuario_permissao_tela" does not exist
+LINE 1: INSERT INTO usuario_permissao_tela values (default,1,'janela...
+                    ^
+2017-09-15 21:08:46 ERROR  : ERROR:  syntax error at or near "CREATE"
+LINE 3: CREATE TABLE usuario_permissao_tela_acoes (
+        ^
+2017-09-17 17:46:56 ERROR  : ERROR:  null value in column "tela" violates not-null constraint
+DETAIL:  Failing row contains (5, 2, null, null).
+2017-09-17 17:47:00 ERROR  : ERROR:  insert or update on table "usuario_permissao_tela" violates foreign key constraint "fk_usuario_permissao_tela_id_usuario"
+DETAIL:  Key (id_usuario)=(5) is not present in table "usuario".
+2017-09-17 17:47:03 ERROR  : ERROR:  insert or update on table "usuario_permissao_tela" violates foreign key constraint "fk_usuario_permissao_tela_id_usuario"
+DETAIL:  Key (id_usuario)=(5) is not present in table "usuario".
+2017-09-17 17:47:07 ERROR  : ERROR:  insert or update on table "usuario_permissao_tela" violates foreign key constraint "fk_usuario_permissao_tela_id_usuario"
+DETAIL:  Key (id_usuario)=(5) is not present in table "usuario".
+2017-09-17 17:47:35 ERROR  : ERROR:  null value in column "id_tela" violates not-null constraint
+DETAIL:  Failing row contains (17, null, null, null).
+2017-09-17 17:47:37 ERROR  : ERROR:  null value in column "acao" violates not-null constraint
+DETAIL:  Failing row contains (17, 5, null, null).
+2017-09-17 17:47:42 ERROR  : ERROR:  null value in column "permite_acesso" violates not-null constraint
+DETAIL:  Failing row contains (17, 5, btnLocalizar, null).
+2017-09-17 17:47:57 ERROR  : ERROR:  duplicate key value violates unique constraint "usuario_permissao_tela_acoes_pkey"
+DETAIL:  Key (id)=(17) already exists.
+2017-09-17 18:21:34 ERROR  : ERROR:  null value in column "permite_acesso" violates not-null constraint
+DETAIL:  Failing row contains (6, 2, janelas.JdgCadastroCidade, null).
+2017-09-17 18:21:53 ERROR  : ERROR:  null value in column "id_tela" violates not-null constraint
+DETAIL:  Failing row contains (19, null, null, null).
+2017-09-17 18:21:56 ERROR  : ERROR:  null value in column "acao" violates not-null constraint
+DETAIL:  Failing row contains (19, 6, null, null).
+2017-09-17 18:21:59 ERROR  : ERROR:  null value in column "acao" violates not-null constraint
+DETAIL:  Failing row contains (19, 6, null, null).
+2017-09-17 18:22:03 ERROR  : ERROR:  null value in column "permite_acesso" violates not-null constraint
+DETAIL:  Failing row contains (19, 6, btnLocalizar, null).
+2017-09-17 18:37:04 ERROR  : ERROR:  null value in column "tela" violates not-null constraint
+DETAIL:  Failing row contains (7, 1, null, null).
+2017-09-17 18:37:25 ERROR  : ERROR:  null value in column "id_tela" violates not-null constraint
+DETAIL:  Failing row contains (20, null, null, null).
+2017-09-17 18:37:28 ERROR  : ERROR:  null value in column "acao" violates not-null constraint
+DETAIL:  Failing row contains (20, 7, null, null).
+2017-09-20 21:26:16 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+
+2017-09-20 21:34:29 ERROR  : ERROR:  cannot drop table usuario_permissao_tela because other objects depend on it
+DETAIL:  constraint usuario_permissao_tela_id_tela on table usuario_permissao_tela_acoes depends on table usuario_permissao_tela
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-09-20 21:34:32 ERROR  : ERROR:  cannot drop table usuario_permissao_tela because other objects depend on it
+DETAIL:  constraint usuario_permissao_tela_id_tela on table usuario_permissao_tela_acoes depends on table usuario_permissao_tela
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-09-20 21:35:53 ERROR  : ERROR:  relation "usuario_permissao_tela" does not exist
+2017-09-20 21:35:57 ERROR  : ERROR:  table "usuario_permissao_tela" does not exist
+2017-09-20 21:35:57 ERROR  : ERROR:  table "usuario_permissao_tela" does not exist
+2017-09-20 21:35:58 ERROR  : ERROR:  table "usuario_permissao_tela" does not exist
+2017-09-20 21:36:00 ERROR  : ERROR:  table "usuario_permissao_tela_acoes" does not exist
+2017-09-20 21:39:31 ERROR  : ERROR:  relation "usuario_permissao_tela" does not exist
+LINE 1: INSERT INTO usuario_permissao_tela values (default,1,'janela...
+                    ^
+2017-09-20 21:55:46 ERROR  : ERROR:  null value in column "permite_acesso" violates not-null constraint
+DETAIL:  Failing row contains (21, 1, janelas.JdgCadastroCliente, Cadastro de Cliente'S, null).
+2017-09-20 22:48:33 ERROR  : ERROR:  syntax error at or near "selecty"
+LINE 1: selecty * from usuario_permissao_tela
+        ^
+2017-09-20 22:48:34 ERROR  : ERROR:  syntax error at or near "selecty"
+LINE 1: selecty * from usuario_permissao_tela
+        ^
+2017-09-20 22:48:36 ERROR  : ERROR:  syntax error at or near "SELECT"
+LINE 3: SELECT * FROM Usuario
+        ^
+2017-09-20 22:55:09 ERROR  : ERROR:  argument of WHERE must be type boolean, not type bigint
+LINE 2: where id - 25
+              ^
+2017-09-20 22:55:11 ERROR  : ERROR:  syntax error at or near "25"
+LINE 2: where id  25
+                  ^
+2017-09-20 22:55:25 ERROR  : ERROR:  relation "usuario_permissao_tela_acao" does not exist
+LINE 1: select * from usuario_permissao_tela_acao
+                      ^
+2017-09-20 22:56:34 ERROR  : ERROR:  syntax error at or near "default"
+LINE 1: select default,38,acao,acao_amigavel,permite_acesso from usu...
+               ^
+2017-09-22 16:14:17 ERROR  : ERROR:  insert or update on table "usuario_permissao_tela_acoes" violates foreign key constraint "usuario_permissao_tela_id_tela"
+DETAIL:  Key (id_tela)=(24) is not present in table "usuario_permissao_tela".
+2017-09-22 16:26:44 ERROR  : ERROR:  null value in column "permite_acesso" violates not-null constraint
+DETAIL:  Failing row contains (6, 38, btnLocalizar, Localizar, null).
+2017-09-22 16:54:36 ERROR  : ERROR:  null value in column "permite_acesso" violates not-null constraint
+DETAIL:  Failing row contains (26, 2, janelas.JdgCadastroCidade, Cadastro de Cidade, null).
+2017-09-22 17:16:56 ERROR  : ERROR:  null value in column "id_usuario" violates not-null constraint
+DETAIL:  Failing row contains (41, null, null, null, null).
+2017-09-22 17:23:58 ERROR  : ERROR:  null value in column "id_usuario" violates not-null constraint
+DETAIL:  Failing row contains (42, null, null, null, null).
+2017-09-22 17:24:05 ERROR  : ERROR:  null value in column "tela_amigavel" violates not-null constraint
+DETAIL:  Failing row contains (42, 2, menuConfiguracoes, null, null).
+2017-09-22 19:48:05 ERROR  : ERROR:  duplicate key value violates unique constraint "usuario_permissao_tela_pkey"
+DETAIL:  Key (id)=(1) already exists.
+2017-09-22 19:49:06 ERROR  : ERROR:  column "tue" does not exist
+LINE 8: ...anelas.JdgCadastroPrioridade','Cadastro de Prioridade',tue);
+                                                                  ^
+2017-09-22 19:50:44 ERROR  : ERROR:  syntax error at or near "INSERT"
+LINE 2: INSERT INTO usuario_permissao_tela_acoes values (2,1,'btnLoc...
+        ^
+2017-09-22 19:52:07 ERROR  : ERROR:  insert or update on table "usuario_permissao_tela_acoes" violates foreign key constraint "usuario_permissao_tela_id_tela"
+DETAIL:  Key (id_tela)=(20) is not present in table "usuario_permissao_tela".
+2017-09-22 19:54:56 ERROR  : ERROR:  duplicate key value violates unique constraint "usuario_permissao_tela_pkey"
+DETAIL:  Key (id)=(20) already exists.
+2017-09-22 19:59:29 ERROR  : ERROR:  duplicate key value violates unique constraint "usuario_permissao_tela_acoes_pkey"
+DETAIL:  Key (id)=(12) already exists.
+2017-09-22 19:59:32 ERROR  : ERROR:  duplicate key value violates unique constraint "usuario_permissao_tela_acoes_pkey"
+DETAIL:  Key (id)=(12) already exists.
+2017-10-15 17:02:27 ERROR  : ERROR:  null value in column "permite_acesso" violates not-null constraint
+DETAIL:  Failing row contains (100, 2, janelas.JdgParametrosSistema, Parâmetros, null).
+2017-10-15 17:02:43 ERROR  : ERROR:  null value in column "id_tela" violates not-null constraint
+DETAIL:  Failing row contains (93, null, null, null, null).
+2017-10-15 17:05:20 ERROR  : ERROR:  null value in column "id_tela" violates not-null constraint
+DETAIL:  Failing row contains (94, null, null, null, null).
+2017-10-15 17:05:22 ERROR  : ERROR:  null value in column "acao" violates not-null constraint
+DETAIL:  Failing row contains (94, 100, null, null, null).
+2017-10-15 17:05:33 ERROR  : ERROR:  null value in column "permite_acesso" violates not-null constraint
+DETAIL:  Failing row contains (94, 100, btnDisableAuditoria, Desabilita, null).
+2017-10-15 17:07:00 ERROR  : ERROR:  unrecognized configuration parameter "myapp.user"
+2017-10-15 17:33:32 ERROR  : ERROR:  duplicate key value violates unique constraint "usuario_permissao_tela_pkey"
+DETAIL:  Key (id)=(100) already exists.
+2017-10-15 17:38:00 ERROR  : ERROR:  extension "hstore" already exists
+2017-10-15 17:42:33 ERROR  : ERROR:  relation "auditoria_id_seq" does not exist
+2017-10-15 17:43:12 ERROR  : ERROR:  syntax error at or near "auditoria_pkey"
+LINE 10:   PRIMARY KEY auditoria_pkey PRIMARY KEY (id),
+                       ^
+2017-10-15 17:43:31 ERROR  : ERROR:  table "auditoria" does not exist
+2017-10-15 17:43:36 ERROR  : ERROR:  syntax error at or near "pk_auditoria"
+LINE 11:   PRIMARY KEY pk_auditoria PRIMARY KEY (id),
+                       ^
+2017-10-15 17:43:52 ERROR  : ERROR:  syntax error at or near "pk_auditoria"
+LINE 10:   PRIMARY KEY pk_auditoria (id),
+                       ^
+2017-10-15 17:44:01 ERROR  : ERROR:  relation "auditoria_id_seq" does not exist
+2017-10-15 17:44:10 ERROR  : ERROR:  table "auditoria" does not exist
+2017-10-15 17:44:15 ERROR  : ERROR:  relation "auditoria_id_seq" does not exist
+2017-10-15 20:12:45 ERROR  : ERROR:  null value in column "permite_acesso" violates not-null constraint
+DETAIL:  Failing row contains (121, 120, btnLocalizar, Localizar, null).
+2017-10-16 20:40:18 ERROR  : ERROR:  insert or update on table "modulo" violates foreign key constraint "fk_modulo_projeto1"
+DETAIL:  Key (id_projeto)=(1) is not present in table "projeto".
+2017-10-16 20:40:19 ERROR  : ERROR:  insert or update on table "modulo" violates foreign key constraint "fk_modulo_projeto1"
+DETAIL:  Key (id_projeto)=(1) is not present in table "projeto".
+2017-10-16 20:40:31 ERROR  : ERROR:  unrecognized configuration parameter "myapp.user"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	--ordem,
+	campos)
+	VALUES(
+	cast(current_setting('myapp.user') as int),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	--'INSERT',
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-10-16 20:40:32 ERROR  : ERROR:  unrecognized configuration parameter "myapp.user"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	--ordem,
+	campos)
+	VALUES(
+	cast(current_setting('myapp.user') as int),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	--'INSERT',
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-10-16 22:26:21 ERROR  : ERROR:  syntax error at or near "SELECT"
+LINE 2: SELECT 
+        ^
+2017-10-16 23:06:59 ERROR  : ERROR:  syntax error at or near ")"
+LINE 7: )
+        ^
+2017-10-16 23:07:14 ERROR  : ERROR:  could not open file "C:/Users/User/Documents/NetBeans/HelpEasy/permissoes.csv" for reading: Permission denied
+2017-10-16 23:07:22 ERROR  : ERROR:  could not open file "C:/Users/User/Documents/NetBeans/HelpEasy/permissoes.csv" for reading: Permission denied
+2017-10-16 23:07:44 ERROR  : ERROR:  could not open file "C:/Users/User/Documents/NetBeans/HelpEasy/permissoes.csv" for reading: Permission denied
+2017-10-16 23:07:45 ERROR  : ERROR:  could not open file "C:/Users/User/Documents/NetBeans/HelpEasy/permissoes.csv" for reading: Permission denied
+2017-10-16 23:15:04 ERROR  : ERROR:  relation "usuarios" does not exist
+LINE 1: select * from telas,usuarios
+                            ^
+2017-10-16 23:17:08 ERROR  : ERROR:  syntax error at or near "select"
+LINE 2: select t.*,u.id as id_usuario from telas t,usuario u
+        ^
+2017-10-16 23:20:20 ERROR  : ERROR:  syntax error at or near "int"
+LINE 1: insert int usuario_permissao_tela (id_usuario,tela,tela_amig...
+               ^
+2017-10-16 23:20:26 ERROR  : ERROR:  syntax error at or near "as"
+LINE 1: ...ssao_tela (id_usuario,tela,tela_amigavel,permite_acesso) as 
+                                                                    ^
+2017-10-16 23:21:11 ERROR  : ERROR:  duplicate key value violates unique constraint "usuario_permissao_tela_pkey"
+DETAIL:  Key (id)=(30) already exists.
+2017-10-16 23:21:12 ERROR  : ERROR:  duplicate key value violates unique constraint "usuario_permissao_tela_pkey"
+DETAIL:  Key (id)=(40) already exists.
+2017-10-16 23:21:13 ERROR  : ERROR:  duplicate key value violates unique constraint "usuario_permissao_tela_pkey"
+DETAIL:  Key (id)=(50) already exists.
+2017-10-16 23:21:28 ERROR  : ERROR:  update or delete on table "usuario_permissao_tela" violates foreign key constraint "usuario_permissao_tela_id_tela" on table "usuario_permissao_tela_acoes"
+DETAIL:  Key (id)=(120) is still referenced from table "usuario_permissao_tela_acoes".
+2017-10-16 23:23:05 ERROR  : ERROR:  extra data after last expected column
+CONTEXT:  COPY telas, line 1: "janelas.JdgCadastroCliente;Cadastro da Cidade;btnSalvar;Salvar;;;"
+2017-10-16 23:23:12 ERROR  : ERROR:  extra data after last expected column
+CONTEXT:  COPY telas, line 1: "janelas.JdgCadastroCliente;Cadastro da Cidade;btnSalvar;Salvar;;;"
+2017-10-16 23:23:47 ERROR  : ERROR:  extra data after last expected column
+CONTEXT:  COPY telas, line 1: "janelas.JdgCadastroCliente;Cadastro da Cidade;btnSalvar;Salvar;"
+2017-10-16 23:25:09 ERROR  : ERROR:  syntax error at or near "lef"
+LINE 2: lef join viewPermissoes vP on vP.tela = vT.tela and vP.id_us...
+        ^
+2017-10-16 23:25:17 ERROR  : ERROR:  column reference "id_usuario" is ambiguous
+LINE 1: select distinct id_usuario,tela,tela_amigavel,false as permi...
+                        ^
+2017-10-16 23:29:35 ERROR  : ERROR:  cannot drop view viewpermissoes because other objects depend on it
+DETAIL:  view viewtelasfaltantes depends on view viewpermissoes
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-10-16 23:29:53 ERROR  : ERROR:  relation "viewpermissoes" already exists
+2017-10-16 23:34:08 ERROR  : ERROR:  relation "usuario_permissao_tela_acao" does not exist
+LINE 1: insert into usuario_permissao_tela_acao (id_tela,acao,acao_a...
+                    ^
+2017-10-16 23:34:16 ERROR  : ERROR:  relation "viewtelasacaofaltantes" does not exist
+LINE 3: select * from viewTelasAcaoFaltantes
+                      ^
+2017-10-16 23:34:25 ERROR  : ERROR:  INSERT has more expressions than target columns
+LINE 2: select * from viewTelasAcoesFaltantes
+               ^
+2017-10-16 23:34:48 ERROR  : ERROR:  INSERT has more expressions than target columns
+LINE 3: select * from viewTelasAcoesFaltantes
+               ^
+2017-10-16 23:38:55 ERROR  : ERROR:  syntax error at or near "into"
+LINE 4: insert into usuario_permissao_tela_acoes (id_tela,acao,acao_...
+               ^
+2017-10-16 23:49:01 ERROR  : ERROR:  extra data after last expected column
+CONTEXT:  COPY telas, line 1: "janelas.JdgCadastroFase;Cadastro de Fase;btnSalvar;Salvar;"
+2017-10-16 23:50:15 ERROR  : ERROR:  invalid byte sequence for encoding "UTF8": 0xf3 0x64 0x75 0x6c
+CONTEXT:  COPY telas, line 4
+2017-10-16 23:50:20 ERROR  : ERROR:  invalid byte sequence for encoding "UTF8": 0xf3 0x64 0x75 0x6c
+CONTEXT:  COPY telas, line 4
+2017-10-17 21:56:22 ERROR  : ERROR:  syntax error at or near "exec"
+LINE 1: exec fnPopulaPermissao()
+        ^
+2017-10-17 22:09:31 ERROR  : ERROR:  cannot drop table telas because other objects depend on it
+DETAIL:  view viewtelas depends on table telas
+view viewtelasfaltantes depends on view viewtelas
+view viewtelasacoesfaltantes depends on view viewtelas
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-10-17 22:10:09 ERROR  : ERROR:  cannot drop view viewtelas because other objects depend on it
+DETAIL:  view viewtelasfaltantes depends on view viewtelas
+view viewtelasacoesfaltantes depends on view viewtelas
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-10-17 22:10:12 ERROR  : ERROR:  cannot drop view viewtelas because other objects depend on it
+DETAIL:  view viewtelasfaltantes depends on view viewtelas
+view viewtelasacoesfaltantes depends on view viewtelas
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-10-17 22:11:31 ERROR  : ERROR:  syntax error at or near "CREATE"
+LINE 273: CREATE TABLE usuario_permissao_tela (
+          ^
+2017-10-17 22:12:06 ERROR  : ERROR:  syntax error at or near "CREATE"
+LINE 273: CREATE TABLE usuario_permissao_tela (
+          ^
+2017-10-17 22:12:13 ERROR  : ERROR:  table "telas" does not exist
+2017-10-17 22:12:51 ERROR  : ERROR:  extension "hstore" already exists
+2017-10-17 22:24:48 ERROR  : ERROR:  database "helpeasy" is being accessed by other users
+DETAIL:  There are 3 other sessions using the database.
+2017-10-17 22:25:25 ERROR  : ERROR:  database "helpeasy" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+2017-10-17 22:27:23 ERROR  : ERROR:  cannot drop table telas because other objects depend on it
+DETAIL:  view viewtelas depends on table telas
+view viewtelasfaltantes depends on view viewtelas
+view viewtelasacoesfaltantes depends on view viewtelas
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-10-17 22:32:25 ERROR  : ERROR:  relation "viewpermissoes" already exists
+2017-10-17 22:33:10 ERROR  : ERROR:  invalid input syntax for integer: "janelas.JdgCadastroFase"
+CONTEXT:  COPY telas, line 1, column id: "janelas.JdgCadastroFase"
+2017-10-17 22:49:22 ERROR  : ERROR:  duplicate key value violates unique constraint "telas_pkey"
+DETAIL:  Key (id)=(1) already exists.
+2017-10-27 12:54:32 ERROR  : ERROR:  insert or update on table "cliente" violates foreign key constraint "fk_cliente_cidade1"
+DETAIL:  Key (id_cidade)=(1) is not present in table "cidade".
+2017-10-27 12:54:33 ERROR  : ERROR:  insert or update on table "cliente" violates foreign key constraint "fk_cliente_cidade1"
+DETAIL:  Key (id_cidade)=(1) is not present in table "cidade".
+2017-10-27 12:54:38 ERROR  : ERROR:  null value in column "situacao" violates not-null constraint
+DETAIL:  Failing row contains (1, null, null).
+2017-10-27 12:54:44 ERROR  : ERROR:  unrecognized configuration parameter "myapp.user"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	campos)
+	VALUES(
+	cast(current_setting('myapp.user') as int),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-10-27 12:54:44 ERROR  : ERROR:  unrecognized configuration parameter "myapp.user"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	campos)
+	VALUES(
+	cast(current_setting('myapp.user') as int),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-10-27 12:54:46 ERROR  : ERROR:  unrecognized configuration parameter "myapp.user"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	campos)
+	VALUES(
+	cast(current_setting('myapp.user') as int),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-10-27 12:54:47 ERROR  : ERROR:  unrecognized configuration parameter "myapp.user"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	campos)
+	VALUES(
+	cast(current_setting('myapp.user') as int),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-10-27 12:54:49 ERROR  : ERROR:  unrecognized configuration parameter "myapp.user"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	campos)
+	VALUES(
+	cast(current_setting('myapp.user') as int),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-10-27 12:54:50 ERROR  : ERROR:  unrecognized configuration parameter "myapp.user"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	campos)
+	VALUES(
+	cast(current_setting('myapp.user') as int),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-10-27 12:55:07 ERROR  : ERROR:  syntax error at end of input
+LINE 1: select fnDisableTrigger(0
+                                 ^
+2017-10-27 12:55:08 ERROR  : ERROR:  function fndisabletrigger() does not exist
+LINE 1: select fnDisableTrigger()
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2017-10-27 12:55:32 ERROR  : ERROR:  null value in column "situacao" violates not-null constraint
+DETAIL:  Failing row contains (2, estrela, null).
+2017-10-27 12:55:43 ERROR  : ERROR:  null value in column "id_cidade" violates not-null constraint
+DETAIL:  Failing row contains (2, null, null, null, null, null, null, null, null, null).
+2017-10-27 19:55:55 ERROR  : ERROR:  syntax error at or near "telas"
+LINE 1: delete telas 
+               ^
+2017-10-27 19:56:01 ERROR  : ERROR:  syntax error at or near "tabela"
+LINE 1: delete tabela telas 
+               ^
+2017-10-27 19:56:08 ERROR  : ERROR:  syntax error at or near "table"
+LINE 1: delete table telas 
+               ^
+2017-10-27 20:19:21 ERROR  : ERROR:  null value in column "id_cidade" violates not-null constraint
+DETAIL:  Failing row contains (5, null, null, null,  , null, null, null, null, null).
+2017-10-27 20:51:32 ERROR  : ERROR:  duplicate key value violates unique constraint "telas_pkey"
+DETAIL:  Key (id)=(36) already exists.
+2017-10-27 20:56:19 ERROR  : ERROR:  null value in column "datahora_movimento" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, 1, null, null, null).
+2017-10-27 20:56:23 ERROR  : ERROR:  null value in column "datahora_movimento" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, , null, A, asas).
+2017-10-27 20:56:27 ERROR  : ERROR:  null value in column "datahora_movimento" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, , null, A, ).
+2017-10-27 20:58:00 ERROR  : ERROR:  null value in column "id_tarefa" violates not-null constraint
+DETAIL:  Failing row contains (1, null, null, 2017-10-27 19:58:00.464023, null, null).
+2017-10-27 20:58:06 ERROR  : ERROR:  insert or update on table "movimento_tarefa" violates foreign key constraint "fk_movimento_tarefa_tarefa"
+DETAIL:  Key (id_tarefa)=(1) is not present in table "tarefa".
+2017-10-27 20:58:08 ERROR  : ERROR:  insert or update on table "movimento_tarefa" violates foreign key constraint "fk_movimento_tarefa_tarefa"
+DETAIL:  Key (id_tarefa)=(1) is not present in table "tarefa".
+2017-10-27 20:58:34 ERROR  : ERROR:  invalid input syntax for type timestamp: "asdas"
+LINE 1: ...r, 'asda'::character varying(150), 'asdas'::text, 'asdas'::t...
+                                                             ^
+2017-10-27 20:58:39 ERROR  : ERROR:  null value in column "datahora_criacao" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, asda, asdas, null, null, null, A).
+2017-10-27 20:58:41 ERROR  : ERROR:  null value in column "datahora_criacao" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, asda, asdas, null, null, null, A).
+2017-10-27 20:58:50 ERROR  : ERROR:  null value in column "datahora_previsao" violates not-null constraint
+DETAIL:  Failing row contains (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, asda, asdas, 2017-12-12 00:00:00, null, null, A).
+2017-10-27 20:58:56 ERROR  : ERROR:  insert or update on table "tarefa" violates foreign key constraint "fk_tarefa_projeto1"
+DETAIL:  Key (id_projeto)=(1) is not present in table "projeto".
+2017-10-27 20:58:59 ERROR  : ERROR:  insert or update on table "tarefa" violates foreign key constraint "fk_tarefa_projeto1"
+DETAIL:  Key (id_projeto)=(1) is not present in table "projeto".
+2017-10-27 20:59:10 ERROR  : ERROR:  null value in column "situacao" violates not-null constraint
+DETAIL:  Failing row contains (1, teste, null).
+2017-10-27 20:59:17 ERROR  : ERROR:  insert or update on table "tarefa" violates foreign key constraint "fk_tarefa_motivo1"
+DETAIL:  Key (id_motivo)=(1) is not present in table "motivo".
+2017-10-27 20:59:18 ERROR  : ERROR:  insert or update on table "tarefa" violates foreign key constraint "fk_tarefa_motivo1"
+DETAIL:  Key (id_motivo)=(1) is not present in table "motivo".
+2017-10-27 20:59:26 ERROR  : ERROR:  null value in column "descricao" violates not-null constraint
+DETAIL:  Failing row contains (1, null, null).
+2017-10-27 20:59:28 ERROR  : ERROR:  null value in column "situacao" violates not-null constraint
+DETAIL:  Failing row contains (1, Teste, null).
+2017-10-27 21:00:35 ERROR  : ERROR:  null value in column "id_projeto" violates not-null constraint
+DETAIL:  Failing row contains (1, null, TESTE, A).
+2017-10-27 21:01:29 ERROR  : ERROR:  column "id_projeto" of relation "projeto" does not exist
+LINE 1: INSERT INTO PROJETO(ID,ID_PROJETO,DESCRICAO,SITUACAO) VALUES...
+                               ^
+2017-10-27 21:02:03 ERROR  : ERROR:  syntax error at or near "INTO"
+LINE 2: INSERT INTO FASE(ID,DESCRICAO,SITUACAO) VALUES (1,'TESTE','A...
+               ^
+2017-10-27 21:03:37 ERROR  : ERROR:  duplicate key value violates unique constraint "cidade_pkey"
+DETAIL:  Key (id)=(1) already exists.
+2017-10-27 21:09:14 ERROR  : ERROR:  syntax error at or near ","
+LINE 1: ,'A');
+        ^
+2017-10-27 21:11:46 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+
+2017-10-27 21:17:34 ERROR  : ERROR:  unrecognized configuration parameter "myapp.user"
+CONTEXT:  SQL statement "INSERT INTO auditoria(
+	id_usuario,
+	tabela,
+	tipo,
+	campos)
+	VALUES(
+	cast(current_setting('myapp.user') as int),
+	TG_TABLE_NAME,
+	substr(TG_OP, 1, 1),
+	v_fields)"
+PL/pgSQL function fnauditoria() line 56 at SQL statement
+2017-10-27 21:18:28 ERROR  : ERROR:  relation "usuario_permissao_tela_acao" does not exist
+LINE 11: DELETE FROM USUARIO_PERMISSAO_TELA_ACAO;
+                     ^
+2017-10-27 21:20:52 ERROR  : ERROR:  null value in column "login" violates not-null constraint
+DETAIL:  Failing row contains (4, teste, null, null, null).
+2017-10-27 21:21:52 ERROR  : ERROR:  missing FROM-clause entry for table "upt"
+LINE 2:  distinct upt.id as id_tela,vT.acao,vT.acao_amigavel,true as...
+                  ^
+2017-10-27 21:25:00 ERROR  : ERROR:  missing FROM-clause entry for table "upt"
+LINE 2:  distinct upt.id as id_tela,vT.acao,vT.acao_amigavel,true as...
+                  ^
+2017-10-27 21:25:01 ERROR  : ERROR:  missing FROM-clause entry for table "upt"
+LINE 4:  distinct upt.id as id_tela,vT.acao,vT.acao_amigavel,true as...
+                  ^
+2017-10-27 21:25:01 ERROR  : ERROR:  missing FROM-clause entry for table "upt"
+LINE 4:  distinct upt.id as id_tela,vT.acao,vT.acao_amigavel,true as...
+                  ^
+2017-11-10 19:28:21 ERROR  : ERROR:  null value in column "id_tarefa" violates not-null constraint
+DETAIL:  Failing row contains (1, null, null, 2017-11-10 18:28:21.875511, null, null).
+2017-11-10 19:37:54 ERROR  : ERROR:  cannot drop table usuario because other objects depend on it
+DETAIL:  constraint fk_tarefa_usuario1 on table tarefa depends on table usuario
+constraint fk_tarefa_usuario2 on table tarefa depends on table usuario
+constraint fk_tarefa_has_usuario_usuario1 on table tarefa_usuario depends on table usuario
+constraint fk_auditoria_usuario on table auditoria depends on table usuario
+constraint fk_usuario_permissao_tela_id_usuario on table usuario_permissao_tela depends on table usuario
+view viewpermissoes depends on table usuario
+view viewtelas depends on table usuario
+view viewtelasfaltantes depends on view viewtelas
+view viewtelasacoesfaltantes depends on view viewtelas
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-11-10 19:39:35 ERROR  : ERROR:  trigger "trgauditoriacidade" for relation "cidade" already exists
+2017-11-10 19:40:01 ERROR  : ERROR:  trigger "trgauditoriacidade" for relation "cidade" already exists
+2017-11-10 19:40:03 ERROR  : ERROR:  relation "cidades" does not exist
+2017-11-10 19:40:05 ERROR  : ERROR:  trigger "trgauditoriacidade" for relation "cidade" already exists
+2017-11-10 19:44:58 ERROR  : ERROR:  syntax error at or near "where"
+LINE 3: where u.id = 1
+        ^
+2017-11-10 19:46:12 ERROR  : ERROR:  column t.id_usuario_ator does not exist
+LINE 2: INNER JOIN Tarefa T on U.Id = T.id_usuario_ator
+                                      ^
+HINT:  Perhaps you meant to reference the column "t.id_usuario_autor".
+2017-11-10 19:46:13 ERROR  : ERROR:  column t.id_usuario_ator does not exist
+LINE 2: INNER JOIN Tarefa T on U.Id = T.id_usuario_ator
+                                      ^
+HINT:  Perhaps you meant to reference the column "t.id_usuario_autor".
+2017-11-10 19:46:14 ERROR  : ERROR:  column t.id_usuario_ator does not exist
+LINE 2: INNER JOIN Tarefa T on U.Id = T.id_usuario_ator
+                                      ^
+HINT:  Perhaps you meant to reference the column "t.id_usuario_autor".
+2017-11-10 19:52:03 ERROR  : ERROR:  syntax error at or near "SELECT"
+LINE 6: SELECT * FROM TAREFA
+        ^
+2017-11-10 19:52:04 ERROR  : ERROR:  syntax error at or near "SELECT"
+LINE 6: SELECT * FROM TAREFA
+        ^
+2017-11-10 19:54:13 ERROR  : ERROR:  column u.darahora_ultimavisualizacao does not exist
+LINE 6:  AND U.darahora_ultimavisualizacao < T.data_hora_criacao
+             ^
+HINT:  Perhaps you meant to reference the column "u.datahora_ultimavisualizacao".
+2017-11-10 19:54:30 ERROR  : ERROR:  column t.data_hora_criacao does not exist
+LINE 6:  AND U.datahora_ultimavisualizacao < T.data_hora_criacao
+                                             ^
+HINT:  Perhaps you meant to reference the column "t.datahora_criacao".
+2017-11-10 19:54:58 ERROR  : ERROR:  invalid input syntax for integer: "Tarefa "
+LINE 1: SELECT 'Tarefa ' + t.id
+               ^
+2017-11-10 19:55:03 ERROR  : ERROR:  invalid input syntax for integer: "Tarefa "
+LINE 1: SELECT 'Tarefa ' & t.id
+               ^
+2017-11-10 19:55:07 ERROR  : ERROR:  unterminated quoted string at or near "' & t.id
+FROM Usuario U
+	INNER JOIN Tarefa T on U.Id = T.id_usuario_autor or U.Id = T.id_usuario_responsavel
+WHERE 
+	U.id = 1
+	AND U.datahora_ultimavisualizacao < T.datahora_criacao
+	
+
+
+--SELECT * FROM TAREFA"
+LINE 1: SELECT "Tarefa "' & t.id
+                        ^
+2017-11-10 19:55:08 ERROR  : ERROR:  column "Tarefa " does not exist
+LINE 1: SELECT "Tarefa " & t.id
+               ^
+2017-11-10 19:55:13 ERROR  : ERROR:  column "Tarefa " does not exist
+LINE 1: SELECT "Tarefa " + t.id
+               ^
+2017-11-10 19:55:17 ERROR  : ERROR:  column "tarefa " does not exist
+LINE 1: SELECT "tarefa " + t.id
+               ^
+2017-11-10 19:55:20 ERROR  : ERROR:  invalid input syntax for integer: "tarefa "
+LINE 1: SELECT 'tarefa ' + t.id
+               ^
+2017-11-10 19:55:29 ERROR  : ERROR:  syntax error at or near "max"
+LINE 1: SELECT 'tarefa ' + cast(t.id as varchar(max))
+                                                ^
+2017-11-10 19:55:34 ERROR  : ERROR:  syntax error at or near "max"
+LINE 1: SELECT 'tarefa ' & cast(t.id as varchar(max))
+                                                ^
+2017-11-10 19:55:37 ERROR  : ERROR:  operator does not exist: unknown & character varying
+LINE 1: SELECT 'tarefa ' & cast(t.id as varchar)
+                         ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2017-11-10 19:55:39 ERROR  : ERROR:  operator does not exist: unknown + character varying
+LINE 1: SELECT 'tarefa ' + cast(t.id as varchar)
+                         ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2017-11-10 19:55:43 ERROR  : ERROR:  operator does not exist: unknown & character varying
+LINE 1: SELECT 'tarefa ' & cast(t.id as varchar)
+                         ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2017-11-10 19:55:48 ERROR  : ERROR:  operator does not exist: unknown + character varying
+LINE 1: SELECT 'tarefa ' + cast(t.id as varchar)
+                         ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2017-11-10 19:55:49 ERROR  : ERROR:  operator does not exist: unknown + character varying
+LINE 1: SELECT 'tarefa ' + cast(t.id as varchar)
+                         ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2017-11-10 19:55:49 ERROR  : ERROR:  operator does not exist: unknown + character varying
+LINE 1: SELECT 'tarefa ' + cast(t.id as varchar)
+                         ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2017-11-10 19:55:50 ERROR  : ERROR:  operator does not exist: unknown + character varying
+LINE 1: SELECT 'tarefa ' + cast(t.id as varchar)
+                         ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2017-11-10 19:55:50 ERROR  : ERROR:  operator does not exist: unknown + character varying
+LINE 1: SELECT 'tarefa ' + cast(t.id as varchar)
+                         ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2017-11-10 19:55:50 ERROR  : ERROR:  operator does not exist: unknown + character varying
+LINE 1: SELECT 'tarefa ' + cast(t.id as varchar)
+                         ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2017-11-10 19:55:50 ERROR  : ERROR:  operator does not exist: unknown + character varying
+LINE 1: SELECT 'tarefa ' + cast(t.id as varchar)
+                         ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2017-11-10 19:58:27 ERROR  : ERROR:  column t.assunto does not exist
+LINE 1: ...id,'Tarefa ' || cast(t.id as varchar) || ' - ' || t.assunto ...
+                                                             ^
+2017-11-10 19:58:33 ERROR  : ERROR:  column t.tituloas does not exist
+LINE 1: ...id,'Tarefa ' || cast(t.id as varchar) || ' - ' || t.tituloas...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "t.titulo".
+2017-11-10 19:58:48 ERROR  : ERROR:  column t.tituloas does not exist
+LINE 1: ...id,'Tarefa ' || cast(t.id as varchar) || ' - ' || T.tituloas...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "t.titulo".
+2017-11-10 19:58:50 ERROR  : ERROR:  syntax error at or near "Texto"
+LINE 1: ...efa ' || cast(t.id as varchar) || ' - ' || T.titul oas Texto
+                                                                  ^
+2017-11-10 19:59:43 ERROR  : ERROR:  syntax error at or near "."
+LINE 1: ...'" foi criada pelo usuário "' || Ua.id || ' - ' ua.nome as T...
+                                                             ^
+2017-11-10 19:59:55 ERROR  : ERROR:  syntax error at or near "."
+LINE 1: ...'" foi criada pelo usuário "' || Ua.id || ' - ' Ua.nome as T...
+                                                             ^
+2017-11-10 19:59:58 ERROR  : ERROR:  syntax error at or near "."
+LINE 1: ...'" foi criada pelo usuário "' || Ua.id || ' - ' Ua.nome as T...
+                                                             ^
+2017-11-10 20:04:48 ERROR  : ERROR:  schema "t" does not exist
+LINE 3:  ,T.id
+          ^
+2017-11-10 20:04:56 ERROR  : ERROR:  syntax error at or near "'Tarefa "'"
+LINE 4:  'Tarefa "' || cast(t.id as varchar) || '-' || T.titulo || '...
+         ^
+2017-11-10 20:09:49 ERROR  : ERROR:  relation "public.movimento_tarefa" does not exist
+LINE 1: SELECT count(*) FROM public.movimento_tarefa WHERE false
+                             ^
+2017-11-10 20:09:50 ERROR  : ERROR:  relation "public.movimento_tarefa" does not exist
+LINE 1: SELECT count(*) FROM public.movimento_tarefa WHERE false
+                             ^
+2017-11-10 20:09:57 ERROR  : ERROR:  relation "public.movimento_tarefa" does not exist
+LINE 1: SELECT count(*) FROM public.movimento_tarefa WHERE false
+                             ^
+2017-11-10 20:10:53 ERROR  : ERROR:  null value in column "id_tarefa" violates not-null constraint
+DETAIL:  Failing row contains (1, null, null, null, 2017-11-10 19:10:53.539205, null, null).
+2017-11-10 20:12:49 ERROR  : ERROR:  column t.id_usuario_responsavel does not exist
+LINE 7:  INNER JOIN movimento_tarefa t on U.Id = T.id_usuario_respon...
+                                                 ^
+2017-11-10 20:14:44 ERROR  : ERROR:  column t.datahora_movimento does not exist
+LINE 11:  AND U.datahora_ultimavisualizacao < t.datahora_movimento
+                                              ^
+HINT:  Perhaps you meant to reference the column "mt.datahora_movimento".
+2017-11-10 20:14:47 ERROR  : ERROR:  column t.datahora_movimento does not exist
+LINE 11:  AND U.datahora_ultimavisualizacao < t.datahora_movimento
+                                              ^
+HINT:  Perhaps you meant to reference the column "mt.datahora_movimento".
+2017-11-10 20:18:31 ERROR  : ERROR:  argument of AND must be type boolean, not type usuario
+LINE 26:  AND U
+              ^
+2017-11-10 20:19:28 ERROR  : ERROR:  syntax error at end of input
+LINE 27:  
+          ^
+2017-11-10 20:21:11 ERROR  : ERROR:  null value in column "id_usuario" violates not-null constraint
+DETAIL:  Failing row contains (3, 1, null, null, 2017-11-10 19:21:11.623834, null, null).
+2017-11-10 20:28:41 ERROR  : ERROR:  cannot drop table tarefa because other objects depend on it
+DETAIL:  constraint fk_tarefa_has_usuario_tarefa1 on table tarefa_usuario depends on table tarefa
+constraint fk_movimento_tarefa_tarefa on table movimento_tarefa depends on table tarefa
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-11-10 20:29:32 ERROR  : ERROR:  syntax error at or near "MOVIMENTO_TAREFA"
+LINE 1: MOVIMENTO_TAREFA
+        ^
+2017-11-10 20:33:45 ERROR  : ERROR:  cannot drop table tarefa because other objects depend on it
+DETAIL:  constraint fk_tarefa_has_usuario_tarefa1 on table tarefa_usuario depends on table tarefa
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2017-11-10 20:34:04 ERROR  : ERROR:  syntax error at or near "tabela"
+LINE 1: drop tabela tarefa
+             ^
+2017-11-10 20:34:06 ERROR  : ERROR:  syntax error at or near "tabel"
+LINE 1: drop tabel tarefa
+             ^
+2017-11-10 20:38:39 ERROR  : ERROR:  invalid input syntax for type timestamp: "ss"
+LINE 1: ..., 'teste'::character varying(150), 'teste'::text, 'ss'::time...
+                                                             ^
+2017-11-10 20:38:40 ERROR  : ERROR:  invalid input syntax for type timestamp: "ss"
+LINE 1: ..., 'teste'::character varying(150), 'teste'::text, 'ss'::time...
+                                                             ^
+2017-11-10 20:39:25 ERROR  : ERROR:  duplicate key value violates unique constraint "tarefa_pkey"
+DETAIL:  Key (id)=(2) already exists.
+2017-11-10 20:39:26 ERROR  : ERROR:  duplicate key value violates unique constraint "tarefa_pkey"
+DETAIL:  Key (id)=(2) already exists.
+2017-11-10 20:39:35 ERROR  : ERROR:  duplicate key value violates unique constraint "tarefa_pkey"
+DETAIL:  Key (id)=(3) already exists.
+2017-11-10 20:39:47 ERROR  : ERROR:  duplicate key value violates unique constraint "tarefa_pkey"
+DETAIL:  Key (id)=(5) already exists.
+2017-11-10 20:39:47 ERROR  : ERROR:  duplicate key value violates unique constraint "tarefa_pkey"
+DETAIL:  Key (id)=(5) already exists.
+2017-11-10 20:39:49 ERROR  : ERROR:  duplicate key value violates unique constraint "tarefa_pkey"
+DETAIL:  Key (id)=(5) already exists.
+2017-11-10 20:39:50 ERROR  : ERROR:  duplicate key value violates unique constraint "tarefa_pkey"
+DETAIL:  Key (id)=(5) already exists.
+2017-11-10 20:41:49 ERROR  : ERROR:  insert or update on table "movimento_tarefa" violates foreign key constraint "fk_movimento_tarefa_tarefa_id_usuario"
+DETAIL:  Key (id_usuario)=(6) is not present in table "usuario".
+2017-11-10 20:44:06 ERROR  : ERROR:  syntax error at or near "u"
+LINE 3:  u.datahora_ultimavisualizacao,t.datahora_criacao
+         ^
+2017-11-10 20:44:07 ERROR  : ERROR:  each UNION query must have the same number of columns
+LINE 18:  u.id as id_usuario
+          ^
+2017-11-10 20:44:46 ERROR  : ERROR:  invalid input syntax for integer: "2017-11-09 19:41:15.735056"
+LINE 1: INSERT INTO public.movimento_tarefa(id) VALUES ('2017-11-09 ...
+                                                        ^
+2017-11-10 20:45:08 ERROR  : ERROR:  each UNION query must have the same number of columns
+LINE 18:  u.id as id_usuario
+          ^
+2017-11-10 20:45:09 ERROR  : ERROR:  each UNION query must have the same number of columns
+LINE 18:  u.id as id_usuario
+          ^
+2017-11-10 20:47:59 ERROR  : ERROR:  each UNION query must have the same number of columns
+LINE 18:  u.id as id_usuario
+          ^
+2017-11-10 20:48:05 ERROR  : ERROR:  each UNION query must have the same number of columns
+LINE 18:  u.id as id_usuario
+          ^
+2017-11-10 20:48:09 ERROR  : ERROR:  each UNION query must have the same number of columns
+LINE 18:  u.id as id_usuario
+          ^
+2017-11-10 20:52:30 ERROR  : ERROR:  argument of JOIN/ON must be type boolean, not type integer
+LINE 14:  INNER JOIN tarefa_usuario tu ON  tu.id_tarefa
+                                           ^
+2017-11-10 20:52:46 ERROR  : ERROR:  column t.id_tarefa does not exist
+LINE 12:  INNER JOIN tarefa_usuario tu ON tu.id_tarefa = t.id_tarefa
+                                                         ^
+HINT:  Perhaps you meant to reference the column "mt.id_tarefa" or the column "tu.id_tarefa".
+2017-11-10 20:56:17 ERROR  : ERROR:  syntax error at or near "SELECT"
+LINE 33: SELECT
+         ^
+2017-11-10 20:57:27 ERROR  : ERROR:  syntax error at or near "u"
+LINE 1:  u.id as id_usuario
+         ^
+2017-11-10 20:57:30 ERROR  : ERROR:  missing FROM-clause entry for table "t"
+LINE 3:  , T.id as id_tarefa
+           ^
+2017-11-10 20:57:46 ERROR  : ERROR:  column u.datahora_ultimavisualizacao does not exist
+LINE 15:  u.datahora_ultimavisualizacao < mt.datahora_movimento
+          ^
+HINT:  Perhaps you meant to reference the column "ua.datahora_ultimavisualizacao".
+2017-11-10 20:58:04 ERROR  : ERROR:  missing FROM-clause entry for table "u"
+LINE 10:  INNER JOIN tarefa t on t.id = u.id_tarefa and (u.Id = t.id_...
+                                        ^
+2017-11-10 20:58:30 ERROR  : ERROR:  missing FROM-clause entry for table "u"
+LINE 9: ... and (tu.Id_usuario = t.id_usuario_responsavel or u.Id = t.i...
+                                                             ^
+2017-11-10 20:58:46 ERROR  : ERROR:  missing FROM-clause entry for table "u"
+LINE 2:  u.id as id_usuario
+         ^
+2017-11-10 20:58:46 ERROR  : ERROR:  syntax error at or near "SELECT"
+LINE 33: SELECT
+         ^
+2017-11-10 21:02:55 ERROR  : ERROR:  missing FROM-clause entry for table "ua"
+LINE 6:        || ua.id || ' - ' || ua.nome || '" e você é o ' || 
+                  ^
+2017-11-10 21:03:00 ERROR  : ERROR:  missing FROM-clause entry for table "ua"
+LINE 5:        || ua.id || ' - ' || ua.nome || '" e você é o ' || 
+                  ^
+2017-11-10 21:03:18 ERROR  : ERROR:  column t.id_autor does not exist
+LINE 12:  INNER JOIN usuario ua on ua.Id = t.id_autor
+                                           ^
+2017-11-10 21:04:02 ERROR  : ERROR:  missing FROM-clause entry for table "m"
+LINE 13:  INNER JOIN usuario ua on ua.Id = m.id_usuario
+                                           ^
+2017-11-10 21:05:05 ERROR  : ERROR:  missing FROM-clause entry for table "t"
+LINE 11:  INNER JOIN movimento_tarefa mt on t.Id = mt.id_tarefa
+                                            ^
+2017-11-10 21:05:15 ERROR  : ERROR:  missing FROM-clause entry for table "t"
+LINE 11:  INNER JOIN movimento_tarefa mt on t.Id = mt.id_tarefa
+                                            ^
+2017-11-10 21:06:33 ERROR  : ERROR:  syntax error at or near "SELECT"
+LINE 33: SELECT
+         ^
+2017-11-10 21:08:07 ERROR  : ERROR:  null value in column "titulo" violates not-null constraint
+DETAIL:  Failing row contains (7, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, null, null, 2017-11-10 20:08:07.227805, 2017-11-10 20:08:07.227805, null, null, null).
+2017-11-10 21:16:41 ERROR  : ERROR:  syntax error at or near "VIEW"
+LINE 1: ...SE off, COSTS on, BUFFERS off, TIMING off )CREATE VIEW viewU...
+                                                             ^
+2017-11-10 21:17:56 ERROR  : ERROR:  relation "viewusuariosalteracoes" already exists
+2017-11-10 21:18:57 ERROR  : ERROR:  relation "viewusuariosalteracoes" does not exist
+LINE 1: select * from viewUsuariosAlteracoes
+                      ^
+2017-11-10 21:18:59 ERROR  : ERROR:  relation "viewusuariosalteracoes" does not exist
+LINE 1: select * from viewUsuariosAlteracoes
+                      ^
+2017-11-10 21:18:59 ERROR  : ERROR:  relation "viewusuariosalteracoes" does not exist
+LINE 1: select * from viewUsuariosAlteracoes
+                      ^
+2017-11-10 21:33:18 ERROR  : ERROR:  syntax error at or near "5"
+LINE 1: 5
+        ^
+2017-11-21 19:29:49 ERROR  : ERROR:  invalid input syntax for type timestamp: "te"
+LINE 1: ...TE public.movimento_tarefa SET datahora_movimento='te'::time...
+                                                             ^
+2017-11-21 19:49:13 ERROR  : ERROR:  update or delete on table "tarefa" violates foreign key constraint "fk_tarefa_has_usuario_tarefa1" on table "tarefa_usuario"
+DETAIL:  Key (id)=(1) is still referenced from table "tarefa_usuario".
+2017-11-26 23:19:20 ERROR  : ERROR:  duplicate key value violates unique constraint "telas_pkey"
+DETAIL:  Key (id)=(39) already exists.
+2017-12-05 19:49:02 ERROR  : ERROR:  duplicate key value violates unique constraint "telas_pkey"
+DETAIL:  Key (id)=(39) already exists.
+2017-12-07 20:13:28 ERROR  : ERROR:  syntax error at or near "viewUsuariosAlteracoes"
+LINE 1: viewUsuariosAlteracoes
+        ^

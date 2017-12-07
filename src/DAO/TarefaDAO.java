@@ -50,6 +50,8 @@ public class TarefaDAO extends DAO {
             session.merge(tarefa);
             t.commit();
             retorno = true;
+            TelaPrincipal.servidor.definirMensagem("leandro");
+            TelaPrincipal.servidor.definirEnvio(true);
 
             if (tarefa.getId() < 1) {
                 int id = ultimoId(tarefa);

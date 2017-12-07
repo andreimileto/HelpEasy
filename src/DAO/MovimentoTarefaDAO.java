@@ -44,6 +44,8 @@ public class MovimentoTarefaDAO {
 
             session.merge(movimentoTarefa);
             t.commit();
+            TelaPrincipal.servidor.definirMensagem("leandro");
+            TelaPrincipal.servidor.definirEnvio(true);
             retorno = true;
 
             if (movimentoTarefa.getId() < 1) {
