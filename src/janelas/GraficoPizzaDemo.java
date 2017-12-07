@@ -21,7 +21,7 @@ public class GraficoPizzaDemo extends ApplicationFrame {
 	/**
 	 * 
 	 */
-    
+    int parametro = 0;
     
     
     
@@ -29,6 +29,7 @@ public class GraficoPizzaDemo extends ApplicationFrame {
 	public GraficoPizzaDemo() {
 		super(null);
 		this.setTitle("Grafico de Pizza");
+                this.parametro = parametro;
 		JPanel jpanel = PanelDemostracao();
 		jpanel.setPreferredSize(new Dimension(500, 270));
 		setContentPane(jpanel);
