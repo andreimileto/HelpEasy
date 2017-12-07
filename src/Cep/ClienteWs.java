@@ -53,12 +53,9 @@ public class ClienteWs {
                     .setLogradouro(jsonObject.getString("logradouro"))
                     .setComplemento(jsonObject.getString("complemento"))
                     .setBairro(jsonObject.getString("bairro"))
-                    //.setLocalidade(jsonObject.getString("localidade"))
-                    .setUf(jsonObject.getString("uf"));
-            //.setUnidade(jsonObject.getString("unidade"))
-            //.setIbge(jsonObject.getString("ibge"))
-            //.setGia(jsonObject.getString("gia"));
-
+                    .setCidade(jsonObject.getString("localidade"))
+                    .setUf(jsonObject.getString("uf"))
+                    .setIbge(jsonObject.getString("ibge"));
         }
 
         return endereco;

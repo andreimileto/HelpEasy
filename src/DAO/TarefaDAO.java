@@ -8,6 +8,7 @@ package DAO;
 import apoio.ConexaoBD;
 import apoio.Formatacao;
 import apoio.HibernateUtil;
+import entidade.Projeto;
 import entidade.Tarefa;
 import janelas.TelaPrincipal;
 import java.util.ArrayList;
@@ -143,6 +144,55 @@ public class TarefaDAO extends DAO {
 
         } catch (HibernateException he) {
             he.printStackTrace();
+        }// finally {
+//            session.close();
+//        }
+        return lista;
+    }
+    
+    public ArrayList<Tarefa> listarParaGrafico(Tarefa tarefa) {
+        this.tarefa = tarefa;
+        List resultado = null;
+        Projeto projeto =new Projeto();
+        tarefa.setProjeto(projeto);
+
+        ArrayList<Tarefa> lista = new ArrayList<>();
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            String sql = "";
+
+            //          if (tarefa.getId() == 0) {
+//            sql = "from Tarefa "
+//                    + "where 1=1 "
+//                    + "";
+            
+            
+           sql = //" select t.id, p.descricao "
+                     " from Tarefa t, Projeto p ";
+                  // + " group by p.descricao";
+
+            
+
+//            sql = sql + " and (upper (titulo) like '%" + tarefa.getTitulo().toUpperCase() + "%'"
+//                    + " or upper (descricao) like '%" + tarefa.getDescricao().toUpperCase() + "%') "
+//                    + " and situacao = 'A' "
+//                    + "order by id";
+
+            String sel = sql;
+
+            org.hibernate.Query q = session.createQuery(sql);
+
+            resultado = q.list();
+
+            for (Object o : resultado) {
+                Tarefa tar = ((Tarefa) ((Object) o));
+                lista.add(tar);
+            }
+
+        } catch (HibernateException he) {
+            he.printStackTrace();
+            System.out.println("Erro listar co grafico = "+he);
         }// finally {
 //            session.close();
 //        }

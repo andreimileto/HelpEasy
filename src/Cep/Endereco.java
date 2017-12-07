@@ -11,7 +11,7 @@ public class Endereco {
     private String cidade;
     private String logradouro;
     private String complemento;
-    private String complemento2;
+    private String ibge;
 
     public String getCep() {
         return cep;
@@ -36,9 +36,9 @@ public class Endereco {
     public String getComplemento() {
         return complemento;
     }
-
-    public String getComplemento2() {
-        return complemento2;
+    
+    public String getIbge() {
+        return ibge;
     }
 
     public Endereco setCep(String cep) {
@@ -71,11 +71,11 @@ public class Endereco {
         return this;
     }
 
-    public Endereco setComplemento2(String complemento2) {
-        this.complemento2 = complemento2;
+    public Endereco setIbge(String ibge) {
+        this.ibge = ibge;
         return this;
     }
-
+    
     @Override
     public String toString() {
         return "Endereco{" +
@@ -85,7 +85,7 @@ public class Endereco {
                 ", bairro='" + bairro + '\'' +
                 ", logradouro='" + logradouro + '\'' +
                 ", complemento='" + complemento + '\'' +
-                ", complemento2='" + complemento2 + '\'' +
+                ", ibge '" + ibge + '\'' +
                 '}';
     }
 }

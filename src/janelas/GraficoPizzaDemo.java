@@ -5,8 +5,11 @@
  */
 package janelas;
 
+import DAO.TarefaDAO;
+import entidade.Tarefa;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 import org.jfree.chart.*;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
@@ -35,14 +38,30 @@ public class GraficoPizzaDemo extends ApplicationFrame {
 		setContentPane(jpanel);
 	}
 	private static PieDataset criaDadosGrafico() {
+            TarefaDAO tarefaDAO = new TarefaDAO();
+            Tarefa tarefa =  new Tarefa();
+            
+               // ArrayList<Tarefa> tarefas = tarefaDAO.listarParaGrafico(tarefa);
+            
 		DefaultPieDataset defaultpiedataset = new DefaultPieDataset();
+//                for (int i = 0; i < tarefas.size(); i++) {
+//                defaultpiedataset.setValue(tarefas.get(i).getProjeto().getDescricao(), 43.23D);
+////		defaultpiedataset.setValue("Conteúdo 2", 10D);
+////		defaultpiedataset.setValue("Conteúdo 3", 27.5D);
+////		defaultpiedataset.setValue("Conteúdo 4", 17.5D);
+////		defaultpiedataset.setValue("Conteúdo 5", 11D);
+////		defaultpiedataset.setValue("Conteúdo 6", 19.39D);
+//		//return defaultpiedataset;
+//            }
 		defaultpiedataset.setValue("Conteúdo 1", 43.23D);
 		defaultpiedataset.setValue("Conteúdo 2", 10D);
 		defaultpiedataset.setValue("Conteúdo 3", 27.5D);
 		defaultpiedataset.setValue("Conteúdo 4", 17.5D);
 		defaultpiedataset.setValue("Conteúdo 5", 11D);
 		defaultpiedataset.setValue("Conteúdo 6", 19.39D);
-		return defaultpiedataset;
+//		return defaultpiedataset;
+//System.out.println("tamanho array "+tarefas.size());
+return defaultpiedataset;
 	}
 	private static JFreeChart criaGrafico(PieDataset piedataset) {
 		JFreeChart jfreechart = ChartFactory.createPieChart(
