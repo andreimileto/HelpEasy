@@ -5,6 +5,7 @@
  */
 package janelas;
 
+import DAO.UsuarioDAO;
 import apoio.HibernateUtil;
 import apoio.LogHeasy;
 import apoio.Validacao;
@@ -19,10 +20,15 @@ import entidade.Projeto;
 import entidade.Tarefa;
 import entidade.Usuario;
 import entidade.Versao;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.jdbc.Work;
 import sockets.Servidor;
 
 /**
@@ -514,21 +520,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         try {
             Session sessao = HibernateUtil.getSessionFactory().openSession();
-            sessao.beginTransaction();
-
-            
+            sessao.beginTransaction();            
             int i = 0;
             List<Object[]> query = sessao.createSQLQuery("select * from viewUsuariosAlteracoes where id_usuario = " + TelaPrincipal.userH.getId()).list();
             for (Object[] qry : query) {
-                dados = dados + "\n" + qry[2];
+                dados = dados + qry[2] +  "\n";
                 i++;
             }
+                       
             sessao.getTransaction().commit();
+            
+            Validacao.atualizaUsuario();
 
         } catch (Exception e) {
             System.out.println("erro ao chamar view: " + e);
         }
-
+        
+        txaErro.setText("");
         txaRetorno.setText("");
         txaRetorno.setText(dados + "\n");
     }//GEN-LAST:event_btnNotifiActionPerformed

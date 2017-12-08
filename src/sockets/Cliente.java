@@ -59,7 +59,7 @@ public class Cliente extends Thread {
                 byte[] buf = new byte[256];
 
                 // prepara pacote para resposta
-                DatagramPacket pacote = new DatagramPacket(buf, buf.length);
+                DatagramPacket pacote = new DatagramPacket(buf, buf.length);    
 
                 // recebe pacote
                 socket.receive(pacote);

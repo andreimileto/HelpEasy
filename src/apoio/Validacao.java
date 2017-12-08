@@ -21,6 +21,7 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.jdbc.Work;
 
@@ -291,6 +292,30 @@ public class Validacao {
             sessao.doWork(new Work() {
                 public void execute(Connection connection) throws SQLException {
                     CallableStatement call = connection.prepareCall("{ call fnenableauditoria() }");
+                    call.execute();
+                }
+            });
+
+            sessao.getTransaction().commit();
+
+        }catch (Exception e) {
+            System.out.println("erro " + e.getMessage());
+        }
+    }
+       
+              
+       public static void atualizaUsuario() {
+        try {       
+            Session sessao = HibernateUtil.getSessionFactory().openSession();
+            sessao.beginTransaction();
+
+            
+            Query query2 = sessao.createSQLQuery("set session \"myapp.user\" = " + TelaPrincipal.userH.getId());
+            query2.executeUpdate();
+            
+            sessao.doWork(new Work() {
+                public void execute(Connection connection) throws SQLException {
+                    CallableStatement call = connection.prepareCall("{ call fnAtualizaVisualizacaoUsuario() }");
                     call.execute();
                 }
             });
