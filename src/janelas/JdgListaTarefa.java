@@ -53,23 +53,23 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     Usuario autor;
     Usuario responsavel;
     Tarefa tarefa;
-
+    
     public JdgListaTarefa(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-
+        
     }
-
+    
     public JdgListaTarefa(java.awt.Frame parent, boolean modal, Tarefa tarefa) {
         super(parent, modal);
         initComponents();
         this.tarefa = tarefa;
         //listarTarefas();
     }
-
+    
     public JdgListaTarefa(java.awt.Frame parent, boolean modal, Tarefa tarefa, Motivo motivo, Usuario autor, Usuario responsavel, Projeto projeto, Prioridade prioridade, Modulo modulo, Versao versaoBug, Versao versaoCorrecao, Fase fase, Cliente cliente) {
         super(parent, modal);
-
+        
         initComponents();
         this.tarefa = tarefa;
         this.motivo = motivo;
@@ -90,14 +90,14 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
         this.fase = fase;
         tarefa.setFase(fase);
-
+        
         this.cliente = cliente;
         tarefa.setCliente(cliente);
 
         // this.cid = cid;
         //listarTarefas();
     }
-
+    
     private void listarTarefas() {
         try {
             //setar para tabela modelo de dados
@@ -108,13 +108,13 @@ public class JdgListaTarefa extends javax.swing.JDialog {
             tblListaTarefas.getColumnModel().getColumn(3).setPreferredWidth(80);
             tblListaTarefas.getColumnModel().getColumn(4).setPreferredWidth(80);
             tblListaTarefas.getColumnModel().getColumn(5).setPreferredWidth(20);
-
+            
         } catch (Exception ex) {
             System.out.println("Erro " + ex);
             janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(), ex.getMessage());
         }
     }
-
+    
     private DefaultTableModel obterDadosParaTabelaCompleto() throws Exception {
         DefaultTableModel dtm = new DefaultTableModel() {
             public boolean isCellEditable(int row, int column) {
@@ -133,16 +133,16 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         }
         TarefaDAO tarDAO = new TarefaDAO();
         ArrayList<Tarefa> tarefas = tarDAO.listar(tarefa);
-
+        
         dtm.addColumn("ID");
         dtm.addColumn("CLIENTE");
         dtm.addColumn("TÍTULO");
         dtm.addColumn("AUTOR");
         dtm.addColumn("RESPONSÁVEL");
         dtm.addColumn("FASE");
-
+        
         for (int i = 0; i < tarefas.size(); i++) {
-
+            
             dtm.addRow(new String[]{String.valueOf(tarefas.get(i).getId()),
                 tarefas.get(i).getCliente().getRazaoSocial(),
                 tarefas.get(i).getTitulo(),
@@ -153,12 +153,12 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         }
         return dtm;
     }
-
+    
     private void selecionado() throws Exception {
-
+        
         int row = tblListaTarefas.getSelectedRow();
         this.tarefa.setId(Integer.parseInt(tblListaTarefas.getValueAt(row, 0).toString()));
-
+        
         TarefaDAO tarDAO = new TarefaDAO();
         ArrayList<Tarefa> tarefas = tarDAO.listarUmId(tarefa);
 
@@ -169,44 +169,47 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         motivo.setId(tarefas.get(0).getMotivo().getId());
         motivo.setDescricao(tarefas.get(0).getMotivo().getDescricao());
         tarefa.setMotivo(motivo);
-
+        
         autor.setId(tarefas.get(0).getUsuarioByIdUsuarioAutor().getId());
         autor.setNome(tarefas.get(0).getUsuarioByIdUsuarioAutor().getNome());
         tarefa.setUsuarioByIdUsuarioAutor(autor);
-
+        
         responsavel.setId(tarefas.get(0).getUsuarioByIdUsuarioResponsavel().getId());
         responsavel.setNome(tarefas.get(0).getUsuarioByIdUsuarioResponsavel().getNome());
         tarefa.setUsuarioByIdUsuarioResponsavel(responsavel);
-
+        
         projeto.setId(tarefas.get(0).getProjeto().getId());
         projeto.setDescricao(tarefas.get(0).getProjeto().getDescricao());
         tarefa.setProjeto(projeto);
-
+        
         prioridade.setId(tarefas.get(0).getPrioridade().getId());
         prioridade.setDescricao(tarefas.get(0).getPrioridade().getDescricao());
         tarefa.setPrioridade(prioridade);
-
+        
         modulo.setId(tarefas.get(0).getModulo().getId());
         modulo.setDescricao(tarefas.get(0).getModulo().getDescricao());
         tarefa.setModulo(modulo);
-
+        
         versaoBug.setId(tarefas.get(0).getVersaoByIdVersaoBug().getId());
         versaoBug.setDescricao(tarefas.get(0).getVersaoByIdVersaoBug().getDescricao());
         tarefa.setVersaoByIdVersaoBug(versaoBug);
-
+        
         versaoCorrecao.setId(tarefas.get(0).getVersaoByIdVersaoCorrecao().getId());
         versaoCorrecao.setDescricao(tarefas.get(0).getVersaoByIdVersaoCorrecao().getDescricao());
         tarefa.setVersaoByIdVersaoCorrecao(versaoCorrecao);
-
+        
         fase.setId(tarefas.get(0).getFase().getId());
         fase.setDescricao(tarefas.get(0).getFase().getDescricao());
         tarefa.setFase(fase);
-
+        
         cliente.setId(tarefas.get(0).getCliente().getId());
         cliente.setRazaoSocial(tarefas.get(0).getCliente().getRazaoSocial());
         cliente.setEmail(tarefas.get(0).getCliente().getEmail());
         tarefa.setCliente(cliente);
-
+        
+        JdgCadastroTarefa cadastroTarefa = new JdgCadastroTarefa(null, true, tarefa, motivo, autor, responsavel, modulo, projeto, prioridade, fase, versaoBug, versaoCorrecao, cliente);
+        cadastroTarefa.setVisible(true);
+        
         this.setVisible(false);
     }
 
@@ -544,6 +547,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         try {
             selecionado();
+            
         } catch (Exception ex) {
             System.out.println("Erro " + ex);
             janelas.TelaPrincipal.logH.gravaErro(this.getClass().getName(), ex.getMessage());
@@ -575,10 +579,10 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         String nomeResponsavel = responsavel.getNome();
         JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, responsavel);
         listaUsuario.setVisible(true);
-
+        
         if (responsavel.getId() > 0) {
             tfdNomeResponsavel.setText(responsavel.getNome());
-
+            
         } else {
             responsavel.setId(idResponsavel);
             responsavel.setNome(nomeResponsavel);
@@ -603,30 +607,30 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLocalizarProjetoActionPerformed
 
     private void btnLocalizarMotivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarMotivoActionPerformed
-
+        
         JdgListaMotivo listaMotivo = new JdgListaMotivo(null, true, motivo);
         listaMotivo.setVisible(true);
-
+        
         if (motivo.getId() > 0) {
             tfdNomeMotivo.setText(motivo.getDescricao());
-
+            
         }
     }//GEN-LAST:event_btnLocalizarMotivoActionPerformed
 
     private void btnLocalizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarClienteActionPerformed
-
+        
         int idCliente = cliente.getId();
         String nomeCliente = cliente.getRazaoSocial();
         //int idCidade = cliente.getCidade().getId();
         cid = new Cidade();
         // cliente = new Cliente();
         cliente.setCidade(cid);
-
+        
         JdgListaCliente clientes = new JdgListaCliente(null, true, cliente, cid);
         clientes.setVisible(true);
         if (cliente.getId() > 0 && cliente.getRazaoSocial().length() > 0) {
             tfdNomeCliente.setText(cliente.getRazaoSocial());
-
+            
         } else {
             cliente.setId(idCliente);
             // cid.setId(idCidade);
@@ -644,22 +648,22 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         JdgListaVersao listaVersao = new JdgListaVersao(null, true, versaoBug, projeto);
         listaVersao.setVisible(true);
         if (versaoBug.getId() > 0 && versaoBug.getDescricao().length() > 0) {
-
+            
             tfdVersaoBug.setText(versaoBug.getDescricao());
-
+            
         }
     }//GEN-LAST:event_btnLocalizarVersaoBugActionPerformed
 
     private void btnLocalizarVersaoCorrecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarVersaoCorrecaoActionPerformed
         versaoCorrecao.setId(0);
         versaoCorrecao.setDescricao("");
-
+        
         JdgListaVersao listaVersao = new JdgListaVersao(null, true, versaoCorrecao, projeto);
         listaVersao.setVisible(true);
         if (versaoCorrecao.getId() > 0 && versaoCorrecao.getDescricao().length() > 0) {
-
+            
             tfdVersaoCorrecao.setText(versaoCorrecao.getDescricao());
-
+            
         }
     }//GEN-LAST:event_btnLocalizarVersaoCorrecaoActionPerformed
 
@@ -671,18 +675,18 @@ public class JdgListaTarefa extends javax.swing.JDialog {
         listaFase.setVisible(true);
         if (fase.getId() > 0 && fase.getDescricao().length() > 0) {
             tfdFase.setText(fase.getDescricao());
-
+            
         } else {
             fase.setId(idFase);
             fase.setDescricao(nomeFase);
             tfdFase.setText(fase.getDescricao());
         }
-
+        
 
     }//GEN-LAST:event_btnLocalizarFaseActionPerformed
 
     private void btnLocalizarPrioridadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarPrioridadeActionPerformed
-
+        
         JdgListaPrioridade listaPrioridade = new JdgListaPrioridade(null, true, prioridade);
         listaPrioridade.setVisible(true);
         if (prioridade.getId() > 0 && prioridade.getDescricao().length() > 0) {
@@ -692,15 +696,15 @@ public class JdgListaTarefa extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLocalizarPrioridadeActionPerformed
 
     private void btnLocalizarAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocalizarAutorActionPerformed
-
+        
         autor.setId(0);
         autor.setNome("");
         JdgListaUsuario listaUsuario = new JdgListaUsuario(null, true, autor);
         listaUsuario.setVisible(true);
-
+        
         if (autor.getId() > 0 && autor.getNome().length() > 0) {
             tfdAutor.setText(autor.getNome());
-
+            
         }
     }//GEN-LAST:event_btnLocalizarAutorActionPerformed
 
@@ -725,7 +729,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
                 tarefa.setId(id);
                 //     JOptionPane.showMessageDialog(rootPane, "id tarefa"+tarefa.getId());
             }
-
+            
         } catch (Exception e) {
             tarefa.setId(0);
         }
@@ -781,7 +785,7 @@ public class JdgListaTarefa extends javax.swing.JDialog {
 
         GraficoPizzaDemo grafico = new GraficoPizzaDemo();
         grafico.gerarGrafico();
-
+        
 
     }//GEN-LAST:event_btnTesteActionPerformed
 
