@@ -67,26 +67,26 @@ public class Cliente extends Thread {
                 // exibe dados na area de texto
                 String dados = new String(pacote.getData()).trim();
 
-                if (dados.equals(TelaPrincipal.userH.getLogin())) {
-                    dados = "é voce leandro";
-                }
-
                 try {
                     Session sessao = HibernateUtil.getSessionFactory().openSession();
                     sessao.beginTransaction();
 
                     dados = "";
+                    int i = 0;
                     List<Object[]> query = sessao.createSQLQuery("select * from viewUsuariosAlteracoes where id_usuario = " + TelaPrincipal.userH.getId()).list();
                     for (Object[] qry : query) {
                         dados = dados + "\n" + qry[2];
+                        i++;
                     }
                     sessao.getTransaction().commit();
 
+                    dados = "Notificações " + i;
                 } catch (Exception e) {
                     System.out.println("erro ao chamar view: " + e);
                 }
-
-                pkgRecebido.append(dados + "\n");
+                
+                txaErro.setText("");
+                txaErro.append(dados + "\n");
 
             } catch (IOException ioe) {
                 txaErro.append(ioe + "\n");

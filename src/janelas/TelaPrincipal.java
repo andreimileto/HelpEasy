@@ -5,6 +5,7 @@
  */
 package janelas;
 
+import apoio.HibernateUtil;
 import apoio.LogHeasy;
 import apoio.Validacao;
 import controle.ControleTarefa;
@@ -20,6 +21,8 @@ import entidade.Usuario;
 import entidade.Versao;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import org.hibernate.Session;
 import sockets.Servidor;
 
 /**
@@ -36,13 +39,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public static EnvioEmail envioEmail = new EnvioEmail();
     public static Servidor servidor = null;
     public static sockets.Cliente cliente = null;
-    
+
     public TelaPrincipal() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-        
+
     }
-    
+
     public TelaPrincipal(Usuario usuario) {
         Validacao.populaPermissao();
         initComponents();
@@ -50,11 +53,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblUsuario.setText(usuario.getLogin());
         userH = usuario;
         Validacao.setaPermissoes(this.jMenuBar1);
-        servidor = new Servidor("localhost",12345, null);
+        servidor = new Servidor("localhost", 12345, null);
         servidor.start();
         System.out.println("224.0.0." + userH.getId());
-        cliente = new sockets.Cliente("224.0.0.0", 12345, txaErro , txaRetorno);
+        cliente = new sockets.Cliente("224.0.0.0", 12345, txaErro, txaRetorno);
         cliente.start();
+        servidor.definirMensagem("leandro");
+        servidor.definirEnvio(true);
     }
 
     /**
@@ -76,7 +81,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         txaRetorno = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         txaErro = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        btnNotifi = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuArquivo = new javax.swing.JMenu();
         menuItemSair = new javax.swing.JMenuItem();
@@ -146,10 +151,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         txaErro.setRows(5);
         jScrollPane1.setViewportView(txaErro);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnNotifi.setText("Exibir Notificações");
+        btnNotifi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnNotifiActionPerformed(evt);
             }
         });
 
@@ -159,12 +164,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(124, 124, 124))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnNotifi)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -174,7 +180,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(btnNotifi)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -422,7 +428,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void ImnCadastroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImnCadastroUsuarioActionPerformed
-        
+
 
     }//GEN-LAST:event_ImnCadastroUsuarioActionPerformed
 
@@ -485,35 +491,53 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Motivo motivo = new Motivo();
         Tarefa tarefa = new Tarefa();
 
-        
-        JdgListaTarefa listaTarefa = new JdgListaTarefa(null, false, tarefa,motivo,autor, responsavel, projeto, prioridade, modulo, versaoBug, versaoCorrecao, fase,cliente);
+        JdgListaTarefa listaTarefa = new JdgListaTarefa(null, false, tarefa, motivo, autor, responsavel, projeto, prioridade, modulo, versaoBug, versaoCorrecao, fase, cliente);
         listaTarefa.setVisible(true);
-        
+
         ArrayList<Tarefa> tarefas = new ArrayList<>();
         ControleTarefa controleTarefa = new ControleTarefa();
         tarefas = controleTarefa.listarUmId(tarefa);
         try {
-        tarefa = tarefas.get(0);    
+            tarefa = tarefas.get(0);
         } catch (Exception e) {
-            
+
         }
-        
-        if (tarefa.getId()>0) {
-            JdgCadastroTarefa cadastroTarefa = new JdgCadastroTarefa(null, true,tarefa,motivo,autor, responsavel, modulo, projeto, prioridade, fase, versaoBug, versaoCorrecao,cliente);
+
+        if (tarefa.getId() > 0) {
+            JdgCadastroTarefa cadastroTarefa = new JdgCadastroTarefa(null, true, tarefa, motivo, autor, responsavel, modulo, projeto, prioridade, fase, versaoBug, versaoCorrecao, cliente);
             cadastroTarefa.setVisible(true);
         }
     }//GEN-LAST:event_imnListaTarefasActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        servidor.definirMensagem("leandro");
-        servidor.definirEnvio(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnNotifiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNotifiActionPerformed
+        String dados = "";
+        
+        try {
+            Session sessao = HibernateUtil.getSessionFactory().openSession();
+            sessao.beginTransaction();
+
+            
+            int i = 0;
+            List<Object[]> query = sessao.createSQLQuery("select * from viewUsuariosAlteracoes where id_usuario = " + TelaPrincipal.userH.getId()).list();
+            for (Object[] qry : query) {
+                dados = dados + "\n" + qry[2];
+                i++;
+            }
+            sessao.getTransaction().commit();
+
+        } catch (Exception e) {
+            System.out.println("erro ao chamar view: " + e);
+        }
+
+        txaRetorno.setText("");
+        txaRetorno.setText(dados + "\n");
+    }//GEN-LAST:event_btnNotifiActionPerformed
 
     /**
      * @param args the command line arguments
      */
     static final LogHeasy logH = new LogHeasy();
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -557,12 +581,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem ImnClientes;
     private javax.swing.JMenuItem ImnPermissoesUsuario;
     private javax.swing.JMenuItem ImnTarefa;
+    private javax.swing.JButton btnNotifi;
     private javax.swing.JMenuItem imnCadastroMotivo;
     private javax.swing.JMenuItem imnCadastroUsuario;
     private javax.swing.JMenuItem imnCidades;
     private javax.swing.JMenuItem imnListaTarefas;
     private javax.swing.JMenuItem imnParametrosSistema;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
