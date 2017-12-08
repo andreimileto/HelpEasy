@@ -141,3 +141,12 @@ CREATE OR REPLACE FUNCTION fnPopulaPermissao() RETURNS void AS $$
 	select * from viewTelasAcoesFaltantes;
 	END;
 $$ LANGUAGE plpgsql;
+
+
+--Função para update usuario;
+CREATE OR REPLACE FUNCTION fnatualizavisualizacaousuario() RETURNS void AS $$
+	BEGIN
+		--set session "myapp.user" = 3;
+		UPDATE usuario set datahora_ultimavisualizacao = now() where id = cast(current_setting('myapp.user') as int);
+	END;
+$$ LANGUAGE plpgsql;
